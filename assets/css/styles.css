@@ -1,49 +1,119 @@
-body{
-    padding-top: 20px;
+body {
+  padding-top: 20px;
 }
 
-.container{
-    margin: 25px;
-    position: relative;
-}
-.aok{
-    position: absolute;
-    width:75px;
-    top:-20px;
-    right:70px;
-}
-#nav-bar{
-    margin:25px;
-    position: relative;
-    background-color: grey;
-    z-index:-1;
-    padding-top: 80px;
-    
-}
-.tu-ilmenau{
-    margin:inherit;
-    margin-top: 5px;
-    width:100px;
-    position: absolute;
-    right:120px;
-    top:10px;
+.container {
+  margin: 25px;
+  position: relative;
 }
 
-img{
-    max-width: 100%;
-    max-height: 100%;
-    display: block; 
-}
-.customer{
-    padding:10px;
-    margin-left: 55px;
-    margin-right: 55px;
-    font-family:Helvetica;
-    font-size: 35px;
+.aok {
+  position: absolute;
+  width: 75px;
+  top: -20px;
+  right: 70px;
 }
 
-.exemption{
-    font-size: 40px;
-    margin-top:0px;
-    margin-bottom: 30px;
+#nav-bar {
+  margin: 25px;
+  position: relative;
+  background-color: grey;
+  z-index: -1;
+  padding-top: 80px;
+}
+
+.tu-ilmenau {
+  margin: inherit;
+  margin-top: 5px;
+  width: 100px;
+  position: absolute;
+  right: 120px;
+  top: 10px;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+.customer {
+  padding: 10px;
+  margin-left: 55px;
+  margin-right: 55px;
+  font-family: Helvetica;
+  font-size: 35px;
+}
+
+.exemption {
+  font-size: 40px;
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
+
+/*HaSh:note for Hakeem: we need to change this to work on iPad not on Mozilla*/
+button::-moz-focus-inner {
+  border: 0;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 600px;
+  margin-top: 100px;
+}
+
+.year {
+  width: 700px;
+  height: 100px;
+  border-radius: 8px;
+  border-color: #4CAF50;
+  border-width: 3px;
+  border-style: solid;
+  background-color: transparent;
+  color: #4CAF50;
+  font-size: 30px;
+}
+
+.back {
+  width: wrap;
+  height: wrap;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border-style: solid;
+  border-color: grey;
+  background-color: transparent;
+  color: grey;
+  font-size: 30px;
+}
+
+.btn {
+  transition: all 0.05s
+}
+
+.year:active {
+  background-color: #e6ffe6;
+}
+
+.back:active {
+  background-color: #e6e6e6;
+}
+
+/*HaSh:note for Hakeem: we need to change this to work only on iPad */
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
 }

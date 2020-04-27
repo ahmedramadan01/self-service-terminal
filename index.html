@@ -1,35 +1,50 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <!-- placeholder titel-->
-    <title>any ideas?</title>
-    <link rel="stylesheet" type="text/css" href="assets\css\styles.css">
-      <!-- Scripts with the async attribute are executed asynchronously.
+
+<head>
+  <meta charset="utf-8">
+  <!-- placeholder titel-->
+  <title>any ideas?</title>
+  <link rel="stylesheet" type="text/css" href="assets\css\styles.css">
+  <!-- Scripts with the async attribute are executed asynchronously.
       This means the script is executed as soon as it's downloaded,
       without blocking the browser in the meantime. -->
-      <!-- HaSh:note for Hakeem:we need to decide later whether we use "async" or "defer" -->
-    <script src="app.js" type="text/javascript" async></script>
+  <!-- HaSh:note for Hakeem:we need to decide later whether we use "async" or "defer" -->
+  <script src="app.js" type="text/javascript" async></script>
 
-  </head>
-  <body>
-    <div class="container">
-      <div class="aok">
-        <img src="assets\images\Logo_AOK_PLUS.svg.png"/>
-      </div>
-      <div id="nav-bar">
-        <div class="tu-ilmenau">
-          <img src ="assets\images\Tu-ilmenauLogo.png"/>
-        </div>
-      </div>
+</head>
+<!-- HaSh:note for Hakeem:we might need to add labels(Screen reader users) -->
 
-      <div class="customer">
-        <p class="exemption">Zuzahlungsbefreigung</p>
-        <p>Für welches Jahr möchten Sie eine
+<body>
+  <div class="container">
+    <div class="aok">
+      <img src="assets\images\Logo_AOK_PLUS.svg.png" />
+    </div>
+    <div id="nav-bar">
+      <div class="tu-ilmenau">
+        <img src="assets\images\Tu-ilmenauLogo.png" />
+      </div>
+    </div>
+
+    <div class="customer">
+      <p class="exemption">Zuzahlungsbefreigung</p>
+      <p>Für welches Jahr möchten Sie eine
         <br class="beantragen">Zuzahlungsbefreigung beantragen?</br></p>
 
-      </div>      
-   </div> 
-    
-  </body>
+    </div>
+  </div>
+
+  <form action="index.html" method="post">
+    <div class="btn-container">
+      <button class="noselect year btn" type="button" name="2020">2020</button>
+      <button class="noselect year btn" type="button" name="2019">2019</button>
+      <button class="noselect year btn" type="button" name="2018">2018</button>
+      <button class="noselect year btn" type="button" name="2017">2017</button>
+      <button class="noselect back btn" type="button" name="back">&#171; Zurück</button>
+    </div>
+  </form>
+
+
+</body>
+
 </html>
