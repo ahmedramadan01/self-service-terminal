@@ -1,3 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 
-# Create your views here.
+def index(request):
+    return render(request, 'self_service_terminal/index.html')
