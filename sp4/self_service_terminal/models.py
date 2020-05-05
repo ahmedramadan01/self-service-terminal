@@ -6,6 +6,6 @@ class Form(models.Model):
     show_on_frontend = models.BooleanField()
     description = models.CharField(max_length=120)
 
-class which_year(models.Model):
+class Which_year(models.Model):
     form = models.ForeignKey(Form,on_delete = models.CASCADE)
     which_year_text = models.CharField(max_length=4)
