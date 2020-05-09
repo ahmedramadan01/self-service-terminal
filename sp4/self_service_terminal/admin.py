@@ -8,6 +8,7 @@ class FormAdmin(admin.ModelAdmin):
         ('Anzeigen',            {'fields': ['show_on_frontend']}),
         ('Details',             {'fields': ['form_title', 'description']})
         ]
+    list_display = ['form_title', 'time_since_last_updated']
         
 admin.site.register(Form, FormAdmin)
 

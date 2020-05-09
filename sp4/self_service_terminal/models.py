@@ -1,4 +1,7 @@
+import datetime
+
 from django.db import models
+from django.utils import timezone
 
 class Menu(models.Model):
     parent_menu = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
@@ -18,6 +21,9 @@ class Form(models.Model):
 
     form_title = models.CharField(max_length=120, default="Formular")
     description = models.TextField(blank=True)
+
+    def time_since_last_updated(self):
+        return timezone.now() - self.last_changed
 
     def __str__(self):
         return self.form_title
