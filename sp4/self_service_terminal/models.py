@@ -1,14 +1,23 @@
 from django.db import models
 
-class Form(models.Model):
-    upload_date = models.DateTimeField()
-    last_changed = models.DateTimeField()
-    show_on_frontend = models.BooleanField()
-    description = models.CharField(max_length=120)
+class Menu(models.Model):
+    parent_menu = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
+
+    menu_title = models.CharField(max_length=100)
+    menu_text = models.TextField(blank=True)
 
     def __str__(self):
-        return self.description
+        return self.menu_title
 
-class Which_year(models.Model):
-    form = models.ForeignKey(Form,on_delete = models.CASCADE)
-    which_year_text = models.CharField(max_length=4)
+class Form(models.Model):
+    parent_menu = models.ForeignKey('Menu', on_delete=models.CASCADE)
+
+    upload_date = models.DateTimeField(auto_now_add=True)
+    last_changed = models.DateTimeField(auto_now=True)
+    show_on_frontend = models.BooleanField(default=False)
+
+    form_title = models.CharField(max_length=120, default="Formular")
+    description = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.form_title
