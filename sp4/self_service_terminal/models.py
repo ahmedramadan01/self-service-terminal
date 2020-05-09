@@ -23,7 +23,11 @@ class Form(models.Model):
     description = models.TextField(blank=True)
 
     def time_since_last_updated(self):
-        return timezone.now() - self.last_changed
+        delta = timezone.now() - self.last_changed
+        days = delta.days
+        hours = int((delta.seconds / 60) / 60)
+        minutes = int((delta.seconds) / 60) - hours * 60
+        return "Zuletzt geändert vor " + str(delta.days) + " Tagen, " + str(hours) + " Stunden, " + str(minutes) + " Minuten."
 
     def __str__(self):
         return self.form_title
