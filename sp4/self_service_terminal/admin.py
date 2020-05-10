@@ -6,9 +6,10 @@ class FormAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Übergeordnetes Menü', {'fields': ['parent_menu']}),
         ('Anzeigen',            {'fields': ['show_on_frontend']}),
-        ('Details',             {'fields': ['form_title', 'description']})
+        ('Details',             {'fields': ['form_title', 'description']}),
+        ('Dateipfad',           {'fields': ['pdffile']})
         ]
-    list_display = ['form_title', 'time_since_last_updated', 'upload_date', 'last_changed']
+    list_display = ['form_title', 'time_since_last_updated_str', 'upload_date', 'last_changed']
     list_filter = ['upload_date','last_changed']
         
 class MenuAdmin(admin.ModelAdmin):

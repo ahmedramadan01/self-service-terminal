@@ -15,6 +15,8 @@ class Menu(models.Model):
 class Form(models.Model):
     parent_menu = models.ForeignKey('Menu', on_delete=models.CASCADE)
 
+    pdffile = models.FileField(upload_to='forms', null=True, blank=True)
+
     upload_date = models.DateTimeField(auto_now_add=True)
     last_changed = models.DateTimeField(auto_now=True)
     show_on_frontend = models.BooleanField(default=False)
