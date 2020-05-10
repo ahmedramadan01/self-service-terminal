@@ -8,8 +8,14 @@ class FormAdmin(admin.ModelAdmin):
         ('Anzeigen',            {'fields': ['show_on_frontend']}),
         ('Details',             {'fields': ['form_title', 'description']})
         ]
-    list_display = ['form_title', 'time_since_last_updated']
+    list_display = ['form_title', 'time_since_last_updated', 'upload_date', 'last_changed']
+    list_filter = ['upload_date','last_changed']
         
-admin.site.register(Form, FormAdmin)
+class MenuAdmin(admin.ModelAdmin):
+    fieldsets = [
+        ('Oberkategorie',    {'fields': ['parent_menu']}),
+        ('Beschreibung',     {'fields': ['menu_title', 'menu_text']})
+    ]
 
-admin.site.register(Menu)
+admin.site.register(Form, FormAdmin)
+admin.site.register(Menu, MenuAdmin)
