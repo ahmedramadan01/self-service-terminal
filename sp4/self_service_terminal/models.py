@@ -27,7 +27,12 @@ class Form(models.Model):
         days = delta.days
         hours = int((delta.seconds / 60) / 60)
         minutes = int((delta.seconds) / 60) - hours * 60
-        return "Zuletzt geändert vor " + str(delta.days) + " Tagen, " + str(hours) + " Stunden, " + str(minutes) + " Minuten."
+        return (days, hours, minutes)
+        
+    
+    def time_since_last_updated_str(self):
+        (days, hours, minutes) = self.time_since_last_updated()
+        return "Zuletzt geändert vor " + str(days) + " Tagen, " + str(hours) + " Stunden, " + str(minutes) + " Minuten."
 
     def __str__(self):
         return self.form_title
