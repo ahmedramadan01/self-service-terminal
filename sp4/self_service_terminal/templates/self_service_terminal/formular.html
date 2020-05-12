@@ -5,7 +5,7 @@
 
 <head>
   <meta charset="utf-8">
-  <!-- placeholder titel-->
+  <script src="https://kit.fontawesome.com/73467a7cb0.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="{% static 'self_service_terminal/styles.css' %}">
   <script src="app.js" type="text/javascript" async></script>
 
@@ -22,8 +22,8 @@
       </div>
     </div>
 
-    <div class="customer">
-      <p class="exemption">Formular title</p>
+    <div class="formular">
+      <p class="forumlar-title">Formular title</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed velit tortor. 
           Vivamus sed dui erat. Donec lacinia mollis arcu in placerat. 
           Ut non odio ac libero aliquam condimentum. Aliquam aliquam, lectus laoreet laoreet ultrices, eros libero consequat nibh, nec mollis orci risus a felis. 
@@ -35,8 +35,9 @@
 
   <form action="index.html" method="post">
     <div class="btn-container">
-      <button class="noselect year btn" type="button" name="2020">Drucken</button>
-      <button class="noselect year btn" type="button" name="2019">Ansehen</button>
+      <button class="noselect print btn" type="button"><i class="fas fa-print"></i>
+        Drucken</button>
+      <button class="noselect view  btn" type="button"><i class="far fa-file-alt"></i>Ansehen</button>
       <button class="noselect back btn" type="button" name="back">&#171; Zurück</button>
     </div>
   </form>

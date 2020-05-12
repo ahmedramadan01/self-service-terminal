@@ -37,7 +37,7 @@ img {
   display: block;
 }
 
-.customer {
+.customer,.formular {
   padding: 10px;
   margin-left: 55px;
   margin-right: 55px;
@@ -45,7 +45,7 @@ img {
   font-size: 35px;
 }
 
-.exemption {
+.exemption,.formular-title {
   font-size: 40px;
   margin-top: 0px;
   margin-bottom: 30px;
@@ -65,7 +65,7 @@ button::-moz-focus-inner {
   margin-top: 100px;
 }
 
-.year {
+.year,.print,.view {
   width: 700px;
   height: 100px;
   border-radius: 8px;
@@ -116,4 +116,8 @@ button::-moz-focus-inner {
   user-select: none;
   /* Non-prefixed version, currently
                                   supported by Chrome, Opera and Firefox */
+}
+
+.fa-print, .fa-file-alt{
+  padding-right: 30px;
 }
