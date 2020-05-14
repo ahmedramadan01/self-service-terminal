@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <!-- placeholder titel-->
+  <title>any ideas?</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'self_service_terminal/styles.css' %}">
+  <!-- Scripts with the async attribute are executed asynchronously.
+      This means the script is executed as soon as it's downloaded,
+      without blocking the browser in the meantime. -->
+  <!-- HaSh:note for Hakeem:we need to decide later whether we use "async" or "defer" -->
+  <script src="app.js" type="text/javascript" async></script>
+
+</head>
+<!-- HaSh:note for Hakeem:we might need to add labels(Screen reader users) -->
+
+<body>
+  <div class="container">
+    <div class="aok">
+      <img src="{% static 'self_service_terminal/Logo_AOK_PLUS.svg.png' %}" />
+    </div>
+    <div id="nav-bar">
+      <div class="tu-ilmenau">
+        <img src="{% static 'self_service_terminal/Tu-ilmenauLogo.png' %}" />
+      </div>
+    </div>
+
+    <div class="customer">
+      <p class="exemption">Zuzahlungsbefreigung</p>
+      <p>Für welches Jahr möchten Sie eine
+        <br class="beantragen">Zuzahlungsbefreigung beantragen?</br></p>
+
+    </div>
+  </div>
+
+  <form target="_parent" action="index.html" method="post">
+    <div class="btn-container">
+      
+      <!-- <button class="noselect year btn" type="button" name="2020">2020</button> -->
+      <a style="text-decoration: none;" class="noselect year btn" href="formular/"> 2020  </a>
+      <!-- <button class="noselect year btn" type="button" name="2019">2019</button> -->
+      <a style="text-decoration: none;" class="noselect year btn" href="formular/"> 2019  </a>
+      <!-- <button class="noselect year btn" type="button" name="2018">2018</button> -->
+      <a style="text-decoration: none;" class="noselect year btn" href="formular/"> 2018  </a>
+      <!-- <button class="noselect year btn" type="button" name="2017">2017</button> -->
+      <a style="text-decoration: none;" class="noselect year btn" href="formular/"> 2017  </a>
+      <!-- <button class="noselect back btn" type="button" name="back">&#171; Zurück</button> -->
+      <a style="text-decoration: none;" class="noselect back btn" href="../">&#171; Zurück  </a>
+    
+
+    </div>
+  </form>
+
+  
+
+
+</body>
+
+</html>
