@@ -75,6 +75,8 @@ button::-moz-focus-inner {
   background-color: transparent;
   color: #4CAF50;
   font-size: 30px;
+  text-align: center;
+  line-height: 95px;
 }
 
 .back {
