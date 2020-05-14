@@ -37,7 +37,8 @@ img {
   display: block;
 }
 
-.customer,.formular {
+.customer,
+.formular {
   padding: 10px;
   margin-left: 55px;
   margin-right: 55px;
@@ -45,7 +46,8 @@ img {
   font-size: 35px;
 }
 
-.exemption,.formular-title {
+.exemption,
+.formular-title {
   font-size: 40px;
   margin-top: 0px;
   margin-bottom: 30px;
@@ -54,6 +56,10 @@ img {
 /*HaSh:note for Hakeem: we need to change this to work on iPad not on Mozilla*/
 button::-moz-focus-inner {
   border: 0;
+}
+h1 {
+  color: #4caf50;
+  padding-left: 20px;
 }
 
 .btn-container {
@@ -64,16 +70,72 @@ button::-moz-focus-inner {
   height: 600px;
   margin-top: 100px;
 }
-
-.year,.print,.view {
-  width: 700px;
-  height: 100px;
+.grey {
+  color: grey;
+  padding-left: 50px;
+}
+#up {
+  height: 630px;
+  /* border: red solid 3px; */
+}
+#down {
+  height: 270px;
+  /* border: black solid 3px; */
+}
+.frequent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  /* border: black solid 3px; */
+  margin-left: 65px;
+  height: 360px;
+}
+.frequent-element {
+  width: 820px;
+  height: 75px;
   border-radius: 8px;
-  border-color: #4CAF50;
+  border-color: #4caf50;
   border-width: 3px;
   border-style: solid;
   background-color: transparent;
-  color: #4CAF50;
+  color: #4caf50;
+  font-size: 30px;
+  line-height: 65px;
+  padding-left: 10px;
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 250px;
+  margin-top: 50px;
+}
+.menu-element {
+  width: 350px;
+  height: 110px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border-color: #4caf50;
+  border-width: 3px;
+  border-style: solid;
+  background-color: transparent;
+  color: #4caf50;
+  font-size: 30px;
+}
+.year,
+.print,
+.view {
+  width: 700px;
+  height: 100px;
+  border-radius: 8px;
+  border-color: #4caf50;
+  border-width: 3px;
+  border-style: solid;
+  background-color: transparent;
+  color: #4caf50;
   font-size: 30px;
   text-align: center;
   line-height: 95px;
@@ -92,15 +154,13 @@ button::-moz-focus-inner {
 }
 
 .btn {
-  transition: all 0.05s
+  transition: all 0.05s;
 }
 
-.year:active {
-  background-color: #e6ffe6;
-}
-
+.year:active,
+.menu-element:active,
 .back:active {
-  background-color: #e6e6e6;
+  background-color: #e6ffe6;
 }
 
 /*HaSh:note for Hakeem: we need to change this to work only on iPad */
@@ -120,6 +180,7 @@ button::-moz-focus-inner {
                                   supported by Chrome, Opera and Firefox */
 }
 
-.fa-print, .fa-file-alt{
+.fa-print,
+.fa-file-alt {
   padding-right: 30px;
 }
