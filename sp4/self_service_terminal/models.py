@@ -24,6 +24,12 @@ class Form(models.Model):
     form_title = models.CharField(max_length=120, default="Formular")
     description = models.TextField(blank=True)
 
+    # TODO printing method
+    def print(self):
+        """ Print the document using the cups software
+        """
+        pass
+
     def time_since_last_updated(self):
         delta = timezone.now() - self.last_changed
         days = delta.days
