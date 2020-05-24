@@ -1,6 +1,19 @@
 from django.contrib import admin
 
-from .models import Form, Menu
+from .models import Form, Menu, Startpage
+
+class StartpageAdmin(admin.ModelAdmin):
+    fieldsets = [
+        ('Titel',           {'fields': ['start_title']}),
+        ('Text',            {'fields': ['start_text']})
+    ]
+
+class MenuAdmin(admin.ModelAdmin):
+    fieldsets = [
+        ('Startseite',       {'fields': ['startpage']}),
+        ('Oberkategorie',    {'fields': ['parent_menu']}),
+        ('Beschreibung',     {'fields': ['menu_title', 'menu_text']})
+    ]
 
 class FormAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -11,12 +24,7 @@ class FormAdmin(admin.ModelAdmin):
         ]
     list_display = ['form_title', 'time_since_last_updated_str', 'upload_date', 'last_changed']
     list_filter = ['upload_date','last_changed']
-        
-class MenuAdmin(admin.ModelAdmin):
-    fieldsets = [
-        ('Oberkategorie',    {'fields': ['parent_menu']}),
-        ('Beschreibung',     {'fields': ['menu_title', 'menu_text']})
-    ]
 
-admin.site.register(Form, FormAdmin)
+admin.site.register(Startpage, StartpageAdmin)
 admin.site.register(Menu, MenuAdmin)
+admin.site.register(Form, FormAdmin)

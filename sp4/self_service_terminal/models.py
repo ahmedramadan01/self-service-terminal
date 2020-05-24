@@ -3,9 +3,17 @@ import datetime
 from django.db import models
 from django.utils import timezone
 
-class Menu(models.Model):
-    parent_menu = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
+class Startpage(models.Model):
+    start_title = models.CharField(max_length=100)
+    start_text = models.TextField()
 
+    def __str__(self):
+        return self.start_title
+    
+
+class Menu(models.Model):
+    startpage = models.ForeignKey(Startpage, on_delete=models.CASCADE, blank=True, null=True)
+    parent_menu = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
     menu_title = models.CharField(max_length=100)
     menu_text = models.TextField(blank=True)
 
@@ -14,13 +22,10 @@ class Menu(models.Model):
 
 class Form(models.Model):
     parent_menu = models.ForeignKey('Menu', on_delete=models.CASCADE)
-
     pdffile = models.FileField(upload_to='forms', null=True, blank=True)
-
     upload_date = models.DateTimeField(auto_now_add=True)
     last_changed = models.DateTimeField(auto_now=True)
     show_on_frontend = models.BooleanField(default=False)
-
     form_title = models.CharField(max_length=120, default="Formular")
     description = models.TextField(blank=True)
 
