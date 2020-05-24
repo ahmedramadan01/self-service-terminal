@@ -26,11 +26,11 @@ class Form(models.Model):
 
     # TODO printing method
     def print_form(self):
-        """ Print the document using the cups software
-        """
+        """ Print the document using the cups software."""
         pass
 
     def time_since_last_updated(self):
+        """Return a tuple in the form (days, hours, minutes)."""
         delta = timezone.now() - self.last_changed
         days = delta.days
         hours = int((delta.seconds / 60) / 60)
@@ -39,6 +39,7 @@ class Form(models.Model):
         
     
     def time_since_last_updated_str(self):
+        """Return a string in german with days, hours, minutes since last updated."""
         (days, hours, minutes) = self.time_since_last_updated()
         return "Zuletzt geändert vor " + str(days) + " Tagen, " + str(hours) + " Stunden, " + str(minutes) + " Minuten."
 
