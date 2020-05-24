@@ -25,7 +25,7 @@ class Form(models.Model):
     description = models.TextField(blank=True)
 
     # TODO printing method
-    def print(self):
+    def print_form(self):
         """ Print the document using the cups software
         """
         pass
