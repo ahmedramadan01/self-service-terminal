@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Form, Menu, Startpage, Design
+from .models import Form, Menu, Homepage, Design
 
 class DesignAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -8,19 +8,24 @@ class DesignAdmin(admin.ModelAdmin):
         ('Logo',            {'fields': ['institute_logo']})
     ]
 
-class StartpageAdmin(admin.ModelAdmin):
-    fieldsets = [
-        ('Titel',           {'fields': ['start_title']}),
-        ('Text',            {'fields': ['start_text']})
-    ]
+class MenuInline(admin.StackedInline):
+    model = Menu
+    extra = 0
 
 class FormInline(admin.StackedInline):
     model = Form
     extra = 0
 
+class HomepageAdmin(admin.ModelAdmin):
+    fieldsets = [
+        ('Titel',           {'fields': ['start_title']}),
+        ('Text',            {'fields': ['start_text']})
+    ]
+    inlines = [MenuInline, FormInline]
+
 class MenuAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('Startseite',       {'fields': ['startpage']}),
+        ('Startseite',       {'fields': ['homepage']}),
         ('Oberkategorie',    {'fields': ['parent_menu']}),
         ('Beschreibung',     {'fields': ['menu_title', 'menu_text']})
     ]
@@ -37,6 +42,6 @@ class FormAdmin(admin.ModelAdmin):
     list_filter = ['upload_date','last_changed']
 
 admin.site.register(Design, DesignAdmin)
-admin.site.register(Startpage, StartpageAdmin)
+admin.site.register(Homepage, HomepageAdmin)
 admin.site.register(Menu, MenuAdmin)
 # admin.site.register(Form, FormAdmin)

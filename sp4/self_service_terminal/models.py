@@ -5,8 +5,8 @@ from django.utils import timezone
 
 # TODO Move Models for pages into abstract models for site, design, submenus and forms
 
-class Startpage(models.Model):
-    """Model the startpage of the self service terminal"""
+class Homepage(models.Model):
+    """Model the homepage of the self service terminal"""
     start_title = models.CharField(max_length=100)
     start_text = models.TextField()
 
@@ -16,7 +16,7 @@ class Startpage(models.Model):
 
 class Menu(models.Model):
     """Model the menus and submenus of the self service terminal"""
-    startpage = models.OneToOneField(Startpage, on_delete=models.CASCADE)
+    homepage = models.OneToOneField(Homepage, on_delete=models.CASCADE)
     parent_menu = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
     menu_title = models.CharField(max_length=100)
     menu_text = models.TextField(blank=True)
@@ -26,6 +26,7 @@ class Menu(models.Model):
 
 class Form(models.Model):
     """Model the forms to be accessed via the self service terminal"""
+    
     parent_menu = models.ForeignKey('Menu', on_delete=models.CASCADE, blank=True, null=True)
     pdffile = models.FileField(upload_to='forms', null=True, blank=True)
     upload_date = models.DateTimeField(auto_now_add=True)
