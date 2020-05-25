@@ -2,11 +2,11 @@ from django.contrib import admin
 
 from .models import Form, Menu, Homepage, Design
 
-class DesignAdmin(admin.ModelAdmin):
-    fieldsets = [
-        ('Farbe',           {'fields': ['colorval']}),
-        ('Logo',            {'fields': ['institute_logo']})
-    ]
+# class DesignAdmin(admin.ModelAdmin):
+#     fieldsets = [
+#         ('Farbe',           {'fields': ['colorval']}),
+#         ('Logo',            {'fields': ['institute_logo']})
+#     ]
 
 class MenuInline(admin.StackedInline):
     model = Menu
@@ -21,7 +21,7 @@ class HomepageAdmin(admin.ModelAdmin):
         ('Titel',           {'fields': ['start_title']}),
         ('Text',            {'fields': ['start_text']})
     ]
-    inlines = [MenuInline, FormInline]
+    inlines = [MenuInline]
 
 class MenuAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -41,7 +41,7 @@ class FormAdmin(admin.ModelAdmin):
     list_display = ['form_title', 'time_since_last_updated_str', 'upload_date', 'last_changed']
     list_filter = ['upload_date','last_changed']
 
-admin.site.register(Design, DesignAdmin)
+# admin.site.register(Design, DesignAdmin)
 admin.site.register(Homepage, HomepageAdmin)
 admin.site.register(Menu, MenuAdmin)
 # admin.site.register(Form, FormAdmin)
