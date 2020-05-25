@@ -8,11 +8,11 @@ from .models import Form, Menu, Homepage, Design
 #         ('Logo',            {'fields': ['institute_logo']})
 #     ]
 
-class MenuInline(admin.StackedInline):
+class MenuInline(admin.TabularInline):
     model = Menu
     extra = 0
 
-class FormInline(admin.StackedInline):
+class FormInline(admin.TabularInline):
     model = Form
     extra = 0
 
