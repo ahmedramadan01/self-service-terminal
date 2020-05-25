@@ -2,5 +2,5 @@
 sp4/db.sqlite3
 sp4/sp4/__pycache__
 sp4/self_service_terminal/__pycache__
-sp4/self_service_terminal/migrations/__pycache__/*
+sp4/self_service_terminal/migrations/__pycache__
 sp4/self_service_terminal/files/*
