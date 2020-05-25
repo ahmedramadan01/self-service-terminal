@@ -29,7 +29,7 @@ class MenuAdmin(admin.ModelAdmin):
         ('Oberkategorie',    {'fields': ['parent_menu']}),
         ('Beschreibung',     {'fields': ['menu_title', 'menu_text']})
     ]
-    inlines = [FormInline]
+    inlines = [MenuInline, FormInline]
 
 class FormAdmin(admin.ModelAdmin):
     fieldsets = [

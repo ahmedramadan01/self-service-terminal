@@ -23,7 +23,7 @@ class Homepage(Design):
 
 class Menu(models.Model):
     """Model the menus and submenus of the self service terminal"""
-    homepage = models.OneToOneField(Homepage, on_delete=models.CASCADE)
+    homepage = models.ForeignKey(Homepage, on_delete=models.CASCADE)
     parent_menu = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
     menu_title = models.CharField(max_length=100)
     menu_text = models.TextField(blank=True)
