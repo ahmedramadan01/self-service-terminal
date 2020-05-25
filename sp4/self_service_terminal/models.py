@@ -26,7 +26,7 @@ class Menu(models.Model):
 
 class Form(models.Model):
     """Model the forms to be accessed via the self service terminal"""
-    parent_menu = models.ForeignKey('Menu', on_delete=models.CASCADE)
+    parent_menu = models.ForeignKey('Menu', on_delete=models.CASCADE, blank=True, null=True)
     pdffile = models.FileField(upload_to='forms', null=True, blank=True)
     upload_date = models.DateTimeField(auto_now_add=True)
     last_changed = models.DateTimeField(auto_now=True)

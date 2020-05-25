@@ -14,12 +14,17 @@ class StartpageAdmin(admin.ModelAdmin):
         ('Text',            {'fields': ['start_text']})
     ]
 
+class FormInline(admin.StackedInline):
+    model = Form
+    extra = 0
+
 class MenuAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Startseite',       {'fields': ['startpage']}),
         ('Oberkategorie',    {'fields': ['parent_menu']}),
         ('Beschreibung',     {'fields': ['menu_title', 'menu_text']})
     ]
+    inlines = [FormInline]
 
 class FormAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -34,4 +39,4 @@ class FormAdmin(admin.ModelAdmin):
 admin.site.register(Design, DesignAdmin)
 admin.site.register(Startpage, StartpageAdmin)
 admin.site.register(Menu, MenuAdmin)
-admin.site.register(Form, FormAdmin)
+# admin.site.register(Form, FormAdmin)
