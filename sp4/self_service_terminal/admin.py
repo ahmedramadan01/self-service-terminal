@@ -39,4 +39,3 @@ class FormAdmin(admin.ModelAdmin):
 
 admin.site.register(Homepage, HomepageAdmin)
 admin.site.register(Menu, MenuAdmin)
-# admin.site.register(Form, FormAdmin)
