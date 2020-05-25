@@ -3,19 +3,12 @@ import datetime
 from django.db import models
 from django.utils import timezone
 
-class Design(models.Model):
-    """Store the settings for color and logos"""
-    # TODO set max value for valid hex color values
-    colorval = models.PositiveIntegerField(null=True, blank=True)
-    institute_logo = models.ImageField(upload_to='images', null=True, blank=True)
-
-    class Meta:
-        abstract = True
-
-class Homepage(Design):
+class Homepage(models.Model):
     """Model the homepage of the self service terminal"""
     start_title = models.CharField(max_length=100)
     start_text = models.TextField()
+    colorval = models.PositiveIntegerField(null=True, blank=True)
+    institute_logo = models.ImageField(upload_to='images', null=True, blank=True)
 
     def __str__(self):
         return self.start_title
@@ -33,7 +26,7 @@ class Menu(models.Model):
 
 class Form(models.Model):
     """Model the forms to be accessed via the self service terminal"""
-    parent_menu = models.ForeignKey('Menu', on_delete=models.CASCADE, blank=True, null=True)
+    parent_menu = models.ForeignKey('Menu', on_delete=models.CASCADE)
     pdffile = models.FileField(upload_to='forms', null=True, blank=True)
     upload_date = models.DateTimeField(auto_now_add=True)
     last_changed = models.DateTimeField(auto_now=True)
