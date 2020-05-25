@@ -3,7 +3,10 @@ import datetime
 from django.db import models
 from django.utils import timezone
 
+# TODO Move Models for pages into abstract models for site, design, submenus and forms
+
 class Startpage(models.Model):
+    """Model the startpage of the self service terminal"""
     start_title = models.CharField(max_length=100)
     start_text = models.TextField()
 
@@ -12,6 +15,7 @@ class Startpage(models.Model):
     
 
 class Menu(models.Model):
+    """Model the menus and submenus of the self service terminal"""
     startpage = models.ForeignKey(Startpage, on_delete=models.CASCADE, blank=True, null=True)
     parent_menu = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
     menu_title = models.CharField(max_length=100)
@@ -21,6 +25,7 @@ class Menu(models.Model):
         return self.menu_title
 
 class Form(models.Model):
+    """Model the forms to be accessed via the self service terminal"""
     parent_menu = models.ForeignKey('Menu', on_delete=models.CASCADE)
     pdffile = models.FileField(upload_to='forms', null=True, blank=True)
     upload_date = models.DateTimeField(auto_now_add=True)
@@ -50,3 +55,9 @@ class Form(models.Model):
 
     def __str__(self):
         return self.form_title
+
+class Design(models.Model):
+    """Store the settings for color and logos"""
+    # TODO set max value for valid hex color values
+    colorval = models.PositiveIntegerField()
+    institute_logo = models.ImageField(upload_to='images', null=True, blank=True)
