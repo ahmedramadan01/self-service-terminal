@@ -10,15 +10,14 @@ class FormInline(admin.TabularInline):
     model = Form
     extra = 0
 
+@admin.register(Homepage)
 class HomepageAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('Titel',           {'fields': ['start_title']}),
-        ('Text',            {'fields': ['start_text']}),
         ('Farbe',           {'fields': ['colorval']}),
         ('Logo',            {'fields': ['institute_logo']})
     ]
-    inlines = [MenuInline]
 
+@admin.register(Menu)
 class MenuAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Startseite',       {'fields': ['homepage']}),
@@ -37,5 +36,5 @@ class FormAdmin(admin.ModelAdmin):
     list_display = ['form_title', 'time_since_last_updated_str', 'upload_date', 'last_changed']
     list_filter = ['upload_date','last_changed']
 
-admin.site.register(Homepage, HomepageAdmin)
-admin.site.register(Menu, MenuAdmin)
+# admin.site.register(Homepage, HomepageAdmin)
+# admin.site.register(Menu, MenuAdmin)
