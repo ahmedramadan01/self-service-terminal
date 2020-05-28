@@ -3,9 +3,11 @@ import datetime
 from django.db import models
 from django.utils import timezone
 
+from .constants import TITLE_LENGTH
+
 class Homepage(models.Model):
     """Model the homepage of the self service terminal"""
-    start_title = models.CharField(max_length=100)
+    start_title = models.CharField(max_length=TITLE_LENGTH)
     start_text = models.TextField()
     colorval = models.PositiveIntegerField(null=True, blank=True)
     institute_logo = models.ImageField(upload_to='images', null=True, blank=True)
@@ -18,7 +20,7 @@ class Menu(models.Model):
     """Model the menus and submenus of the self service terminal"""
     homepage = models.ForeignKey(Homepage, on_delete=models.CASCADE)
     parent_menu = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
-    menu_title = models.CharField(max_length=100)
+    menu_title = models.CharField(max_length=TITLE_LENGTH)
     menu_text = models.TextField(blank=True)
 
     def __str__(self):
@@ -31,7 +33,7 @@ class Form(models.Model):
     upload_date = models.DateTimeField(auto_now_add=True)
     last_changed = models.DateTimeField(auto_now=True)
     show_on_frontend = models.BooleanField(default=False)
-    form_title = models.CharField(max_length=120, default="Formular")
+    form_title = models.CharField(max_length=TITLE_LENGTH, default="Formular")
     description = models.TextField(blank=True)
 
     # TODO printing method
