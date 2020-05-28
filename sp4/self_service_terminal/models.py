@@ -6,7 +6,7 @@ from django.utils import timezone
 from .constants import TITLE_LENGTH
 
 class Homepage(models.Model):
-    """Model the homepage of the self service terminal"""
+    """Model the settings of the self service terminal"""
     start_title = models.CharField(max_length=TITLE_LENGTH)
     start_text = models.TextField()
     colorval = models.PositiveIntegerField(null=True, blank=True)
