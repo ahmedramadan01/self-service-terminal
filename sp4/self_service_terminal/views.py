@@ -14,3 +14,12 @@ def menu(request, menu_id=None, menu_title=None):
 def formular(request, form_id=None, form_title=None):
     """TODO Return the form with the primary key <formid>."""
     return render(request, 'self_service_terminal/formular.html')
+
+# Testview für die Django Templatesprache
+
+def menu_template_test(request, menu_id=None, menu_title=None):
+    context = {
+        'miep' : 'Was?!',
+        'range': list(range(10))
+    }
+    return render(request, 'self_service_terminal/dtl_test.html', context)
