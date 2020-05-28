@@ -6,7 +6,7 @@ from django.utils import timezone
 from .constants import TITLE_LENGTH
 
 class Homepage(models.Model):
-    """Model the settings of the self service terminal"""
+    """Model the settings of the self service terminal."""
     start_title = models.CharField(max_length=TITLE_LENGTH)
     start_text = models.TextField()
     colorval = models.PositiveIntegerField(null=True, blank=True)
@@ -17,7 +17,7 @@ class Homepage(models.Model):
     
 
 class Menu(models.Model):
-    """Model the menus and submenus of the self service terminal"""
+    """Model the menus and submenus of the self service terminal."""
     homepage = models.ForeignKey(Homepage, on_delete=models.CASCADE)
     parent_menu = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
     menu_title = models.CharField(max_length=TITLE_LENGTH)
@@ -27,7 +27,7 @@ class Menu(models.Model):
         return self.menu_title
 
 class Form(models.Model):
-    """Model the forms to be accessed via the self service terminal"""
+    """Model the forms to be accessed via the self service terminal."""
     parent_menu = models.ForeignKey('Menu', on_delete=models.CASCADE)
     pdffile = models.FileField(upload_to='forms', null=True, blank=True)
     upload_date = models.DateTimeField(auto_now_add=True)
