@@ -2,8 +2,7 @@ from django.urls import path
 
 from . import views
 
-# TODO Use custom path converters?
-# https://docs.djangoproject.com/en/3.0/topics/http/urls/#registering-custom-path-converters
+# TODO Customize error view to automatically return to homepage
 
 urlpatterns = [
     path('', views.index, name='index'),
