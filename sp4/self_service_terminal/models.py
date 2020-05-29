@@ -5,7 +5,7 @@ from django.utils import timezone
 
 from .constants import TITLE_LENGTH
 
-class Homepage(models.Model):
+class Terminal_Settings(models.Model):
     """Model the settings of the self service terminal."""
     start_title = models.CharField(max_length=TITLE_LENGTH)
     start_text = models.TextField()
@@ -18,7 +18,7 @@ class Homepage(models.Model):
 
 class Menu(models.Model):
     """Model the menus and submenus of the self service terminal."""
-    homepage = models.ForeignKey(Homepage, on_delete=models.CASCADE)
+    homepage = models.ForeignKey(Terminal_Settings, on_delete=models.CASCADE)
     parent_menu = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
     menu_title = models.CharField(max_length=TITLE_LENGTH)
     menu_text = models.TextField(blank=True)

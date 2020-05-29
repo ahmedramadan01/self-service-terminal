@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Form, Menu, Homepage
+from .models import Form, Menu, Terminal_Settings
 
 class MenuInline(admin.TabularInline):
     model = Menu
@@ -10,8 +10,8 @@ class FormInline(admin.TabularInline):
     model = Form
     extra = 0
 
-@admin.register(Homepage)
-class HomepageAdmin(admin.ModelAdmin):
+@admin.register(Terminal_Settings)
+class Terminal_SettingsAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Farbe',           {'fields': ['colorval']}),
         ('Logo',            {'fields': ['institute_logo']})
@@ -36,5 +36,5 @@ class FormAdmin(admin.ModelAdmin):
     list_display = ['form_title', 'time_since_last_updated_str', 'upload_date', 'last_changed']
     list_filter = ['upload_date','last_changed']
 
-# admin.site.register(Homepage, HomepageAdmin)
+# admin.site.register(Terminal_Settings, Terminal_SettingsAdmin)
 # admin.site.register(Menu, MenuAdmin)

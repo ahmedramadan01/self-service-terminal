@@ -1,16 +1,16 @@
 from django.test import TestCase
-from .models import Homepage, Menu, Form
+from .models import Terminal_Settings, Menu, Form
 import datetime
 
 retstr = "Zuletzt geändert vor {days} Tagen, {hours} Stunden, {minutes} Minuten."
 
 class FormTestCase(TestCase):
     def setUp(self):
-        Homepage.objects.create(
+        Terminal_Settings.objects.create(
             start_title="Home", 
             start_text="bla"
         )
-        home = Homepage.objects.get(start_title="Home")
+        home = Terminal_Settings.objects.get(start_title="Home")
 
         Menu.objects.create(
             menu_title='menu1', 
