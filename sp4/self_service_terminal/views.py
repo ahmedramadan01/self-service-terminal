@@ -15,6 +15,11 @@ def formular(request, form_id=None, form_title=None):
     """TODO Return the form with the primary key <formid>."""
     return render(request, 'self_service_terminal/formular.html')
 
+def print_formular(request, form_id=None):
+    """TODO Just run the print function of the given form 
+    and do not change the current page"""
+    return render(request, 'self_service_terminal/formular.html')
+
 # Testview für die Django Templatesprache
 
 def menu_template_test(request, menu_id=None, menu_title=None):
