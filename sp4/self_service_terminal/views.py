@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse
 
 def index(request):
-    """Return the homepage."""
+    """Return the bare base.html."""
     return render(request, 'self_service_terminal/index.html')
 
 """ TODO If entry with primary key menu_id or form_id does not exist
