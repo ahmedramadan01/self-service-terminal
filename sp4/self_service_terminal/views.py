@@ -4,15 +4,16 @@ def index(request):
     """Return the homepage."""
     return render(request, 'self_service_terminal/index.html')
 
-""" TODO If entry with primary key menuid or formid does not exist
+""" TODO If entry with primary key menu_id or form_id does not exist
 in the database then return the homepage."""
 
 def menu(request, menu_id=None, menu_title=None):
-    """TODO Return the menu with the primary key <menuid>."""
-    return render(request, 'self_service_terminal/years.html') 
+    """TODO Return the menu with the primary key <menu_id>."""
+
+    return render(request, 'self_service_terminal/menu.html') 
 
 def formular(request, form_id=None, form_title=None):
-    """TODO Return the form with the primary key <formid>."""
+    """TODO Return the form with the primary key <form_id>."""
     return render(request, 'self_service_terminal/formular.html')
 
 def print_formular(request, form_id=None):
