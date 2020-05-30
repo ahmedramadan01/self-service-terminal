@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse
 
 def index(request):
     """Return the bare base.html."""
-    return render(request, 'self_service_terminal/index.html')
+    return render(request, 'self_service_terminal/base.html')
 
 """ TODO If entry with primary key menu_id or form_id does not exist
 in the database then return the homepage."""
