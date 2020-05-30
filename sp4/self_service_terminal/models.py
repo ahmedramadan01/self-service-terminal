@@ -57,3 +57,19 @@ class Form(models.Model):
 
     def __str__(self):
         return self.form_title
+
+class Backup(models.Model):
+    """creates .json Files when exporting configuration and saves them to a folder"""
+    title = models.CharField(max_length=100)
+    date_created = models.DateTimeField(auto_now_add=True)
+    backup_description = models.TextField()
+    backup_file = models.FileField() # Hier soll später eine .json Datei erstellt und gespeichert werden
+    # TODO FieldFile.save Methode welche .json erzeugt und ablegt 
+
+class Import(models.Model):
+    """saves .json files to import the configuration saved in them to the database"""
+    title =models.CharField(max_length=100)
+    backup_descitpion = models.TextField()
+    import_file = models.FileField() # Hier soll die zu importierende .json Datei abgelegt werden TODO uploadto einrichten
+    import_date = models.DateTimeField(auto_now_add=True)
+    data_imported = models.BooleanField(default=False)
