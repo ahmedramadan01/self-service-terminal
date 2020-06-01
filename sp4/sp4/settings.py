@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'import_export'
 ]
 
 MIDDLEWARE = [
@@ -126,3 +127,7 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'self_service_terminal/files')
 
 MEDIA_URL = '/files/'
+
+# Transactions on data import for import_export
+
+IMPORT_EXPORT_USE_TRANSACTIONS = True
