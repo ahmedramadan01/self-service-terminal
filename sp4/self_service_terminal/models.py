@@ -15,6 +15,7 @@ class Terminal_Settings(models.Model):
     institute_logo = models.ImageField(upload_to='images/', default='images/placeholder.jpg', null=True, blank=True)
     krankenkasse_logo = models.ImageField(upload_to='images/', null=True, blank=True)
 
+
     def __str__(self):
         return self.start_title
     
