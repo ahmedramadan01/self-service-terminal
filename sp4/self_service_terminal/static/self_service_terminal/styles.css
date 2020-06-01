@@ -1,35 +1,39 @@
 body {
-  padding-top: 20px;
+  padding: 20px;
   font-family: Helvetica;
 }
 
-.container {
-  margin: 25px;
-  position: relative;
+header{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height:65px ;
 }
 
-.aok {
-  position: absolute;
-  width: 75px;
-  top: -20px;
-  right: 70px;
+#nav-bar{
+  background-color:#737373 ;
+  height:80px ;
 }
 
-#nav-bar {
-  margin: 25px;
-  position: relative;
-  background-color: grey;
-  z-index: -1;
-  padding-top: 80px;
-}
-
-.tu-ilmenau {
-  margin: inherit;
-  margin-top: 5px;
+/* tu-ilmenau logo */
+#left-logo{ 
   width: 100px;
-  position: absolute;
-  right: 120px;
-  top: 10px;
+ height: 34px;
+ align-self: center;
+}
+
+/* aok logo */
+#right-logo{
+ width: 75px;
+ height: 80px;
+}
+
+#left-link{    
+  margin-right: 25px;
+}
+
+#right-link{
+  margin-right: 50px;
 }
 
 img {
