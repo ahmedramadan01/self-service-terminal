@@ -9,7 +9,7 @@ class Terminal_Settings(models.Model):
     """Model the settings of the self service terminal."""
     start_title = models.CharField(max_length=TITLE_LENGTH)
     start_text = models.TextField()
-    colorval = models.CharField(max_length=7)
+    colorval = models.CharField(max_length=7, default=0)
     institute_logo = models.ImageField(upload_to='images', null=True, blank=True)
 
     def __str__(self):
