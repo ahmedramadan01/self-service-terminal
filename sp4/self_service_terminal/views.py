@@ -72,3 +72,6 @@ def menu_template_test(request, menu_id=None, menu_title=None):
         'range': list(range(10))
     }
     return render(request, 'self_service_terminal/dtl_test.html', context)
+
+def years(request):
+     return render(request, 'self_service_terminal/years.html')

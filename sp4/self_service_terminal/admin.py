@@ -14,7 +14,8 @@ class FormInline(admin.TabularInline):
 class Terminal_SettingsAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Farbe',           {'fields': ['colorval']}),
-        ('Logo',            {'fields': ['institute_logo']})
+        ('Logos',            {'fields': ['institute_logo', 'krankenkasse_logo']})
+
     ]
 
 @admin.register(Menu)
