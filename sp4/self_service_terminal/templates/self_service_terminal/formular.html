@@ -13,9 +13,16 @@
   </p>
 </div>
 
-<form action="index.html" method="post">
+<form action="" method="get">
   <div class="btn-container">
-    <button class="noselect print btn" type="button"><i class="fas fa-print"></i><a href="/form/{{ id_this }}/print">Drucken</a></button>
+
+    <!--Makes a HTPP request to the print site => calls printing method for current form
+        See the console output for the development server:
+        "GET /form/1/print HTTP/1.1" 204 0-->
+    <a class="print" href="/form/{{ id_this }}/print">Drucken</a>
+    <!---->
+
+    <button class="noselect print btn" type="button"><i class="fas fa-print"></i>Drucken</button>
     <button class="noselect view  btn" type="button"><i class="far fa-file-alt"></i>Ansehen</button>
     <a style="text-decoration: none;" class="noselect back btn" href="../">&#171; Zurück </a>
   </div>

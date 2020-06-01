@@ -61,7 +61,7 @@ def print_formular(request, form_id=None):
     """TODO Just run the print function of the given form 
     and do not change the current page"""
     # Form.objects.get('id=').print_form()
-    return HttpResponse("Print form " + str(form_id))
+    return HttpResponse(status=204)
 
 # Testview für die Django Templatesprache
 

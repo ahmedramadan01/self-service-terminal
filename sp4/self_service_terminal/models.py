@@ -1,9 +1,10 @@
 import datetime
+import os
 
 from django.db import models
 from django.utils import timezone
 
-from .constants import TITLE_LENGTH
+from .constants import *
 
 class Terminal_Settings(models.Model):
     """Model the settings of the self service terminal."""
@@ -37,9 +38,10 @@ class Form(models.Model):
     description = models.TextField(blank=True)
 
     # TODO printing method
-    def print_form(self):
-        """ Print the document using the cups software."""
-        pass
+    def print_form(self, number_of_copies=1):
+        """ Print the document using the linux command lpr."""
+        printstring = 'lpr -P {p} -# {n} {file}'
+        os.system(printstring.format(p=PRINTER, n=number_of_copies, file=self.pdffile.path))
 
     def time_since_last_updated(self):
         """Return a tuple in the form (days, hours, minutes)."""
