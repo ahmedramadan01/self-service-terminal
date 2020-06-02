@@ -13,7 +13,7 @@ class FormInline(admin.TabularInline):
 @admin.register(Terminal_Settings)
 class Terminal_SettingsAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('Farbe',           {'fields': ['colorval_nav_bar', 'colorval_heading', 'colorval_text', 'colorval_button', 'colorval_zueruck_button']}),
+        ('Farbe',           {'fields': ['colorval_nav_bar', 'colorval_heading', 'colorval_text', 'colorval_button', 'colorval_zurueck_button']}),
         ('Logos',            {'fields': ['institute_logo', 'krankenkasse_logo']})
 
     ]
