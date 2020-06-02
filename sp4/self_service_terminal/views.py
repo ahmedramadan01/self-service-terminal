@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse
-from .models import Form
+from .models import Menu, Form
 
 
 def index(request):
@@ -15,28 +15,18 @@ def menu(request, menu_id=None, menu_title=None):
     """TODO Return the menu with the primary key <menu_id>.
 
     Parameters:
-    - id_homepage
-    - id_parent_menu
-    - submenus : {
-        menu1_id : {
-            menu1_name : 'somename',
-            menu1_id   : 101010
-        },
-        ...
-    }
-    - number_of_submenus
+    - menu object
+    - list of submenu objects
+    - list of subforms objects
     """
+    menu = Menu.objects.get(pk=menu_id)
+    submenus = list(Menu.objects.filter(parent_menu=menu_id))
+    subforms = list(Form.objects.filter(parent_menu=menu_id))
     context = {
-        'id_homepage': 12345,
-        'id_parent_menu': 54321,
-        'submenus': {
-            10101: {
-                'name': 'Ich bin ein Menü.',
-                'id': 10101
-            }
-        }
+        'menu' : menu,
+        'submenus' : submenus,
+        'subforms' : subforms
     }
-    context['number_of_submenus'] = len(context['submenus'])
     return render(request, 'self_service_terminal/menu.html', context)
 
 
@@ -44,15 +34,11 @@ def formular(request, form_id=None, form_title=None):
     """TODO Return the form with the primary key <form_id>.
 
     Parameters:
-    - id_homepage
-    - id_parent
-    - number_of_copies
+    - form object
     """
+    form = Form.objects.get(pk=form_id)
     context = {
-        'id_this' : form_id,
-        'id_homepage': 1234,
-        'id_parent': 54321,
-        'number_of_copies': 100000000
+        'form' : form
     }
     return render(request, 'self_service_terminal/formular.html', context)
 
@@ -67,7 +53,9 @@ def print_formular(request, form_id=None):
 
 
 def menu_template_test(request, menu_id=None, menu_title=None):
+    menu = Menu.objects.get(pk=menu_id)
     context = {
+        'menu' : menu,
         'miep': 'Was?!',
         'range': list(range(10))
     }
