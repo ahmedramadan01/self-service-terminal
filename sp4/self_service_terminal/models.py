@@ -12,8 +12,8 @@ class Terminal_Settings(models.Model):
     start_title = models.CharField(max_length=TITLE_LENGTH)
     start_text = models.TextField()
     colorval = models.CharField(max_length=7, blank= True, default='')
-    institute_logo = models.ImageField(upload_to='images/', default='images/placeholder.jpg', null=True, blank=True)
-    krankenkasse_logo = models.ImageField(upload_to='images/', default='images/placeholder.jpg', null=True, blank=True)
+    institute_logo = models.ImageField(upload_to='images', default='static/Tu-ilmenauLogo.png', blank=True)
+    krankenkasse_logo = models.ImageField(upload_to='images', default='static/Logo_AOK_PLUS.svg.png', blank=True)
 
 
     def __str__(self):
