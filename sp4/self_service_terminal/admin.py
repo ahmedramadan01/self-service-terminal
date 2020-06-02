@@ -2,6 +2,8 @@ from django.contrib import admin
 
 from .models import Form, Menu, Terminal_Settings
 
+from import_export.admin import ImportExportModelAdmin
+
 class MenuInline(admin.TabularInline):
     model = Menu
     extra = 0
@@ -10,16 +12,19 @@ class FormInline(admin.TabularInline):
     model = Form
     extra = 0
 
+
+
 @admin.register(Terminal_Settings)
-class Terminal_SettingsAdmin(admin.ModelAdmin):
+class Terminal_SettingsAdmin(ImportExportModelAdmin):
     fieldsets = [
         ('Farbe',           {'fields': ['colorval']}),
         ('Logos',            {'fields': ['institute_logo', 'krankenkasse_logo']})
 
     ]
 
+
 @admin.register(Menu)
-class MenuAdmin(admin.ModelAdmin):
+class MenuAdmin(ImportExportModelAdmin):
     fieldsets = [
         ('Startseite',       {'fields': ['homepage']}),
         ('Oberkategorie',    {'fields': ['parent_menu']}),
