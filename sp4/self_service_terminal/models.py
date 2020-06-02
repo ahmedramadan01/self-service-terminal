@@ -3,7 +3,6 @@ import os
 
 from django.db import models
 from django.utils import timezone
-from django.utils.safestring import mark_safe
 
 
 from .constants import *
@@ -12,9 +11,13 @@ class Terminal_Settings(models.Model):
     """Model the settings of the self service terminal."""
     start_title = models.CharField(max_length=TITLE_LENGTH)
     start_text = models.TextField()
-    colorval = models.CharField(max_length=7, blank= True, default='')
-    institute_logo = models.ImageField(upload_to='images/', default='images/placeholder.jpg', null=True, blank=True)
-    krankenkasse_logo = models.ImageField(upload_to='images/', default='images/placeholder.jpg', null=True, blank=True)
+    colorval_nav_bar = models.CharField(max_length=7, blank= True, default='')
+    colorval_heading = models.CharField(max_length=7, blank= True, default='')
+    colorval_text = models.CharField(max_length=7, blank= True, default='')
+    colorval_button = models.CharField(max_length=7, blank= True, default='')
+    colorval_zurueck_button = models.CharField(max_length=7, blank= True, default='')
+    institute_logo = models.ImageField(upload_to='images', default='static/Tu-ilmenauLogo.png', blank=True)
+    krankenkasse_logo = models.ImageField(upload_to='images', default='static/Logo_AOK_PLUS.svg.png', blank=True)
 
 
     def __str__(self):
