@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse
-from .models import Form
+from .models import Menu, Form
 
 
 def index(request):
@@ -67,7 +67,9 @@ def print_formular(request, form_id=None):
 
 
 def menu_template_test(request, menu_id=None, menu_title=None):
+    menu = Menu.objects.get(pk=menu_id)
     context = {
+        'menu' : menu,
         'miep': 'Was?!',
         'range': list(range(10))
     }
