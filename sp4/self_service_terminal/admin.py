@@ -14,8 +14,8 @@ class FormInline(admin.TabularInline):
 
 
 
-@admin.register(Homepage)
-class HomepageAdmin(ImportExportModelAdmin):
+@admin.register(Terminal_Settings)
+class Terminal_SettingsAdmin(ImportExportModelAdmin):
     fieldsets = [
         ('Farbe',           {'fields': ['colorval']}),
         ('Logo',            {'fields': ['institute_logo']})
