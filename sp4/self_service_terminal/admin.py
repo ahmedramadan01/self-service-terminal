@@ -22,7 +22,6 @@ class HomepageAdmin(ImportExportModelAdmin):
     ]
 
 
-
 @admin.register(Menu)
 class MenuAdmin(ImportExportModelAdmin):
     fieldsets = [
