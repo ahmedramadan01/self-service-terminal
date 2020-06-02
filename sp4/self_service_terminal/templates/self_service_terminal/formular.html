@@ -1,49 +1,31 @@
+{% extends "self_service_terminal/base.html"%}
 {% load static %}
+{% block content%}
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<div class="formular">
+  <p class="formular-title">Formular title</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed velit tortor.
+    Vivamus sed dui erat. Donec lacinia mollis arcu in placerat.
+    Ut non odio ac libero aliquam condimentum. Aliquam aliquam, lectus laoreet laoreet ultrices, eros libero
+    consequat nibh, nec mollis orci risus a felis.
+    Quisque consectetur sagittis magna sit amet ornare. Quisque luctus tempus enim non viverra. Morbi molestie nulla
+    at ligula blandit malesuada.
+  </p>
+</div>
 
-<head>
-  <meta charset="utf-8">
-  <script src="https://kit.fontawesome.com/73467a7cb0.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="{% static 'self_service_terminal/styles.css' %}">
-  <script src="app.js" type="text/javascript" async></script>
+<form action="" method="get">
+  <div class="btn-container">
 
-</head>
+    <!--Makes a HTPP request to the print site => calls printing method for current form
+        See the console output for the development server:
+        "GET /form/1/print HTTP/1.1" 204 0-->
+    <a class="print" href="/form/{{ id_this }}/print">Drucken</a>
+    <!---->
 
-<body>
-  <div class="container">
-    <div class="aok">
-      <img src="{% static 'self_service_terminal/Logo_AOK_PLUS.svg.png' %}" />
-    </div>
-    <div id="nav-bar">
-      <div class="tu-ilmenau">
-        <img src="{% static 'self_service_terminal/Tu-ilmenauLogo.png' %}" />
-      </div>
-    </div>
-
-    <div class="formular">
-      <p class="formular-title">Formular title</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed velit tortor. 
-          Vivamus sed dui erat. Donec lacinia mollis arcu in placerat. 
-          Ut non odio ac libero aliquam condimentum. Aliquam aliquam, lectus laoreet laoreet ultrices, eros libero consequat nibh, nec mollis orci risus a felis. 
-          Quisque consectetur sagittis magna sit amet ornare. Quisque luctus tempus enim non viverra. Morbi molestie nulla at ligula blandit malesuada.
-        </p>
-
-    </div>
+    <button class="noselect print btn" type="button"><i class="fas fa-print"></i>Drucken</button>
+    <button class="noselect view  btn" type="button"><i class="far fa-file-alt"></i>Ansehen</button>
+    <a style="text-decoration: none;" class="noselect back btn" href="../">&#171; Zurück </a>
   </div>
+</form>
 
-  <form action="index.html" method="post">
-    <div class="btn-container">
-      <button class="noselect print btn" type="button"><i class="fas fa-print"></i>
-        Drucken</button>
-      <button class="noselect view  btn" type="button"><i class="far fa-file-alt"></i>Ansehen</button>
-      <!-- <button class="noselect back btn" type="button" name="back">&#171; Zurück</button> -->
-      <a style="text-decoration: none;" class="noselect back btn" href="../">&#171; Zurück  </a>
-    </div>
-  </form>
-
-
-</body>
-
-</html>
+{% endblock %}
