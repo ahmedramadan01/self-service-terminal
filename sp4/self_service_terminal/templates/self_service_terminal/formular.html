@@ -19,7 +19,7 @@
     <!--Makes a HTPP request to the print site => calls printing method for current form
         See the console output for the development server:
         "GET /form/1/print HTTP/1.1" 204 0-->
-    <a class="print" href="/form/{{ id_this }}/print">Drucken</a>
+    <a class="print" href="/form/{{ form.pk }}/print">Drucken</a>
     <!---->
 
     <button class="noselect print btn" type="button"><i class="fas fa-print"></i>Drucken</button>
