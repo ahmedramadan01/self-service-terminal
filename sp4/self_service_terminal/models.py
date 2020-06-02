@@ -11,7 +11,11 @@ class Terminal_Settings(models.Model):
     """Model the settings of the self service terminal."""
     start_title = models.CharField(max_length=TITLE_LENGTH)
     start_text = models.TextField()
-    colorval = models.CharField(max_length=7, blank= True, default='')
+    colorval_nav_bar = models.CharField(max_length=7, blank= True, default='')
+    colorval_heading = models.CharField(max_length=7, blank= True, default='')
+    colorval_text = models.CharField(max_length=7, blank= True, default='')
+    colorval_button = models.CharField(max_length=7, blank= True, default='')
+    colorval_zueruck_button = models.CharField(max_length=7, blank= True, default='')
     institute_logo = models.ImageField(upload_to='images', default='static/Tu-ilmenauLogo.png', blank=True)
     krankenkasse_logo = models.ImageField(upload_to='images', default='static/Logo_AOK_PLUS.svg.png', blank=True)
 
