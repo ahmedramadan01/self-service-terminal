@@ -4,29 +4,30 @@ import datetime
 
 retstr = "Zuletzt geändert vor {days} Tagen, {hours} Stunden, {minutes} Minuten."
 
+
 class FormTestCase(TestCase):
     def setUp(self):
         Terminal_Settings.objects.create(
-            start_title="Home", 
-            start_text="bla"
+            title="Home",
+            description="bla"
         )
-        home = Terminal_Settings.objects.get(start_title="Home")
+        home = Terminal_Settings.objects.get(title="Home")
 
         Menu.objects.create(
-            menu_title='menu1', 
+            menu_title='menu1',
             menu_text='Ein Untermenü',
-            homepage = home
+            homepage=home
         )
         menu1 = Menu.objects.get(menu_title='menu1')
 
         Form.objects.create(form_title='1', parent_menu=menu1)
         Form.objects.create(
-            form_title='2', 
-            parent_menu=menu1, 
-            upload_date=datetime.datetime(2000, 1, 1), 
+            form_title='2',
+            parent_menu=menu1,
+            upload_date=datetime.datetime(2000, 1, 1),
             last_changed=datetime.datetime(1999, 1, 1)
         )
-    
+
     def test_menu_form_interaction(self):
         root = Menu.objects.get(menu_title='menu1')
         form = Form.objects.get(form_title='1')

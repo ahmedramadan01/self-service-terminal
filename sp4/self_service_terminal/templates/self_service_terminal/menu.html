@@ -1,0 +1,24 @@
+{% extends "self_service_terminal/base.html"%}
+{% load static %}
+{% block title %}Hier kommt der Menütitel hin. {% endblock %}
+{% block content%}
+
+
+<div class="formular">
+    <p class="formular-title">{{menu}}</p>
+    <p>
+        {{menu.menu_text}}
+    </p>
+</div>
+<div class="btn-container">
+    {% for entry in submenus %}
+
+    <a class="noselect year btn" href="/menu/{{entry.pk}}">{{ entry.menu_title }} </a>
+    {% endfor %}
+    {% for entry in subforms %}
+    <a class="noselect year btn form" href="/form/{{entry.pk}}">{{ entry.form_title }} </a>
+
+
+    {% endfor %}
+</div>
+{% endblock %}
