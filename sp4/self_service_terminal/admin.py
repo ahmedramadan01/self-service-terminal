@@ -32,7 +32,8 @@ class MenuAdmin(ImportExportModelAdmin):
     ]
     inlines = [MenuInline, FormInline]
 
-class FormAdmin(admin.ModelAdmin):
+@admin.register(Form)
+class FormAdmin(ImportExportModelAdmin):
     fieldsets = [
         ('Übergeordnetes Menü', {'fields': ['parent_menu']}),
         ('Anzeigen',            {'fields': ['show_on_frontend']}),
