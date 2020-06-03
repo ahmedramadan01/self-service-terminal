@@ -23,9 +23,9 @@ def menu(request, menu_id=None, menu_title=None):
     submenus = list(Menu.objects.filter(parent_menu=menu_id))
     subforms = list(Form.objects.filter(parent_menu=menu_id))
     context = {
-        'menu' : menu,
-        'submenus' : submenus,
-        'subforms' : subforms
+        'menu': menu,
+        'submenus': submenus,
+        'subforms': subforms
     }
     return render(request, 'self_service_terminal/menu.html', context)
 
@@ -38,7 +38,7 @@ def formular(request, form_id=None, form_title=None):
     """
     form = Form.objects.get(pk=form_id)
     context = {
-        'form' : form
+        'form': form
     }
     return render(request, 'self_service_terminal/formular.html', context)
 
@@ -57,10 +57,10 @@ def menu_template_test(request, menu_id=None, menu_title=None):
     submenus = list(Menu.objects.filter(parent_menu=menu_id))
     subforms = list(Form.objects.filter(parent_menu=menu_id))
     context = {
-        'menu'      : menu,
-        'submenus'  : submenus,
-        'subforms'  : subforms,
-        'miep'      : 'Was?!',
-        'range'     : list(range(10))
+        'menu': menu,
+        'submenus': submenus,
+        'subforms': subforms,
+        'miep': 'Was?!',
+        'range': list(range(10))
     }
     return render(request, 'self_service_terminal/dtl_test.html', context)
