@@ -12,6 +12,8 @@ class Terminal_Settings(models.Model):
     """Model the settings of the self service terminal."""
     title = models.CharField(max_length=TITLE_LENGTH)
     description = models.TextField()
+    homepage = models.OneToOneField(
+        'Menu', on_delete=models.CASCADE, blank=True, null=True)
     colorval_nav_bar = models.CharField(max_length=7, blank=True, default='')
     colorval_heading = models.CharField(max_length=7, blank=True, default='')
     colorval_text = models.CharField(max_length=7, blank=True, default='')

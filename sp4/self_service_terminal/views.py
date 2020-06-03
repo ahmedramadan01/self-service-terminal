@@ -1,10 +1,18 @@
 from django.shortcuts import render, HttpResponse
-from .models import Menu, Form
+from .models import Menu, Form, Terminal_Settings
 
 
 def index(request):
-
-    return render(request, 'self_service_terminal/index.html')
+    homepage_id = list(Terminal_Settings.objects.all())[0].homepage_id
+    homepage = Menu.objects.get(pk=homepage_id)
+    submenus = list(Menu.objects.filter(parent_menu=homepage_id))
+    subforms = list(Form.objects.filter(parent_menu=homepage_id))
+    context = {
+        'menu': homepage,
+        'submenus': submenus,
+        'subforms': subforms
+    }
+    return render(request, 'self_service_terminal/menu.html', context)
 
 
 """ TODO If entry with primary key menu_id or form_id does not exist
