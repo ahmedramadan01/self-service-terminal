@@ -4,12 +4,23 @@
 {# Verfügbare Variablen: menu, miep, range #}
 
 {% block content %}
+
 {% for entry in submenus %}
 <p>
+    test
     {{ entry.settings.institute_logo }} <br>
     {{ entry.parent_menu }} <br>
     {{ entry.menu_title }} <br>
     {{ entry.menu_text }} <br>
+</p>
+{% endfor %}
+{% for entry in subforms %}
+<p>
+    test
+    {{ entry.settings.institute_logo }} <br>
+    {{ entry.parent_menu }} <br>
+    {{ entry.form_title }} <br>
+    {{ entry.description }} <br>
 </p>
 {% endfor %}
 {% endblock content %}
