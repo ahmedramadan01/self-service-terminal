@@ -7,10 +7,10 @@ retstr = "Zuletzt geändert vor {days} Tagen, {hours} Stunden, {minutes} Minuten
 class FormTestCase(TestCase):
     def setUp(self):
         Terminal_Settings.objects.create(
-            start_title="Home", 
-            start_text="bla"
+            title="Home", 
+            description="bla"
         )
-        home = Terminal_Settings.objects.get(start_title="Home")
+        home = Terminal_Settings.objects.get(title="Home")
 
         Menu.objects.create(
             menu_title='menu1', 

@@ -1,20 +1,15 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset='uft-8'/>
-        <title>Hier kommt der Menütitel hin.</title>
-    </head>
+{% extends "self_service_terminal/base.html"%}
+{% load static %}
 
-    <body>
-        <p>
-            {{ menu.menu_title }}
-        </p>
-        {% for i in range %}
-        <p> 
-            {{ miep }} <br>
-            Ich bin ein Baum.
-        </p>
-        {% endfor %}
-    </body>
+{# Verfügbare Variablen: menu, miep, range #}
 
-</html>
+{% block content %}
+{% for entry in submenus %}
+<p>
+    {{ entry.settings.institute_logo }} <br>
+    {{ entry.parent_menu }} <br>
+    {{ entry.menu_title }} <br>
+    {{ entry.menu_text }} <br>
+</p>
+{% endfor %}
+{% endblock content %}

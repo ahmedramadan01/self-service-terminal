@@ -9,8 +9,8 @@ from .constants import *
 
 class Terminal_Settings(models.Model):
     """Model the settings of the self service terminal."""
-    start_title = models.CharField(max_length=TITLE_LENGTH)
-    start_text = models.TextField()
+    title = models.CharField(max_length=TITLE_LENGTH)
+    description = models.TextField()
     colorval_nav_bar = models.CharField(max_length=7, blank= True, default='')
     colorval_heading = models.CharField(max_length=7, blank= True, default='')
     colorval_text = models.CharField(max_length=7, blank= True, default='')
@@ -21,12 +21,12 @@ class Terminal_Settings(models.Model):
 
 
     def __str__(self):
-        return self.start_title
+        return self.title
     
 
 class Menu(models.Model):
     """Model the menus and submenus of the self service terminal."""
-    homepage = models.ForeignKey(Terminal_Settings, on_delete=models.CASCADE)
+    settings = models.ForeignKey(Terminal_Settings, on_delete=models.CASCADE)
     parent_menu = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
     menu_title = models.CharField(max_length=TITLE_LENGTH)
     menu_text = models.TextField(blank=True)

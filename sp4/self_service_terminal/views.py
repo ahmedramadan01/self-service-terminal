@@ -46,7 +46,7 @@ def formular(request, form_id=None, form_title=None):
 def print_formular(request, form_id=None):
     """TODO Just run the print function of the given form 
     and do not change the current page"""
-    # Form.objects.get('id=').print_form()
+    # Form.objects.get(pk=form_id).print_form()
     return HttpResponse(status=204)
 
 # Testview für die Django Templatesprache
@@ -54,9 +54,13 @@ def print_formular(request, form_id=None):
 
 def menu_template_test(request, menu_id=None, menu_title=None):
     menu = Menu.objects.get(pk=menu_id)
+    submenus = list(Menu.objects.filter(parent_menu=menu_id))
+    subforms = list(Form.objects.filter(parent_menu=menu_id))
     context = {
-        'menu' : menu,
-        'miep': 'Was?!',
-        'range': list(range(10))
+        'menu'      : menu,
+        'submenus'  : submenus,
+        'subforms'  : subforms,
+        'miep'      : 'Was?!',
+        'range'     : list(range(10))
     }
     return render(request, 'self_service_terminal/dtl_test.html', context)
