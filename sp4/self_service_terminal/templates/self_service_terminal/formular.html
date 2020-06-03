@@ -1,17 +1,11 @@
 {% extends "self_service_terminal/base.html"%}
 {% load static %}
-{% block title %}Hier kommt der formulartitel hin. {% endblock %}
+{% block title %}{{form}} {% endblock %}
 {% block content%}
 
 <div class="formular">
-  <p class="formular-title">Formular title</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed velit tortor.
-    Vivamus sed dui erat. Donec lacinia mollis arcu in placerat.
-    Ut non odio ac libero aliquam condimentum. Aliquam aliquam, lectus laoreet laoreet ultrices, eros libero
-    consequat nibh, nec mollis orci risus a felis.
-    Quisque consectetur sagittis magna sit amet ornare. Quisque luctus tempus enim non viverra. Morbi molestie nulla
-    at ligula blandit malesuada.
-  </p>
+  <p class="formular-title">{{form}}</p>
+  <p>{{form.description}} </p>
 </div>
 
 <form action="" method="get">
@@ -23,9 +17,9 @@
     <a class="print" href="/form/{{ form.pk }}/print">Drucken</a>
     <!---->
 
-    <button class="noselect print btn" type="button"><i class="fas fa-print"></i>Drucken</button>
+    <!-- <button class="noselect print btn" type="button"><i class="fas fa-print"></i>Drucken</button> -->
     <button class="noselect view  btn" type="button"><i class="far fa-file-alt"></i>Ansehen</button>
-    <a style="text-decoration: none;" class="noselect back btn" href="../">&#171; Zurück </a>
+    <a style="text-decoration: none;" class="noselect back btn" href="/menu/{{form.parent_menu.pk}}">&#171; Zurück </a>
   </div>
 </form>
 

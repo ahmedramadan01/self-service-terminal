@@ -4,7 +4,8 @@
 {# Verfügbare Variablen: menu, miep, range #}
 
 {% block content %}
-
+{{menu.menu_text}}
+{{miep}}
 {% for entry in submenus %}
 <p>
     test
@@ -23,4 +24,7 @@
     {{ entry.description }} <br>
 </p>
 {% endfor %}
+
+
+
 {% endblock content %}
