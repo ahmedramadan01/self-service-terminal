@@ -7,32 +7,39 @@ from django.utils import timezone
 
 from .constants import *
 
+
 class Terminal_Settings(models.Model):
     """Model the settings of the self service terminal."""
-    start_title = models.CharField(max_length=TITLE_LENGTH)
-    start_text = models.TextField()
-    colorval_nav_bar = models.CharField(max_length=7, blank= True, default='')
-    colorval_heading = models.CharField(max_length=7, blank= True, default='')
-    colorval_text = models.CharField(max_length=7, blank= True, default='')
-    colorval_button = models.CharField(max_length=7, blank= True, default='')
-    colorval_zurueck_button = models.CharField(max_length=7, blank= True, default='')
-    institute_logo = models.ImageField(upload_to='images', default='static/Tu-ilmenauLogo.png', blank=True)
-    krankenkasse_logo = models.ImageField(upload_to='images', default='static/Logo_AOK_PLUS.svg.png', blank=True)
-
+    title = models.CharField(max_length=TITLE_LENGTH)
+    description = models.TextField()
+    homepage = models.OneToOneField(
+        'Menu', on_delete=models.CASCADE, blank=True, null=True)
+    colorval_nav_bar = models.CharField(max_length=7, blank=True, default='')
+    colorval_heading = models.CharField(max_length=7, blank=True, default='')
+    colorval_text = models.CharField(max_length=7, blank=True, default='')
+    colorval_button = models.CharField(max_length=7, blank=True, default='')
+    colorval_zurueck_button = models.CharField(
+        max_length=7, blank=True, default='')
+    institute_logo = models.ImageField(
+        upload_to='images', default='static/Tu-ilmenauLogo.png', blank=True)
+    krankenkasse_logo = models.ImageField(
+        upload_to='images', default='static/Logo_AOK_PLUS.svg.png', blank=True)
 
     def __str__(self):
-        return self.start_title
-    
+        return self.title
+
 
 class Menu(models.Model):
     """Model the menus and submenus of the self service terminal."""
-    homepage = models.ForeignKey(Terminal_Settings, on_delete=models.CASCADE)
-    parent_menu = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
+    settings = models.ForeignKey(Terminal_Settings, on_delete=models.CASCADE)
+    parent_menu = models.ForeignKey(
+        'self', on_delete=models.CASCADE, blank=True, null=True)
     menu_title = models.CharField(max_length=TITLE_LENGTH)
     menu_text = models.TextField(blank=True)
 
     def __str__(self):
         return self.menu_title
+
 
 class Form(models.Model):
     """Model the forms to be accessed via the self service terminal."""
@@ -48,7 +55,8 @@ class Form(models.Model):
     def print_form(self, number_of_copies=1):
         """ Print the document using the linux command lpr."""
         printstring = 'lpr -P {p} -# {n} {file}'
-        os.system(printstring.format(p=PRINTER, n=number_of_copies, file=self.pdffile.path))
+        os.system(printstring.format(
+            p=PRINTER, n=number_of_copies, file=self.pdffile.path))
 
     def time_since_last_updated(self):
         """Return a tuple in the form (days, hours, minutes)."""
@@ -57,8 +65,7 @@ class Form(models.Model):
         hours = int((delta.seconds / 60) / 60)
         minutes = int((delta.seconds) / 60) - hours * 60
         return (days, hours, minutes)
-        
-    
+
     def time_since_last_updated_str(self):
         """Return a string in german with days, hours, minutes since last updated."""
         (days, hours, minutes) = self.time_since_last_updated()

@@ -16,6 +16,7 @@ def runPrinter(printerName,num,fileName):
 	printstring = 'lpr -P {p} -# {n} {file}'
 	cmd(printstring.format(p=printerName,n=num,file=fileName))
 
+
 def start():
 	if isRun():
 		printerName = getPrinter()

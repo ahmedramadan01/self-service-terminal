@@ -1,10 +1,18 @@
 from django.shortcuts import render, HttpResponse
-from .models import Menu, Form
+from .models import Menu, Form, Terminal_Settings
 
 
 def index(request):
-
-    return render(request, 'self_service_terminal/index.html')
+    homepage_id = list(Terminal_Settings.objects.all())[0].homepage_id
+    homepage = Menu.objects.get(pk=homepage_id)
+    submenus = list(Menu.objects.filter(parent_menu=homepage_id))
+    subforms = list(Form.objects.filter(parent_menu=homepage_id))
+    context = {
+        'menu': homepage,
+        'submenus': submenus,
+        'subforms': subforms
+    }
+    return render(request, 'self_service_terminal/menu.html', context)
 
 
 """ TODO If entry with primary key menu_id or form_id does not exist
@@ -23,9 +31,9 @@ def menu(request, menu_id=None, menu_title=None):
     submenus = list(Menu.objects.filter(parent_menu=menu_id))
     subforms = list(Form.objects.filter(parent_menu=menu_id))
     context = {
-        'menu' : menu,
-        'submenus' : submenus,
-        'subforms' : subforms
+        'menu': menu,
+        'submenus': submenus,
+        'subforms': subforms
     }
     return render(request, 'self_service_terminal/menu.html', context)
 
@@ -38,7 +46,7 @@ def formular(request, form_id=None, form_title=None):
     """
     form = Form.objects.get(pk=form_id)
     context = {
-        'form' : form
+        'form': form
     }
     return render(request, 'self_service_terminal/formular.html', context)
 
@@ -46,7 +54,7 @@ def formular(request, form_id=None, form_title=None):
 def print_formular(request, form_id=None):
     """TODO Just run the print function of the given form 
     and do not change the current page"""
-    # Form.objects.get('id=').print_form()
+    # Form.objects.get(pk=form_id).print_form()
     return HttpResponse(status=204)
 
 # Testview für die Django Templatesprache
@@ -54,8 +62,12 @@ def print_formular(request, form_id=None):
 
 def menu_template_test(request, menu_id=None, menu_title=None):
     menu = Menu.objects.get(pk=menu_id)
+    submenus = list(Menu.objects.filter(parent_menu=menu_id))
+    subforms = list(Form.objects.filter(parent_menu=menu_id))
     context = {
-        'menu' : menu,
+        'menu': menu,
+        'submenus': submenus,
+        'subforms': subforms,
         'miep': 'Was?!',
         'range': list(range(10))
     }
