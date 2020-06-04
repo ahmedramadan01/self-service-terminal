@@ -17,9 +17,9 @@
     <a class="print" href="/form/{{ form.pk }}/print">Drucken</a>
     <!---->
 
-    <!-- <button class="noselect print btn" type="button"><i class="fas fa-print"></i>Drucken</button> -->
-    <button class="noselect view  btn" type="button"><i class="far fa-file-alt"></i>Ansehen</button>
+    <a href="{{form.pdffile.url}}" class="noselect view  btn">Ansehen</a>
     <a style="text-decoration: none;" class="noselect back btn" href="/menu/{{form.parent_menu.pk}}">&#171; Zurück </a>
+
   </div>
 </form>
 
