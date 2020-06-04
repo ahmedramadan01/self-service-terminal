@@ -58,7 +58,7 @@ class Form(models.Model):
         args = ['lpr', self.pdffile.path]
         result = subprocess.run(args, capture_output=True)
         if result.returncode:
-            print('Error: Print command has not been executed.')
+            print('Error: lpr', self.pdffile.name, 'returned 1.')
         else:
             print('Print', self.pdffile.name)
 
