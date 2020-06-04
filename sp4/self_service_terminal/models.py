@@ -1,5 +1,6 @@
 import datetime
 import os
+import subprocess
 
 from django.db import models
 from django.utils import timezone
@@ -54,9 +55,12 @@ class Form(models.Model):
     # TODO printing method
     def print_form(self, number_of_copies=1):
         """ Print the document using the linux command lpr."""
-        printstring = 'lpr -P {p} -# {n} {file}'
-        os.system(printstring.format(
-            p=PRINTER, n=number_of_copies, file=self.pdffile.path))
+        args = ['lpr', self.pdffile.path]
+        result = subprocess.run(args, capture_output=True)
+        if result.returncode:
+            print('Error: Print command has not been executed.')
+        else:
+            print('Print', self.pdffile.name)
 
     def time_since_last_updated(self):
         """Return a tuple in the form (days, hours, minutes)."""
