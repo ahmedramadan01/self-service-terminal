@@ -1,5 +1,6 @@
 import datetime
 import os
+import subprocess
 
 from django.db import models
 from django.utils import timezone
@@ -12,6 +13,8 @@ class Terminal_Settings(models.Model):
     """Model the settings of the self service terminal."""
     title = models.CharField(max_length=TITLE_LENGTH)
     description = models.TextField()
+    homepage = models.OneToOneField(
+        'Menu', on_delete=models.CASCADE, blank=True, null=True)
     colorval_nav_bar = models.CharField(max_length=7, blank=True, default='')
     colorval_heading = models.CharField(max_length=7, blank=True, default='')
     colorval_text = models.CharField(max_length=7, blank=True, default='')
@@ -49,12 +52,15 @@ class Form(models.Model):
     form_title = models.CharField(max_length=TITLE_LENGTH, default="Formular")
     description = models.TextField(blank=True)
 
-    # TODO printing method
     def print_form(self, number_of_copies=1):
         """ Print the document using the linux command lpr."""
-        printstring = 'lpr -P {p} -# {n} {file}'
-        os.system(printstring.format(
-            p=PRINTER, n=number_of_copies, file=self.pdffile.path))
+        args = ['lpr', self.pdffile.path]
+        result = subprocess.run(args, capture_output=True)
+        if result.returncode:
+            print('Error: "lpr ' + self.pdffile.name + '" returned 1.')
+            print(result.stderr)
+        else:
+            print('Printing', self.pdffile.name)
 
     def time_since_last_updated(self):
         """Return a tuple in the form (days, hours, minutes)."""

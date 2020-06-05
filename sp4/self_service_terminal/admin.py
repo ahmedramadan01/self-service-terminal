@@ -18,6 +18,7 @@ class FormInline(admin.TabularInline):
 @admin.register(Terminal_Settings)
 class Terminal_SettingsAdmin(ImportExportModelAdmin):
     fieldsets = [
+        ('Startseite', {'fields': ['homepage']}),
         ('Beschreibung', {'fields': ['title', 'description']}),
         ('Farbe',
             {'fields': [
@@ -40,8 +41,8 @@ class MenuAdmin(ImportExportModelAdmin):
     ]
     inlines = [MenuInline, FormInline]
 
-
-class FormAdmin(admin.ModelAdmin):
+@admin.register(Form)
+class FormAdmin(ImportExportModelAdmin):
     fieldsets = [
         ('Übergeordnetes Menü', {'fields': ['parent_menu']}),
         ('Anzeigen',            {'fields': ['show_on_frontend']}),

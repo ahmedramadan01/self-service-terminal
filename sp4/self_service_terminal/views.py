@@ -1,10 +1,18 @@
 from django.shortcuts import render, HttpResponse
-from .models import Menu, Form
+from .models import Menu, Form, Terminal_Settings
 
 
 def index(request):
-
-    return render(request, 'self_service_terminal/index.html')
+    homepage_id = list(Terminal_Settings.objects.all())[0].homepage_id
+    homepage = Menu.objects.get(pk=homepage_id)
+    submenus = list(Menu.objects.filter(parent_menu=homepage_id))
+    subforms = list(Form.objects.filter(parent_menu=homepage_id))
+    context = {
+        'menu': homepage,
+        'submenus': submenus,
+        'subforms': subforms
+    }
+    return render(request, 'self_service_terminal/menu.html', context)
 
 
 """ TODO If entry with primary key menu_id or form_id does not exist
@@ -44,14 +52,13 @@ def formular(request, form_id=None, form_title=None):
 
 
 def print_formular(request, form_id=None):
-    """TODO Just run the print function of the given form 
-    and do not change the current page"""
-    # Form.objects.get(pk=form_id).print_form()
+    """Run the print method of the given form object
+    and return a HTTP 204 No Content response."""
+    Form.objects.get(pk=form_id).print_form()
     return HttpResponse(status=204)
 
+
 # Testview für die Django Templatesprache
-
-
 def menu_template_test(request, menu_id=None, menu_title=None):
     menu = Menu.objects.get(pk=menu_id)
     submenus = list(Menu.objects.filter(parent_menu=menu_id))
