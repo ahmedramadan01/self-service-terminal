@@ -1,1 +1,53 @@
-sd.fkglhjnsydlkfjgnsödofjgnsöodfggbn
+\section{Realisierte Architektur}
+
+Im Folgenden erläutern wir die implementierte Struktur des Self-Service-Terminal anhand des bekannten MTV-Prinzips.
+
+\subsection{Models}
+\begin{itemize}
+    \item \textbf{M010} \textit{Terminal\_Settings:} Datenbankstrukturen für die Konfigurationseinstellungen der Anwendung
+    \begin{itemize}
+        \item \textbf{terminal\_settings\_id} = Primärschlüssel der \textit{Terminal\_Settings} Relation
+        \item \textbf{title} = Character Feld
+        \item \textbf{description} = Text Feld
+        \item \textbf{hompage} = 1:1 Assoziation zu einem \textit{Menu} Objekt
+        \item \textbf{colorval\_nav\_bar} = Character Feld zur Speicherung eines RGB-Farbcodes für die Navigationsleiste im base.html Template
+        \item \textbf{colorval\_heading} = Character Feld zur Speicherung eines RGB-Farbcodes für die Kopfleiste im base.html Template
+        \item \textbf{colorval\_text} = Character Feld zur Speicherung eines RGB-Farbcodes für die Textfarbe im base.html Template
+        \item \textbf{colorval\_button} = Character Feld zur Speicherung eines RGB-Farbcodes für die Farbe der Buttons im base.html Template
+        \item \textbf{colorval\_zurück\_button} = Character Feld zur Speicherung eines RGB-Farbcodes für die Farbe des Zurück-Buttons im base.html Templates
+        \item \textbf{institute\_logo} = Image Feld zur Speicherung des Logos der TU Ilmenau
+        \item \textbf{krankenkasse\_logo} = Image Feld zur Speicherung eines Firmen-Logos
+    \end{itemize}
+\end{itemize}
+\newpage
+\begin{itemize}
+    \item \textbf{M020} \textit{Menu:} Datenbankstrukturen zur Erstellung und Speicherung der Menüstrukturen zur Navigation
+    \begin{itemize}
+        \item \textbf{settings} = Fremdschlüssel zur \textit{Terminal\_Settings} Relation
+        \item \textbf{parent\_menu} = Fremdschlüssel zur \textit{Menu} Relation um für \textit{Menü} Objekte das Eltern-Menü festzulegen; Grundlage zur Erzeugung einer Baumstruktur
+        \item \textbf{menu\_title} = Character Feld zur Speicherung des Titels eines \textit{Menu} Objekts
+        \item \textbf{menu\_text} = Text Feld zur Speicherung des Beschreibungstexts eines \textit{Menu} Objekts
+    \end{itemize}
+\end{itemize}
+\vspace{0,5cm}
+\begin{itemize}
+    \item \textbf{M030} \textit{Form:} Datenbankstrukturen für die gespeicherten PDF-Formulare
+    \begin{itemize}
+        \item \textbf{parent\_menu} = Fremdschlüssel zur \textit{Menu} Relation um für \textit{Form} Objekte das Eltern-Menü festzulegen
+        \item \textbf{pdffile} = Datei Feld zur Speicherung des Pfads für hochgeladene Formulare
+        \item \textbf{upload\_date} = Datums Feld welches bei Speicherung eines Formulars das Upload-Datum speichert
+        \item \textbf{last\_changed} = Datums Feld zur Speicherung des Zeitpunktes der letzten Änderung eines \textit{Form} Objekts
+        \item \textbf{show\_on\_frontend} = Boolean Feld um im Backend festzulegen, ob ein \textit{Form} Objekt im Frontend angezeigt werden soll
+        \item \textbf{form\_title} = Character Feld zur Speicherung des Titels eines \textit{Form} Objekts
+        \item \textbf{description} = Text Feld zur Speicherung des Beschreibungstext eines \textit{Form} Objekts
+    \end{itemize}
+    \begin{itemize}
+        \item \textbf{Methoden der \textit{Form} Klasse}
+        \begin{itemize}
+            \item \textbf{print\_form:} Methode zum Ausdrucken eines Formulars durch den Aufruf des \textit{lpr-Shell-Kommandos} in einem Python-Subprozess. Bei Misserfolg des Druckvorgangs wird ein Fehlercode ausgegeben. Bei Erfolg wird dem Kunden signalisiert, dass der Druckvorgang durchgeführt wird.
+            \newpage
+            \item \textbf{time\_since\_last\_updated:} Methode zur Rückgabe des Zeitraums, der seit der letzten Änderung des \textit{Form} Objekts vergangen ist. Dazu wird die aktuelle Zeit vom letzten Änderungsdatum abgezogen. Daraufhin wird ein Tupel in der Form: (Tage, Stunden, Minuten) zurückgegeben.
+            \item \textbf{time\_since\_last\_updated\_str:} Methode zur Umwandlung des Tupels aus der \textit{time\_since\_last\_updated} Methode in einen String und Rückgabe des Strings.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
