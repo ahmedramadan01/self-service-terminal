@@ -1,15 +1,19 @@
 {% extends "self_service_terminal/base.html"%}
 {% load static %}
-{% block title %}{{form}} {% endblock %}
+{% block title %} {{ form.form_title }} {% endblock %}
 {% block content%}
 
 <div class="formular">
   <p class="formular-title">{{form}}</p>
-  <p>{{form.description}} </p>
+  <p>{{form.description}}</p>
 </div>
+
 
 <form action="" method="get">
   <div class="btn-container">
+    
+    <!-- <embed type="application/pdf" src="{{ form.pdffile.url }}" width="650" height="850"> -->
+    <img src="{{ img_path }}" width="650" height="850">
 
     <!--Makes a HTTP request to the print site => calls printing method for current form
         See the console output for the development server:
@@ -17,7 +21,7 @@
     <a class="print btn" href="/form/{{ form.pk }}/print">Drucken</a>
     <!---->
 
-    <a class="noselect view  btn" href="{{form.pdffile.url}}">Ansehen</a>
+    <!-- <a class="noselect view  btn" href="{{form.pdffile.url}}">Ansehen</a> -->
     <a class="noselect back btn" href="/menu/{{form.parent_menu.pk}}">&#171; Zurück </a>
 
   </div>

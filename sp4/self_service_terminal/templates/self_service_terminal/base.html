@@ -7,13 +7,7 @@
     <!-- placeholder title-->
     <title> {% block title %} {% endblock %} </title>
     <link rel="stylesheet" type="text/css" href="{% static 'self_service_terminal/styles.css' %}" />
-    <!-- Scripts with the async attribute are executed asynchronously.
-      This means the script is executed as soon as it's downloaded,
-      without blocking the browser in the meantime. -->
-    <!-- HaSh:note for Hakeem:we need to decide later whether we use "async" or "defer" -->
-    <script src="app.js" type="text/javascript" async></script>
 </head>
-<!-- HaSh:note for Hakeem:we might need to add labels(Screen reader users) -->
 
 <body>
     <nav id="nav-bar">
@@ -33,8 +27,8 @@
     </nav>
 
     {% block content %}
-    
-    {% endblock %}
+    {% endblock content %}
+
 </body>
 
 </html>

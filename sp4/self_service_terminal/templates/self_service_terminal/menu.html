@@ -1,6 +1,6 @@
 {% extends "self_service_terminal/base.html"%}
 {% load static %}
-{% block title %}Hier kommt der Menütitel hin. {% endblock %}
+{% block title %} {{ menu.menu_title}} {% endblock %}
 {% block content%}
 
 
@@ -20,7 +20,10 @@
     <a class="noselect year btn form" href="/form/{{entry.pk}}">{{ entry.form_title }} </a>
     {% endfor %}
 
+    {% if settings.homepage_id != menu.pk %}
     <a class="noselect back btn" href="/menu/{{menu.parent_menu.pk}}">
         &#171; Zurück </a>
+    {% endif %}
+
 </div>
 {% endblock %}

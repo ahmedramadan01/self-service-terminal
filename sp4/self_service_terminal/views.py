@@ -1,6 +1,9 @@
 from django.shortcuts import render, HttpResponse
 from .models import Menu, Form, Terminal_Settings
 
+from pdf2image import convert_from_path
+import os
+
 # TEMP: Define the settings as the first entry of all Terminal_Settings
 # settings = list(Terminal_Settings.objects.all())[0]
 def get_settings():
@@ -54,9 +57,29 @@ def formular(request, form_id=None, form_title=None):
     """
     settings = get_settings()
     form = Form.objects.get(pk=form_id)
+
+    try:
+        path = form.pdffile.path
+        folder = path.rsplit('/', maxsplit=1)[0]
+        img_path = form.pdffile.path.split('.')[0]
+        if not os.path.isfile(img_path):
+            convert_from_path(
+                form.pdffile.path,
+                output_folder=folder,
+                first_page=1,
+                last_page=1,
+                fmt='jpeg',
+                single_file=True,
+                output_file=img_path
+            )
+        img_url = form.pdffile.url.rsplit('.', maxsplit=1)[0] + '.jpg'
+    except Exception:
+        img_url = settings.krankenkasse_logo.url
+
     context = {
         'settings': settings,
-        'form': form
+        'form': form,
+        'img_path': img_url
     }
     return render(request, 'self_service_terminal/formular.html', context)
 
