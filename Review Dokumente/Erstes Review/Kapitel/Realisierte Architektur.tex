@@ -4,7 +4,7 @@ Im Folgenden erläutern wir die implementierte Struktur des Self-Service-Termina
 
 \subsection{Models}
 \begin{itemize}
-    \item \textbf{M010} \textit{Terminal\_Settings:} Datenbankstrukturen für die Konfigurationseinstellungen der Anwendung
+    \item \textbf{/M010/} \textit{Terminal\_Settings:} Datenbankstrukturen für die Konfigurationseinstellungen der Anwendung
     \begin{itemize}
         \item \textbf{terminal\_settings\_id} = Primärschlüssel der \textit{Terminal\_Settings} Relation
         \item \textbf{title} = Character Feld
@@ -21,7 +21,7 @@ Im Folgenden erläutern wir die implementierte Struktur des Self-Service-Termina
 \end{itemize}
 \newpage
 \begin{itemize}
-    \item \textbf{M020} \textit{Menu:} Datenbankstrukturen zur Erstellung und Speicherung der Menüstrukturen zur Navigation
+    \item \textbf{/M020/} \textit{Menu:} Datenbankstrukturen zur Erstellung und Speicherung der Menüstrukturen zur Navigation
     \begin{itemize}
         \item \textbf{settings} = Fremdschlüssel zur \textit{Terminal\_Settings} Relation
         \item \textbf{parent\_menu} = Fremdschlüssel zur \textit{Menu} Relation um für \textit{Menü} Objekte das Eltern-Menü festzulegen; Grundlage zur Erzeugung einer Baumstruktur
@@ -31,7 +31,7 @@ Im Folgenden erläutern wir die implementierte Struktur des Self-Service-Termina
 \end{itemize}
 \vspace{0,5cm}
 \begin{itemize}
-    \item \textbf{M030} \textit{Form:} Datenbankstrukturen für die gespeicherten PDF-Formulare
+    \item \textbf{/M030/} \textit{Form:} Datenbankstrukturen für die gespeicherten PDF-Formulare
     \begin{itemize}
         \item \textbf{parent\_menu} = Fremdschlüssel zur \textit{Menu} Relation um für \textit{Form} Objekte das Eltern-Menü festzulegen
         \item \textbf{pdffile} = Datei Feld zur Speicherung des Pfads für hochgeladene Formulare
@@ -42,12 +42,30 @@ Im Folgenden erläutern wir die implementierte Struktur des Self-Service-Termina
         \item \textbf{description} = Text Feld zur Speicherung des Beschreibungstext eines \textit{Form} Objekts
     \end{itemize}
     \begin{itemize}
+    \newpage
         \item \textbf{Methoden der \textit{Form} Klasse}
         \begin{itemize}
             \item \textbf{print\_form:} Methode zum Ausdrucken eines Formulars durch den Aufruf des \textit{lpr-Shell-Kommandos} in einem Python-Subprozess. Bei Misserfolg des Druckvorgangs wird ein Fehlercode ausgegeben. Bei Erfolg wird dem Kunden signalisiert, dass der Druckvorgang durchgeführt wird.
-            \newpage
             \item \textbf{time\_since\_last\_updated:} Methode zur Rückgabe des Zeitraums, der seit der letzten Änderung des \textit{Form} Objekts vergangen ist. Dazu wird die aktuelle Zeit vom letzten Änderungsdatum abgezogen. Daraufhin wird ein Tupel in der Form: (Tage, Stunden, Minuten) zurückgegeben.
             \item \textbf{time\_since\_last\_updated\_str:} Methode zur Umwandlung des Tupels aus der \textit{time\_since\_last\_updated} Methode in einen String und Rückgabe des Strings.
         \end{itemize}
     \end{itemize}
 \end{itemize}
+
+\vspace{1,5cm}
+
+\subsection{Templates}
+\begin{itemize}
+    \item \textbf{/T010/} \textit{base.html:} Basis Template, welches die Grundstruktur der ausgelieferten Webseiten enthält. In der \textit{base.html} werden die Attribute der \textit{Terminal\_Settings} als Variablen eingesetzt, um das Frontend konfigurierbar zu machen. Außerdem werden die nötigen Grundeinstellungen getroffen.
+    \item \textbf{/T020/} \textit{formular.html:} Template für Vorschau und Druck eines ausgewählten Formulars.
+    \item \textbf{/T030/} \textit{menu.html:} Template in welchem die im Admin-Panel zugeordneten Formulare angezeigt und angeordnet werden.
+\end{itemize}
+\newpage
+\subsection{Views}
+\begin{itemize}
+    \item \textbf{/V010/} \textit{index:} Das index View ruft jenes Objekt auf, welchem die \textit{hompage\_id} zugeordnet wurde, nennt es \textit{homepage} und legt es in der Variable \textit{menu} ab. \textit{Menu} und \textit{Form} Objekte, welchen das \textit{homepage} Objekt als \textit{parent\_menu} zugeordnet wurde, werden als Liste in den Variablen \textit{submenus} und \textit{subforms} abgelegt. Die entsprechend gefüllten Variablen werden durch die \textit{render}-Funktion in eine hhtp-Request umgewandelt an das \textit{menu.html} Template übergeben. Im Ergebnis steht entsteht ein Teil der Menüstruktur mit der Hompage als Wurzel und den der Hompage zugeordneten Submenus und Subforms. Die restliche Menüstruktur wird durch das \textit{menu} View erzeugt.
+    \item \textbf{/V020/} \textit{menu:} Das menu View ruft ein \textit{Menu} Objekt auf und speichert es in der Variable \textit{menu}. \textit{Menu} und \textit{Form} Objekte, welche die \textit{menu\_id} des aufgerufenen Objekts als \textit{parent\_id} gespeichert haben, werden in der Variable \textit{submenus} beziehungsweise \textit{subforms} abgelegt. Die gefüllten Variablen werden durch die \textit{render}-Funktion in hhtp-Requests umgewandelt und an das \textit{menu.html} Template übergeben. Die Methode erzeugt also die übrige Baumstruktur aus den im Admin-Panel getroffenen Einstellungen.
+    \item \textbf{/V030/} \textit{formular:} Dem formular View wird ein \textit{Form} Objekt übergeben. Entsprechendes Objekt wird in der Variable \textit{form} gespeichert und der \textit{render}-Funktion übergeben, welches eine http-Request erzeugt und diese an das \textit{form.html} übergibt.
+    \item \textbf{/V040/} \textit{print\_formular:} Das print\_formular View \textit{print\_form}-Methode des \textit{Menu} Models auf und übergibt ihr die \textit{form\_id} eines zu druckenden Formulars. Außerdem gibt die Funktion die http-Response 204 zurück. Die http-Response 205 zeigt an, dass die Anfrage erfolgreich abgeschlossen wurde und keine neue Seite geladen werden muss. 
+\end{itemize}
+\newpage 
