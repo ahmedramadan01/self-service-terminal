@@ -1,11 +1,11 @@
 {% extends "self_service_terminal/base.html"%}
 {% load static %}
-{% block title %}{{form}} {% endblock %}
+{% block title %} {{ form.form_title }} {% endblock %}
 {% block content%}
 
 <div class="formular">
   <p class="formular-title">{{form}}</p>
-  <p>{{form.description}} </p>
+  <p>{{form.description}}</p>
 </div>
 
 <form action="" method="get">
