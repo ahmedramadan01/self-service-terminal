@@ -20,7 +20,7 @@ in the database then return the homepage."""
 
 
 def menu(request, menu_id=None, menu_title=None):
-    """TODO Return the menu with the primary key <menu_id>.
+    """Return the menu with the primary key <menu_id>.
 
     Parameters:
     - menu object
@@ -39,7 +39,7 @@ def menu(request, menu_id=None, menu_title=None):
 
 
 def formular(request, form_id=None, form_title=None):
-    """TODO Return the form with the primary key <form_id>.
+    """Return the form with the primary key <form_id>.
 
     Parameters:
     - form object
