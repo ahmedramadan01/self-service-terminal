@@ -20,7 +20,10 @@
     <a class="noselect year btn form" href="/form/{{entry.pk}}">{{ entry.form_title }} </a>
     {% endfor %}
 
+    {% if settings.homepage_id != menu.pk %}
     <a class="noselect back btn" href="/menu/{{menu.parent_menu.pk}}">
         &#171; Zurück </a>
+    {% endif %}
+
 </div>
 {% endblock %}
