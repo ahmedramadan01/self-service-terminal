@@ -1,0 +1,21 @@
+\section{Persistente Daten}
+Das System speichert keine Kundendaten.\par
+\vspace{0.5cm}
+Folgende Datentypen werden vom System dauerhaft abgelegt:
+
+\begin{itemize}
+    \item \textbf{/D010/} \textit{Konfigurationsdatei:} \par
+    JSON Datei zur Speicherung des Konfigurationszustands des Systems.
+    
+    \item \textbf{/D020/} \textit{Formulare:} \par
+    Im Backend abgelegte Formulare der AOK im PDF-Format.
+    
+    \item \textbf{/D030/} \textit{Metadaten:} \par
+    .SQLITE Datei mit den Datenbankinhalten zum Betrieb der Anwendung (Views, Models, Templates), sowie Metadaten zu abgelegten Formularen.
+    
+    \item \textbf{/D040/} \textit{Logos:} \par
+    Logos zur Darstellung im Frontend als JPEG Dateien
+    
+    \item \textbf{/D050/} \textit{Logindaten:} \par
+    Verschlüsselte Logindaten des Administrator-Kontos
+\end{itemize}

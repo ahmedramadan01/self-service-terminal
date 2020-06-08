@@ -1,0 +1,43 @@
+\section{Produktumgebung}
+
+Das Self Service Terminal wird auf auf Debian basierten Betriebssystemen entwickelt und ausschließlich darauf getestet. Genauer ist zum Betrieb des Systems ein Raspberry Pi Einplatinencomputer vorgesehen. Ein solcher Kleinstcomputer eignet sich besonders für den Einsatz als Server für das SST, weil er klein gebaut ist und kostengünstig angeschafft werden kann. Als Client wird ein Apple IPad mit einer Bildschirmdiagonale von 9 Zoll eingesetzt, welches hochkant in einem Ständer steht. Der Zugriff auf die Webanwendung erfolgt über den Safari Webbrowser.
+
+\subsection{Software}
+
+\begin{itemize}
+  \item Client
+    \begin{itemize}
+      \item Safari Webbrowser
+    \end{itemize}
+  \item Server
+    \begin{itemize}
+      \item Betriebssystem: Raspbian
+      \item Python 3 Interpreter
+      \item Django Framework
+      \item Apache Webserver
+      \item SQLite Datenbank
+      \item CUPS Druckersoftware
+    \end{itemize}
+\end{itemize}
+
+\subsection{Hardware}
+
+
+ \begin{itemize}
+    \item Client
+    \begin{itemize}
+      \item 9 Zoll Apple IPad mit Safari Browser
+    \end{itemize}
+  \item Server
+    \begin{itemize}
+      \item Raspberry Pi Einplatinencomputer
+      \item Netzwerkfähiger Computer zur Administration
+      \item Netzwerkfähiger oder USB-Drucker
+    \end{itemize}
+\end{itemize}
+\subsection{Orgware}
+
+\begin{itemize}
+  \item Der Dienst muss einmalig auf dem Raspberry Pi installiert werden und startet nach jedem Neustart von selbst
+  \item Gewährleistung einer WLAN Verbindung zwischen Raspberry Pi und IPad
+\end{itemize}

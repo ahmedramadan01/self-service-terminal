@@ -8,6 +8,7 @@ header{
   justify-content: flex-end;
   align-items: flex-end;
   height:65px ;
+  display: -webkit-flex;
 }
 
 #nav-bar{
@@ -56,6 +57,7 @@ h1 {
 }
 
 .btn-container {
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -76,6 +78,7 @@ h1 {
   border: black solid 3px;
 } */
 .frequent {
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -98,6 +101,7 @@ h1 {
   padding-left: 10px;
 }
 .menu {
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

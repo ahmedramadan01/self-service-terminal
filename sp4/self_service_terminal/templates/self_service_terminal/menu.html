@@ -11,15 +11,15 @@
     </p>
 </div>
 <div class="btn-container">
+    
     {% for entry in submenus %}
-
     <a class="noselect year btn" href="/menu/{{entry.pk}}">{{ entry.menu_title }} </a>
     {% endfor %}
+
     {% for entry in subforms %}
     <a class="noselect year btn form" href="/form/{{entry.pk}}">{{ entry.form_title }} </a>
-
-
     {% endfor %}
+
     <a class="noselect back btn" href="/menu/{{menu.parent_menu.pk}}">
         &#171; Zurück </a>
 </div>

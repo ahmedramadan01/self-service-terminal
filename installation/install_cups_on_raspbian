@@ -1,0 +1,34 @@
+# Install CUPS on Raspbian and add current user to lpadmin group
+
+$ sudo apt install cups
+$ sudo usermod -a -G lpadmin $USER
+
+# Change /etc/cups/cupsd.conf as follows:
+
+"""
+# Only listen for connections from the local machine
+# Listen localhost:631
+Port 631
+
+< Location / >
+    Order allow,deny
+    Allow @local
+< /Location >
+
+< Location /admin >
+    Order allow,deny
+    Allow @local
+< /Location >
+
+< Location /admin/conf >
+    AuthType Default
+    Require user @SYSTEM
+    Order allow,deny
+    Allow @local
+< /Location >
+"""
+
+# Restart cups server
+$ sudo /etc/init.d/cups restart
+
+# The CUPS GUI Interface can now be accessed via <Pi's IP or Hostname>:631
