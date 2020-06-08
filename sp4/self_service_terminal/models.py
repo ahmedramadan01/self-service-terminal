@@ -36,7 +36,8 @@ class Menu(models.Model):
         'self', on_delete=models.CASCADE, blank=True, null=True)
     menu_title = models.CharField(max_length=TITLE_LENGTH)
     menu_text = models.TextField(blank=True)
-
+    test_img = models.ImageField(
+        upload_to='images', default='default.png', blank=True)
     def __str__(self):
         return self.menu_title
 

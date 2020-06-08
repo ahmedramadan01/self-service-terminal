@@ -37,7 +37,7 @@ class MenuAdmin(ImportExportModelAdmin):
     fieldsets = [
         ('Startseite',       {'fields': ['settings']}),
         ('Oberkategorie',    {'fields': ['parent_menu']}),
-        ('Beschreibung',     {'fields': ['menu_title', 'menu_text']})
+        ('Beschreibung',     {'fields': ['menu_title', 'menu_text','test_img']})
     ]
     inlines = [MenuInline, FormInline]
 

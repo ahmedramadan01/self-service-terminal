@@ -9,6 +9,7 @@
     <p>
         {{menu.menu_text}}
     </p>
+    <img src="{{menu.test_img.url}}" width="240" height="240"/>
 </div>
 <div class="btn-container">
     {% for entry in submenus %}
@@ -17,8 +18,6 @@
     {% endfor %}
     {% for entry in subforms %}
     <a class="noselect year btn form" href="/form/{{entry.pk}}">{{ entry.form_title }} </a>
-
-
     {% endfor %}
 </div>
 {% endblock %}
