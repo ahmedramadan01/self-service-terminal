@@ -3,9 +3,11 @@ from .models import Menu, Form, Terminal_Settings
 
 # TEMP: Define the settings as the first entry of all Terminal_Settings
 # settings = list(Terminal_Settings.objects.all())[0]
+def get_settings():
+    return list(Terminal_Settings.objects.all())[0]
 
 def index(request):
-    settings = list(Terminal_Settings.objects.all())[0]
+    settings = get_settings()
     homepage_id = list(Terminal_Settings.objects.all())[0].homepage_id
     homepage = Menu.objects.get(pk=homepage_id)
     submenus = list(Menu.objects.filter(parent_menu=homepage_id))
@@ -31,7 +33,7 @@ def menu(request, menu_id=None, menu_title=None):
     - list of submenu objects
     - list of subforms objects
     """
-    settings = list(Terminal_Settings.objects.all())[0]
+    settings = get_settings()
     menu = Menu.objects.get(pk=menu_id)
     submenus = list(Menu.objects.filter(parent_menu=menu_id))
     subforms = list(Form.objects.filter(parent_menu=menu_id))
@@ -50,7 +52,7 @@ def formular(request, form_id=None, form_title=None):
     Parameters:
     - form object
     """
-    settings = list(Terminal_Settings.objects.all())[0]
+    settings = get_settings()
     form = Form.objects.get(pk=form_id)
     context = {
         'settings': settings,
@@ -68,10 +70,12 @@ def print_formular(request, form_id=None):
 
 # Testview für die Django Templatesprache
 def menu_template_test(request, menu_id=None, menu_title=None):
+    settings = get_settings()
     menu = Menu.objects.get(pk=menu_id)
     submenus = list(Menu.objects.filter(parent_menu=menu_id))
     subforms = list(Form.objects.filter(parent_menu=menu_id))
     context = {
+        'settings': settings,
         'menu': menu,
         'submenus': submenus,
         'subforms': subforms,
