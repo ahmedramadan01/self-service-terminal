@@ -1,13 +1,17 @@
 from django.shortcuts import render, HttpResponse
 from .models import Menu, Form, Terminal_Settings
 
+# TEMP: Define the settings as the first entry of all Terminal_Settings
+# settings = list(Terminal_Settings.objects.all())[0]
 
 def index(request):
+    settings = list(Terminal_Settings.objects.all())[0]
     homepage_id = list(Terminal_Settings.objects.all())[0].homepage_id
     homepage = Menu.objects.get(pk=homepage_id)
     submenus = list(Menu.objects.filter(parent_menu=homepage_id))
     subforms = list(Form.objects.filter(parent_menu=homepage_id))
     context = {
+        'settings': settings,
         'menu': homepage,
         'submenus': submenus,
         'subforms': subforms
@@ -27,10 +31,12 @@ def menu(request, menu_id=None, menu_title=None):
     - list of submenu objects
     - list of subforms objects
     """
+    settings = list(Terminal_Settings.objects.all())[0]
     menu = Menu.objects.get(pk=menu_id)
     submenus = list(Menu.objects.filter(parent_menu=menu_id))
     subforms = list(Form.objects.filter(parent_menu=menu_id))
     context = {
+        'settings': settings,
         'menu': menu,
         'submenus': submenus,
         'subforms': subforms
@@ -44,8 +50,10 @@ def formular(request, form_id=None, form_title=None):
     Parameters:
     - form object
     """
+    settings = list(Terminal_Settings.objects.all())[0]
     form = Form.objects.get(pk=form_id)
     context = {
+        'settings': settings,
         'form': form
     }
     return render(request, 'self_service_terminal/formular.html', context)
