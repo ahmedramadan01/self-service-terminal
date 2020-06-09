@@ -95,30 +95,58 @@ def print_formular(request, form_id=None):
 # Testview für die Django Templatesprache
 def menu_template_test(request, menu_id=None, menu_title=None):
     settings = get_settings()
-    menu = Menu.objects.get(pk=menu_id)
-    submenus = list(Menu.objects.filter(parent_menu=menu_id))
-    subforms = list(Form.objects.filter(parent_menu=menu_id))
-    
-    # Fill the paginator with all submenus and subforms
-    paginator = Paginator(submenus + subforms, 5)
+    if menu_id:
+        menu = Menu.objects.get(pk=menu_id)
+        submenus = list(Menu.objects.filter(parent_menu=menu_id))
+        subforms = list(Form.objects.filter(parent_menu=menu_id))
+        
+        # Fill the paginator with all submenus and subforms
+        paginator = Paginator(submenus + subforms, 5)
 
-    # Get the current page from the HTTP Request
-    page_number = request.GET.get('page')
-    # Get all objects that are allowed on the current page
-    page_obj = paginator.get_page(page_number)
+        # Get the current page from the HTTP Request
+        page_number = request.GET.get('page')
+        # Get all objects that are allowed on the current page
+        page_obj = paginator.get_page(page_number)
 
-    # Add option to test for Menu and Form object
-    for i in range(len(page_obj.object_list)):
-        page_obj.object_list[i] = {
-            'object': page_obj.object_list[i],
-            'is_menu': type(page_obj.object_list[i]) is Menu,
-            'is_form': type(page_obj.object_list[i]) is Form
+        # Add option to test for Menu and Form object
+        for i in range(len(page_obj.object_list)):
+            page_obj.object_list[i] = {
+                'object': page_obj.object_list[i],
+                'is_menu': type(page_obj.object_list[i]) is Menu,
+                'is_form': type(page_obj.object_list[i]) is Form
+            }
+        
+        # Only for debugging purposes
+        # print(page_obj.object_list)
+
+        context = {
+            'settings': settings,
+            'menu': menu,
+            'page_obj': page_obj
         }
-    print(page_obj.object_list)
+        return render(request, 'self_service_terminal/dtl_test.html', context)
 
-    context = {
-        'settings': settings,
-        'menu': menu,
-        'page_obj': page_obj
-    }
-    return render(request, 'self_service_terminal/dtl_test.html', context)
+    else:
+        homepage_id = list(Terminal_Settings.objects.all())[0].homepage_id
+        homepage = Menu.objects.get(pk=homepage_id)
+
+        submenus = list(Menu.objects.filter(parent_menu=homepage_id))
+        subforms = list(Form.objects.filter(parent_menu=homepage_id))
+
+        paginator = Paginator(submenus + subforms, 5)
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        
+        for i in range(len(page_obj.object_list)):
+            page_obj.object_list[i] = {
+                'object': page_obj.object_list[i],
+                'is_menu': type(page_obj.object_list[i]) is Menu,
+                'is_form': type(page_obj.object_list[i]) is Form
+            }
+
+        context = {
+            'settings': settings,
+            'menu': homepage,
+            'page_obj': page_obj
+        }
+        return render(request, 'self_service_terminal/dtl_test.html', context)
