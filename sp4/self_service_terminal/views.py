@@ -12,10 +12,13 @@ def get_settings():
 
 def index(request):
     settings = get_settings()
+
     homepage_id = list(Terminal_Settings.objects.all())[0].homepage_id
     homepage = Menu.objects.get(pk=homepage_id)
+
     submenus = list(Menu.objects.filter(parent_menu=homepage_id))
     subforms = list(Form.objects.filter(parent_menu=homepage_id))
+
     context = {
         'settings': settings,
         'menu': homepage,
@@ -25,12 +28,8 @@ def index(request):
     return render(request, 'self_service_terminal/menu.html', context)
 
 
-""" TODO If entry with primary key menu_id or form_id does not exist
-in the database then return the homepage."""
-
-
 def menu(request, menu_id=None, menu_title=None):
-    """Return the menu with the primary key <menu_id>.
+    """Return the menu site with the primary key <menu_id>.
 
     Parameters:
     - menu object
@@ -38,20 +37,37 @@ def menu(request, menu_id=None, menu_title=None):
     - list of subforms objects
     """
     settings = get_settings()
+
     menu = Menu.objects.get(pk=menu_id)
     submenus = list(Menu.objects.filter(parent_menu=menu_id))
     subforms = list(Form.objects.filter(parent_menu=menu_id))
+
+    # Fill the paginator with all submenus and subforms
+    paginator = Paginator(submenus + subforms, 5)
+
+    # Get the current page from the HTTP Request
+    page_number = request.GET.get('page')
+    # Get all objects that are allowed on the current page
+    page_obj = paginator.get_page(page_number)
+
+    # Add option to test for Menu and Form object
+    for i in range(len(page_obj.object_list)):
+        page_obj.object_list[i] = {
+            'object': page_obj.object_list[i],
+            'is_menu': type(page_obj.object_list[i]) is Menu,
+            'is_form': type(page_obj.object_list[i]) is Form
+        }
+
     context = {
         'settings': settings,
         'menu': menu,
-        'submenus': submenus,
-        'subforms': subforms
+        'page_obj': page_obj
     }
     return render(request, 'self_service_terminal/menu.html', context)
 
 
 def formular(request, form_id=None, form_title=None):
-    """Return the form with the primary key <form_id>.
+    """Return the form site with the primary key <form_id>.
 
     Parameters:
     - form object

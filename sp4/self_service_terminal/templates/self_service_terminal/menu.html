@@ -1,8 +1,9 @@
 {% extends "self_service_terminal/base.html"%}
 {% load static %}
-{% block title %} {{ menu.menu_title}} {% endblock %}
-{% block content%}
 
+{% block title %} {{ menu.menu_title}} {% endblock %}
+
+{% block content %}
 
 <div class="formular">
     <p class="formular-title"  style="color: {{ settings.colorval_heading }};">{{menu}}</p>
@@ -10,20 +11,40 @@
         {{menu.menu_text}}
     </p>
 </div>
+
+{% if page_obj.has_previous %}
+    <a href="?page=1">&laquo; first</a>
+    <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+{% endif %}
+
+{% if page_obj.paginator.num_pages != 1 %}
+<span class="current">
+    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+</span>
+{% endif %}
+
+{% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">next</a>
+    <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+{% endif %}
+
 <div class="btn-container">
     
-    {% for entry in submenus %}
-    <a style="text-decoration: none;color:{{ settings.colorval_button }}" class="noselect year btn" href="/menu/{{entry.pk}}">{{ entry.menu_title }} </a>
-    {% endfor %}
+    {% for entry in page_obj.object_list %}
+        {% if entry.is_menu %}
+            <a style="text-decoration: none;color:{{ settings.colorval_button }}" class="noselect year btn" href="/menu/{{ entry.object.pk }}">{{ entry.object.menu_title }}</a>
+        {% endif %}
 
-    {% for entry in subforms %}
-    <a style="text-decoration: none;color:{{ settings.colorval_button }}" class="noselect year btn form" href="/form/{{entry.pk}}">{{ entry.form_title }} </a>
+        {% if entry.is_form %}
+            <a style="text-decoration: none;color:{{ settings.colorval_button }}" class="noselect year btn form" href="/form/{{ entry.object.pk }}">{{ entry.object.form_title }}</a>
+        {% endif %}
     {% endfor %}
 
     {% if settings.homepage_id != menu.pk %}
-    <a style="text-decoration: none;color:{{ settings.colorval_zurueck_button }}" class="noselect back btn" href="/menu/{{menu.parent_menu.pk}}">
+    <a style="text-decoration: none;color:{{ settings.colorval_zurueck_button }}" class="noselect back btn" href="/menu/{{ menu.parent_menu.pk }}">
         &#171; Zurück </a>
     {% endif %}
 
 </div>
-{% endblock %}
+
+{% endblock content %}
