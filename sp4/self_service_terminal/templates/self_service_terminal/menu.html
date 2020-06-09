@@ -5,23 +5,23 @@
 
 
 <div class="formular">
-    <p class="formular-title"  style="color:{{menu.settings.colorval_heading}};">{{menu}}</p>
-    <p style="color:{{menu.settings.colorval_text}};">
+    <p class="formular-title"  style="color: {{ settings.colorval_heading }};">{{menu}}</p>
+    <p style="color: {{ settings.colorval_text }};">
         {{menu.menu_text}}
     </p>
 </div>
 <div class="btn-container">
     
     {% for entry in submenus %}
-    <a class="noselect year btn" href="/menu/{{entry.pk}}">{{ entry.menu_title }} </a>
+    <a style="text-decoration: none;color:{{ settings.colorval_button }}" class="noselect year btn" href="/menu/{{entry.pk}}">{{ entry.menu_title }} </a>
     {% endfor %}
 
     {% for entry in subforms %}
-    <a class="noselect year btn form" href="/form/{{entry.pk}}">{{ entry.form_title }} </a>
+    <a style="text-decoration: none;color:{{ settings.colorval_button }}" class="noselect year btn form" href="/form/{{entry.pk}}">{{ entry.form_title }} </a>
     {% endfor %}
 
     {% if settings.homepage_id != menu.pk %}
-    <a class="noselect back btn" href="/menu/{{menu.parent_menu.pk}}">
+    <a style="text-decoration: none;color:{{ settings.colorval_zurueck_button }}" class="noselect back btn" href="/menu/{{menu.parent_menu.pk}}">
         &#171; Zurück </a>
     {% endif %}
 

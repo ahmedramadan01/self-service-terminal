@@ -18,12 +18,12 @@
     <!--Makes a HTTP request to the print site => calls printing method for current form
         See the console output for the development server:
         "GET /form/1/print HTTP/1.1" 204 0-->
-    <a class="print btn" href="/form/{{ form.pk }}/print">Drucken</a>
+    <a style="text-decoration: none;color:{{ settings.colorval_button }}" class="print btn" href="/form/{{ form.pk }}/print">Drucken</a>
     <!---->
 
     <!-- <button class="noselect print btn" type="button"><i class="fas fa-print"></i>Drucken</button> -->
-    <button style="text-decoration: none;color:{{menu.settings.colorval_button}}" class="noselect view  btn" type="button"><i class="far fa-file-alt"></i>Ansehen</button>
-    <a style="text-decoration: none;color:{{menu.settings.colorval_zurueck_button}}" class="noselect back btn" href="/menu/{{form.parent_menu.pk}}">&#171; Zurück </a>
+    <button style="text-decoration: none;color:{{ settings.colorval_button }}" class="noselect view  btn" type="button"><i class="far fa-file-alt"></i>Ansehen</button>
+    <a style="text-decoration: none;color:{{ settings.colorval_zurueck_button }}" class="noselect back btn" href="/menu/{{form.parent_menu.pk}}">&#171; Zurück </a>
   </div>
 </form>
 
