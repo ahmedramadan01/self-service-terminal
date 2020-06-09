@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['constants_9',['constants',['../namespaceself__service__terminal_1_1constants.html',1,'self_service_terminal']]],
-  ['selfserviceterminalconfig_10',['SelfServiceTerminalConfig',['../classself__service__terminal_1_1apps_1_1_self_service_terminal_config.html',1,'self_service_terminal::apps']]]
+  ['terminal_5fsettings_17',['Terminal_Settings',['../classself__service__terminal_1_1models_1_1_terminal___settings.html',1,'self_service_terminal::models']]],
+  ['terminal_5fsettingsadmin_18',['Terminal_SettingsAdmin',['../classself__service__terminal_1_1admin_1_1_terminal___settings_admin.html',1,'self_service_terminal::admin']]],
+  ['time_5fsince_5flast_5fupdated_19',['time_since_last_updated',['../classself__service__terminal_1_1models_1_1_form.html#adbbf12cf5b451ddfe09acb9763ad5028',1,'self_service_terminal::models::Form']]],
+  ['time_5fsince_5flast_5fupdated_5fstr_20',['time_since_last_updated_str',['../classself__service__terminal_1_1models_1_1_form.html#a62094639e6dfb61dc27a004a7e51e8f2',1,'self_service_terminal::models::Form']]]
 ];

@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['_5f_5fstr_5f_5f_0',['__str__',['../classself__service__terminal_1_1models_1_1_terminal___settings.html#ac2d14a182dc6e232f1485896c74167d5',1,'self_service_terminal.models.Terminal_Settings.__str__()'],['../classself__service__terminal_1_1models_1_1_menu.html#a5b4e27681661efe9d3806bfc991d5d6e',1,'self_service_terminal.models.Menu.__str__()']]]
+  ['form_0',['Form',['../classself__service__terminal_1_1models_1_1_form.html',1,'self_service_terminal::models']]],
+  ['formadmin_1',['FormAdmin',['../classself__service__terminal_1_1admin_1_1_form_admin.html',1,'self_service_terminal::admin']]],
+  ['forminline_2',['FormInline',['../classself__service__terminal_1_1admin_1_1_form_inline.html',1,'self_service_terminal::admin']]],
+  ['formtestcase_3',['FormTestCase',['../classself__service__terminal_1_1tests_1_1_form_test_case.html',1,'self_service_terminal::tests']]]
 ];
