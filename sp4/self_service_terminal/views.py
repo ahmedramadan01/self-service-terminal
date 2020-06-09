@@ -86,7 +86,7 @@ def formular(request, form_id=None, form_title=None):
             )
         img_url = form.pdffile.url.rsplit('.', maxsplit=1)[0] + '.jpg'
     except Exception:
-        img_url = settings.krankenkasse_logo.url
+        img_url = settings.insurance_logo.url
 
     parent_page_number = request.GET.get('page')
 

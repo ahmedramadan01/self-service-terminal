@@ -28,7 +28,7 @@ class Terminal_SettingsAdmin(ImportExportModelAdmin):
                 'colorval_button',
                 'colorval_zurueck_button']
              }),
-        ('Logos', {'fields': ['institute_logo', 'krankenkasse_logo']})
+        ('Logos', {'fields': ['institute_logo', 'insurance_logo']})
     ]
 
 

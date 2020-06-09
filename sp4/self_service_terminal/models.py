@@ -25,7 +25,7 @@ class Terminal_Settings(models.Model):
         max_length=7, blank=True, default='')
     institute_logo = models.ImageField(
         upload_to='images', default='static/Tu-ilmenauLogo.png', blank=True)
-    krankenkasse_logo = models.ImageField(
+    insurance_logo = models.ImageField(
         upload_to='images', default='static/Logo_AOK_PLUS.svg.png', blank=True)
 
     def __str__(self):
