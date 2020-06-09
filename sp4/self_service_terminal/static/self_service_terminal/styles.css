@@ -8,6 +8,7 @@ header{
   justify-content: flex-end;
   align-items: flex-end;
   height:65px ;
+  display: -webkit-flex;
 }
 
 #nav-bar{
@@ -20,26 +21,14 @@ header{
   width: 100px;
  height: 34px;
  align-self: center;
+ margin-right: 25px;
 }
 
 /* aok logo */
 #right-logo{
  width: 75px;
  height: 80px;
-}
-
-#left-link{    
-  margin-right: 25px;
-}
-
-#right-link{
-  margin-right: 50px;
-}
-
-img {
-  max-width: 100%;
-  max-height: 100%;
-  display: block;
+ margin-right: 50px;
 }
 
 .customer,
@@ -68,26 +57,28 @@ h1 {
 }
 
 .btn-container {
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 600px;
-  margin-top: 100px;
+  /* height: 600px;
+  margin-top: 100px; */
 }
 .grey {
   color: grey;
   padding-left: 50px;
 }
-#up {
+/* #up {
   height: 630px;
-  /* border: red solid 3px; */
+  border: red solid 3px;
 }
 #down {
   height: 270px;
-  /* border: black solid 3px; */
-}
+  border: black solid 3px;
+} */
 .frequent {
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -110,6 +101,7 @@ h1 {
   padding-left: 10px;
 }
 .menu {
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -159,6 +151,8 @@ h1 {
 }
 
 .btn {
+  margin: 10px;
+  text-decoration: none;
   transition: all 0.05s;
 }
 

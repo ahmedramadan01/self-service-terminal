@@ -1,6 +1,8 @@
 from django.urls import path
-
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 # TODO Customize error view to automatically return to homepage
 
@@ -16,3 +18,6 @@ urlpatterns = [
     path('dtl/<int:menu_id>/', views.menu_template_test),
     path('dtl/', views.menu_template_test)
 ]
+ 
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
