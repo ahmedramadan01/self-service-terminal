@@ -16,7 +16,7 @@ Install the necessary pip packages
 > $ pip install django django-import-export mod_wsgi Pillow pdf2image
 
 TODO Setup WLAN
-
+(there is an official tutorial: https://www.raspberrypi.org/documentation/configuration/wireless/access-point-routed.md)
 
 (optional) Setup remote printer access via CUPS
 > $ sudo usermod -a -G lpadmin $USER
