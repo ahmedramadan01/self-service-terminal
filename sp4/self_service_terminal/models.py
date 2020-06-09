@@ -9,21 +9,7 @@ from .constants import *
 
 
 class Terminal_Settings(models.Model):
-    """Model the settings of the self service terminal.
-    
-    dieser Class hat 10 attribute title, description, homepage, colorval_nav_bar, colorval_heading,colorval_text,colorval_button
-    colorval_zurueck_button,  institute_logo,krankenkasse_logo
-    Title attr: ein Title erstellen, 
-    description attr:beschreibt was diese instance ueberhaupt macht.
-    homepage:verbinden mit Menu Form
-    colorval_nav_bar:Das color von navbar zu aendern
-    colorval_heading:Das color von navbar zu aendern
-    colorval_button:Das color von navbar zu aendern
-    colorval_text:Das color von navbar zu aendern
-    colorval_zueruck_button:Das color von navbar zu aendern
-    institute_logo: Das logo von Institute zu wechseln
-    krankenkasse_logo:Das logo von krankenkasse zu wechseln
-    """
+    """Model the settings of the self service terminal."""
     title = models.CharField(max_length=TITLE_LENGTH)
     description = models.TextField()
     homepage = models.OneToOneField(
@@ -40,7 +26,6 @@ class Terminal_Settings(models.Model):
         upload_to='images', default='static/Logo_AOK_PLUS.svg.png', blank=True)
 
     def __str__(self):
-        """return the instance of this class durch dem title"""
         return self.title
 
 
@@ -52,7 +37,6 @@ class Menu(models.Model):
     menu_title = models.CharField(max_length=TITLE_LENGTH)
     menu_text = models.TextField(blank=True)
     def __str__(self):
-        """return the instance of this class durch menu_title"""
         return self.menu_title
 
 
