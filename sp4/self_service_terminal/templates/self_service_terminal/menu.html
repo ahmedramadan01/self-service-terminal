@@ -36,7 +36,7 @@
         {% endif %}
 
         {% if entry.is_form %}
-            <a style="text-decoration: none;color:{{ settings.colorval_button }}" class="noselect year btn form" href="/form/{{ entry.object.pk }}">{{ entry.object.form_title }}</a>
+            <a style="text-decoration: none;color:{{ settings.colorval_button }}" class="noselect year btn form" href="/form/{{ entry.object.pk }}?page={{ page_obj.number }}">{{ entry.object.form_title }}</a>
         {% endif %}
     {% endfor %}
 

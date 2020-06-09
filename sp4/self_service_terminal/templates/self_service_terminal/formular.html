@@ -22,7 +22,7 @@
     <!---->
 
     <!-- <button class="noselect print btn" type="button"><i class="fas fa-print"></i>Drucken</button> -->
-    <a style="text-decoration: none;color:{{ settings.colorval_zurueck_button }}" class="noselect back btn" href="/menu/{{ form.parent_menu.pk }}">&#171; Zurück </a>
+    <a style="text-decoration: none;color:{{ settings.colorval_zurueck_button }}" class="noselect back btn" href="/menu/{{ form.parent_menu.pk }}?page={{ parent_page_number }}">&#171; Zurück </a>
   </div>
 </form>
 

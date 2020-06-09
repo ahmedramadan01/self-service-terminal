@@ -30,11 +30,6 @@ def index(request):
 
 def menu(request, menu_id=None, menu_title=None):
     """Return the menu site with the primary key <menu_id>.
-
-    Parameters:
-    - menu object
-    - list of submenu objects
-    - list of subforms objects
     """
     settings = get_settings()
 
@@ -47,6 +42,7 @@ def menu(request, menu_id=None, menu_title=None):
 
     # Get the current page from the HTTP Request
     page_number = request.GET.get('page')
+
     # Get all objects that are allowed on the current page
     page_obj = paginator.get_page(page_number)
 
@@ -68,13 +64,12 @@ def menu(request, menu_id=None, menu_title=None):
 
 def formular(request, form_id=None, form_title=None):
     """Return the form site with the primary key <form_id>.
-
-    Parameters:
-    - form object
     """
     settings = get_settings()
+
     form = Form.objects.get(pk=form_id)
 
+    # Convert first page of pdffile to jpg and save it
     try:
         path = form.pdffile.path
         folder = path.rsplit('/', maxsplit=1)[0]
@@ -93,10 +88,13 @@ def formular(request, form_id=None, form_title=None):
     except Exception:
         img_url = settings.krankenkasse_logo.url
 
+    parent_page_number = request.GET.get('page')
+
     context = {
         'settings': settings,
         'form': form,
-        'img_path': img_url
+        'img_path': img_url,
+        'parent_page_number': parent_page_number
     }
     return render(request, 'self_service_terminal/formular.html', context)
 
