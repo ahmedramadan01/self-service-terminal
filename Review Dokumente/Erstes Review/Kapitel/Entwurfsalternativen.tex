@@ -1,0 +1,15 @@
+\section{Entwurfsentscheidungen}
+\subsection{Webframework}
+Wir haben uns für das Webframework \href{https://www.djangoproject.com/}{Django} entschieden. Gründe dafür sind unter anderem die \href{https://docs.djangoproject.com/en/3.0/faq/general/#faq-mtv}{Abstraktion von Daten und Verhalten im MTV} Prinzip, die bestehende Integration von objektrelationalen Abbildungen für populäre Datenbanksysteme wie MySQL, PostgreSQL oder SQLite. Auch eine automatisch generierte Administratorseite und Djangos Templatesprache zur Generierung von HTML sprachen für Django. Außerdem bietet Django einige Erweiterungen an, die häufige Probleme der Webentwicklung lösen, und es enthält eine sehr ausführliche Dokumentation. \\
+
+\noindent Eine Alternative wäre das in Python geschriebene Webframework Flask. Flask hängt im Gegensatz zu Django nur von der Jinja2 Template Engine und dem WSGI Toolset "`Werkzeug"' ab. Andere Funktionalitäten, wie zum Beispiel objektrelationale Abbildungen, sind nur als Erweiterungen verfügbar.
+Flask wurde später als Django veröffentlicht. Deshalb gibt es für Django eine größere Anzahl von Plugins und Erweiterungen. \\
+
+\noindent 
+Web2py ist ein freies Webframework für die agile Entwicklung von datenbankbasierten Webanwendungen, welches ebenfalls in Python geschrieben ist. Im Vergleich zu Django hält sich web2py eher an das MVC Prinzip. Es erkennt und rendert Views automatisch. Sein Templatesystem ist keine eigenständige Sprache, sondern besteht aus Pythoncode.
+\newpage
+\subsection{Programmiersprache}
+Zu Beginn des Projektes hatten wir die Wahl zwischen Node.js und Python. Wir haben uns schlussendlich für Python entschieden, da uns die Nutzung des Django Frameworks vielversprechend erschien und Django nur in Verbindung mit Python zu betreiben ist. Der Vorteil in der Nutzung von Node.js hätte in der Asynchronität der IO Operationen gelegen.
+\vspace{1,5cm}
+\subsection{Datenbank}
+Wir haben uns für SQLite als Datenbanksystem entschieden. SQLite weist eine geringe Komplexität und eine geringe Größe auf, eine Datenbank besteht nur aus einer Datei. Unsere Anwendung benötigt nicht viele Schreibzugriffe in kurzer Zeit und es ist auch keine paralleles Schreiben nötig, weshalb SQLite ausreichend ist. SQLite besitzt zudem kein Usermanagement, was aber auch für unsere Anwendung nicht benötigt wird.

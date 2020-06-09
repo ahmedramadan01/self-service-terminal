@@ -1,13 +1,22 @@
 from django.shortcuts import render, HttpResponse
 from .models import Menu, Form, Terminal_Settings
 
+from pdf2image import convert_from_path
+import os
+
+# TEMP: Define the settings as the first entry of all Terminal_Settings
+# settings = list(Terminal_Settings.objects.all())[0]
+def get_settings():
+    return list(Terminal_Settings.objects.all())[0]
 
 def index(request):
+    settings = get_settings()
     homepage_id = list(Terminal_Settings.objects.all())[0].homepage_id
     homepage = Menu.objects.get(pk=homepage_id)
     submenus = list(Menu.objects.filter(parent_menu=homepage_id))
     subforms = list(Form.objects.filter(parent_menu=homepage_id))
     context = {
+        'settings': settings,
         'menu': homepage,
         'submenus': submenus,
         'subforms': subforms
@@ -20,17 +29,19 @@ in the database then return the homepage."""
 
 
 def menu(request, menu_id=None, menu_title=None):
-    """TODO Return the menu with the primary key <menu_id>.
+    """Return the menu with the primary key <menu_id>.
 
     Parameters:
     - menu object
     - list of submenu objects
     - list of subforms objects
     """
+    settings = get_settings()
     menu = Menu.objects.get(pk=menu_id)
     submenus = list(Menu.objects.filter(parent_menu=menu_id))
     subforms = list(Form.objects.filter(parent_menu=menu_id))
     context = {
+        'settings': settings,
         'menu': menu,
         'submenus': submenus,
         'subforms': subforms
@@ -39,32 +50,55 @@ def menu(request, menu_id=None, menu_title=None):
 
 
 def formular(request, form_id=None, form_title=None):
-    """TODO Return the form with the primary key <form_id>.
+    """Return the form with the primary key <form_id>.
 
     Parameters:
     - form object
     """
+    settings = get_settings()
     form = Form.objects.get(pk=form_id)
+
+    try:
+        path = form.pdffile.path
+        folder = path.rsplit('/', maxsplit=1)[0]
+        img_path = form.pdffile.path.split('.')[0]
+        if not os.path.isfile(img_path):
+            convert_from_path(
+                form.pdffile.path,
+                output_folder=folder,
+                first_page=1,
+                last_page=1,
+                fmt='jpeg',
+                single_file=True,
+                output_file=img_path
+            )
+        img_url = form.pdffile.url.rsplit('.', maxsplit=1)[0] + '.jpg'
+    except Exception:
+        img_url = settings.krankenkasse_logo.url
+
     context = {
-        'form': form
+        'settings': settings,
+        'form': form,
+        'img_path': img_url
     }
     return render(request, 'self_service_terminal/formular.html', context)
 
 
 def print_formular(request, form_id=None):
-    """TODO Just run the print function of the given form 
-    and do not change the current page"""
-    # Form.objects.get(pk=form_id).print_form()
+    """Run the print method of the given form object
+    and return a HTTP 204 No Content response."""
+    Form.objects.get(pk=form_id).print_form()
     return HttpResponse(status=204)
 
+
 # Testview für die Django Templatesprache
-
-
 def menu_template_test(request, menu_id=None, menu_title=None):
+    settings = get_settings()
     menu = Menu.objects.get(pk=menu_id)
     submenus = list(Menu.objects.filter(parent_menu=menu_id))
     subforms = list(Form.objects.filter(parent_menu=menu_id))
     context = {
+        'settings': settings,
         'menu': menu,
         'submenus': submenus,
         'subforms': subforms,
