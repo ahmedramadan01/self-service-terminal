@@ -11,6 +11,8 @@ def get_settings():
     return list(Terminal_Settings.objects.all())[0]
 
 def index(request):
+    """Render and return the homepage.
+    """
     settings = get_settings()
 
     homepage_id = list(Terminal_Settings.objects.all())[0].homepage_id

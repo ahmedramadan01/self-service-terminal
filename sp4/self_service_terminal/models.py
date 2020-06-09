@@ -11,10 +11,14 @@ from .constants import *
 class Terminal_Settings(models.Model):
     """Model the settings of the self service terminal.
     
-    
+    Contains settings fields for the colors and logos of the user interface.
+    Values must be valid for CSS. Example: #aabbcc or black
+    Sets the homepage menu.
+    Title and description fields are deprecated.
     """
     title = models.CharField(max_length=TITLE_LENGTH)
     description = models.TextField()
+
     homepage = models.OneToOneField(
         'Menu', on_delete=models.CASCADE, blank=True, null=True)
     colorval_nav_bar = models.CharField(max_length=7, blank=True, default='')
@@ -33,18 +37,28 @@ class Terminal_Settings(models.Model):
 
 
 class Menu(models.Model):
-    """Model the menus and submenus of the self service terminal."""
+    """Model the menus and submenus of the self service terminal.
+    
+    Is linked to its parent menu via a ForeignKey Field. Contains only its 
+    title and some descriptive text.
+    """
     settings = models.ForeignKey(Terminal_Settings, on_delete=models.CASCADE)
     parent_menu = models.ForeignKey(
         'self', on_delete=models.CASCADE, blank=True, null=True)
     menu_title = models.CharField(max_length=TITLE_LENGTH)
     menu_text = models.TextField(blank=True)
+
     def __str__(self):
         return self.menu_title
 
 
 class Form(models.Model):
-    """Model the forms to be accessed via the self service terminal."""
+    """Model the forms to be accessed via the self service terminal.
+    
+    Is linked to its parent menu via a ForeignKey Field. Contains a File
+    Field for the PDF forms it will hold. Has some info about its upload date
+    and last change. Has a title and some descriptive text.
+    """
     parent_menu = models.ForeignKey('Menu', on_delete=models.CASCADE)
     pdffile = models.FileField(upload_to='forms', null=True, blank=True)
     upload_date = models.DateTimeField(auto_now_add=True)
@@ -70,7 +84,9 @@ class Form(models.Model):
             print('Printing', self.pdffile.name)
 
     def time_since_last_updated(self):
-        """Return a tuple in the form (days, hours, minutes)."""
+        """Return the time passed since the form was updated.
+        
+        Return a tuple in the form (days, hours, minutes)."""
         delta = timezone.now() - self.last_changed
         days = delta.days
         hours = int((delta.seconds / 60) / 60)
