@@ -1,4 +1,5 @@
-"""The one and only source for constants."""
+"""Constants for the whole project."""
+
 TITLE_LENGTH = 100
-# Here goes the default system printer name
 PRINTER = "some_name"
+BUTTONS_PER_PAGE = 5
