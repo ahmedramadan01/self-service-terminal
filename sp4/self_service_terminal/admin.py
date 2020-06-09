@@ -1,3 +1,9 @@
+"""Customizations for the admin site.
+
+This document defines among other things which fields appear on the admin page 
+and can be edited.
+"""
+
 from django.contrib import admin
 
 from .models import Form, Menu, Terminal_Settings
@@ -52,6 +58,3 @@ class FormAdmin(ImportExportModelAdmin):
     list_display = ['form_title', 'time_since_last_updated_str',
                     'upload_date', 'last_changed']
     list_filter = ['upload_date', 'last_changed']
-
-# admin.site.register(Terminal_Settings, Terminal_SettingsAdmin)
-# admin.site.register(Menu, MenuAdmin)

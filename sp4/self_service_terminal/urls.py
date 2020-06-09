@@ -1,3 +1,6 @@
+"""Defines the URL Patterns used in the project.
+"""
+
 from django.urls import path
 from . import views
 from django.conf import settings

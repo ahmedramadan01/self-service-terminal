@@ -1,3 +1,7 @@
+"""Source for automated tests. Currently just experiments, no systematic 
+testing.
+"""
+
 from django.test import TestCase
 from .models import Terminal_Settings, Menu, Form
 import datetime
