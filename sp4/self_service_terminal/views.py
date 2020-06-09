@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render, HttpResponse
 from .models import Menu, Form, Terminal_Settings
 
@@ -97,12 +98,27 @@ def menu_template_test(request, menu_id=None, menu_title=None):
     menu = Menu.objects.get(pk=menu_id)
     submenus = list(Menu.objects.filter(parent_menu=menu_id))
     subforms = list(Form.objects.filter(parent_menu=menu_id))
+    
+    # Fill the paginator with all submenus and subforms
+    paginator = Paginator(submenus + subforms, 5)
+
+    # Get the current page from the HTTP Request
+    page_number = request.GET.get('page')
+    # Get all objects that are allowed on the current page
+    page_obj = paginator.get_page(page_number)
+
+    # Add option to test for Menu and Form object
+    for i in range(len(page_obj.object_list)):
+        page_obj.object_list[i] = {
+            'object': page_obj.object_list[i],
+            'is_menu': type(page_obj.object_list[i]) is Menu,
+            'is_form': type(page_obj.object_list[i]) is Form
+        }
+    print(page_obj.object_list)
+
     context = {
         'settings': settings,
         'menu': menu,
-        'submenus': submenus,
-        'subforms': subforms,
-        'miep': 'Was?!',
-        'range': list(range(10))
+        'page_obj': page_obj
     }
     return render(request, 'self_service_terminal/dtl_test.html', context)
