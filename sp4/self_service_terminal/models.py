@@ -9,7 +9,10 @@ from .constants import *
 
 
 class Terminal_Settings(models.Model):
-    """Model the settings of the self service terminal."""
+    """Model the settings of the self service terminal.
+    
+    wir koennen mit dieser class viele sachen machen
+    """
     title = models.CharField(max_length=TITLE_LENGTH)
     description = models.TextField()
     homepage = models.OneToOneField(
@@ -26,6 +29,7 @@ class Terminal_Settings(models.Model):
         upload_to='images', default='static/Logo_AOK_PLUS.svg.png', blank=True)
 
     def __str__(self):
+        """return the instance of this class"""
         return self.title
 
 

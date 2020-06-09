@@ -1,0 +1,77 @@
+\hypertarget{classself__service__terminal_1_1models_1_1_form}{}\doxysection{self\+\_\+service\+\_\+terminal.\+models.\+Form Class Reference}
+\label{classself__service__terminal_1_1models_1_1_form}\index{self\_service\_terminal.models.Form@{self\_service\_terminal.models.Form}}
+Inheritance diagram for self\+\_\+service\+\_\+terminal.\+models.\+Form\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classself__service__terminal_1_1models_1_1_form}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classself__service__terminal_1_1models_1_1_form_aa9cf02f243abdb6149580bfb2b5f5e46}{print\+\_\+form}} (self, number\+\_\+of\+\_\+copies=1)
+\item 
+def \mbox{\hyperlink{classself__service__terminal_1_1models_1_1_form_adbbf12cf5b451ddfe09acb9763ad5028}{time\+\_\+since\+\_\+last\+\_\+updated}} (self)
+\item 
+def \mbox{\hyperlink{classself__service__terminal_1_1models_1_1_form_a62094639e6dfb61dc27a004a7e51e8f2}{time\+\_\+since\+\_\+last\+\_\+updated\+\_\+str}} (self)
+\item 
+\mbox{\Hypertarget{classself__service__terminal_1_1models_1_1_form_aa528a08a125141c264922cc056ba38ff}\label{classself__service__terminal_1_1models_1_1_form_aa528a08a125141c264922cc056ba38ff}} 
+def {\bfseries \+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classself__service__terminal_1_1models_1_1_form_afc1371f783fd75a7f1a681747434f137}\label{classself__service__terminal_1_1models_1_1_form_afc1371f783fd75a7f1a681747434f137}} 
+{\bfseries parent\+\_\+menu} = models.\+Foreign\+Key(\textquotesingle{}\mbox{\hyperlink{classself__service__terminal_1_1models_1_1_menu}{Menu}}\textquotesingle{}, on\+\_\+delete=models.\+C\+A\+S\+C\+A\+DE)
+\item 
+\mbox{\Hypertarget{classself__service__terminal_1_1models_1_1_form_ad83ce21a0d8db2ba5a18a2d95d6adfcc}\label{classself__service__terminal_1_1models_1_1_form_ad83ce21a0d8db2ba5a18a2d95d6adfcc}} 
+{\bfseries pdffile} = models.\+File\+Field(upload\+\_\+to=\textquotesingle{}forms\textquotesingle{}, null=True, blank=True)
+\item 
+\mbox{\Hypertarget{classself__service__terminal_1_1models_1_1_form_a66f6f232e0e8d58a9db78db6a97753f7}\label{classself__service__terminal_1_1models_1_1_form_a66f6f232e0e8d58a9db78db6a97753f7}} 
+{\bfseries upload\+\_\+date} = models.\+Date\+Time\+Field(auto\+\_\+now\+\_\+add=True)
+\item 
+\mbox{\Hypertarget{classself__service__terminal_1_1models_1_1_form_a5d92421f56d24b126428110b06b7d74a}\label{classself__service__terminal_1_1models_1_1_form_a5d92421f56d24b126428110b06b7d74a}} 
+{\bfseries last\+\_\+changed} = models.\+Date\+Time\+Field(auto\+\_\+now=True)
+\item 
+\mbox{\Hypertarget{classself__service__terminal_1_1models_1_1_form_ac539857c12cbc2c4723fc9db7e1527b3}\label{classself__service__terminal_1_1models_1_1_form_ac539857c12cbc2c4723fc9db7e1527b3}} 
+{\bfseries show\+\_\+on\+\_\+frontend} = models.\+Boolean\+Field(default=False)
+\item 
+\mbox{\Hypertarget{classself__service__terminal_1_1models_1_1_form_a9d9f1e15877294e016bbd77b3044f1a8}\label{classself__service__terminal_1_1models_1_1_form_a9d9f1e15877294e016bbd77b3044f1a8}} 
+{\bfseries form\+\_\+title} = models.\+Char\+Field(max\+\_\+length=T\+I\+T\+L\+E\+\_\+\+L\+E\+N\+G\+TH, default=\char`\"{}Formular\char`\"{})
+\item 
+\mbox{\Hypertarget{classself__service__terminal_1_1models_1_1_form_a2d7fcac585af2a159645882631bf39a5}\label{classself__service__terminal_1_1models_1_1_form_a2d7fcac585af2a159645882631bf39a5}} 
+{\bfseries description} = models.\+Text\+Field(blank=True)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Model the forms to be accessed via the self service terminal.\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classself__service__terminal_1_1models_1_1_form_aa9cf02f243abdb6149580bfb2b5f5e46}\label{classself__service__terminal_1_1models_1_1_form_aa9cf02f243abdb6149580bfb2b5f5e46}} 
+\index{self\_service\_terminal.models.Form@{self\_service\_terminal.models.Form}!print\_form@{print\_form}}
+\index{print\_form@{print\_form}!self\_service\_terminal.models.Form@{self\_service\_terminal.models.Form}}
+\doxysubsubsection{\texorpdfstring{print\_form()}{print\_form()}}
+{\footnotesize\ttfamily def self\+\_\+service\+\_\+terminal.\+models.\+Form.\+print\+\_\+form (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{number\+\_\+of\+\_\+copies = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Print the document using the linux command lpr.\end{DoxyVerb}
+ \mbox{\Hypertarget{classself__service__terminal_1_1models_1_1_form_adbbf12cf5b451ddfe09acb9763ad5028}\label{classself__service__terminal_1_1models_1_1_form_adbbf12cf5b451ddfe09acb9763ad5028}} 
+\index{self\_service\_terminal.models.Form@{self\_service\_terminal.models.Form}!time\_since\_last\_updated@{time\_since\_last\_updated}}
+\index{time\_since\_last\_updated@{time\_since\_last\_updated}!self\_service\_terminal.models.Form@{self\_service\_terminal.models.Form}}
+\doxysubsubsection{\texorpdfstring{time\_since\_last\_updated()}{time\_since\_last\_updated()}}
+{\footnotesize\ttfamily def self\+\_\+service\+\_\+terminal.\+models.\+Form.\+time\+\_\+since\+\_\+last\+\_\+updated (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a tuple in the form (days, hours, minutes).\end{DoxyVerb}
+ \mbox{\Hypertarget{classself__service__terminal_1_1models_1_1_form_a62094639e6dfb61dc27a004a7e51e8f2}\label{classself__service__terminal_1_1models_1_1_form_a62094639e6dfb61dc27a004a7e51e8f2}} 
+\index{self\_service\_terminal.models.Form@{self\_service\_terminal.models.Form}!time\_since\_last\_updated\_str@{time\_since\_last\_updated\_str}}
+\index{time\_since\_last\_updated\_str@{time\_since\_last\_updated\_str}!self\_service\_terminal.models.Form@{self\_service\_terminal.models.Form}}
+\doxysubsubsection{\texorpdfstring{time\_since\_last\_updated\_str()}{time\_since\_last\_updated\_str()}}
+{\footnotesize\ttfamily def self\+\_\+service\+\_\+terminal.\+models.\+Form.\+time\+\_\+since\+\_\+last\+\_\+updated\+\_\+str (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a string in german with days, hours, minutes since last updated.\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sp4/self\+\_\+service\+\_\+terminal/models.\+py\end{DoxyCompactItemize}
