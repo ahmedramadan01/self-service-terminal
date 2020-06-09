@@ -9,7 +9,10 @@ from .constants import *
 
 
 class Terminal_Settings(models.Model):
-    """Model the settings of the self service terminal."""
+    """Model the settings of the self service terminal.
+    
+    
+    """
     title = models.CharField(max_length=TITLE_LENGTH)
     description = models.TextField()
     homepage = models.OneToOneField(
@@ -51,7 +54,13 @@ class Form(models.Model):
     description = models.TextField(blank=True)
 
     def print_form(self, number_of_copies=1):
-        """ Print the document using the linux command lpr."""
+        """ Print the document.
+        
+        Print the pdffile. The command is passed to the Linux operating system 
+        using the Python STL module subprocess. If the command run() returns 1, 
+        an error message is issued and the contents of stderr is printed with 
+        print().
+        """
         args = ['lpr', self.pdffile.path]
         result = subprocess.run(args, capture_output=True)
         if result.returncode:
