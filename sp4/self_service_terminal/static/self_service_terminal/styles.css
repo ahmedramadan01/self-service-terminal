@@ -183,7 +183,7 @@ align-items: center;
   /* Internet Explorer/Edge */
   user-select: none;
   /* Non-prefixed version, currently
-                                  supported by Chrome, Opera and Firefox */
+  supported by Chrome, Opera and Firefox */
 }
 
 .fa-print,
@@ -204,19 +204,9 @@ align-items: center;
 }
 
 .isDisabled {
-  width: wrap;
-  height: wrap;
-  padding: 8px 13px;
-  border-radius: 8px;
-  border-style: solid;
-  border-color: grey;
-  background-color: transparent;
-  color: grey;
-  font-size: 25px;
   opacity: 0.3;
-  margin: 10px;
-
 }
+
 .current{ 
   text-align: center;
   font-size: 25px;

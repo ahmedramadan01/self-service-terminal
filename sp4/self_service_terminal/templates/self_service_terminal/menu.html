@@ -12,8 +12,6 @@
     </p>
 </div>
 
-
-
 {% if page_obj.paginator.num_pages != 1 %}
 <div class="current">
     Seite {{ page_obj.number }} von {{ page_obj.paginator.num_pages }}
@@ -22,17 +20,17 @@
 
 <nav>
 <div class="previous-page">
-    {% if page_obj.paginator.num_pages != 1 %}
-        
+    
+    {% if page_obj.paginator.num_pages != 1 %}  
         {% if page_obj.has_previous %}
             <a class="btn navigation" href="?page=1">&laquo; erste</a>
             <a class="btn navigation" href="?page={{ page_obj.previous_page_number }}">vorherige</a>
         {% else  %}
-            <p class="noselect isDisabled">&laquo; erste</p>
-            <p class="noselect isDisabled">vorherige</p>
+            <p class="btn navigation noselect isDisabled">&laquo; erste</p>
+            <p class="btn navigation noselect isDisabled">vorherige</p>
         {% endif %}
-        
     {% endif %}
+
 </div>
 </nav>
 
@@ -60,17 +58,17 @@
 
 </nav>
 <div class="next-page">
+    
     {% if page_obj.paginator.num_pages != 1 %}
-        
         {% if page_obj.has_next %}
             <a class="btn navigation" href="?page={{ page_obj.next_page_number }}">nächste</a>
             <a class="btn navigation" href="?page={{ page_obj.paginator.num_pages }}">letzte &raquo;</a>
         {% else %}
-            <p class="noselect isDisabled">nächste</p>
-            <p class="noselect isDisabled">letzte &raquo;</p>
+            <p class="btn navigation noselect isDisabled">nächste</p>
+            <p class="btn navigation noselect isDisabled">letzte &raquo;</p>
         {% endif %}
-        
     {% endif %}
+    
 </div>
 </nav>
 
