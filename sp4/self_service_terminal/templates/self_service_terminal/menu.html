@@ -20,50 +20,58 @@
 </div>
 {% endif %}
 
-<div id="old">
+<nav>
+<div class="previous-page">
     {% if page_obj.paginator.num_pages != 1 %}
-    {% if page_obj.has_previous %}
-    <a class="btn navigation" href="?page=1">&laquo; erste</a>
-    <a class="btn navigation" href="?page={{ page_obj.previous_page_number }}">vorherige</a>
-    {% else  %}
-    <p class="noselect isDisabled">&laquo; erste</p>
-    <p class="noselect isDisabled">vorherige</p>
+        
+        {% if page_obj.has_previous %}
+            <a class="btn navigation" href="?page=1">&laquo; erste</a>
+            <a class="btn navigation" href="?page={{ page_obj.previous_page_number }}">vorherige</a>
+        {% else  %}
+            <p class="noselect isDisabled">&laquo; erste</p>
+            <p class="noselect isDisabled">vorherige</p>
+        {% endif %}
+        
     {% endif %}
-    {% endif %}
+</div>
+</nav>
 
-
+<div class="button-block">
     <div class="btn-container">
-
         {% for entry in page_obj.object_list %}
-        {% if entry.is_menu %}
-        <a style="color:{{ settings.colorval_button }}" class="noselect year btn"
-            href="/menu/{{ entry.object.pk }}">{{ entry.object.menu_title }}</a>
-        {% endif %}
+            {% if entry.is_menu %}
+            <a style="color:{{ settings.colorval_button }}" class="noselect view btn"
+                href="/menu/{{ entry.object.pk }}">{{ entry.object.menu_title }}</a>
+            {% endif %}
 
-        {% if entry.is_form %}
-        <a style="color:{{ settings.colorval_button }}" class="noselect year btn"
-            href="/form/{{ entry.object.pk }}?page={{ page_obj.number }}">{{ entry.object.form_title }}</a>
-        {% endif %}
+            {% if entry.is_form %}
+            <a style="color:{{ settings.colorval_button }}" class="noselect view btn"
+                href="/form/{{ entry.object.pk }}?page={{ page_obj.number }}">{{ entry.object.form_title }}</a>
+            {% endif %}
         {% endfor %}
 
         {% if settings.homepage_id != menu.pk %}
-        <a style="color:{{ settings.colorval_zurueck_button }}" class="noselect back btn"
-            href="/menu/{{ menu.parent_menu.pk }}">
-            &#171; Zurück </a>
+            <a style="color:{{ settings.colorval_zurueck_button }}" class="noselect back btn"
+                href="/menu/{{ menu.parent_menu.pk }}">
+                &#171; Zurück </a>
         {% endif %}
-
-
-
     </div>
+</div>
+
+</nav>
+<div class="next-page">
     {% if page_obj.paginator.num_pages != 1 %}
-    {% if page_obj.has_next %}
-    <a class="btn navigation" href="?page={{ page_obj.next_page_number }}">nächste</a>
-    <a class="btn navigation" href="?page={{ page_obj.paginator.num_pages }}">letzte &raquo;</a>
-    {% else %}
-    <p class="noselect isDisabled">nächste</p>
-    <p class="noselect isDisabled">letzte &raquo;</p>
-    {% endif %}
+        
+        {% if page_obj.has_next %}
+            <a class="btn navigation" href="?page={{ page_obj.next_page_number }}">nächste</a>
+            <a class="btn navigation" href="?page={{ page_obj.paginator.num_pages }}">letzte &raquo;</a>
+        {% else %}
+            <p class="noselect isDisabled">nächste</p>
+            <p class="noselect isDisabled">letzte &raquo;</p>
+        {% endif %}
+        
     {% endif %}
 </div>
+</nav>
 
 {% endblock content %}

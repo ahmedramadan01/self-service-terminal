@@ -62,7 +62,7 @@ h1 {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  }
+}
 
 .grey {
   color: grey;
@@ -222,4 +222,30 @@ align-items: center;
   font-size: 25px;
 }
 
+.previous-page{
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 20%; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 500px;
+}
 
+.next-page{
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 20%; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  right: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 500px;
+}
+
+.button-block{
+  padding-top: 0%;
+  padding-left: 30%;
+  padding-right: 30%;
+}
