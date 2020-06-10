@@ -1,0 +1,426 @@
+\begin{theindex}
+
+  \item {\_\_str\_\_}
+    \subitem {self\_service\_terminal.models.Form}, \hyperpage{22}
+    \subitem {self\_service\_terminal.models.Menu}, \hyperpage{26}
+    \subitem {self\_service\_terminal.models.Terminal\_Settings}, 
+		\hyperpage{36}
+
+  \indexspace
+
+  \item {ALLOWED\_HOSTS}
+    \subitem {sp4.settings}, \hyperpage{17}
+  \item {application}
+    \subitem {sp4.asgi}, \hyperpage{16}
+    \subitem {sp4.wsgi}, \hyperpage{20}
+  \item {AUTH\_PASSWORD\_VALIDATORS}
+    \subitem {sp4.settings}, \hyperpage{17}
+
+  \indexspace
+
+  \item {BASE\_DIR}
+    \subitem {sp4.settings}, \hyperpage{17}
+
+  \indexspace
+
+  \item {colorval\_button}
+    \subitem {self\_service\_terminal.models.Terminal\_Settings}, 
+		\hyperpage{37}
+  \item {colorval\_heading}
+    \subitem {self\_service\_terminal.models.Terminal\_Settings}, 
+		\hyperpage{37}
+  \item {colorval\_nav\_bar}
+    \subitem {self\_service\_terminal.models.Terminal\_Settings}, 
+		\hyperpage{37}
+  \item {colorval\_text}
+    \subitem {self\_service\_terminal.models.Terminal\_Settings}, 
+		\hyperpage{37}
+  \item {colorval\_zurueck\_button}
+    \subitem {self\_service\_terminal.models.Terminal\_Settings}, 
+		\hyperpage{37}
+
+  \indexspace
+
+  \item {DATABASES}
+    \subitem {sp4.settings}, \hyperpage{17}
+  \item {DEBUG}
+    \subitem {sp4.settings}, \hyperpage{17}
+  \item {dependencies}
+    \subitem {self\_service\_terminal.migrations.0001\_initial.Migration}, 
+		\hyperpage{35}
+    \subitem {self\_service\_terminal.migrations.0002\_terminal\_settings\_homepage.Migration}, 
+		\hyperpage{29}
+    \subitem {self\_service\_terminal.migrations.0003\_menu\_test\_img.Migration}, 
+		\hyperpage{31}
+    \subitem {self\_service\_terminal.migrations.0004\_menu\_menu\_texttt.Migration}, 
+		\hyperpage{32}
+    \subitem {self\_service\_terminal.migrations.0005\_remove\_menu\_menu\_texttt.Migration}, 
+		\hyperpage{33}
+    \subitem {self\_service\_terminal.migrations.0006\_remove\_menu\_test\_img.Migration}, 
+		\hyperpage{34}
+    \subitem {self\_service\_terminal.migrations.0007\_auto\_20200609\_2031.Migration}, 
+		\hyperpage{30}
+  \item {description}
+    \subitem {self\_service\_terminal.models.Form}, \hyperpage{22}
+    \subitem {self\_service\_terminal.models.Terminal\_Settings}, 
+		\hyperpage{37}
+  \item {document\_root}
+    \subitem {self\_service\_terminal.urls}, \hyperpage{13}
+
+  \indexspace
+
+  \item {extra}
+    \subitem {self\_service\_terminal.admin.FormInline}, \hyperpage{25}
+    \subitem {self\_service\_terminal.admin.MenuInline}, \hyperpage{28}
+
+  \indexspace
+
+  \item {fieldsets}
+    \subitem {self\_service\_terminal.admin.FormAdmin}, \hyperpage{24}
+    \subitem {self\_service\_terminal.admin.MenuAdmin}, \hyperpage{28}
+    \subitem {self\_service\_terminal.admin.Terminal\_SettingsAdmin}, 
+		\hyperpage{39}
+  \item {form\_title}
+    \subitem {self\_service\_terminal.models.Form}, \hyperpage{23}
+  \item {formular}
+    \subitem {self\_service\_terminal.views}, \hyperpage{14}
+
+  \indexspace
+
+  \item {get\_settings}
+    \subitem {self\_service\_terminal.views}, \hyperpage{14}
+
+  \indexspace
+
+  \item {homepage}
+    \subitem {self\_service\_terminal.models.Terminal\_Settings}, 
+		\hyperpage{38}
+
+  \indexspace
+
+  \item {IMPORT\_EXPORT\_USE\_TRANSACTIONS}
+    \subitem {sp4.settings}, \hyperpage{17}
+  \item {index}
+    \subitem {self\_service\_terminal.views}, \hyperpage{14}
+  \item {initial}
+    \subitem {self\_service\_terminal.migrations.0001\_initial.Migration}, 
+		\hyperpage{35}
+  \item {inlines}
+    \subitem {self\_service\_terminal.admin.MenuAdmin}, \hyperpage{28}
+  \item {INSTALLED\_APPS}
+    \subitem {sp4.settings}, \hyperpage{18}
+  \item {institute\_logo}
+    \subitem {self\_service\_terminal.models.Terminal\_Settings}, 
+		\hyperpage{38}
+  \item {insurance\_logo}
+    \subitem {self\_service\_terminal.models.Terminal\_Settings}, 
+		\hyperpage{38}
+
+  \indexspace
+
+  \item {LANGUAGE\_CODE}
+    \subitem {sp4.settings}, \hyperpage{18}
+  \item {last\_changed}
+    \subitem {self\_service\_terminal.models.Form}, \hyperpage{23}
+  \item {list\_display}
+    \subitem {self\_service\_terminal.admin.FormAdmin}, \hyperpage{24}
+
+  \indexspace
+
+  \item {main}
+    \subitem {manage}, \hyperpage{9}
+  \item {manage}, \hyperpage{9}
+    \subitem {main}, \hyperpage{9}
+  \item {MEDIA\_ROOT}
+    \subitem {sp4.settings}, \hyperpage{18}
+  \item {MEDIA\_URL}
+    \subitem {self\_service\_terminal.urls}, \hyperpage{13}
+    \subitem {sp4.settings}, \hyperpage{18}
+  \item {menu}
+    \subitem {self\_service\_terminal.views}, \hyperpage{14}
+  \item {menu\_template\_test}
+    \subitem {self\_service\_terminal.views}, \hyperpage{15}
+  \item {menu\_text}
+    \subitem {self\_service\_terminal.models.Menu}, \hyperpage{27}
+  \item {menu\_title}
+    \subitem {self\_service\_terminal.models.Menu}, \hyperpage{27}
+  \item {MIDDLEWARE}
+    \subitem {sp4.settings}, \hyperpage{18}
+  \item {model}
+    \subitem {self\_service\_terminal.admin.FormInline}, \hyperpage{25}
+    \subitem {self\_service\_terminal.admin.MenuInline}, \hyperpage{29}
+
+  \indexspace
+
+  \item {name}
+    \subitem {self\_service\_terminal.apps.SelfServiceTerminalConfig}, 
+		\hyperpage{36}
+
+  \indexspace
+
+  \item {operations}
+    \subitem {self\_service\_terminal.migrations.0001\_initial.Migration}, 
+		\hyperpage{35}
+    \subitem {self\_service\_terminal.migrations.0002\_terminal\_settings\_homepage.Migration}, 
+		\hyperpage{29}
+    \subitem {self\_service\_terminal.migrations.0003\_menu\_test\_img.Migration}, 
+		\hyperpage{31}
+    \subitem {self\_service\_terminal.migrations.0004\_menu\_menu\_texttt.Migration}, 
+		\hyperpage{32}
+    \subitem {self\_service\_terminal.migrations.0005\_remove\_menu\_menu\_texttt.Migration}, 
+		\hyperpage{33}
+    \subitem {self\_service\_terminal.migrations.0006\_remove\_menu\_test\_img.Migration}, 
+		\hyperpage{34}
+    \subitem {self\_service\_terminal.migrations.0007\_auto\_20200609\_2031.Migration}, 
+		\hyperpage{30}
+
+  \indexspace
+
+  \item {parent\_menu}
+    \subitem {self\_service\_terminal.models.Form}, \hyperpage{23}
+    \subitem {self\_service\_terminal.models.Menu}, \hyperpage{27}
+  \item {pdffile}
+    \subitem {self\_service\_terminal.models.Form}, \hyperpage{23}
+  \item {print\_form}
+    \subitem {self\_service\_terminal.models.Form}, \hyperpage{22}
+  \item {print\_formular}
+    \subitem {self\_service\_terminal.views}, \hyperpage{15}
+  \item {PRINTER}
+    \subitem {self\_service\_terminal.constants}, \hyperpage{10}
+
+  \indexspace
+
+  \item {retstr}
+    \subitem {self\_service\_terminal.tests}, \hyperpage{13}
+  \item {ROOT\_URLCONF}
+    \subitem {sp4.settings}, \hyperpage{18}
+
+  \indexspace
+
+  \item {SECRET\_KEY}
+    \subitem {sp4.settings}, \hyperpage{19}
+  \item {self\_service\_terminal}, \hyperpage{9}
+  \item {self\_service\_terminal.admin}, \hyperpage{10}
+  \item {self\_service\_terminal.admin.FormAdmin}, \hyperpage{24}
+    \subitem {fieldsets}, \hyperpage{24}
+    \subitem {list\_display}, \hyperpage{24}
+  \item {self\_service\_terminal.admin.FormInline}, \hyperpage{24}
+    \subitem {extra}, \hyperpage{25}
+    \subitem {model}, \hyperpage{25}
+  \item {self\_service\_terminal.admin.MenuAdmin}, \hyperpage{27}
+    \subitem {fieldsets}, \hyperpage{28}
+    \subitem {inlines}, \hyperpage{28}
+  \item {self\_service\_terminal.admin.MenuInline}, \hyperpage{28}
+    \subitem {extra}, \hyperpage{28}
+    \subitem {model}, \hyperpage{29}
+  \item {self\_service\_terminal.admin.Terminal\_SettingsAdmin}, 
+		\hyperpage{38}
+    \subitem {fieldsets}, \hyperpage{39}
+  \item {self\_service\_terminal.apps}, \hyperpage{10}
+  \item {self\_service\_terminal.apps.SelfServiceTerminalConfig}, 
+		\hyperpage{35}
+    \subitem {name}, \hyperpage{36}
+  \item {self\_service\_terminal.constants}, \hyperpage{10}
+    \subitem {PRINTER}, \hyperpage{10}
+    \subitem {TITLE\_LENGTH}, \hyperpage{10}
+  \item {self\_service\_terminal.migrations}, \hyperpage{11}
+  \item {self\_service\_terminal.migrations.0001\_initial}, 
+		\hyperpage{11}
+  \item {self\_service\_terminal.migrations.0001\_initial.Migration}, 
+		\hyperpage{34}
+    \subitem {dependencies}, \hyperpage{35}
+    \subitem {initial}, \hyperpage{35}
+    \subitem {operations}, \hyperpage{35}
+  \item {self\_service\_terminal.migrations.0002\_terminal\_settings\_homepage}, 
+		\hyperpage{11}
+  \item {self\_service\_terminal.migrations.0002\_terminal\_settings\_homepage.Migration}, 
+		\hyperpage{29}
+    \subitem {dependencies}, \hyperpage{29}
+    \subitem {operations}, \hyperpage{29}
+  \item {self\_service\_terminal.migrations.0003\_menu\_test\_img}, 
+		\hyperpage{11}
+  \item {self\_service\_terminal.migrations.0003\_menu\_test\_img.Migration}, 
+		\hyperpage{31}
+    \subitem {dependencies}, \hyperpage{31}
+    \subitem {operations}, \hyperpage{31}
+  \item {self\_service\_terminal.migrations.0004\_menu\_menu\_texttt}, 
+		\hyperpage{11}
+  \item {self\_service\_terminal.migrations.0004\_menu\_menu\_texttt.Migration}, 
+		\hyperpage{32}
+    \subitem {dependencies}, \hyperpage{32}
+    \subitem {operations}, \hyperpage{32}
+  \item {self\_service\_terminal.migrations.0005\_remove\_menu\_menu\_texttt}, 
+		\hyperpage{12}
+  \item {self\_service\_terminal.migrations.0005\_remove\_menu\_menu\_texttt.Migration}, 
+		\hyperpage{33}
+    \subitem {dependencies}, \hyperpage{33}
+    \subitem {operations}, \hyperpage{33}
+  \item {self\_service\_terminal.migrations.0006\_remove\_menu\_test\_img}, 
+		\hyperpage{12}
+  \item {self\_service\_terminal.migrations.0006\_remove\_menu\_test\_img.Migration}, 
+		\hyperpage{34}
+    \subitem {dependencies}, \hyperpage{34}
+    \subitem {operations}, \hyperpage{34}
+  \item {self\_service\_terminal.migrations.0007\_auto\_20200609\_2031}, 
+		\hyperpage{12}
+  \item {self\_service\_terminal.migrations.0007\_auto\_20200609\_2031.Migration}, 
+		\hyperpage{30}
+    \subitem {dependencies}, \hyperpage{30}
+    \subitem {operations}, \hyperpage{30}
+  \item {self\_service\_terminal.models}, \hyperpage{12}
+  \item {self\_service\_terminal.models.Form}, \hyperpage{21}
+    \subitem {\_\_str\_\_}, \hyperpage{22}
+    \subitem {description}, \hyperpage{22}
+    \subitem {form\_title}, \hyperpage{23}
+    \subitem {last\_changed}, \hyperpage{23}
+    \subitem {parent\_menu}, \hyperpage{23}
+    \subitem {pdffile}, \hyperpage{23}
+    \subitem {print\_form}, \hyperpage{22}
+    \subitem {show\_on\_frontend}, \hyperpage{23}
+    \subitem {time\_since\_last\_updated}, \hyperpage{22}
+    \subitem {time\_since\_last\_updated\_str}, \hyperpage{22}
+    \subitem {upload\_date}, \hyperpage{23}
+  \item {self\_service\_terminal.models.Menu}, \hyperpage{26}
+    \subitem {\_\_str\_\_}, \hyperpage{26}
+    \subitem {menu\_text}, \hyperpage{27}
+    \subitem {menu\_title}, \hyperpage{27}
+    \subitem {parent\_menu}, \hyperpage{27}
+    \subitem {settings}, \hyperpage{27}
+  \item {self\_service\_terminal.models.Terminal\_Settings}, 
+		\hyperpage{36}
+    \subitem {\_\_str\_\_}, \hyperpage{36}
+    \subitem {colorval\_button}, \hyperpage{37}
+    \subitem {colorval\_heading}, \hyperpage{37}
+    \subitem {colorval\_nav\_bar}, \hyperpage{37}
+    \subitem {colorval\_text}, \hyperpage{37}
+    \subitem {colorval\_zurueck\_button}, \hyperpage{37}
+    \subitem {description}, \hyperpage{37}
+    \subitem {homepage}, \hyperpage{38}
+    \subitem {institute\_logo}, \hyperpage{38}
+    \subitem {insurance\_logo}, \hyperpage{38}
+    \subitem {title}, \hyperpage{38}
+  \item {self\_service\_terminal.tests}, \hyperpage{12}
+    \subitem {retstr}, \hyperpage{13}
+  \item {self\_service\_terminal.tests.FormTestCase}, \hyperpage{25}
+    \subitem {setUp}, \hyperpage{25}
+    \subitem {test\_menu\_form\_interaction}, \hyperpage{25}
+    \subitem {test\_time\_since\_last\_updated}, \hyperpage{26}
+  \item {self\_service\_terminal.urls}, \hyperpage{13}
+    \subitem {document\_root}, \hyperpage{13}
+    \subitem {MEDIA\_URL}, \hyperpage{13}
+    \subitem {urlpatterns}, \hyperpage{13}
+  \item {self\_service\_terminal.views}, \hyperpage{14}
+    \subitem {formular}, \hyperpage{14}
+    \subitem {get\_settings}, \hyperpage{14}
+    \subitem {index}, \hyperpage{14}
+    \subitem {menu}, \hyperpage{14}
+    \subitem {menu\_template\_test}, \hyperpage{15}
+    \subitem {print\_formular}, \hyperpage{15}
+  \item {settings}
+    \subitem {self\_service\_terminal.models.Menu}, \hyperpage{27}
+  \item {setUp}
+    \subitem {self\_service\_terminal.tests.FormTestCase}, 
+		\hyperpage{25}
+  \item {show\_on\_frontend}
+    \subitem {self\_service\_terminal.models.Form}, \hyperpage{23}
+  \item {sp4}, \hyperpage{15}
+  \item {sp4.asgi}, \hyperpage{15}
+    \subitem {application}, \hyperpage{16}
+  \item {sp4.settings}, \hyperpage{16}
+    \subitem {ALLOWED\_HOSTS}, \hyperpage{17}
+    \subitem {AUTH\_PASSWORD\_VALIDATORS}, \hyperpage{17}
+    \subitem {BASE\_DIR}, \hyperpage{17}
+    \subitem {DATABASES}, \hyperpage{17}
+    \subitem {DEBUG}, \hyperpage{17}
+    \subitem {IMPORT\_EXPORT\_USE\_TRANSACTIONS}, \hyperpage{17}
+    \subitem {INSTALLED\_APPS}, \hyperpage{18}
+    \subitem {LANGUAGE\_CODE}, \hyperpage{18}
+    \subitem {MEDIA\_ROOT}, \hyperpage{18}
+    \subitem {MEDIA\_URL}, \hyperpage{18}
+    \subitem {MIDDLEWARE}, \hyperpage{18}
+    \subitem {ROOT\_URLCONF}, \hyperpage{18}
+    \subitem {SECRET\_KEY}, \hyperpage{19}
+    \subitem {STATIC\_URL}, \hyperpage{19}
+    \subitem {TEMPLATES}, \hyperpage{19}
+    \subitem {TIME\_ZONE}, \hyperpage{19}
+    \subitem {USE\_I18N}, \hyperpage{19}
+    \subitem {USE\_L10N}, \hyperpage{19}
+    \subitem {USE\_TZ}, \hyperpage{20}
+    \subitem {WSGI\_APPLICATION}, \hyperpage{20}
+  \item {sp4.urls}, \hyperpage{20}
+  \item {sp4.wsgi}, \hyperpage{20}
+    \subitem {application}, \hyperpage{20}
+  \item {sp4/manage.py}, \hyperpage{41}
+  \item {sp4/self\_service\_terminal/\_\_init\_\_.py}, \hyperpage{41}
+  \item {sp4/self\_service\_terminal/admin.py}, \hyperpage{42}
+  \item {sp4/self\_service\_terminal/apps.py}, \hyperpage{42}
+  \item {sp4/self\_service\_terminal/constants.py}, \hyperpage{42}
+  \item {sp4/self\_service\_terminal/migrations/0001\_initial.py}, 
+		\hyperpage{42}
+  \item {sp4/self\_service\_terminal/migrations/0002\_terminal\_settings\_homepage.py}, 
+		\hyperpage{43}
+  \item {sp4/self\_service\_terminal/migrations/0003\_menu\_test\_img.py}, 
+		\hyperpage{43}
+  \item {sp4/self\_service\_terminal/migrations/0004\_menu\_menu\_texttt.py}, 
+		\hyperpage{43}
+  \item {sp4/self\_service\_terminal/migrations/0005\_remove\_menu\_menu\_texttt.py}, 
+		\hyperpage{43}
+  \item {sp4/self\_service\_terminal/migrations/0006\_remove\_menu\_test\_img.py}, 
+		\hyperpage{44}
+  \item {sp4/self\_service\_terminal/migrations/0007\_auto\_20200609\_2031.py}, 
+		\hyperpage{44}
+  \item {sp4/self\_service\_terminal/migrations/\_\_init\_\_.py}, 
+		\hyperpage{41}
+  \item {sp4/self\_service\_terminal/models.py}, \hyperpage{44}
+  \item {sp4/self\_service\_terminal/tests.py}, \hyperpage{44}
+  \item {sp4/self\_service\_terminal/urls.py}, \hyperpage{45}
+  \item {sp4/self\_service\_terminal/views.py}, \hyperpage{45}
+  \item {sp4/sp4/\_\_init\_\_.py}, \hyperpage{41}
+  \item {sp4/sp4/asgi.py}, \hyperpage{46}
+  \item {sp4/sp4/settings.py}, \hyperpage{46}
+  \item {sp4/sp4/urls.py}, \hyperpage{45}
+  \item {sp4/sp4/wsgi.py}, \hyperpage{46}
+  \item {STATIC\_URL}
+    \subitem {sp4.settings}, \hyperpage{19}
+
+  \indexspace
+
+  \item {TEMPLATES}
+    \subitem {sp4.settings}, \hyperpage{19}
+  \item {test\_menu\_form\_interaction}
+    \subitem {self\_service\_terminal.tests.FormTestCase}, 
+		\hyperpage{25}
+  \item {test\_time\_since\_last\_updated}
+    \subitem {self\_service\_terminal.tests.FormTestCase}, 
+		\hyperpage{26}
+  \item {time\_since\_last\_updated}
+    \subitem {self\_service\_terminal.models.Form}, \hyperpage{22}
+  \item {time\_since\_last\_updated\_str}
+    \subitem {self\_service\_terminal.models.Form}, \hyperpage{22}
+  \item {TIME\_ZONE}
+    \subitem {sp4.settings}, \hyperpage{19}
+  \item {title}
+    \subitem {self\_service\_terminal.models.Terminal\_Settings}, 
+		\hyperpage{38}
+  \item {TITLE\_LENGTH}
+    \subitem {self\_service\_terminal.constants}, \hyperpage{10}
+
+  \indexspace
+
+  \item {upload\_date}
+    \subitem {self\_service\_terminal.models.Form}, \hyperpage{23}
+  \item {urlpatterns}
+    \subitem {self\_service\_terminal.urls}, \hyperpage{13}
+  \item {USE\_I18N}
+    \subitem {sp4.settings}, \hyperpage{19}
+  \item {USE\_L10N}
+    \subitem {sp4.settings}, \hyperpage{19}
+  \item {USE\_TZ}
+    \subitem {sp4.settings}, \hyperpage{20}
+
+  \indexspace
+
+  \item {WSGI\_APPLICATION}
+    \subitem {sp4.settings}, \hyperpage{20}
+
+\end{theindex}
