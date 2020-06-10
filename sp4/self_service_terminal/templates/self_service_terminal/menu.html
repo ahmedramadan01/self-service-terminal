@@ -18,6 +18,7 @@
 </div>
 {% endif %}
 
+<!--Go to previous page button-->
 <nav>
 <div class="previous-page">
     {% if page_obj.paginator.num_pages != 1 %}
@@ -30,6 +31,7 @@
 </div>
 </nav>
 
+<!--Submenu and Subforms buttons-->
 <div class="button-block">
     <div class="btn-container">
         {% for entry in page_obj.object_list %}
@@ -52,6 +54,7 @@
     </div>
 </div>
 
+<!--Go to next page button-->
 </nav>
 <div class="next-page">
     {% if page_obj.paginator.num_pages != 1 %}
