@@ -34,3 +34,22 @@ Configuration for Form:
     1. pdffile set/not set
     2. show-on-frontend True/False
 """
+
+from django.test import TestCase
+from self_service_terminal.models import Terminal_Settings, Menu, Form
+
+class AccessTestCase(TestCase):
+    def setUp(self):
+        settings = Terminal_Settings.objects.create(title='Settings1')
+        menu = Menu.objects.create(settings=settings, menu_title='Menu')
+        submenu = Menu.objects.create(
+            settings=settings, 
+            parent_menu=menu,
+            menu_title='Submenu'
+            )
+        form = Form.objects.create(
+            parent_menu=menu,
+            pdffile='forms/form.pdf',
+            show_on_frontend=True,
+            form_title='Form'
+        )
