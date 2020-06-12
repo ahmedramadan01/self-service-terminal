@@ -60,7 +60,7 @@ class Form(models.Model):
     and last change. Has a title and some descriptive text.
     """
     parent_menu = models.ForeignKey('Menu', on_delete=models.CASCADE)
-    pdffile = models.FileField(upload_to='forms', default="default.pdf")
+    pdffile = models.FileField(upload_to='forms', default="forms/default.pdf")
     upload_date = models.DateTimeField(auto_now_add=True)
     last_changed = models.DateTimeField(auto_now=True)
     show_on_frontend = models.BooleanField(default=False)

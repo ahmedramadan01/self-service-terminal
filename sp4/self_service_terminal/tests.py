@@ -1,49 +1,36 @@
-"""Source for automated tests. Currently just experiments, no systematic 
-testing.
 """
+Automated Tests.
 
-from django.test import TestCase
-from .models import Terminal_Settings, Menu, Form
-import datetime
+Test database structure:
+    - Settings >-|
+    - Menu <-----| Homepage
+        |
+        -<- Submenu
+        |
+        -<- Form
 
-retstr = "Zuletzt geändert vor {days} Tagen, {hours} Stunden, {minutes} Minuten."
+General tests for every different configuration:
+    1. Return of Status Code 200 for
+        - /
+        - /menu/<pk-of-Menu>
+        - /menu/<pk-of-Submenu>
+        - /form/<pk-of-Form>
+    2. Return of Status Code 204 for
+        - /form/<pk-of-Form>/print
+    and check for return code of lpr-command == 0
 
+Configurations for Settings:
+    1. Homepage set/not set
+    2. colorval_* set/not set (default?)
+    3. *_logo set/not set
 
-class FormTestCase(TestCase):
-    def setUp(self):
-        Terminal_Settings.objects.create(
-            title="Home",
-            description="bla"
-        )
-        home = Terminal_Settings.objects.get(title="Home")
+Configurations for Menu:
+    1. parent_menu set/not set
 
-        Menu.objects.create(
-            menu_title='menu1',
-            menu_text='Ein Untermenü',
-            homepage=home
-        )
-        menu1 = Menu.objects.get(menu_title='menu1')
+Configurations for Submenu:
+    1. parent_menu set to Menu
 
-        Form.objects.create(form_title='1', parent_menu=menu1)
-        Form.objects.create(
-            form_title='2',
-            parent_menu=menu1,
-            upload_date=datetime.datetime(2000, 1, 1),
-            last_changed=datetime.datetime(1999, 1, 1)
-        )
-
-    def test_menu_form_interaction(self):
-        root = Menu.objects.get(menu_title='menu1')
-        form = Form.objects.get(form_title='1')
-        self.assertEqual(root.menu_text, 'Ein Untermenü')
-        self.assertEqual(form.parent_menu, root)
-
-    def test_time_since_last_updated(self):
-        all_forms = Form.objects.all()
-        for form in all_forms:
-            (days, hours, minutes) = form.time_since_last_updated()
-            self.assertGreaterEqual(days, 0)
-            self.assertLess(hours, 24)
-            self.assertGreaterEqual(hours, 0)
-            self.assertLess(minutes, 60)
-            self.assertGreaterEqual(minutes, 0)
+Configuration for Form:
+    1. pdffile set/not set
+    2. show-on-frontend True/False
+"""
