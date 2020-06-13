@@ -1,6 +1,6 @@
 """Customizations for the admin site.
 
-This document defines among other things which fields appear on the admin page 
+This document defines among other things which fields appear on the admin page
 and can be edited.
 """
 
@@ -41,19 +41,20 @@ class Terminal_SettingsAdmin(ImportExportModelAdmin):
 @admin.register(Menu)
 class MenuAdmin(ImportExportModelAdmin):
     fieldsets = [
-        ('Startseite',       {'fields': ['settings']}),
-        ('Oberkategorie',    {'fields': ['parent_menu']}),
-        ('Beschreibung',     {'fields': ['menu_title', 'menu_text']})
+        ('Startseite', {'fields': ['settings']}),
+        ('Oberkategorie', {'fields': ['parent_menu']}),
+        ('Beschreibung', {'fields': ['menu_title', 'menu_text']})
     ]
     inlines = [MenuInline, FormInline]
+
 
 @admin.register(Form)
 class FormAdmin(ImportExportModelAdmin):
     fieldsets = [
         ('Übergeordnetes Menü', {'fields': ['parent_menu']}),
-        ('Anzeigen',            {'fields': ['show_on_frontend']}),
-        ('Details',             {'fields': ['form_title', 'description']}),
-        ('Dateipfad',           {'fields': ['pdffile']})
+        ('Anzeigen', {'fields': ['show_on_frontend']}),
+        ('Details', {'fields': ['form_title', 'description']}),
+        ('Dateipfad', {'fields': ['pdffile']})
     ]
     list_display = ['form_title', 'time_since_last_updated_str',
                     'upload_date', 'last_changed']

@@ -38,15 +38,17 @@ Configuration for Form:
 from django.test import TestCase, Client
 from self_service_terminal.models import Terminal_Settings, Menu, Form
 
+
 class AccessTestCase(TestCase):
     def setUp(self):
         self.settings = Terminal_Settings.objects.create(title='Settings1')
-        self.menu = Menu.objects.create(settings=self.settings, menu_title='Menu')
+        self.menu = Menu.objects.create(
+            settings=self.settings, menu_title='Menu')
         self.submenu = Menu.objects.create(
-            settings=self.settings, 
+            settings=self.settings,
             parent_menu=self.menu,
             menu_title='Submenu'
-            )
+        )
         self.form = Form.objects.create(
             parent_menu=self.menu,
             pdffile='forms/form.pdf',
@@ -54,7 +56,6 @@ class AccessTestCase(TestCase):
             form_title='Form'
         )
         self.settings.homepage = self.menu
-
 
     def test_homepage_availability(self):
         c = Client()

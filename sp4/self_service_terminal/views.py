@@ -9,14 +9,17 @@ from .constants import *
 
 # TEMP: Define the settings as the first entry of all Terminal_Settings
 # settings = list(Terminal_Settings.objects.all())[0]
+
+
 def get_settings():
     return list(Terminal_Settings.objects.all())[0]
+
 
 def index(request):
     """Render and return the homepage.
 
-    If more then BUTTONS_PER_PAGE submenus and subforms are present, render 
-    additional pages with the remaining buttons, which can be accessed by 
+    If more then BUTTONS_PER_PAGE submenus and subforms are present, render
+    additional pages with the remaining buttons, which can be accessed by
     pressing navigation buttons on the left and right side of the screen.
     """
     settings = get_settings()
@@ -30,12 +33,12 @@ def index(request):
     paginator = Paginator(submenus + subforms, BUTTONS_PER_PAGE)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    
+
     for i in range(len(page_obj.object_list)):
         page_obj.object_list[i] = {
             'object': page_obj.object_list[i],
-            'is_menu': type(page_obj.object_list[i]) is Menu,
-            'is_form': type(page_obj.object_list[i]) is Form
+            'is_menu': isinstance(page_obj.object_list[i], Menu),
+            'is_form': isinstance(page_obj.object_list[i], Form)
         }
 
     context = {
@@ -49,8 +52,8 @@ def index(request):
 def menu(request, menu_id=None, menu_title=None):
     """Render and return the menu site with the primary key <menu_id>.
 
-    If more then BUTTONS_PER_PAGE submenus and subforms are present, render 
-    additional pages with the remaining buttons, which can be accessed by 
+    If more then BUTTONS_PER_PAGE submenus and subforms are present, render
+    additional pages with the remaining buttons, which can be accessed by
     pressing navigation buttons on the left and right side of the screen.
     """
     settings = get_settings()
@@ -72,8 +75,8 @@ def menu(request, menu_id=None, menu_title=None):
     for i in range(len(page_obj.object_list)):
         page_obj.object_list[i] = {
             'object': page_obj.object_list[i],
-            'is_menu': type(page_obj.object_list[i]) is Menu,
-            'is_form': type(page_obj.object_list[i]) is Form
+            'is_menu': isinstance(page_obj.object_list[i], Menu),
+            'is_form': isinstance(page_obj.object_list[i], Form)
         }
 
     context = {
@@ -87,7 +90,7 @@ def menu(request, menu_id=None, menu_title=None):
 def formular(request, form_id=None, form_title=None):
     """Render and return the form site with the primary key <form_id>.
 
-    Create a preview image for the PDF to be printed. Then render and return 
+    Create a preview image for the PDF to be printed. Then render and return
     the form page.
     """
     settings = get_settings()
@@ -125,7 +128,7 @@ def formular(request, form_id=None, form_title=None):
 
 
 def print_formular(request, form_id=None):
-    """Run the print method of the given form object and return a HTTP 204 
+    """Run the print method of the given form object and return a HTTP 204
     No Content response.
     """
     Form.objects.get(pk=form_id).print_form()
@@ -140,7 +143,7 @@ def menu_template_test(request, menu_id=None, menu_title=None):
         menu = Menu.objects.get(pk=menu_id)
         submenus = list(Menu.objects.filter(parent_menu=menu_id))
         subforms = list(Form.objects.filter(parent_menu=menu_id))
-        
+
         # Fill the paginator with all submenus and subforms
         paginator = Paginator(submenus + subforms, BUTTONS_PER_PAGE)
 
@@ -153,10 +156,10 @@ def menu_template_test(request, menu_id=None, menu_title=None):
         for i in range(len(page_obj.object_list)):
             page_obj.object_list[i] = {
                 'object': page_obj.object_list[i],
-                'is_menu': type(page_obj.object_list[i]) is Menu,
-                'is_form': type(page_obj.object_list[i]) is Form
+                'is_menu': isinstance(page_obj.object_list[i], Menu),
+                'is_form': isinstance(page_obj.object_list[i], Form)
             }
-        
+
         # Only for debugging purposes
         # print(page_obj.object_list)
 
@@ -177,12 +180,12 @@ def menu_template_test(request, menu_id=None, menu_title=None):
         paginator = Paginator(submenus + subforms, BUTTONS_PER_PAGE)
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
-        
+
         for i in range(len(page_obj.object_list)):
             page_obj.object_list[i] = {
                 'object': page_obj.object_list[i],
-                'is_menu': type(page_obj.object_list[i]) is Menu,
-                'is_form': type(page_obj.object_list[i]) is Form
+                'is_menu': isinstance(page_obj.object_list[i], Menu),
+                'is_form': isinstance(page_obj.object_list[i], Form)
             }
 
         context = {

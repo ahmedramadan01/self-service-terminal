@@ -21,6 +21,6 @@ urlpatterns = [
     path('dtl/<int:menu_id>/', views.menu_template_test),
     path('dtl/', views.menu_template_test)
 ]
- 
+
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
