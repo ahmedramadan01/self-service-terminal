@@ -42,7 +42,7 @@ from self_service_terminal.models import Terminal_Settings, Menu, Form
 class DefaultTestCase(TestCase):
     def setUp(self):
         self.settings = Terminal_Settings.objects.create(
-            title='default_settings')
+            title='settings')
         self.settings.save()
         self.menu = Menu.objects.create(
             settings=self.settings, menu_title='default_menu')
