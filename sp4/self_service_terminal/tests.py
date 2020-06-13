@@ -70,15 +70,17 @@ class DefaultTestCase(TestCase):
         self.assertEqual(self.settings.homepage.pk, 1)
 
         self.assertEqual(self.menu.pk, 1)
-        menu_response = self.c.get('/menu/' + str(self.menu.pk))
+        menu_response = self.c.get('/menu/1/')
+        self.assertEqual(menu_response.status_code, 200)
+        menu_response = self.c.get('/menu/' + str(self.menu.pk) + '/')
         self.assertEqual(menu_response.status_code, 200)
 
         self.assertHTMLEqual(
             str(homepage_response.content), str(menu_response.content))
 
     def test_menu_availability(self):
-        self.assertEqual('/menu/1', '/menu/' + str(self.menu.pk))
+        self.assertEqual('/menu/1/', '/menu/' + str(self.menu.pk) + '/')
         self.assertEqual(2, len(Menu.objects.all()))
         for m in Menu.objects.all():
-            response = self.c.get('/menu/' + str(m.pk))
+            response = self.c.get('/menu/' + str(m.pk) + '/')
             self.assertEqual(response.status_code, 200)
