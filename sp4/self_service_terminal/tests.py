@@ -9,16 +9,6 @@ Test database structure:
         |
         -<- Form
 
-General tests for every different configuration:
-    1. Return of Status Code 200 for
-        - /
-        - /menu/<pk-of-Menu>
-        - /menu/<pk-of-Submenu>
-        - /form/<pk-of-Form>
-    2. Return of Status Code 204 for
-        - /form/<pk-of-Form>/print
-    and check for return code of lpr-command == 0
-
 Configurations for Settings:
     1. Homepage set/not set
     2. colorval_* set/not set (default?)
@@ -30,9 +20,19 @@ Configurations for Menu:
 Configurations for Submenu:
     1. parent_menu set to Menu
 
-Configuration for Form:
+Configurations for Form:
     1. pdffile set/not set
     2. show-on-frontend True/False
+
+General tests for every different configuration:
+    1. Return of Status Code 200 for
+        - /
+        - /menu/<pk-of-Menu>
+        - /menu/<pk-of-Submenu>
+        - /form/<pk-of-Form>
+    2. Return of Status Code 204 for
+        - /form/<pk-of-Form>/print
+    and check for return code of lpr-command == 0
 """
 
 from django.test import TestCase, Client
@@ -75,3 +75,10 @@ class DefaultTestCase(TestCase):
 
         self.assertHTMLEqual(
             str(homepage_response.content), str(menu_response.content))
+
+    def test_menu_availability(self):
+        self.assertEqual('/menu/1', '/menu/' + str(self.menu.pk))
+        self.assertEqual(2, len(Menu.objects.all()))
+        for m in Menu.objects.all():
+            response = self.c.get('/menu/' + str(m.pk))
+            self.assertEqual(response.status_code, 200)

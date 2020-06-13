@@ -17,7 +17,7 @@ class Terminal_Settings(models.Model):
     Title and description fields are deprecated.
     """
     title = models.CharField(max_length=TITLE_LENGTH)
-    description = models.TextField()
+    description = models.TextField(blank=True, null=True)
 
     homepage = models.OneToOneField(
         'Menu', on_delete=models.CASCADE, blank=True, null=True)
@@ -28,9 +28,9 @@ class Terminal_Settings(models.Model):
     colorval_zurueck_button = models.CharField(
         max_length=7, blank=True, default='')
     institute_logo = models.ImageField(
-        upload_to='images', default='static/Tu-ilmenauLogo.png', blank=True)
+        upload_to='images', default='images/institute_logo.png')
     insurance_logo = models.ImageField(
-        upload_to='images', default='static/Logo_AOK_PLUS.svg.png', blank=True)
+        upload_to='images', default='images/insurance_logo.png')
 
     def __str__(self):
         return self.title

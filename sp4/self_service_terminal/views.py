@@ -12,7 +12,7 @@ from .constants import *
 
 
 def get_settings():
-    return Terminal_Settings.objects.get(pk=1)
+    return Terminal_Settings.objects.get(title='settings')
 
 
 def index(request):
