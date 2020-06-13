@@ -39,27 +39,39 @@ from django.test import TestCase, Client
 from self_service_terminal.models import Terminal_Settings, Menu, Form
 
 
-class AccessTestCase(TestCase):
+class DefaultTestCase(TestCase):
     def setUp(self):
-        self.settings = Terminal_Settings.objects.create(title='Settings1')
+        self.settings = Terminal_Settings.objects.create(
+            title='default_settings')
+        self.settings.save()
         self.menu = Menu.objects.create(
-            settings=self.settings, menu_title='Menu')
+            settings=self.settings, menu_title='default_menu')
+        self.menu.save()
         self.submenu = Menu.objects.create(
             settings=self.settings,
             parent_menu=self.menu,
-            menu_title='Submenu'
+            menu_title='default_submenau'
         )
+        self.submenu.save()
         self.form = Form.objects.create(
             parent_menu=self.menu,
             pdffile='forms/form.pdf',
             show_on_frontend=True,
-            form_title='Form'
+            form_title='default_form'
         )
+        self.form.save()
         self.settings.homepage = self.menu
+        self.settings.save()
+        self.c = Client()
 
     def test_homepage_availability(self):
-        c = Client()
-        homepage_response = c.get('/menu/1')
-        menu_response = c.get('/menu/' + str(self.menu.pk))
+        homepage_response = self.c.get('/')
+        self.assertEqual(homepage_response.status_code, 200)
+        self.assertEqual(self.settings.homepage.pk, 1)
+
+        self.assertEqual(self.menu.pk, 1)
+        menu_response = self.c.get('/menu/' + str(self.menu.pk))
+        self.assertEqual(menu_response.status_code, 200)
+
         self.assertHTMLEqual(
             str(homepage_response.content), str(menu_response.content))

@@ -12,7 +12,7 @@ from .constants import *
 
 
 def get_settings():
-    return list(Terminal_Settings.objects.all())[0]
+    return Terminal_Settings.objects.get(pk=1)
 
 
 def index(request):
@@ -24,8 +24,8 @@ def index(request):
     """
     settings = get_settings()
 
-    homepage_id = list(Terminal_Settings.objects.all())[0].homepage_id
-    homepage = Menu.objects.get(pk=homepage_id)
+    homepage_id = settings.homepage.pk
+    homepage = settings.homepage
 
     submenus = list(Menu.objects.filter(parent_menu=homepage_id))
     subforms = list(Form.objects.filter(parent_menu=homepage_id))
