@@ -75,7 +75,7 @@ class DefaultTestCase(TestCase):
         menu_response = self.c.get('/menu/' + str(self.menu.pk) + '/')
         self.assertEqual(menu_response.status_code, 200)
 
-        self.assertHTMLEqual(
+        self.assertEqual(
             str(homepage_response.content), str(menu_response.content))
 
     def test_menu_availability(self):
