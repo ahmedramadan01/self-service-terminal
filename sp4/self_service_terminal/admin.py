@@ -5,12 +5,18 @@ and can be edited.
 """
 
 from django.contrib import admin
-
 from .models import Form, Menu, Terminal_Settings
-
 from import_export.admin import ImportExportModelAdmin
+from django.contrib.admin import AdminSite
 
+class MyAdminSite(AdminSite):
+    site_header = 'Monty python adminstration'
+admin_site = MyAdminSite(name='myadmin')
+admin_site.register(Terminal_Settings)
+admin_site.register(Form)
+admin_site.register(Menu)
 
+admin.site.site_header = 'Admin Tutorial Dashboard'
 class MenuInline(admin.TabularInline):
     model = Menu
     extra = 0
