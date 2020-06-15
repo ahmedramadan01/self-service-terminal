@@ -1,49 +1,77 @@
-"""Source for automated tests. Currently just experiments, no systematic 
-testing.
+"""
+Automated Tests.
+
+Test database structure:
+    - Settings >-|
+    - Menu <-----| Homepage
+        |
+        -<- Submenu
+        |
+        -<- Form
+
+General tests for every different configuration:
+    1. Return of Status Code 200 for
+        - /
+        - /menu/<pk-of-Menu>
+        - /menu/<pk-of-Submenu>
+        - /form/<pk-of-Form>
+    2. Return of Status Code 204 for
+        - /form/<pk-of-Form>/print
+    and check for return code of lpr-command == 0
+
+Configurations for Settings:
+    1. Homepage set/not set
+    2. colorval_* set/not set (default?)
+    3. *_logo set/not set
+
+Configurations for Menu:
+    1. parent_menu set/not set
+
+Configurations for Submenu:
+    1. parent_menu set to Menu
+
+Configuration for Form:
+    1. pdffile set/not set
+    2. show-on-frontend True/False
 """
 
-from django.test import TestCase
-from .models import Terminal_Settings, Menu, Form
-import datetime
-
-retstr = "Zuletzt geändert vor {days} Tagen, {hours} Stunden, {minutes} Minuten."
+from django.test import TestCase, Client
+from self_service_terminal.models import Terminal_Settings, Menu, Form
 
 
-class FormTestCase(TestCase):
+class DefaultTestCase(TestCase):
     def setUp(self):
-        Terminal_Settings.objects.create(
-            title="Home",
-            description="bla"
+        self.settings = Terminal_Settings.objects.create(
+            title='default_settings')
+        self.settings.save()
+        self.menu = Menu.objects.create(
+            settings=self.settings, menu_title='default_menu')
+        self.menu.save()
+        self.submenu = Menu.objects.create(
+            settings=self.settings,
+            parent_menu=self.menu,
+            menu_title='default_submenau'
         )
-        home = Terminal_Settings.objects.get(title="Home")
-
-        Menu.objects.create(
-            menu_title='menu1',
-            menu_text='Ein Untermenü',
-            homepage=home
+        self.submenu.save()
+        self.form = Form.objects.create(
+            parent_menu=self.menu,
+            pdffile='forms/form.pdf',
+            show_on_frontend=True,
+            form_title='default_form'
         )
-        menu1 = Menu.objects.get(menu_title='menu1')
+        self.form.save()
+        self.settings.homepage = self.menu
+        self.settings.save()
+        self.c = Client()
 
-        Form.objects.create(form_title='1', parent_menu=menu1)
-        Form.objects.create(
-            form_title='2',
-            parent_menu=menu1,
-            upload_date=datetime.datetime(2000, 1, 1),
-            last_changed=datetime.datetime(1999, 1, 1)
-        )
+    def test_homepage_availability(self):
+        homepage_response = self.c.get('/')
+        self.assertEqual(homepage_response.status_code, 200)
+        self.assertEqual(self.settings.homepage.pk, 1)
 
-    def test_menu_form_interaction(self):
-        root = Menu.objects.get(menu_title='menu1')
-        form = Form.objects.get(form_title='1')
-        self.assertEqual(root.menu_text, 'Ein Untermenü')
-        self.assertEqual(form.parent_menu, root)
+        self.assertEqual(self.menu.pk, 1)
+        menu_response = self.c.get('/menu/' + str(self.menu.pk))
+        self.assertEqual(menu_response.status_code, 200)
 
-    def test_time_since_last_updated(self):
-        all_forms = Form.objects.all()
-        for form in all_forms:
-            (days, hours, minutes) = form.time_since_last_updated()
-            self.assertGreaterEqual(days, 0)
-            self.assertLess(hours, 24)
-            self.assertGreaterEqual(hours, 0)
-            self.assertLess(minutes, 60)
-            self.assertGreaterEqual(minutes, 0)
+        self.assertHTMLEqual(
+            str(homepage_response.content), str(menu_response.content))
