@@ -103,6 +103,7 @@ class DefaultTestCase(TestCase):
         for f in Form.objects.all():
             response = self.c.get('/form/' + str(f.pk) + '/print')
             self.assertEqual(response.status_code, 204)
+        run(['lprm', '-'])
 
     def test_cups_availability(self):
         """Test the availability of the CUPS Server
