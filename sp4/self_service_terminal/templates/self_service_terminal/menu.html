@@ -19,7 +19,6 @@
 {% endif %}
 
 <!--Go to previous page button-->
-<nav>
 <div class="previous-page">
     {% if page_obj.paginator.num_pages != 1 %}
         {% if page_obj.has_previous %}
@@ -29,7 +28,6 @@
         {% endif %}
     {% endif %}
 </div>
-</nav>
 
 <!--Submenu and Subforms buttons-->
 <div class="button-block">
@@ -55,7 +53,6 @@
 </div>
 
 <!--Go to next page button-->
-</nav>
 <div class="next-page">
     {% if page_obj.paginator.num_pages != 1 %}
         {% if page_obj.has_next %}
@@ -65,6 +62,5 @@
         {% endif %}
     {% endif %}
 </div>
-</nav>
 
 {% endblock content %}
