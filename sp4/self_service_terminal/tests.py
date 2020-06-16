@@ -93,6 +93,11 @@ class DefaultTestCase(TestCase):
             response = self.c.get('/menu/' + str(m.pk) + '/')
             self.assertEqual(response.status_code, 200)
 
+    def test_form_availability(self):
+        for f in Form.objects.all():
+            response = self.c.get('/form/' + str(f.pk) + '/')
+            self.assertEqual(response.status_code, 200)
+
 
 class UnconnectedConfiguration(DefaultTestCase):
     def setUp(self):
