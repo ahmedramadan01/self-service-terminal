@@ -111,7 +111,7 @@ class DefaultTestCase(TestCase):
         Run the tests in an environment with the locale set to 'en_US.utf8'
         equal results on all machines.
         """
-        locale = 'en_US.utf8'
+        locale = 'en_US.UTF-8'
         env = ['env', 'LANG=' + locale]
         command_is_running = ['lpstat', '-r']
         command_default = ['lpstat', '-d']
