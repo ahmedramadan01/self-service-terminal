@@ -34,6 +34,7 @@ General tests for every different configuration:
         - /form/<pk-of-Form>/print
     and check for return code of lpr-command == 0
 """
+from subprocess import run
 
 from django.test import TestCase, Client
 from self_service_terminal.models import Terminal_Settings, Menu, Form
@@ -98,6 +99,31 @@ class DefaultTestCase(TestCase):
             response = self.c.get('/form/' + str(f.pk) + '/')
             self.assertEqual(response.status_code, 200)
 
+    def test_print_return_code(self):
+        for f in Form.objects.all():
+            response = self.c.get('/form/' + str(f.pk) + '/print')
+            self.assertEqual(response.status_code, 204)
+        run(['lprm', '-'])
+
+    def test_cups_availability(self):
+        """Test the availability of the CUPS Server
+
+        Run the tests in an environment with the locale set to 'en_US.utf8'
+        equal results on all machines.
+        """
+        locale = 'en_US.utf8'
+        env = ['env', 'LANG=' + locale]
+        command_is_running = ['lpstat', '-r']
+        command_default = ['lpstat', '-d']
+
+        response = run(env + command_is_running, capture_output=True)
+        self.assertEqual(response.stdout, b'scheduler is running\n')
+
+        response = run(env + command_default, capture_output=True)
+        self.assertNotEqual(
+            response.stdout,
+            b'no system default destination\n')
+
 
 class UnconnectedConfiguration(DefaultTestCase):
     def setUp(self):
@@ -126,6 +152,7 @@ class UnconnectedConfiguration(DefaultTestCase):
 
         self.terminal_settings.save()
         self.c = Client()
+
 
 class ProductionCase(DefaultTestCase):
     def setUp(self):
