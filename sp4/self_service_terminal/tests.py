@@ -38,16 +38,18 @@ General tests for every different configuration:
 from django.test import TestCase, Client
 from self_service_terminal.models import Terminal_Settings, Menu, Form
 
+
 class DefaultTestCase(TestCase):
     """Default test case.
 
-    This class describes the default test case. It can be subclassed to 
-    overwrite the values in the setUp method. At least all values from this 
-    setUp method must be present in the subclass's setUp method, otherwise 
+    This class describes the default test case. It can be subclassed to
+    overwrite the values in the setUp method. At least all values from this
+    setUp method must be present in the subclass's setUp method, otherwise
     tests from DefaultTestCase will fail.
-    If new values are added to the subclass in the setUp method, they can only 
+    If new values are added to the subclass in the setUp method, they can only
     be used in the test methods of the subclass.
     """
+
     def setUp(self):
         self.settings = Terminal_Settings.objects.create(
             title='settings')
@@ -79,14 +81,18 @@ class DefaultTestCase(TestCase):
         menu_response = self.c.get('/menu/' + str(self.menu.pk) + '/')
         self.assertEqual(menu_response.status_code, 200)
 
-        self.assertHTMLEqual(str(homepage_response.content), str(menu_response.content))
+        homepage_menu_response = self.c.get(
+            '/menu/' + str(self.settings.homepage.pk) + '/')
+        self.assertEqual(homepage_menu_response.status_code, 200)
+
+        self.assertHTMLEqual(
+            str(homepage_response.content), str(homepage_menu_response.content))
 
     def test_menu_availability(self):
-        self.assertEqual('/menu/1/', '/menu/' + str(self.menu.pk) + '/')
-        self.assertEqual(2, len(Menu.objects.all()))
         for m in Menu.objects.all():
             response = self.c.get('/menu/' + str(m.pk) + '/')
             self.assertEqual(response.status_code, 200)
+
 
 class UnconnectedConfiguration(DefaultTestCase):
     def setUp(self):
@@ -109,7 +115,9 @@ class UnconnectedConfiguration(DefaultTestCase):
             form_title='default_form'
         )
         self.form.save()
-        self.settings.homepage = self.menu
+
+        # Here's the difference:
+        self.settings.homepage = self.submenu
+
         self.settings.save()
         self.c = Client()
-    
