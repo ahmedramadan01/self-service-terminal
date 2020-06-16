@@ -98,6 +98,11 @@ class DefaultTestCase(TestCase):
             response = self.c.get('/form/' + str(f.pk) + '/')
             self.assertEqual(response.status_code, 200)
 
+    def test_print_return_code(self):
+        for f in Form.objects.all():
+            response = self.c.get('/form/' + str(f.pk) + '/print')
+            self.assertEqual(response.status_code, 204)
+
 
 class UnconnectedConfiguration(DefaultTestCase):
     def setUp(self):
