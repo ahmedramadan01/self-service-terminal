@@ -38,8 +38,16 @@ General tests for every different configuration:
 from django.test import TestCase, Client
 from self_service_terminal.models import Terminal_Settings, Menu, Form
 
-
 class DefaultTestCase(TestCase):
+    """Default test case.
+
+    This class describes the default test case. It can be subclassed to 
+    overwrite the values in the setUp method. At least all values from this 
+    setUp method must be present in the subclass's setUp method, otherwise 
+    tests from DefaultTestCase will fail.
+    If new values are added to the subclass in the setUp method, they can only 
+    be used in the test methods of the subclass.
+    """
     def setUp(self):
         self.settings = Terminal_Settings.objects.create(
             title='settings')
@@ -50,7 +58,7 @@ class DefaultTestCase(TestCase):
         self.submenu = Menu.objects.create(
             settings=self.settings,
             parent_menu=self.menu,
-            menu_title='default_submenau'
+            menu_title='default_submenu'
         )
         self.submenu.save()
         self.form = Form.objects.create(
