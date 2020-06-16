@@ -1,63 +1,103 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render, HttpResponse
 from .models import Menu, Form, Terminal_Settings
 
 from pdf2image import convert_from_path
 import os
 
+from .constants import *
+
 # TEMP: Define the settings as the first entry of all Terminal_Settings
 # settings = list(Terminal_Settings.objects.all())[0]
+
+
 def get_settings():
-    return list(Terminal_Settings.objects.all())[0]
+    return Terminal_Settings.objects.get(title='settings')
+
 
 def index(request):
+    """Render and return the homepage.
+
+    If more then BUTTONS_PER_PAGE submenus and subforms are present, render
+    additional pages with the remaining buttons, which can be accessed by
+    pressing navigation buttons on the left and right side of the screen.
+    """
     settings = get_settings()
-    homepage_id = list(Terminal_Settings.objects.all())[0].homepage_id
-    homepage = Menu.objects.get(pk=homepage_id)
+
+    homepage_id = settings.homepage.pk
+    homepage = settings.homepage
+
     submenus = list(Menu.objects.filter(parent_menu=homepage_id))
     subforms = list(Form.objects.filter(parent_menu=homepage_id))
+
+    paginator = Paginator(submenus + subforms, BUTTONS_PER_PAGE)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    for i in range(len(page_obj.object_list)):
+        page_obj.object_list[i] = {
+            'object': page_obj.object_list[i],
+            'is_menu': isinstance(page_obj.object_list[i], Menu),
+            'is_form': isinstance(page_obj.object_list[i], Form)
+        }
+
     context = {
         'settings': settings,
         'menu': homepage,
-        'submenus': submenus,
-        'subforms': subforms
+        'page_obj': page_obj
     }
     return render(request, 'self_service_terminal/menu.html', context)
 
 
-""" TODO If entry with primary key menu_id or form_id does not exist
-in the database then return the homepage."""
-
-
 def menu(request, menu_id=None, menu_title=None):
-    """Return the menu with the primary key <menu_id>.
+    """Render and return the menu site with the primary key <menu_id>.
 
-    Parameters:
-    - menu object
-    - list of submenu objects
-    - list of subforms objects
+    If more then BUTTONS_PER_PAGE submenus and subforms are present, render
+    additional pages with the remaining buttons, which can be accessed by
+    pressing navigation buttons on the left and right side of the screen.
     """
     settings = get_settings()
+
     menu = Menu.objects.get(pk=menu_id)
     submenus = list(Menu.objects.filter(parent_menu=menu_id))
     subforms = list(Form.objects.filter(parent_menu=menu_id))
+
+    # Fill the paginator with all submenus and subforms
+    paginator = Paginator(submenus + subforms, BUTTONS_PER_PAGE)
+
+    # Get the current page from the HTTP Request
+    page_number = request.GET.get('page')
+
+    # Get all objects that are allowed on the current page
+    page_obj = paginator.get_page(page_number)
+
+    # Add option to test for Menu and Form object
+    for i in range(len(page_obj.object_list)):
+        page_obj.object_list[i] = {
+            'object': page_obj.object_list[i],
+            'is_menu': isinstance(page_obj.object_list[i], Menu),
+            'is_form': isinstance(page_obj.object_list[i], Form)
+        }
+
     context = {
         'settings': settings,
         'menu': menu,
-        'submenus': submenus,
-        'subforms': subforms
+        'page_obj': page_obj
     }
     return render(request, 'self_service_terminal/menu.html', context)
 
 
 def formular(request, form_id=None, form_title=None):
-    """Return the form with the primary key <form_id>.
+    """Render and return the form site with the primary key <form_id>.
 
-    Parameters:
-    - form object
+    Create a preview image for the PDF to be printed. Then render and return
+    the form page.
     """
     settings = get_settings()
+
     form = Form.objects.get(pk=form_id)
 
+    # Convert first page of pdffile to jpg and save it
     try:
         path = form.pdffile.path
         folder = path.rsplit('/', maxsplit=1)[0]
@@ -74,35 +114,83 @@ def formular(request, form_id=None, form_title=None):
             )
         img_url = form.pdffile.url.rsplit('.', maxsplit=1)[0] + '.jpg'
     except Exception:
-        img_url = settings.krankenkasse_logo.url
+        img_url = settings.insurance_logo.url
+
+    parent_page_number = request.GET.get('page')
 
     context = {
         'settings': settings,
         'form': form,
-        'img_path': img_url
+        'img_path': img_url,
+        'parent_page_number': parent_page_number
     }
     return render(request, 'self_service_terminal/formular.html', context)
 
 
 def print_formular(request, form_id=None):
-    """Run the print method of the given form object
-    and return a HTTP 204 No Content response."""
+    """Run the print method of the given form object and return a HTTP 204
+    No Content response.
+    """
     Form.objects.get(pk=form_id).print_form()
     return HttpResponse(status=204)
 
 
 # Testview für die Django Templatesprache
 def menu_template_test(request, menu_id=None, menu_title=None):
+    """Only for testing purposes."""
     settings = get_settings()
-    menu = Menu.objects.get(pk=menu_id)
-    submenus = list(Menu.objects.filter(parent_menu=menu_id))
-    subforms = list(Form.objects.filter(parent_menu=menu_id))
-    context = {
-        'settings': settings,
-        'menu': menu,
-        'submenus': submenus,
-        'subforms': subforms,
-        'miep': 'Was?!',
-        'range': list(range(10))
-    }
-    return render(request, 'self_service_terminal/dtl_test.html', context)
+    if menu_id:
+        menu = Menu.objects.get(pk=menu_id)
+        submenus = list(Menu.objects.filter(parent_menu=menu_id))
+        subforms = list(Form.objects.filter(parent_menu=menu_id))
+
+        # Fill the paginator with all submenus and subforms
+        paginator = Paginator(submenus + subforms, BUTTONS_PER_PAGE)
+
+        # Get the current page from the HTTP Request
+        page_number = request.GET.get('page')
+        # Get all objects that are allowed on the current page
+        page_obj = paginator.get_page(page_number)
+
+        # Add option to test for Menu and Form object
+        for i in range(len(page_obj.object_list)):
+            page_obj.object_list[i] = {
+                'object': page_obj.object_list[i],
+                'is_menu': isinstance(page_obj.object_list[i], Menu),
+                'is_form': isinstance(page_obj.object_list[i], Form)
+            }
+
+        # Only for debugging purposes
+        # print(page_obj.object_list)
+
+        context = {
+            'settings': settings,
+            'menu': menu,
+            'page_obj': page_obj
+        }
+        return render(request, 'self_service_terminal/dtl_test.html', context)
+
+    else:
+        homepage_id = list(Terminal_Settings.objects.all())[0].homepage_id
+        homepage = Menu.objects.get(pk=homepage_id)
+
+        submenus = list(Menu.objects.filter(parent_menu=homepage_id))
+        subforms = list(Form.objects.filter(parent_menu=homepage_id))
+
+        paginator = Paginator(submenus + subforms, BUTTONS_PER_PAGE)
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+
+        for i in range(len(page_obj.object_list)):
+            page_obj.object_list[i] = {
+                'object': page_obj.object_list[i],
+                'is_menu': isinstance(page_obj.object_list[i], Menu),
+                'is_form': isinstance(page_obj.object_list[i], Form)
+            }
+
+        context = {
+            'settings': settings,
+            'menu': homepage,
+            'page_obj': page_obj
+        }
+        return render(request, 'self_service_terminal/dtl_test.html', context)
