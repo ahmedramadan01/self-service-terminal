@@ -51,14 +51,14 @@ class DefaultTestCase(TestCase):
     """
 
     def setUp(self):
-        self.settings = Terminal_Settings.objects.create(
+        self.terminal_settings = Terminal_Settings.objects.create(
             title='settings')
-        self.settings.save()
+        self.terminal_settings.save()
         self.menu = Menu.objects.create(
-            settings=self.settings, menu_title='default_menu')
+            settings=self.terminal_settings, menu_title='default_menu')
         self.menu.save()
         self.submenu = Menu.objects.create(
-            settings=self.settings,
+            settings=self.terminal_settings,
             parent_menu=self.menu,
             menu_title='default_submenu'
         )
@@ -70,8 +70,8 @@ class DefaultTestCase(TestCase):
             form_title='default_form'
         )
         self.form.save()
-        self.settings.homepage = self.menu
-        self.settings.save()
+        self.terminal_settings.homepage = self.menu
+        self.terminal_settings.save()
         self.c = Client()
 
     def test_homepage_availability(self):
@@ -82,7 +82,7 @@ class DefaultTestCase(TestCase):
         self.assertEqual(menu_response.status_code, 200)
 
         homepage_menu_response = self.c.get(
-            '/menu/' + str(self.settings.homepage.pk) + '/')
+            '/menu/' + str(self.terminal_settings.homepage.pk) + '/')
         self.assertEqual(homepage_menu_response.status_code, 200)
 
         self.assertHTMLEqual(
@@ -101,14 +101,14 @@ class DefaultTestCase(TestCase):
 
 class UnconnectedConfiguration(DefaultTestCase):
     def setUp(self):
-        self.settings = Terminal_Settings.objects.create(
+        self.terminal_settings = Terminal_Settings.objects.create(
             title='settings')
-        self.settings.save()
+        self.terminal_settings.save()
         self.menu = Menu.objects.create(
-            settings=self.settings, menu_title='default_menu')
+            settings=self.terminal_settings, menu_title='default_menu')
         self.menu.save()
         self.submenu = Menu.objects.create(
-            settings=self.settings,
+            settings=self.terminal_settings,
             parent_menu=self.menu,
             menu_title='default_submenu'
         )
@@ -122,7 +122,37 @@ class UnconnectedConfiguration(DefaultTestCase):
         self.form.save()
 
         # Here's the difference:
-        self.settings.homepage = self.submenu
+        self.terminal_settings.homepage = self.submenu
 
-        self.settings.save()
+        self.terminal_settings.save()
         self.c = Client()
+
+class ProductionCase(DefaultTestCase):
+    def setUp(self):
+        self.terminal_settings = Terminal_Settings.objects.create(
+            title='settings')
+        self.terminal_settings.save()
+        self.menu = Menu.objects.create(
+            settings=self.terminal_settings, menu_title='default_menu')
+        self.menu.save()
+        self.submenu = Menu.objects.create(
+            settings=self.terminal_settings,
+            parent_menu=self.menu,
+            menu_title='default_submenu'
+        )
+        self.submenu.save()
+        self.form = Form.objects.create(
+            parent_menu=self.menu,
+            pdffile='forms/form.pdf',
+            show_on_frontend=True,
+            form_title='default_form'
+        )
+        self.form.save()
+        self.terminal_settings.homepage = self.menu
+        self.terminal_settings.save()
+        self.c = Client()
+
+    def test_debug_false(self):
+        with self.settings(Debug=False):
+            response = self.c.get('/')
+            self.assertEqual(response.status_code, 200)
