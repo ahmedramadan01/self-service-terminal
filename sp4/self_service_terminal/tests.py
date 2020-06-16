@@ -75,16 +75,11 @@ class DefaultTestCase(TestCase):
     def test_homepage_availability(self):
         homepage_response = self.c.get('/')
         self.assertEqual(homepage_response.status_code, 200)
-        self.assertEqual(self.settings.homepage.pk, 1)
 
-        self.assertEqual(self.menu.pk, 1)
-        menu_response = self.c.get('/menu/1/')
-        self.assertEqual(menu_response.status_code, 200)
         menu_response = self.c.get('/menu/' + str(self.menu.pk) + '/')
         self.assertEqual(menu_response.status_code, 200)
 
-        self.assertEqual(
-            str(homepage_response.content), str(menu_response.content))
+        self.assertHTMLEqual(str(homepage_response.content), str(menu_response.content))
 
     def test_menu_availability(self):
         self.assertEqual('/menu/1/', '/menu/' + str(self.menu.pk) + '/')
@@ -92,3 +87,29 @@ class DefaultTestCase(TestCase):
         for m in Menu.objects.all():
             response = self.c.get('/menu/' + str(m.pk) + '/')
             self.assertEqual(response.status_code, 200)
+
+class UnconnectedConfiguration(DefaultTestCase):
+    def setUp(self):
+        self.settings = Terminal_Settings.objects.create(
+            title='settings')
+        self.settings.save()
+        self.menu = Menu.objects.create(
+            settings=self.settings, menu_title='default_menu')
+        self.menu.save()
+        self.submenu = Menu.objects.create(
+            settings=self.settings,
+            parent_menu=self.menu,
+            menu_title='default_submenu'
+        )
+        self.submenu.save()
+        self.form = Form.objects.create(
+            parent_menu=self.menu,
+            pdffile='forms/form.pdf',
+            show_on_frontend=True,
+            form_title='default_form'
+        )
+        self.form.save()
+        self.settings.homepage = self.menu
+        self.settings.save()
+        self.c = Client()
+    
