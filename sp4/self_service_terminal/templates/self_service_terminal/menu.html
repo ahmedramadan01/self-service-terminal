@@ -23,43 +23,41 @@
     <div class="navigation-container">
         {% if page_obj.paginator.num_pages != 1 %}
             {% if page_obj.has_previous %}
-                <p><a class="btn navigation" href="?page={{ page_obj.previous_page_number }}">&laquo;</a></p>
+                <a class="btn navigation" href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
             {% else  %}
-                <p><a class="btn navigation noselect isDisabled">&laquo;</a></p>
+                <a class="btn navigation noselect isDisabled">&laquo;</a>
             {% endif %}
         {% endif %}
     </div>
 
     <!--Submenu and Subforms buttons-->
-    <div class="button-block">
-        <div class="btn-container">
-            {% for entry in page_obj.object_list %}
-                {% if entry.is_menu %}
-                <a style="color:{{ settings.colorval_button }}" class="noselect view btn"
-                    href="/menu/{{ entry.object.pk }}">{{ entry.object.menu_title }}</a>
-                {% endif %}
-
-                {% if entry.is_form %}
-                <a style="color:{{ settings.colorval_button }}" class="noselect view btn"
-                    href="/form/{{ entry.object.pk }}?page={{ page_obj.number }}">{{ entry.object.form_title }}</a>
-                {% endif %}
-            {% endfor %}
-
-            {% if settings.homepage_id != menu.pk %}
-                <a style="color:{{ settings.colorval_zurueck_button }}" class="noselect back btn"
-                    href="/menu/{{ menu.parent_menu.pk }}">
-                    &#171; Zurück </a>
+    <div class="btn-container">
+        {% for entry in page_obj.object_list %}
+            {% if entry.is_menu %}
+            <a style="color:{{ settings.colorval_button }}" class="noselect view btn"
+                href="/menu/{{ entry.object.pk }}">{{ entry.object.menu_title }}</a>
             {% endif %}
-        </div>
+
+            {% if entry.is_form %}
+            <a style="color:{{ settings.colorval_button }}" class="noselect view btn"
+                href="/form/{{ entry.object.pk }}?page={{ page_obj.number }}">{{ entry.object.form_title }}</a>
+            {% endif %}
+        {% endfor %}
+
+        {% if settings.homepage_id != menu.pk %}
+            <a style="color:{{ settings.colorval_zurueck_button }}" class="noselect back btn"
+                href="/menu/{{ menu.parent_menu.pk }}">
+                &#171; Zurück </a>
+        {% endif %}
     </div>
 
     <!--Go to next page button-->
     <div class="navigation-container">
         {% if page_obj.paginator.num_pages != 1 %}
             {% if page_obj.has_next %}
-                <p><a class="btn navigation" href="?page={{ page_obj.next_page_number }}">&raquo;</a></p>
+                <a class="btn navigation" href="?page={{ page_obj.next_page_number }}">&raquo;</a>
             {% else %}
-                <p><a class="btn navigation noselect isDisabled">&raquo;</a></p>
+                <a class="btn navigation noselect isDisabled">&raquo;</a>
             {% endif %}
         {% endif %}
     </div>

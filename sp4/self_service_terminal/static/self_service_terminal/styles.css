@@ -225,12 +225,6 @@ align-items: center;
   align-items: center;
 }
 
-.button-block{
-  padding-top: 0%;
-  padding-left: 30%;
-  padding-right: 30%;
-}
-
 #preview-image{
   display: block;
   max-width: 500px;
