@@ -42,7 +42,8 @@ class Menu(models.Model):
     Is linked to its parent menu via a ForeignKey Field. Contains only its
     title and some descriptive text.
     """
-    settings = models.ForeignKey(Terminal_Settings, on_delete=models.CASCADE)
+    settings = models.ForeignKey(
+        Terminal_Settings, on_delete=models.CASCADE, blank=True, null=True)
     parent_menu = models.ForeignKey(
         'self', on_delete=models.CASCADE, blank=True, null=True)
     menu_title = models.CharField(max_length=TITLE_LENGTH)

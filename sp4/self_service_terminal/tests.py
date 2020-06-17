@@ -38,6 +38,7 @@ from subprocess import run
 
 from django.test import TestCase, Client
 from self_service_terminal.models import Terminal_Settings, Menu, Form
+from self_service_terminal.views import get_settings
 
 
 class DefaultTestCase(TestCase):
@@ -124,6 +125,15 @@ class DefaultTestCase(TestCase):
             response.stdout,
             b'no system default destination\n')
 
+    def test_get_settings(self):
+        self.assertEqual(
+            type(get_settings()), 
+            Terminal_Settings
+        )
+        self.assertEqual(get_settings(), self.menu.settings)
+        self.assertEqual(get_settings(), self.submenu.settings)
+        self.assertEqual(get_settings(), 
+        Terminal_Settings.objects.get(title='settings'))
 
 class UnconnectedConfiguration(DefaultTestCase):
     def setUp(self):
