@@ -193,3 +193,25 @@ class ProductionCase(DefaultTestCase):
         with self.settings(Debug=False):
             response = self.c.get('/')
             self.assertEqual(response.status_code, 200)
+
+"""
+class NoSettings(DefaultTestCase):
+    def setUp(self):
+        self.menu = Menu.objects.create(menu_title='default_menu')
+        self.menu.save()
+        self.submenu = Menu.objects.create(
+            parent_menu=self.menu,
+            menu_title='default_submenu'
+        )
+        self.submenu.save()
+        self.form = Form.objects.create(
+            parent_menu=self.menu,
+            pdffile='forms/form.pdf',
+            show_on_frontend=True,
+            form_title='default_form'
+        )
+        self.form.save()
+        self.terminal_settings.homepage = self.menu
+        self.terminal_settings.save()
+        self.c = Client()
+"""
