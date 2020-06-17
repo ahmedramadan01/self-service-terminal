@@ -216,24 +216,13 @@ align-items: center;
   font-size: 25px;
 }
 
-.previous-page{
-  width: 12%; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: auto;
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 500px;
+.content {
+  display: flex;
 }
 
-.next-page{
-  width: 12%; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  right: 0;
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 500px;
+.navigation-container {
+  display: flex;
+  align-items: center;
 }
 
 .button-block{
