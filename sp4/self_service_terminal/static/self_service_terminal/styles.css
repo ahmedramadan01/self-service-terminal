@@ -86,8 +86,6 @@ header{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  
-  border: red 2px solid;
   }
 
 .btn-container {
@@ -96,7 +94,6 @@ header{
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border: black 2px solid;
 }
 
 .green-btn,
