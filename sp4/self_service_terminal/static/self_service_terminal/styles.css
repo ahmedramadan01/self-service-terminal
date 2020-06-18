@@ -1,8 +1,29 @@
+/*General Styles*/
 body {
   padding: 20px;
   font-family: Helvetica;
 }
+a{
+  text-decoration: none;
+}
 
+h1 {
+  color: #4caf50;
+  font-size: 60px;
+  text-align: center;
+}
+h3{
+  color:#737373 ;
+  font-size: 30px;
+  text-align: center;
+}
+button{
+  display: block;
+  margin: 0px auto;
+  margin-top: 300px;
+}
+
+/*Header Styles*/
 header{
   display: flex;
   justify-content: flex-end;
@@ -12,8 +33,17 @@ header{
 }
 
 #nav-bar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color:#737373 ;
   height:80px ;
+}
+#nav-bar a{
+  margin-left: 30px;
+  color: #fff;
+  letter-spacing: 1px;
+  font-size: 30px;
 }
 
 /* tu-ilmenau logo */
@@ -55,10 +85,7 @@ header{
 button::-moz-focus-inner {
   border: 0;
 }
-h1 {
-  color: #4caf50;
-  padding-left: 20px;
-}
+
 
 .btn-container {
   display: -webkit-flex;
@@ -79,14 +106,6 @@ justify-content: space-around;
 align-items: center;
 }
 
-/* #up {
-  height: 630px;
-  border: red solid 3px;
-}
-#down {
-  height: 270px;
-  border: black solid 3px;
-} */
 .frequent {
   display: -webkit-flex;
   display: flex;
@@ -132,7 +151,7 @@ align-items: center;
   color: #4caf50;
   font-size: 30px;
 }
-.year,
+.green-btn,
 .print,
 .view {
   width: 650px;
@@ -162,7 +181,6 @@ align-items: center;
 
 .btn {
   margin: 10px;
-  text-decoration: none;
   transition: all 0.05s;
 }
 
@@ -216,30 +234,13 @@ align-items: center;
   font-size: 25px;
 }
 
-.previous-page{
-  width: 12%; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: auto;
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 500px;
+.content {
+  display: flex;
 }
 
-.next-page{
-  width: 12%; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  right: 0;
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 500px;
-}
-
-.button-block{
-  padding-top: 0%;
-  padding-left: 30%;
-  padding-right: 30%;
+.navigation-container {
+  display: flex;
+  align-items: center;
 }
 
 #preview-image{
