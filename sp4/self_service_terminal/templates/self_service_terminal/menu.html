@@ -3,26 +3,21 @@
 
 {% block title %} {{ menu.menu_title}} {% endblock %}
 
-{% block script %}
-    {% if settings.homepage.pk == menu.pk %}
-        <script src="{% static 'self_service_terminal/app.js' %}" type="text/javascript" async></script>
-    {% endif %}
-{% endblock script %}
 
 {% block content %}
-    {% if settings.homepage.pk == menu.pk %}
-    <div id="welcome">
-        <h1>Willkommen <br> bei der AOK</h1>
-        <h3>Drücken Sie auf START <br> um ein Formular auszuwählen</h3>
-        <button id="start" class="green-btn">START</button>
-    </div>
-    {% endif %}
-
 {% if settings.homepage.pk == menu.pk %}
-<div id="homepage" class="" style="display :none;">
-{% else %}
-<div id="homepage" class=""></div>
+<div id="welcome">
+    <h1>Willkommen <br> bei der AOK</h1>
+    <h3>Drücken Sie auf START <br> um ein Formular auszuwählen</h3>
+    <button id="start" class="green-btn">START</button>
+</div>
 {% endif %}
+
+
+<div id="homepage" class="" {% if settings.homepage.pk == menu.pk %} style="display :none;" {% endif %}>
+
+
+
     <div class="formular">
         <p class="formular-title" style="color: {{ settings.colorval_heading }};">{{menu}}</p>
         <p class="formular-text" style="color: {{ settings.colorval_text }};">

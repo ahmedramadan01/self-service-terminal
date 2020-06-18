@@ -168,8 +168,8 @@ align-items: center;
 }
 
 .back {
-  width: wrap;
-  height: wrap;
+  /* width: wrap;
+  height: wrap; */
   padding: 10px 15px;
   border-radius: 8px;
   border-style: solid;
@@ -214,8 +214,8 @@ align-items: center;
 }
 
 .navigation {
-  width: wrap;
-  height: wrap;
+  /* width: wrap;
+  height: wrap; */
   padding: 8px 13px;
   border-radius: 8px;
   border-style: solid;
