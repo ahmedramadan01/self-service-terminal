@@ -3,26 +3,21 @@
 
 {% block title %} {{ menu.menu_title}} {% endblock %}
 
-{% block script %}
-    {% if settings.homepage.pk == menu.pk %}
-        <script src="{% static 'self_service_terminal/app.js' %}" type="text/javascript" async></script>
-    {% endif %}
-{% endblock script %}
 
 {% block content %}
-    {% if settings.homepage.pk == menu.pk %}
-    <div id="welcome">
-        <h1>Willkommen <br> bei der AOK</h1>
-        <h3>Drücken Sie auf START <br> um ein Formular auszuwählen</h3>
-        <button id="start" class="green-btn">START</button>
-    </div>
-    {% endif %}
-
 {% if settings.homepage.pk == menu.pk %}
-<div id="homepage" class="" style="display :none;">
-{% else %}
-<div id="homepage" class=""></div>
+<div id="welcome">
+    <h1>Willkommen <br> bei der AOK</h1>
+    <h3>Drücken Sie auf START <br> um ein Formular auszuwählen</h3>
+    <button id="start" class="btn green-btn">START</button>
+</div>
 {% endif %}
+
+
+<div {% if settings.homepage.pk == menu.pk %} id="homepage" class="" style="display :none;" {% endif %}>
+
+
+
     <div class="formular">
         <p class="formular-title" style="color: {{ settings.colorval_heading }};">{{menu}}</p>
         <p class="formular-text" style="color: {{ settings.colorval_text }};">
@@ -36,19 +31,16 @@
     </div>
     {% endif %}
 
-    <div class="content">
-        <!--Go to previous page button-->
-        <div class="navigation-container">
-            {% if page_obj.paginator.num_pages != 1 %}
-            {% if page_obj.has_previous %}
-            <a class="btn navigation" href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
-            {% else  %}
-            <a class="btn navigation noselect isDisabled">&laquo;</a>
-            {% endif %}
-            {% endif %}
-        </div>
+    <div class="menu_pages">
 
-        <!--Submenu and Subforms buttons-->
+        {% if page_obj.paginator.num_pages != 1 %}
+        {% if page_obj.has_previous %}
+        <a class="btn navigation" href="?page={{ page_obj.previous_page_number }}">&lArr;</a>
+        {% else  %}
+        <a class="btn navigation noselect isDisabled">&lArr;</a>
+        {% endif %}
+        {% endif %}
+
         <div class="btn-container">
             {% for entry in page_obj.object_list %}
             {% if entry.is_menu %}
@@ -65,20 +57,19 @@
             {% if settings.homepage_id != menu.pk %}
             <a style="color:{{ settings.colorval_zurueck_button }}" class="noselect back btn"
                 href="/menu/{{ menu.parent_menu.pk }}">
-                &#171; Zurück </a>
+                &#8666; Zurück </a>
             {% endif %}
         </div>
 
-        <!--Go to next page button-->
-        <div class="navigation-container">
-            {% if page_obj.paginator.num_pages != 1 %}
-            {% if page_obj.has_next %}
-            <a class="btn navigation" href="?page={{ page_obj.next_page_number }}">&raquo;</a>
-            {% else %}
-            <a class="btn navigation noselect isDisabled">&raquo;</a>
-            {% endif %}
-            {% endif %}
-        </div>
+
+        {% if page_obj.paginator.num_pages != 1 %}
+        {% if page_obj.has_next %}
+        <a class="btn navigation" href="?page={{ page_obj.next_page_number }}">&rArr;</a>
+        {% else %}
+        <a class="btn navigation noselect isDisabled">&rArr;</a>
+        {% endif %}
+        {% endif %}
+
     </div>
 </div>
 {% endblock content %}
