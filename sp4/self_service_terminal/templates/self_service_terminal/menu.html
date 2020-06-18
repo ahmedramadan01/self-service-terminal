@@ -9,12 +9,12 @@
 <div id="welcome">
     <h1>Willkommen <br> bei der AOK</h1>
     <h3>Drücken Sie auf START <br> um ein Formular auszuwählen</h3>
-    <button id="start" class="green-btn">START</button>
+    <button id="start" class="btn green-btn">START</button>
 </div>
 {% endif %}
 
 
-<div id="homepage" class="" {% if settings.homepage.pk == menu.pk %} style="display :none;" {% endif %}>
+<div {% if settings.homepage.pk == menu.pk %} id="homepage" class="" style="display :none;" {% endif %}>
 
 
 
@@ -31,19 +31,16 @@
     </div>
     {% endif %}
 
-    <div class="content">
-        <!--Go to previous page button-->
-        <div class="navigation-container">
-            {% if page_obj.paginator.num_pages != 1 %}
-            {% if page_obj.has_previous %}
-            <a class="btn navigation" href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
-            {% else  %}
-            <a class="btn navigation noselect isDisabled">&laquo;</a>
-            {% endif %}
-            {% endif %}
-        </div>
+    <div class="menu_pages">
 
-        <!--Submenu and Subforms buttons-->
+        {% if page_obj.paginator.num_pages != 1 %}
+        {% if page_obj.has_previous %}
+        <a class="btn navigation" href="?page={{ page_obj.previous_page_number }}">&lArr;</a>
+        {% else  %}
+        <a class="btn navigation noselect isDisabled">&lArr;</a>
+        {% endif %}
+        {% endif %}
+
         <div class="btn-container">
             {% for entry in page_obj.object_list %}
             {% if entry.is_menu %}
@@ -60,20 +57,19 @@
             {% if settings.homepage_id != menu.pk %}
             <a style="color:{{ settings.colorval_zurueck_button }}" class="noselect back btn"
                 href="/menu/{{ menu.parent_menu.pk }}">
-                &#171; Zurück </a>
+                &#8666; Zurück </a>
             {% endif %}
         </div>
 
-        <!--Go to next page button-->
-        <div class="navigation-container">
-            {% if page_obj.paginator.num_pages != 1 %}
-            {% if page_obj.has_next %}
-            <a class="btn navigation" href="?page={{ page_obj.next_page_number }}">&raquo;</a>
-            {% else %}
-            <a class="btn navigation noselect isDisabled">&raquo;</a>
-            {% endif %}
-            {% endif %}
-        </div>
+
+        {% if page_obj.paginator.num_pages != 1 %}
+        {% if page_obj.has_next %}
+        <a class="btn navigation" href="?page={{ page_obj.next_page_number }}">&rArr;</a>
+        {% else %}
+        <a class="btn navigation noselect isDisabled">&rArr;</a>
+        {% endif %}
+        {% endif %}
+
     </div>
 </div>
 {% endblock content %}
