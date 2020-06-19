@@ -16,7 +16,7 @@ class Terminal_Settings(models.Model):
     Sets the homepage menu.
     Title and description fields are deprecated.
     """
-    title = models.CharField(max_length=TITLE_LENGTH)
+    title = models.CharField(max_length=TITLE_LENGTH, unique=True)
     description = models.TextField(blank=True, null=True)
 
     homepage = models.OneToOneField(
@@ -35,7 +35,6 @@ class Terminal_Settings(models.Model):
     def __str__(self):
         return self.title
 
-
 class Menu(models.Model):
     """Model the menus and submenus of the self service terminal.
 
@@ -44,7 +43,7 @@ class Menu(models.Model):
     """
     settings = models.ForeignKey(
         Terminal_Settings, on_delete=models.CASCADE, blank=True, null=True,
-        default=lambda: Terminal_Settings.objects.get(title='settings'))
+        to_field='title', default='settings')
     parent_menu = models.ForeignKey(
         'self', on_delete=models.CASCADE, blank=True, null=True)
     menu_title = models.CharField(max_length=TITLE_LENGTH)
