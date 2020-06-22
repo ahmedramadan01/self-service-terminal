@@ -1,8 +1,12 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render, HttpResponse
+from django.http import HttpRequest
 from .models import Menu, Form, Terminal_Settings
+from .admin import MenuResource, FormResource
 
 from pdf2image import convert_from_path
+from datetime import datetime
+from time import strftime
 import os
 
 from .constants import *
@@ -133,6 +137,20 @@ def print_formular(request, form_id=None):
     """
     Form.objects.get(pk=form_id).print_form()
     return HttpResponse(status=204)
+
+def export_view(request=HttpRequest(), path=EXPORT_PATH):
+    homepage_pk = Terminal_Settings.objects.get(title='settings').pk
+    queryset = Menu.objects.exclude(pk=homepage_pk)
+    menu_dataset = MenuResource().export(queryset=queryset)
+    form_dataset = FormResource().export()
+    date = strftime('%Y-%m-%d')
+    
+    if not path.exists():
+        path.mkdir()
+    with open(path.joinpath(date + '_menu-export.json'), mode='w') as fp:
+        fp.write(menu_dataset.json)
+    with open(path.joinpath(date + '_form-export.json'), mode='w') as fp:
+        fp.write(form_dataset.json)
 
 
 # Testview für die Django Templatesprache
