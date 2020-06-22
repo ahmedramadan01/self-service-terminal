@@ -8,6 +8,7 @@ from django.contrib import admin
 
 from .models import Form, Menu, Terminal_Settings
 
+from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 
 
@@ -59,3 +60,14 @@ class FormAdmin(ImportExportModelAdmin):
     list_display = ['form_title', 'time_since_last_updated_str',
                     'upload_date', 'last_changed']
     list_filter = ['upload_date', 'last_changed']
+
+
+class MenuResource(resources.ModelResource):
+
+    class Meta:
+        model = Menu
+
+class FormResource(resources.ModelResource):
+
+    class Meta:
+        model = Form
