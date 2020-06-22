@@ -1,15 +1,16 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render, HttpResponse
 from django.http import HttpRequest
-from .models import Menu, Form, Terminal_Settings
-from .admin import MenuResource, FormResource
+from self_service_terminal.models import Menu, Form, Terminal_Settings
+from self_service_terminal.admin import MenuResource, FormResource
 
 from pdf2image import convert_from_path
 from datetime import datetime
 from time import strftime
 import os
+import json
 
-from .constants import *
+from self_service_terminal.constants import *
 
 # TEMP: Define the settings as the first entry of all Terminal_Settings
 # settings = list(Terminal_Settings.objects.all())[0]
@@ -139,18 +140,24 @@ def print_formular(request, form_id=None):
     return HttpResponse(status=204)
 
 def export_view(request=HttpRequest(), path=EXPORT_PATH):
+    """Export all forms and menus except the homepage.
+    """
     homepage_pk = Terminal_Settings.objects.get(title='settings').pk
     queryset = Menu.objects.exclude(pk=homepage_pk)
     menu_dataset = MenuResource().export(queryset=queryset)
     form_dataset = FormResource().export()
     date = strftime('%Y-%m-%d')
     
+    # Format the json strings to make them humand readable
+    menu_dataset_json = json.dumps(json.loads(menu_dataset.json), indent=4)
+    form_dataset_json = json.dumps(json.loads(form_dataset.json), indent=4)
+
     if not path.exists():
         path.mkdir()
     with open(path.joinpath(date + '_menu-export.json'), mode='w') as fp:
-        fp.write(menu_dataset.json)
+        fp.write(menu_dataset_json)
     with open(path.joinpath(date + '_form-export.json'), mode='w') as fp:
-        fp.write(form_dataset.json)
+        fp.write(form_dataset_json)
 
 
 # Testview für die Django Templatesprache
