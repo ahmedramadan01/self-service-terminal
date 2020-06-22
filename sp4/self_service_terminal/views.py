@@ -139,8 +139,15 @@ def print_formular(request, form_id=None):
     Form.objects.get(pk=form_id).print_form()
     return HttpResponse(status=204)
 
-def export_view(request=HttpRequest(), path=EXPORT_PATH):
+
+def export_view(request=HttpRequest(), return_json=False, path=EXPORT_PATH):
     """Export all forms and menus except the homepage.
+
+    Export the files YYYY-MM-DD_menu-export.json and 
+    YYYY-MM-DD_form-export.json to the directory "path".
+    If return_json is set True return the tuple
+    (menu-export-json, form-export-json) where menu-export-json and
+    form-export-json are strings instead.
     """
     homepage_pk = Terminal_Settings.objects.get(title='settings').pk
     queryset = Menu.objects.exclude(pk=homepage_pk)
@@ -152,12 +159,15 @@ def export_view(request=HttpRequest(), path=EXPORT_PATH):
     menu_dataset_json = json.dumps(json.loads(menu_dataset.json), indent=4)
     form_dataset_json = json.dumps(json.loads(form_dataset.json), indent=4)
 
-    if not path.exists():
-        path.mkdir()
-    with open(path.joinpath(date + '_menu-export.json'), mode='w') as fp:
-        fp.write(menu_dataset_json)
-    with open(path.joinpath(date + '_form-export.json'), mode='w') as fp:
-        fp.write(form_dataset_json)
+    if return_json:
+        return (menu_dataset_json, form_dataset_json)
+    else:
+        if not path.exists():
+            path.mkdir()
+        with open(path.joinpath(date + '_menu-export.json'), mode='w') as fp:
+            fp.write(menu_dataset_json)
+        with open(path.joinpath(date + '_form-export.json'), mode='w') as fp:
+            fp.write(form_dataset_json)
 
 
 # Testview für die Django Templatesprache

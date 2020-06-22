@@ -38,7 +38,8 @@ from subprocess import run
 
 from django.test import TestCase, Client
 from self_service_terminal.models import Terminal_Settings, Menu, Form
-from self_service_terminal.views import get_settings
+from self_service_terminal.views import get_settings, export_view
+from self_service_terminal.constants import *
 
 
 class DefaultTestCase(TestCase):
