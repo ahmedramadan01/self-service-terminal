@@ -3,7 +3,7 @@
 import os
 import getpass
 
-# Vorbereitung Raspian OS:
+# Prepare Raspberry Pi OS:
 os.system("sudo apt update") 
 os.system("sudo apt upgrade")
 os.system("sudo apt install python3 apache2 apache2-dev cups -y")
@@ -15,7 +15,7 @@ os.system("source ~/.venv/self_service_terminal/bin/activate")
 # Python:
 os.system("pip install django mod_wsgi django-import-export Pillow pdf2image")
 
-# Wlan, noch nicht funktional
+# Wlan, currently not operational
 
 os.system("sudo apt install hostpad")
 
@@ -43,7 +43,7 @@ os.system("sudo netfilter-persistent save")
 # configure dhcp and dns for wlan, NICHT FUNKTIONAL
 # rename default config file and edit new one
  
-os.systems("sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig")
+os.system("sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig")
 with open(" /etc/dnsmasq.conf", mode="a") as fp:
     fp.write("""\ninterface=wlan0\t#\tListeningInterface\ndhcp-range=192.168.4.2,192.168.4.20,255.255.255.0,24h\t#\tPool of IP addresses served via DHCP\ndomain=wlan\t#\tLocal wireless DNS domain\naddress=/gw.wlan/192.168.4.1\t#\tAlias for this router""")
 # ensure wireless operation
@@ -74,7 +74,7 @@ with open("/etc/hostapd/hostapd.conf") as fp:
 # FILL IN INFO FROM DOCUMENTATION
 check = input("Um die Einrichtung abzuschließen, muss das System neu gestartet werden. Wollen Sie das jetzt tun? (y/n)")
 if check == "y":
-    os.systems("sudo systemctl reboot")
+    os.system("sudo systemctl reboot")
 
 
 
