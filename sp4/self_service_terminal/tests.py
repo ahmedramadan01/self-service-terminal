@@ -38,7 +38,8 @@ from subprocess import run
 
 from django.test import TestCase, Client
 from self_service_terminal.models import Terminal_Settings, Menu, Form
-from self_service_terminal.views import get_settings
+from self_service_terminal.views import get_settings, export_view
+from self_service_terminal.constants import *
 
 
 class DefaultTestCase(TestCase):
@@ -56,8 +57,7 @@ class DefaultTestCase(TestCase):
         self.terminal_settings = Terminal_Settings.objects.create(
             title='settings')
         self.terminal_settings.save()
-        self.menu = Menu.objects.create(
-            settings=self.terminal_settings, menu_title='default_menu')
+        self.menu = Menu.objects.create(menu_title='default_menu')
         self.menu.save()
         self.submenu = Menu.objects.create(
             settings=self.terminal_settings,
@@ -134,6 +134,13 @@ class DefaultTestCase(TestCase):
         self.assertEqual(get_settings(), self.submenu.settings)
         self.assertEqual(get_settings(), 
         Terminal_Settings.objects.get(title='settings'))
+    
+    def test_default_settings(self):
+        self.assertEqual(
+            self.terminal_settings.pk,
+            self.menu.settings.pk)
+        for m in Menu.objects.all():
+            self.assertEqual(self.terminal_settings.pk, m.settings.pk)
 
 class UnconnectedConfiguration(DefaultTestCase):
     def setUp(self):
