@@ -1,4 +1,8 @@
-#!/usr/bin/python3
+#!/home/pi/.venv/self_service_terminal/bin/python3
+
+# Venv:
+# os.system("python3 -m venv ~/.venv/self_service_terminal")
+# os.system("source ~/.venv/self_service_terminal/bin/activate")
 
 import os
 import getpass
@@ -7,10 +11,6 @@ import getpass
 os.system("sudo apt update") 
 os.system("sudo apt upgrade")
 os.system("sudo apt install python3 apache2 apache2-dev cups -y")
-
-# Venv:
-os.system("python3 -m venv ~/.venv/self_service_terminal")
-os.system("source ~/.venv/self_service_terminal/bin/activate")
 
 # Python:
 os.system("pip install django mod_wsgi django-import-export Pillow pdf2image")
@@ -44,7 +44,7 @@ os.system("sudo netfilter-persistent save")
 # rename default config file and edit new one
  
 os.system("sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig")
-with open(" /etc/dnsmasq.conf", mode="a") as fp:
+with open("/etc/dnsmasq.conf", mode="a") as fp:
     fp.write("""\ninterface=wlan0\t#\tListeningInterface\ndhcp-range=192.168.4.2,192.168.4.20,255.255.255.0,24h\t#\tPool of IP addresses served via DHCP\ndomain=wlan\t#\tLocal wireless DNS domain\naddress=/gw.wlan/192.168.4.1\t#\tAlias for this router""")
 # ensure wireless operation
 os.system("sudo rfkill unblock wlan")
