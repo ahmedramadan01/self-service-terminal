@@ -9,6 +9,7 @@ from datetime import datetime
 from time import strftime
 import os
 import json
+import tablib
 
 from self_service_terminal.constants import *
 
@@ -168,6 +169,22 @@ def export_view(request=HttpRequest(), return_json=False, path=EXPORT_PATH):
             fp.write(menu_dataset_json)
         with open(path.joinpath(date + '_form-export.json'), mode='w') as fp:
             fp.write(form_dataset_json)
+
+def import_view(request, menu_file_path, form_file_path):
+    """Import all forms and menus except the homepage.
+    """
+    with open(menu_file_path, mode='r') as fp:
+        menu_json = json.load(fp)
+    with open(form_file_path, mode='r') as fp:
+        form_json = json.load(fp)
+
+    menu_dataset = tablib.Dataset()
+    form_dataset = tablib.Dataset()
+    menu_dataset.load(str(menu_json))
+    form_dataset.load(str(form_json))
+
+    MenuResource().import_data(menu_dataset)
+    FormResource().import_data(form_dataset)
 
 
 # Testview für die Django Templatesprache
