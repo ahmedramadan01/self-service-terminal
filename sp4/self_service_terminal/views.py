@@ -141,7 +141,7 @@ def print_formular(request, form_id=None):
     return HttpResponse(status=204)
 
 
-def export_view(request=HttpRequest(), return_json=False, path=EXPORT_PATH):
+def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
     """Export all forms and menus except the homepage.
 
     Export the files YYYY-MM-DD_menu-export.json and 
@@ -160,7 +160,7 @@ def export_view(request=HttpRequest(), return_json=False, path=EXPORT_PATH):
     menu_dataset_json = json.dumps(json.loads(menu_dataset.json), indent=4)
     form_dataset_json = json.dumps(json.loads(form_dataset.json), indent=4)
 
-    if return_json:
+    if return_string:
         return (menu_dataset_json, form_dataset_json)
     else:
         if not path.exists():
@@ -170,13 +170,17 @@ def export_view(request=HttpRequest(), return_json=False, path=EXPORT_PATH):
         with open(path.joinpath(date + '_form-export.json'), mode='w') as fp:
             fp.write(form_dataset_json)
 
-def import_view(request, menu_file_path, form_file_path):
+def import_view(request=HttpRequest(), import_string=False, menu_file=None, form_file=None):
     """Import all forms and menus except the homepage.
     """
-    with open(menu_file_path, mode='r') as fp:
-        menu_json = json.load(fp)
-    with open(form_file_path, mode='r') as fp:
-        form_json = json.load(fp)
+    if not import_string:
+        with open(menu_file_path, mode='r') as fp:
+            menu_json = json.load(fp)
+        with open(form_file_path, mode='r') as fp:
+            form_json = json.load(fp)
+    else:
+        menu_json = menu_file
+        form_json = form_file
 
     menu_dataset = tablib.Dataset()
     form_dataset = tablib.Dataset()
