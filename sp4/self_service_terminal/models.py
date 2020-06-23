@@ -15,6 +15,9 @@ class Terminal_Settings(models.Model):
     Values must be valid for CSS. Example: #aabbcc or black
     Sets the homepage menu.
     Title and description fields are deprecated.
+
+    Important: Currently only the Terminal_Settings instance with the
+    title='settings' is used in the Self service terminal.
     """
     title = models.CharField(max_length=TITLE_LENGTH, unique=True)
     description = models.TextField(blank=True, null=True)
