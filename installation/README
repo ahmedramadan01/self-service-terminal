@@ -1,7 +1,7 @@
 ##### Installation Guide ######
 
 Update the system
-> $ sudo apt update && sudo apt upgrade
+> $ sudo apt update && sudo apt upgrade -y
 
 Install Apache and CUPS
 > sudo apt install apache2 apache2-dev cups
