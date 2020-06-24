@@ -1,6 +1,5 @@
 /*General Styles*/
 body {
-  padding: 20px;
   font-family: Helvetica;
 }
 a{
@@ -25,6 +24,9 @@ header{
   align-items: flex-end;
   height:65px ;
   display: -webkit-flex;
+}
+nav{
+  margin: 12px;
 }
 
 #nav-bar{
@@ -82,18 +84,29 @@ header{
 .formular-text {
   font-size: 60%;
 }
-.menu_pages{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  }
-
 .btn-container {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 700px;
+ 
+}
+.menus-container {
   display: -webkit-flex;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+ 
+}
+.navigation-container{
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+ 
+
 }
 
 .green-btn,
@@ -113,8 +126,6 @@ header{
 }
 
 .back {
-  /* width: wrap;
-  height: wrap; */
   padding: 10px 15px;
   border-radius: 8px;
   border-style: solid;
@@ -125,7 +136,7 @@ header{
 }
 
 .btn {
-  margin: 10px;
+  margin: 5px;
   transition: all 0.05s;
 }
 
@@ -150,18 +161,6 @@ header{
   user-select: none;
   /* Non-prefixed version, currently
   supported by Chrome, Opera and Firefox */
-}
-
-.navigation {
-  /* width: wrap;
-  height: wrap; */
-  padding: 8px 13px;
-  border-radius: 8px;
-  border-style: solid;
-  border-color: grey;
-  background-color: transparent;
-  color: grey;
-  font-size: 25px;
 }
 
 .isDisabled {
