@@ -37,12 +37,12 @@
         <div class="menus-container">
             {% for entry in page_obj.object_list %}
             {% if entry.is_menu %}
-            <a style="color:{{ settings.colorval_button }}" class="noselect view btn"
+            <a style="color:{{ settings.colorval_button }}" class="noselect green-btn btn"
                 href="/menu/{{ entry.object.pk }}">{{ entry.object.menu_title }}</a>
             {% endif %}
 
             {% if entry.is_form %}
-            <a style="color:{{ settings.colorval_button }}" class="noselect view btn"
+            <a style="color:{{ settings.colorval_button }}" class="noselect yellow-btn btn"
                 href="/form/{{ entry.object.pk }}?page={{ page_obj.number }}">{{ entry.object.form_title }}</a>
             {% endif %}
             {% endfor %}
