@@ -1,7 +1,7 @@
 ##### Installation Guide ######
 
 Update the system
-> $ sudo apt update && sudo apt upgrade
+> $ sudo apt update && sudo apt upgrade -y
 
 Install Apache and CUPS
 > sudo apt install apache2 apache2-dev cups
@@ -17,6 +17,37 @@ Install the necessary pip packages
 
 TODO Setup WLAN
 (there is an official tutorial: https://www.raspberrypi.org/documentation/configuration/wireless/access-point-routed.md)
+
+TODO Setup System Apache
+> $ sudo mod_wsgi-express install-module
+Copy the output into the /etc/apache2/mods-available/wsgi.load file.
+> $ sudo a2enmod wsgi
+
+# Example on Raspbian for the 000-default.conf Apache config files
+# This configuration also serves static and media files
+"""
+WSGIDaemonProcess sp4 python-home=/home/pi/.venv/softwareprojekt_aok python-path=/home/pi/projects/2020-06-06_softwareprojekt_aok/softwarepro$
+WSGIProcessGroup sp4
+
+Alias /files/ /home/pi/projects/2020-06-06_softwareprojekt_aok/softwareprojekt---self-service-terminal/sp4/self_service_terminal/files/
+Alias /static/ /home/pi/projects/2020-06-06_softwareprojekt_aok/softwareprojekt---self-service-terminal/sp4/self_service_terminal/static/
+
+<Directory /home/pi/projects/2020-06-06_softwareprojekt_aok/softwareprojekt---self-service-terminal/sp4/self_service_terminal/static>
+Require all granted
+</Directory>
+
+<Directory /home/pi/projects/2020-06-06_softwareprojekt_aok/softwareprojekt---self-service-terminal/sp4/self_service_terminal/files>
+Require all granted
+</Directory>
+
+WSGIScriptAlias / /home/pi/projects/2020-06-06_softwareprojekt_aok/softwareprojekt---self-service-terminal/sp4/sp4/wsgi.py
+
+<Directory /home/pi/projects/2020-06-06_softwareprojekt_aok/softwareprojekt---self-service-terminal/sp4/sp4>
+<Files wsgi.py>
+Require all granted
+</Files>
+</Directory>
+"""
 
 (optional) Setup remote printer access via CUPS
 > $ sudo usermod -a -G lpadmin $USER
