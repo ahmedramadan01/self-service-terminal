@@ -6,6 +6,7 @@ import os
 from subprocess import run
 import getpass
 
+# git clone sst Pfadname: /home/Self-Service-Terminal/sp4/.....
 # Prepare Raspberry Pi OS:
 run("sudo apt update", shell=True) 
 run("sudo apt upgrade", shell=True)
@@ -79,3 +80,4 @@ if check == "y":
 
 
 
+# git clone des SST noch hinzufügen
