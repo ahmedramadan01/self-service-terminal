@@ -36,9 +36,9 @@ default_config = """
 \tRequire all granted
 \t</Directory>
 \t
-\tWSGIScriptAlias / {sp4_path}/sp4/wsgi.py
+\tWSGIScriptAlias / {sp4_path}/wsgi.py
 \t
-\t<Directory {sp4_path}/sp4>
+\t<Directory {sp4_path}>
 \t<Files wsgi.py>
 \tRequire all granted
 \t</Files>
