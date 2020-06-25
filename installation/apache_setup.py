@@ -1,12 +1,20 @@
+# run like this: sudo /path/to/venv/bin/python apache_setup.py
+
 from subprocess import run
 import sys
 import getpass
 
+# get ouput from command and convert to string and write output to wsgi.load config file
+
 result = run("sudo mod_wsgi-express install-module", shell=True, capture_output=True)
 with open("/etc/apache2/mods-available/wsgi.load", mode="w") as fp:
-    fp.write(result.stdout)
+    fp.write(str(result.stdout))
+
 
 run("sudo a2enmod wsgi", shell=True)
+
+# get paths needed in 000-default.config file and add them to string
+
 venv_path = sys.prefix
 current_user = getpass.getuser()
 default_path = "/home/{}/Self-Service-Terminal/sp4".format(current_user)
@@ -37,6 +45,8 @@ default_config = """
 \t</Directory>
 """
 default_config = default_config.format(venv_path=venv_path, sst_path=sst_path, sp4_path=sp4_path)
+
+# insert modified string after "Virtual Host" in string - overwrite config file with added content
 
 with open("/etc/apache2/sites-enabled/000-default.conf", mode="r") as fp:
     config_content = fp.read()
