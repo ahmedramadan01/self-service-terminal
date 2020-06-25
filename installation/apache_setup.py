@@ -8,7 +8,7 @@ import getpass
 
 result = run("sudo mod_wsgi-express install-module", shell=True, capture_output=True)
 with open("/etc/apache2/mods-available/wsgi.load", mode="w") as fp:
-    fp.write(str(result.stdout))
+    fp.write(result.stdout.decode("ascii"))
 
 
 run("sudo a2enmod wsgi", shell=True)
