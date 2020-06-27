@@ -171,3 +171,42 @@ Change the default VirtualHost configuration (`/etc/apache2/sites-available/000-
 ```
 
 ## [OPTIONAL] 6. Setup the remote interface for CUPS`
+(root)  
+```bash
+sudo usermod -a -G lpadmin $USER
+```
+`$USER` is the user in whose home directory the self-service-terminal was installed.  
+
+Change `/etc/cups/cupsd.conf` like this:  
+```
+# Only listen for connections from the local machine
+# Listen localhost:631
+Port 631
+
+< Location / >
+    Order allow,deny
+    Allow @local
+< /Location >
+
+< Location /admin >
+    Order allow,deny
+    Allow @local
+< /Location >
+
+< Location /admin/conf >
+    AuthType Default
+    Require user @SYSTEM
+    Order allow,deny
+    Allow @local
+< /Location >
+```
+
+Restart the cups server:  
+```bash
+sudo systemctl restart cups
+```
+
+The CUPS GUI Interface can now be accessed via a webbrowser:  
+```
+{IP or hostname}:631
+```
