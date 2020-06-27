@@ -90,7 +90,14 @@ Run
 ```bash
 sudo systemctl reboot
 ```
-to restart the system and make the Access Point available.
+to restart the system and make the Access Point available.  
+
+Useful commands for hostapd:  
+- `systemctl status hostapd`
+- `sudo systemctl stop hostapd`
+- `sudo systemctl start hostapd`
+- `sudo systemctl disable hostapd`
+- `sudo systemctl enable hostapd`
 
 ## 5. Setup the Apache Webserver
 (dir) (venv) (root)  
@@ -162,7 +169,5 @@ Change the default VirtualHost configuration (`/etc/apache2/sites-available/000-
 
 </VirtualHost>
 ```
-
-
 
 ## [OPTIONAL] 6. Setup the remote interface for CUPS`
