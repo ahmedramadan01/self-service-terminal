@@ -1,36 +1,35 @@
-# Installation Guide
-## Preconditions
+# Preconditions
 - existing Python virtual environment
   - create with `python3 -m venv /path/to/venv/venv_name`
 - existing installation directory (e.g. `/home/{user}/Self-Service-Terminal`)
 
-## Constraints
+# Constraints
 The following commands are to be run
 1. in the virtual Python environment. (venv)
 2. as root. (root)
 3. in the installation directory. (dir)
 
-## Steps
-### 1. Update your system and install all necessary packages
+# Steps
+## 1. Update your system and install all necessary packages
 (root)  
 ```bash
 sudo apt update && sudo apt upgrade -y  
 sudo apt install apache2 apache2-dev cups hostapd dnsmasq  
 ```
 
-### 2. Install all necessary pip packages
+## 2. Install all necessary pip packages
 (venv)  
 ```bash
 pip install django django-import-export mod_wsgi Pillow pdf2image  
 ```
 
-### 3. Clone the source code into your installation directory
+## 3. Clone the source code into your installation directory
 (dir)  
 ```bash
 git clone {url/to/self_service_terminal}
 ```  
 
-### 4. [Setup the Wireless Access Point](https://www.raspberrypi.org/documentation/configuration/wireless/access-point-routed.md)
+## 4. [Setup the Wireless Access Point](https://www.raspberrypi.org/documentation/configuration/wireless/access-point-routed.md)
 (root)  
 
 ```bash
@@ -93,7 +92,7 @@ sudo systemctl reboot
 ```
 to restart the system and make the Access Point available.
 
-### 5. Setup the Apache Webserver
+## 5. Setup the Apache Webserver
 (dir) (venv) (root)  
 
 ```bash
@@ -102,4 +101,4 @@ sudo mod_wsgi-express install-module
 
 Copy the output into the `/etc/apache2/mods-available/wsgi.load` file.
 
-### [OPTIONAL] 6. Setup the remote interface for CUPS`
+## [OPTIONAL] 6. Setup the remote interface for CUPS`
