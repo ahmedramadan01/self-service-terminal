@@ -80,6 +80,7 @@ TODO document:
 - output = actual_output
 """
 from subprocess import run
+import re
 
 from django.test import TestCase, Client
 from self_service_terminal.models import Terminal_Settings, Menu, Form
@@ -133,7 +134,7 @@ class DefaultTestCase(TestCase):
         self.assertEqual(homepage_menu_response.status_code, 200)
 
         self.assertHTMLEqual(
-            str(homepage_response.content), str(homepage_menu_response.content))
+            homepage_menu_response.content.decode(), menu_response.content.decode())
 
     def test_menu_availability(self):
         for m in Menu.objects.all():
@@ -189,6 +190,25 @@ class DefaultTestCase(TestCase):
         for m in Menu.objects.all():
             self.assertEqual(self.terminal_settings.pk, m.settings.pk)
 
+    # def test_user_navigation(self):
+    #     """ (T0010) Simulate a user navigating through the pages.
+    #     """
+    #     href_regex = re.compile(r'href="/menu/[0-9]+"|href="/form/[0-9]+"')
+    #     link_regex = re.compile(r'/menu/[0-9]+|/form/[0-9]+')
+
+    #     response = self.c.get('/')
+    #     self.assertEqual(response.status_code, 200)
+    #     # Decode the byte string to a normal string in UTF-8
+    #     response = response.content.decode()
+
+    #     links = href_regex.findall(response)
+    #     for link in link_regex.findall(response):
+    #         link = link.strip('href="')
+    #         tmp_response = self.c.get(link)
+    #         self.assertEqual(tmp_response.status_code, 200)
+
+
+
 class UnconnectedConfiguration(DefaultTestCase):
     def setUp(self):
         self.terminal_settings = Terminal_Settings.objects.create(
@@ -216,6 +236,20 @@ class UnconnectedConfiguration(DefaultTestCase):
 
         self.terminal_settings.save()
         self.c = Client()
+    
+    def test_homepage_availability(self):
+        homepage_response = self.c.get('/')
+        self.assertEqual(homepage_response.status_code, 200)
+
+        submenu_response = self.c.get('/menu/' + str(self.submenu.pk) + '/')
+        self.assertEqual(submenu_response.status_code, 200)
+
+        homepage_menu_response = self.c.get(
+            '/menu/' + str(self.terminal_settings.homepage.pk) + '/')
+        self.assertEqual(homepage_menu_response.status_code, 200)
+
+        self.assertHTMLEqual(
+            homepage_menu_response.content.decode(), submenu_response.content.decode())
 
 
 class ProductionCase(DefaultTestCase):
