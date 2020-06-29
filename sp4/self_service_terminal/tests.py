@@ -236,6 +236,30 @@ class DefaultTestCase(TestCase):
             path = Path(form_entry.pdffile.path)
             self.assertTrue(path.exists())
 
+    def test_setup_pdffile(self):
+        """ (T0050)
+        """
+        self.custom_form = Form.objects.create(
+            parent_menu=self.submenu,
+            pdffile="forms/Aerztliche-Bescheinigung-Notwendigkeit-Haushaltshilfe.pdf",
+            form_title='custom_form',
+            description='nothing to see here'
+        )
+        self.custom_form.save()
+        try:
+            form = Form.objects.get(form_title='custom_form')
+            form.form_title = 'different title'
+            form.description = 'a lot ot see here'
+            form.save()
+            self.assertEqual(self.custom_form.form_title, 'different title')
+            self.assertEqual(self.custom_form.description, 'a lot to see here')
+        except:
+            pass
+        finally:
+            self.custom_form.delete()
+        
+
+
 
 class UnconnectedConfiguration(DefaultTestCase):
     def setUp(self):
