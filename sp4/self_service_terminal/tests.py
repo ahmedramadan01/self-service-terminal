@@ -193,38 +193,28 @@ class DefaultTestCase(TestCase):
     def test_user_navigation(self):
         """ (T0010) Simulate a user navigating through the pages.
         """
-        menu_container_regex = re.compile(r'(?s)<div class="menus-container">.*</div>')
-        href_regex = re.compile(r'href="/menu/[0-9]+"|href="/form/[0-9]+"')
-        link_regex = re.compile(r'/menu/[0-9]+|/form/[0-9]+')
-
-        response = self.c.get('/')
-        self.assertEqual(response.status_code, 200)
-        # Decode the byte string to a normal string in UTF-8
-        response = response.content.decode()
-
-        # match the <div class="menu-container">
-        match = menu_container_regex.search(response)
-        menu_container = match.group()
-
-        # find all matches of link_regex in menu_container
-        stack = link_regex.findall(menu_container)
-        l = [i + '/' for i in stack]
-        stack = l
-        print(stack)
-
-        while len(stack) > 0:
-            link = stack.pop()
-            response = self.c.get(link)
-            self.assertEqual(response.status_code, 200)
-            response = response.content.decode()
-            
-            match = menu_container_regex.search(response)
-            if match:
-                menu_container = match.group()
-
-                for link in link_regex.findall(menu_container):
-                    link = link + '/'
-                    stack.append(link)
+        # get homepage primary key
+        homepage = Menu.objects.get(pk=self.terminal_settings.homepage.pk)
+        homepage_response = self.c.get('/menu/' + str(homepage.pk) + '/')
+        self.assertEqual(homepage_response.status_code, 200)
+        
+        # Depth-First-Search
+        submenu_stack = [homepage]
+        discovered = list()
+        while len(submenu_stack) > 0:
+            menu = submenu_stack.pop()
+            if not menu in discovered:
+                discovered.append(menu)
+                menu_response = self.c.get('/menu/' + str(menu.pk) + '/')
+                self.assertEqual(menu_response.status_code, 200)
+                submenus = list(Menu.objects.filter(parent_menu=menu.pk))
+                subforms = list(Form.objects.filter(parent_menu=menu.pk))
+                for entry in submenus:
+                    submenu_stack.append(entry)
+                for entry in subforms:
+                    form_response = self.c.get('/form/' + str(entry.pk) + '/')
+                    self.assertEqual(form_response.status_code, 200)
+                    
     
     def test_menu_1(self):
         r = self.c.get('/menu/1/')
