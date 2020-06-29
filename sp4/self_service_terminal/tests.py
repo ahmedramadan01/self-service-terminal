@@ -36,7 +36,6 @@ General tests for every different configuration:
     4. (T0010) Test the user navigation:
         Depth-first-search via menu and form URLs starting from the
         homepage.
-        (Regex?)
     5. (T0010) Check tree structure via Primary Keys against proposed structure
         in setUp method.
     6. (T0030) If no PDF is set in the admin panel, no PDF should be printed out
@@ -118,6 +117,12 @@ class DefaultTestCase(TestCase):
             form_title='default_form'
         )
         self.form.save()
+        self.form2 = Form.objects.create(
+            parent_menu=self.submenu,
+            show_on_frontend=True,
+            form_title='second_form'
+        )
+        self.form2.save()
         self.terminal_settings.homepage = self.menu
         self.terminal_settings.save()
         self.c = Client()

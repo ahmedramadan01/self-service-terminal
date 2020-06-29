@@ -137,8 +137,12 @@ def print_formular(request, form_id=None):
     """Run the print method of the given form object and return a HTTP 204
     No Content response.
     """
-    Form.objects.get(pk=form_id).print_form()
-    return HttpResponse(status=204)
+    form = Form.objects.get(pk=form_id)
+    if form.pdffile.name != 'forms/default.pdf':
+        form.print_form()
+        return HttpResponse(status=204)
+    else:
+        return HttpResponse('Kein PDF hinterlegt.', status=204)
 
 
 def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
