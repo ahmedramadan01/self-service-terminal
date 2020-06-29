@@ -28,7 +28,7 @@ class Terminal_Settings(models.Model):
     colorval_heading = models.CharField(max_length=7, blank=True, default='')
     colorval_text = models.CharField(max_length=7, blank=True, default='')
     colorval_button = models.CharField(max_length=7, blank=True, default='')
-    colorval_zurueck_button = models.CharField(
+    colorval_return_button = models.CharField(
         max_length=7, blank=True, default='')
     institute_logo = models.ImageField(
         upload_to='images', default='images/institute_logo.png')
