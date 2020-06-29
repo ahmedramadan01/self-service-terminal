@@ -1,0 +1,54 @@
+\documentclass[12, A4]{article}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage[export]{adjustbox}
+\usepackage{pdflscape}
+\usepackage{helvet}
+\usepackage{multirow}
+\usepackage[hyperref]{xcolor}
+
+\date{\today}
+
+\begin{document}
+
+
+\begin{titlepage} %Titelseite
+\centering
+
+	{\scshape\LARGE Self Service Terminal for Health Insurance Offices\par}
+	\vspace{5cm}
+
+	{\huge\bfseries Installationsanleitung\par}
+	\vspace{4.5cm}
+	{\Large\itshape Jan Angerer, David Hruschka, Yusuf Nowati \par}
+	\vspace{0.5cm}
+	{\Large\itshape Ziqi Lin, Hakeem Shaddoud, Ahmed Ramadan \par}
+	\vfill
+
+
+	\vfill
+
+% Unterer Seitenabschnitt
+
+\end{titlepage} %Ende Titelseite
+
+
+
+
+\newpage
+\tableofcontents  %erzeugt Inhaltsverzeichnis anhand von Chapter und Subsection
+\newpage
+\input{Inhalt/Einleitung}
+\input{Inhalt/Systemvoraussetzungen}
+\input{Inhalt/Python}
+\input{Inhalt/Druckersoftware}
+\input{Inhalt/Bereitstellung des Funknetzes}
+\input{Inhalt/Webserver}
+\input{Inhalt/Self Service Terminal}
+\input{Inhalt/Nutzung}
+
+\end{document}

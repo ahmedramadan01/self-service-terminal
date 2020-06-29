@@ -1,0 +1,50 @@
+\section{Nachweis funktionaler und nichtfunktionaler Eigenschaften}
+
+
+\subsection{Benutzerfunktionen}
+
+\begin{itemize}
+    \item \textbf{/F0010/}\textit{Formulare auswählen:} \par
+    Ein Benutzer kann Formulare in den Menüs suchen und sich ein Formular anzeigen lassen.\par
+    \noindent \textbf{Test /T0010/:} Eingestellte Menüs sind aufrufbar, eingestellte Formulare sind aufrufbar. Es existiert eine Baumstruktur. Die Baumstruktur ist navigierbar.
+    
+    \item \textbf{/F0020/}\textit{Formulare ausdrucken:} \par
+    Ein Benutzer kann ein gefundenes Formular über eine Schaltfläche in der Anwendung ausdrucken.\par
+    \noindent \textbf{Test /T0020/:} Bei Betätigung des Drucken-Buttons wird der lpr-Befehl gesendet und http-Status-Code 204 zurückgegeben.\par
+    \noindent \textbf{Test /T0030/:} Ist eine Formularseite im Frontend eingestellt, aber kein entsprechendes PDF hochgeladen, wird beim Aufruf der Drucken-Funktion eine entsprechende Fehlermeldung angezeigt.
+\end{itemize}
+
+\vspace{1,5cm}
+
+\subsection{Administratorfunktionen}
+
+    \begin{itemize}
+        \item \textbf{/F0110/}\textit{Einfügen von Formularen:} \par
+        Ein Administrator kann Formulare im Format PDF in das Backend hochladen und speichern.\par
+        \noindent \textbf{Test /0040/:} Ein hochgeladenes PDF wird im Files-Ordner gespeichert, die zugehörige URL ist abrufbar, der Pfad zu dieser PDF ist in der Datenbank hinterlegt.
+        
+        \item \textbf{/F0120/}\textit{Bearbeiten von Formularen:} \par
+        Ein Administrator kann die Metadaten eines hochgeladenen und gespeicherten Formulars, wie Titel, Beschreibung oder Position in der Menüstruktur, direkt auf der Admin-Seite bearbeiten.\par
+        \noindent \textbf{Test /0050/:} Wird ein Formular gespeichert, werden alle Werte des Objekts der zugehörigen Relation in der Datenbank belegt. Die Werte sind aus der Admin-Seite änderbar.
+        
+        \item \textbf{/F0130/}\textit{Löschen von Formularen:} \par
+        Ein Administrator kann ein auf der Admin-Seite gespeichertes Formular aus dem System löschen.\par
+        \noindent \textbf{Test /0060/:} Datenbankeinträge zu einem Formular werden nach der Löschung des Formulars gelöscht. Fremdschlüsseleinträge zu entsprechendem Formular werden gelöscht.
+        
+        \item \textbf{/F0140/}\textit{Setzen der Farben und Logos:} \par 
+        Ein Administrator kann die Farben des Frontends anpassen. Außerdem kann er Logos im jpg-Format hochladen und im Frontend anzeigen lassen.
+        \noindent \textbf{Test /0070/:} Änderungen der Farben auf der Admin-Seiten führen zu Änderungen der entsprechenden Datenbankeinträge. Die geänderten Datenbankeinträge führen zu geänderten Farben im Frontend. Hochgeladene Logos werden gespeichert, Datenbankeinträge hierzu werden angelegt. Logos lassen sich im Frontend anzeigen.
+        
+        \item \textbf{/F0150/}\textit{Export und Import:} \par
+        Die Einstellungen können als JSON Datei exportiert und importiert werden. Die Formulare werden zusammen mit der JSON-Datei in einer Ordnerstruktur exportiert.
+        \noindent \textbf{Test /0080/:} Aufruf der Export-Funktion resultiert in der Erstellung einer JSON-Datei, in der die exportieren Werte gespeichert sind. Die Export-Datei ist im Files-Ordner zu finden. Import eine kompatiblen JSON-Datei führt zu den erwarteten Änderungen in der Datenbank.
+    \end{itemize}{}
+  
+  \vspace{1,5cm}  
+  \subsection{Systemfunktionen}
+  
+    \begin{itemize}
+        \item \textbf{/F0250/}\textit{Dynamische Generierung von Seiten:} \par
+        Der Server generiert dynamisch die passende Oberfläche zu den hinterlegten Formularstrukturen.
+        \noindent \textbf{Test /0090/:} Werden mehr als fünf Untermenüs oder Formulare einem Menü zugeordnet, werden automatisch weitere Seiten zur Anzeige der Formulare und Untermenüs erzeugt. Diese Seiten sind vom ursprünglichen Menü aus aufrufbar.
+    \end{itemize}
