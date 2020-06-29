@@ -79,6 +79,7 @@ TODO document:
 - output = actual_output
 """
 from subprocess import run
+from pathlib import Path
 import re
 
 from django.test import TestCase, Client
@@ -110,6 +111,7 @@ class DefaultTestCase(TestCase):
             menu_title='default_submenu'
         )
         self.submenu.save()
+        # T0040
         self.form = Form.objects.create(
             parent_menu=self.menu,
             pdffile='forms/form.pdf',
@@ -156,7 +158,10 @@ class DefaultTestCase(TestCase):
         """
         for f in Form.objects.all():
             response = self.c.get('/form/' + str(f.pk) + '/print')
-            self.assertEqual(response.status_code, 204)
+            if f.pdffile.name == 'forms/default.pdf':
+                self.assertEqual(response.status_code, 404)
+            else:
+                self.assertEqual(response.status_code, 204)
         run(['lprm', '-'])
 
     def test_cups_availability(self):
@@ -220,10 +225,13 @@ class DefaultTestCase(TestCase):
                     form_response = self.c.get('/form/' + str(entry.pk) + '/')
                     self.assertEqual(form_response.status_code, 200)
                     
-    
     def test_menu_1(self):
         r = self.c.get('/menu/1/')
         self.assertEqual(r.status_code, 200)
+
+    def test_pdf_file_exists(self):
+        for form_entry in Form.objects.all():
+            self.assertTrue(Path('/files/' + form_entry.pdffile.name).exists())
 
 
 class UnconnectedConfiguration(DefaultTestCase):
