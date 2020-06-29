@@ -231,7 +231,10 @@ class DefaultTestCase(TestCase):
 
     def test_pdf_file_exists(self):
         for form_entry in Form.objects.all():
-            self.assertTrue(Path('/files/' + form_entry.pdffile.name).exists())
+            path = Path(BASE_DIR)
+            path = path.joinpath('self_service_terminal')
+            path = path.joinpath('files').joinpath(form_entry.pdffile.name)
+            self.assertTrue(path.exists())
 
 
 class UnconnectedConfiguration(DefaultTestCase):
