@@ -32,7 +32,52 @@ General tests for every different configuration:
         - /form/<pk-of-Form>
     2. Return of Status Code 204 for
         - /form/<pk-of-Form>/print
-    and check for return code of lpr-command == 0
+    3. Check for return code of lpr-command == 0
+    4. (T0010) Test the user navigation:
+        Depth-first-search via menu and form URLs starting from the
+        homepage.
+        (Regex?)
+    5. (T0010) Check tree structure via Primary Keys against proposed structure
+        in setUp method.
+    6. (T0030) If no PDF is set in the admin panel, no PDF should be printed out
+        and an error message should be displayed.
+    7. (T0040) Test Upload of a PDF in the admin panel:
+        - check if files/forms/<pdf_name> exists
+        - check files/forms/<pdf_name> is in database form entry 
+        (form.url, form.path?)
+    8. (T0050) Add Form object with attributes and
+        - Check if values of attributes are saved in database.
+        - Change these values via the admin panel and check if the new values 
+        are present in the database.
+    9. (T0060) Delete Form object via admin panel and
+        - check if database entries have been deleted.
+        - check if foreign key entries have been deleted.
+    10. (T0070) Change color values via admin panel
+        - check if color values have been changed in database.
+        - check (via regex) if colors have changed in frontend.
+        Upload logos via admin panel and
+        - check if files/images/<logo_name> exists in file system.
+        - check if database entries have been added for the logos.
+        - check if logos are present in the frontend.
+    11. (T0080) Export and Import
+        Run the export function and
+        - check if exported json file exists in file system at
+        EXPORT_PATH/export/<YYYY-MM-DD_menu-export.json> and
+        EXPORT_PATH/export/<YYYY-MM-DD_form-export.json>.
+        - assert that the exported json files are equal to the expected ones.
+        Run the import function on a database with only the settings and
+        homepage object and
+        - check the database if the new objects exists.
+        - check the values of all objects against how they should be set.
+    12. (T0090) Pagination test
+        Create a menu with more then 5 submenus and forms.
+        - Check via regex if the links for pagination appear.
+        - Check via URL parameters if pagination works.
+
+TODO document:
+- input = used attributes
+- expected_output
+- output = actual_output
 """
 from subprocess import run
 
@@ -101,6 +146,8 @@ class DefaultTestCase(TestCase):
             self.assertEqual(response.status_code, 200)
 
     def test_print_return_code(self):
+        """ (T0020)
+        """
         for f in Form.objects.all():
             response = self.c.get('/form/' + str(f.pk) + '/print')
             self.assertEqual(response.status_code, 204)
