@@ -261,7 +261,19 @@ class DefaultTestCase(TestCase):
     def test_change_color_values(self):
         """ (T0070) Change the color values.
         """
-        pass
+        color = 'red'
+        t = self.terminal_settings
+        t.colorval_nav_bar = color
+        t.colorval_heading = color
+        t.colorval_button = color
+        t.colorval_return_button = color
+        t.save()
+
+        settings = Terminal_Settings.objects.get(title='settings')
+        self.assertEqual(settings.colorval_nav_bar, 'red')
+        self.assertEqual(settings.colorval_heading, 'red')
+        self.assertEqual(settings.colorval_button, 'red')
+        self.assertEqual(settings.colorval_return_button, 'red')
 
 
 
