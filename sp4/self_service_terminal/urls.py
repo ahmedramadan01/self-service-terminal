@@ -6,6 +6,7 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from self_service_terminal.admin import admin_site
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -18,7 +19,8 @@ urlpatterns = [
 
     # Django Templatesprache Test
     path('dtl/<int:menu_id>/', views.menu_template_test),
-    path('dtl/', views.menu_template_test)
+    path('dtl/', views.menu_template_test),
+    path('myadmin/', admin_site.urls)
 ]
 
 urlpatterns += staticfiles_urlpatterns()
