@@ -142,7 +142,7 @@ def print_formular(request, form_id=None):
         form.print_form()
         return HttpResponse(status=204)
     else:
-        return HttpResponse('Kein PDF hinterlegt.', status=204)
+        return HttpResponse('No PDF file deposited.', status=404)
 
 
 def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
