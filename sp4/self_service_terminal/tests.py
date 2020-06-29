@@ -230,10 +230,10 @@ class DefaultTestCase(TestCase):
         self.assertEqual(r.status_code, 200)
 
     def test_pdf_file_exists(self):
+        """ (T0040)
+        """
         for form_entry in Form.objects.all():
-            path = Path(BASE_DIR)
-            path = path.joinpath('self_service_terminal')
-            path = path.joinpath('files').joinpath(form_entry.pdffile.name)
+            path = Path(form_entry.pdffile.path)
             self.assertTrue(path.exists())
 
 
