@@ -258,6 +258,10 @@ class DefaultTestCase(TestCase):
         finally:
             self.custom_form.delete()
         
+    def test_change_color_values(self):
+        """ (T0070) Change the color values.
+        """
+        pass
 
 
 
