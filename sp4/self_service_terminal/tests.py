@@ -190,23 +190,45 @@ class DefaultTestCase(TestCase):
         for m in Menu.objects.all():
             self.assertEqual(self.terminal_settings.pk, m.settings.pk)
 
-    # def test_user_navigation(self):
-    #     """ (T0010) Simulate a user navigating through the pages.
-    #     """
-    #     href_regex = re.compile(r'href="/menu/[0-9]+"|href="/form/[0-9]+"')
-    #     link_regex = re.compile(r'/menu/[0-9]+|/form/[0-9]+')
+    def test_user_navigation(self):
+        """ (T0010) Simulate a user navigating through the pages.
+        """
+        menu_container_regex = re.compile(r'(?s)<div class="menus-container">.*</div>')
+        href_regex = re.compile(r'href="/menu/[0-9]+"|href="/form/[0-9]+"')
+        link_regex = re.compile(r'/menu/[0-9]+|/form/[0-9]+')
 
-    #     response = self.c.get('/')
-    #     self.assertEqual(response.status_code, 200)
-    #     # Decode the byte string to a normal string in UTF-8
-    #     response = response.content.decode()
+        response = self.c.get('/')
+        self.assertEqual(response.status_code, 200)
+        # Decode the byte string to a normal string in UTF-8
+        response = response.content.decode()
 
-    #     links = href_regex.findall(response)
-    #     for link in link_regex.findall(response):
-    #         link = link.strip('href="')
-    #         tmp_response = self.c.get(link)
-    #         self.assertEqual(tmp_response.status_code, 200)
+        # match the <div class="menu-container">
+        match = menu_container_regex.search(response)
+        menu_container = match.group()
 
+        # find all matches of link_regex in menu_container
+        stack = link_regex.findall(menu_container)
+        l = [i + '/' for i in stack]
+        stack = l
+        print(stack)
+
+        while len(stack) > 0:
+            link = stack.pop()
+            response = self.c.get(link)
+            self.assertEqual(response.status_code, 200)
+            response = response.content.decode()
+            
+            match = menu_container_regex.search(response)
+            if match:
+                menu_container = match.group()
+
+                for link in link_regex.findall(menu_container):
+                    link = link + '/'
+                    stack.append(link)
+    
+    def test_menu_1(self):
+        r = self.c.get('/menu/1/')
+        self.assertEqual(r.status_code, 200)
 
 
 class UnconnectedConfiguration(DefaultTestCase):
