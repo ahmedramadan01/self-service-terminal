@@ -275,16 +275,6 @@ class DefaultTestCase(TestCase):
         self.assertEqual(settings.colorval_button, 'red')
         self.assertEqual(settings.colorval_return_button, 'red')
 
-    def test_logo_file_exists(self):
-        """ (T0070)
-        """
-        logo_file = Path(BASE_DIR).parent.joinpath('default_files/blue_dot.jpg')
-        self.terminal_settings.institute_logo = logo_file
-        self.terminal_settings.insurance_logo = logo_file
-
-        settings = Terminal_Settings.objects.get(title='settings')
-        self.assertEqual(settings.institute_logo.path, str(logo_file))
-
 
 class UnconnectedConfiguration(DefaultTestCase):
     def setUp(self):
