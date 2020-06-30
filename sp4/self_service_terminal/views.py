@@ -10,6 +10,7 @@ from time import strftime
 import os
 import json
 import tablib
+import queue
 
 from self_service_terminal.constants import *
 
@@ -143,6 +144,23 @@ def print_formular(request, form_id=None):
         return HttpResponse(status=204)
     else:
         return HttpResponse('No PDF file deposited.', status=404)
+
+def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
+    # Get menu that has no parent
+    root = Menu.objects.filter(parent_menu=None)[0]
+    
+    # Breadth-first search (BFS) on the menus
+    q = queue.Queue()
+    discovered = [root]
+    export_list = list()
+    q.put(root)
+    while not q.qsize() == 0:
+        menu = q.get()
+        export_list.append(menu)
+        for submenu in Menu.objects.filter(parent_menu=menu.pk):
+            if submenu not in discovered:
+                discovered.append(submenu)
+                q.put(submenu)
 
 
 # def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
