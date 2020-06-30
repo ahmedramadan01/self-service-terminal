@@ -179,9 +179,9 @@ def import_view(request=HttpRequest(), import_string=False, menu_file=None, form
     """Import all forms and menus except the homepage.
     """
     if not import_string:
-        with open(menu_file_path, mode='r') as fp:
+        with open(menu_file, mode='r') as fp:
             menu_json = json.load(fp)
-        with open(form_file_path, mode='r') as fp:
+        with open(form_file, mode='r') as fp:
             form_json = json.load(fp)
     else:
         menu_json = menu_file
