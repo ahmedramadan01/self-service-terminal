@@ -2,7 +2,7 @@ from django.core.paginator import Paginator
 from django.shortcuts import render, HttpResponse
 from django.http import HttpRequest
 from self_service_terminal.models import Menu, Form, Terminal_Settings
-from self_service_terminal.admin import MenuResource, FormResource
+from self_service_terminal.admin import MenuResource, FormResource, Terminal_SettingsResource
 
 from pdf2image import convert_from_path
 from datetime import datetime
@@ -154,22 +154,36 @@ def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
     (menu-export-json, form-export-json) where menu-export-json and
     form-export-json are strings instead.
     """
+    settings_dataset = Terminal_SettingsResource().export()
+
+    # Remove the homepage key from the settings that are going to be exported
+    settings_dataset_dict = json.loads(settings_dataset.json)
+    settings_dataset_dict[0].pop('homepage')
+
+    # Prepare the settings json file
+    settings_dataset_json = json.dumps(settings_dataset_dict)
+
+
     settings = Terminal_Settings.objects.get(title='settings')
     homepage = settings.homepage
     menu_queryset = Menu.objects.exclude(pk=settings.homepage.pk)
     menu_dataset = MenuResource().export(queryset=menu_queryset)
     form_dataset = FormResource().export()
+    
     date = strftime('%Y-%m-%d')
     
     # Format the json strings to make them humand readable
+    settings_dataset_json = json.dumps(json.loads(settings_dataset_json), indent=4)
     menu_dataset_json = json.dumps(json.loads(menu_dataset.json), indent=4)
     form_dataset_json = json.dumps(json.loads(form_dataset.json), indent=4)
 
     if return_string:
-        return (menu_dataset_json, form_dataset_json)
+        return (settings_dataset_json, menu_dataset_json, form_dataset_json)
     else:
         if not path.exists():
             path.mkdir()
+        with open(path.joinpath(date + '_settings_export.json'), mode='w') as fp:
+            fp.write(settings_dataset_json)
         with open(path.joinpath(date + '_menu-export.json'), mode='w') as fp:
             fp.write(menu_dataset_json)
         with open(path.joinpath(date + '_form-export.json'), mode='w') as fp:
