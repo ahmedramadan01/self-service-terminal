@@ -42,7 +42,7 @@ class Terminal_SettingsAdmin(ImportExportModelAdmin):
                 'colorval_heading',
                 'colorval_text',
                 'colorval_button',
-                'colorval_zurueck_button']
+                'colorval_return_button']
              }),
         ('Logos', {'fields': ['institute_logo', 'insurance_logo']})
     ]
