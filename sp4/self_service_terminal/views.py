@@ -244,7 +244,26 @@ def import_view(request=HttpRequest(), import_string=False, imported_data=None):
     for settings in Terminal_Settings.objects.all():
         settings.delete()
 
-    # Add the content of input_dict to the database
+    # Add the menus of input_dict to the database
+    for menu in input_dict['menus']:
+        try:
+            parent = Menu.objects.get(pk=menu['parent_menu_id'])
+            m = Menu.objects.create(
+                pk=menu['id'],
+                parent_menu=parent,
+                menu_title=menu['menu_title'],
+                menu_text=menu['menu_text']
+            )
+        except:
+            m = Menu.objects.create(
+                pk=menu['id'],
+                menu_title=menu['menu_title'],
+                menu_text=menu['menu_text']
+            )
+        finally:
+            m.save()
+    
+    
 
 
 
