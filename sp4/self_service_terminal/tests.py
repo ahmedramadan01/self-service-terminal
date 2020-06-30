@@ -275,6 +275,29 @@ class DefaultTestCase(TestCase):
         self.assertEqual(settings.colorval_button, 'red')
         self.assertEqual(settings.colorval_return_button, 'red')
 
+    def test_pagination(self):
+        """ (T0090)
+        """
+        number_menus = 10
+        for i in range(number_menus):
+            Menu.objects.create(
+                menu_title='pagination_menu_' + str(i),
+                parent_menu=self.submenu
+            )
+            
+        response = self.c.get('/menu/' + str(self.submenu.pk) + '/?page=1')
+        self.assertEqual(response.status_code, 200)
+        response = response.content.decode()
+        for i in range(5):
+            self.assertIn('pagination_menu_' + str(i), response)
+
+        response = self.c.get('/menu/' + str(self.submenu.pk) + '/?page=2')
+        self.assertEqual(response.status_code, 200)
+        response = response.content.decode()
+        for i in range(5, 10):
+            self.assertIn('pagination_menu_' + str(i), response)
+        
+
 
 class UnconnectedConfiguration(DefaultTestCase):
     def setUp(self):
