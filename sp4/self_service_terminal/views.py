@@ -7,9 +7,12 @@ from self_service_terminal.admin import MenuResource, FormResource, Terminal_Set
 from pdf2image import convert_from_path
 from datetime import datetime
 from time import strftime
+from shutil import copytree, copy2, rmtree
 import os
 import json
 import tablib
+import queue
+
 
 from self_service_terminal.constants import *
 
@@ -144,73 +147,175 @@ def print_formular(request, form_id=None):
     else:
         return HttpResponse('No PDF file deposited.', status=404)
 
-
 def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
-    """Export settings, menus and forms.
+    """ Export the database entries of settings, menus and forms. Copy all
+    files from the director files to the export directory.
 
-    Export the files YYYY-MM-DD_settings-export.json,
-    YYYY-MM-DD_menu-export.json and YYYY-MM-DD_form-export.json to the
-    directory "path".
-    If return_json is set True return the tuple
-    (settings-export-json, menu-export-json, form-export-json) as strings
-    instead.
+    If return_string = True return only the database entries as an
+    json-formatted string.
     """
-    settings_dataset = Terminal_SettingsResource().export()
+    # Get menu that has no parent
+    root = Menu.objects.filter(parent_menu=None)[0]
+    
+    # Breadth-first search (BFS) on the menus
+    # This is necessary to retain the order of the menus when importing then
+    q = queue.Queue()
+    discovered = [root]
+    export_list = list()
+    q.put(root)
+    while not q.qsize() == 0:
+        menu = q.get()
+        export_list.append(menu)
+        for submenu in Menu.objects.filter(parent_menu=menu.pk):
+            if submenu not in discovered:
+                discovered.append(submenu)
+                q.put(submenu)
 
-    # Remove the homepage key from the settings that are going to be exported
-    settings_dataset_dict = json.loads(settings_dataset.json)
-    settings_dataset_dict[0].pop('homepage')
-
-    # Prepare the settings json file
-    settings_dataset_json = json.dumps(settings_dataset_dict)
-
-
+    # Get the settings and forms
     settings = Terminal_Settings.objects.get(title='settings')
-    homepage = settings.homepage
-    menu_queryset = Menu.objects.exclude(pk=settings.homepage.pk)
-    menu_dataset = MenuResource().export(queryset=menu_queryset)
-    form_dataset = FormResource().export()
-    
-    date = strftime('%Y-%m-%d')
-    
-    # Format the json strings to make them human readable
-    settings_dataset_json = json.dumps(json.loads(settings_dataset_json), indent=4)
-    menu_dataset_json = json.dumps(json.loads(menu_dataset.json), indent=4)
-    form_dataset_json = json.dumps(json.loads(form_dataset.json), indent=4)
+    forms = list(Form.objects.all())
 
-    # Either return the exported strings directly or write them to the path
+    # Create output dictionary
+    output_dictionary = {
+        "menus" : list(),
+        "settings" : list(),
+        "forms" : list()
+    }
+
+    # Add all menus to the output_dictionary
+    for menu in export_list:
+        menu = vars(menu)
+        menu.pop('_state')
+        output_dictionary['menus'].append(menu)
+
+    # Add the settings to the output_dictionary
+    settings = vars(settings)
+    settings.pop('_state')
+    output_dictionary['settings'].append(settings)
+
+    # Add all forms to the output_dictionary
+    for form in Form.objects.all():
+        form = vars(form)
+        form.pop('_state')
+        form.pop('upload_date')
+        form.pop('last_changed')
+        output_dictionary['forms'].append(form)
+    
+    # Create output json string
+    output_json = json.dumps(output_dictionary, indent=4)
+
+    date = strftime('%Y-%m-%d_%H-%M-%S')
+    path = path.joinpath(date + '_export')
+    file_src = Path(BASE_DIR).joinpath('self_service_terminal').joinpath('files')
+    file_dst = path.joinpath(date + '_files')
+
     if return_string:
-        return (settings_dataset_json, menu_dataset_json, form_dataset_json)
+        return output_json
     else:
         if not path.exists():
             path.mkdir()
-        with open(path.joinpath(date + '_settings_export.json'), mode='w') as fp:
-            fp.write(settings_dataset_json)
-        with open(path.joinpath(date + '_menu-export.json'), mode='w') as fp:
-            fp.write(menu_dataset_json)
-        with open(path.joinpath(date + '_form-export.json'), mode='w') as fp:
-            fp.write(form_dataset_json)
+        with open(path.joinpath(date + '_export.json'), mode='w') as fp:
+            fp.write(output_json)
+        copytree(file_src, file_dst, copy_function=copy2)
 
-def import_view(request=HttpRequest(), import_string=False, settings_file=None,
-                menu_file=None, form_file=None):
-    """Import settings, menus and forms.
+
+
+def import_view(request=HttpRequest(), import_string=False, imported_data=None):
+    """ Import the files that have been exported by the export_view.
+
+    This view copies all exported files to the files installation directory,
+    deletes all settings, menu and form entries on the database
+    and adds the exported settings, menus and forms to the database.
+    If import_string = True then imported_data should be a string as returned
+    by the export_view if its return_string = True.
     """
+    # Set the destination for the files
+    file_src = Path(BASE_DIR).joinpath('self_service_terminal').joinpath('files')
+
     if not import_string:
-        with open(menu_file, mode='r') as fp:
-            menu_json = json.load(fp)
-        with open(form_file, mode='r') as fp:
-            form_json = json.load(fp)
+        input_json = ''
+        imported_data = Path(imported_data)
+        for child in imported_data.iterdir():
+            # load the database entries from the export
+            if '.json' in str(child):
+                with open(child) as fp:
+                    input_dict = json.load(fp)
+            # copy all of the exported files into the files directory
+            # of this installation
+            if child.is_dir() and '_files' in str(child):
+                for f in child.joinpath('forms').iterdir():
+                    copy2(f, file_src.joinpath('forms'))
+                for f in child.joinpath('images').iterdir():
+                    copy2(f, file_src.joinpath('images'))
     else:
-        menu_json = menu_file
-        form_json = form_file
+        input_dict = imported_data
 
-    menu_dataset = tablib.Dataset()
-    form_dataset = tablib.Dataset()
-    menu_dataset.load(str(menu_json))
-    form_dataset.load(str(form_json))
+    # Delete all entries in the database
+    for menu in Menu.objects.all():
+        menu.delete()
+    for form in Form.objects.all():
+        form.delete()
+    for settings in Terminal_Settings.objects.all():
+        settings.delete()
 
-    MenuResource().import_data(menu_dataset)
-    FormResource().import_data(form_dataset)
+    # Add the menus of input_dict to the database
+    for menu in input_dict['menus']:
+        try:
+            parent = Menu.objects.get(pk=menu['parent_menu_id'])
+            m = Menu.objects.create(
+                pk=menu['id'],
+                parent_menu=parent,
+                menu_title=menu['menu_title'],
+                menu_text=menu['menu_text']
+            )
+        except:
+            m = Menu.objects.create(
+                pk=menu['id'],
+                menu_title=menu['menu_title'],
+                menu_text=menu['menu_text']
+            )
+        finally:
+            m.save()
+    
+    # Add the settings of input_dict to the database
+    for settings in input_dict['settings']:
+        s = Terminal_Settings.objects.create(
+            pk=settings['id'],
+            title=settings['title'],
+            description=settings['description'],
+            colorval_nav_bar=settings['colorval_nav_bar'],
+            colorval_heading=settings['colorval_heading'],
+            colorval_text=settings['colorval_text'],
+            colorval_button=settings['colorval_button'],
+            colorval_return_button=settings['colorval_return_button'],
+            institute_logo=settings['institute_logo'],
+            insurance_logo=settings['insurance_logo']
+        )
+        s.save()
+
+    # Add the forms of input_dict to the database
+    for form in input_dict['forms']:
+        try:
+            parent = Menu.objects.get(pk=form['parent_menu_id'])
+            f = Form.objects.create(
+                pk=form['id'],
+                parent_menu=parent,
+                pdffile=form['pdffile'],
+                show_on_frontend=form['show_on_frontend'],
+                form_title=form['form_title'],
+                description=form['description']
+            )
+        except:
+            f = Form.objects.create(
+                pk=form['id'],
+                pdffile=form['pdffile'],
+                show_on_frontend=form['show_on_frontend'],
+                form_title=form['form_title'],
+                description=form['description']
+            )
+        finally:
+            f.save()
+
 
 
 # Testview für die Django Templatesprache

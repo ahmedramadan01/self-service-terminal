@@ -22,8 +22,6 @@ class Terminal_Settings(models.Model):
     title = models.CharField(max_length=TITLE_LENGTH, unique=True)
     description = models.TextField(blank=True, null=True)
 
-    homepage = models.OneToOneField(
-        'Menu', on_delete=models.CASCADE, blank=True, null=True)
     colorval_nav_bar = models.CharField(max_length=7, blank=True, default='')
     colorval_heading = models.CharField(max_length=7, blank=True, default='')
     colorval_text = models.CharField(max_length=7, blank=True, default='')
@@ -44,15 +42,10 @@ class Menu(models.Model):
     Is linked to its parent menu via a ForeignKey Field. Contains only its
     title and some descriptive text.
     """
-    settings = models.ForeignKey(
-        Terminal_Settings, on_delete=models.CASCADE, blank=True, null=True,
-        to_field='title', default='settings')
     parent_menu = models.ForeignKey(
         'self', on_delete=models.CASCADE, blank=True, null=True)
     menu_title = models.CharField(max_length=TITLE_LENGTH)
     menu_text = models.TextField(blank=True)
-
-
 
     def __str__(self):
         return self.menu_title
