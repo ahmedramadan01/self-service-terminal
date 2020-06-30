@@ -201,6 +201,8 @@ def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
     if return_string:
         return output_json
     else:
+        if not path.exists():
+            path.mkdir()
         with open(path.joinpath(date + '_export.json'), mode='w') as fp:
             fp.write(output_json)
 
