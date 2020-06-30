@@ -181,6 +181,8 @@ def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
         output_dictionary['menus'].append(menu)
 
     # Add the settings to the output_dictionary
+    settings = vars(settings)
+    settings.pop('_state')
     output_dictionary['settings'].append(settings)
 
     # Add all forms to the output_dictionary
@@ -191,8 +193,16 @@ def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
         form.pop('last_changed')
         output_dictionary['forms'].append(form)
     
+    # Create output json string
+    output_json = json.dumps(output_dictionary, indent=4)
 
+    date = strftime('%Y-%m-%d')
 
+    if return_string:
+        return output_json
+    else:
+        with open(path.joinpath(date + '_export.json'), mode='w') as fp:
+            fp.write(output_json)
 
 
 # def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
