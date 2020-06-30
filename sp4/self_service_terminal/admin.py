@@ -51,7 +51,6 @@ class Terminal_SettingsAdmin(ImportExportModelAdmin):
 @admin.register(Menu)
 class MenuAdmin(ImportExportModelAdmin):
     fieldsets = [
-        ('Startseite', {'fields': ['settings']}),
         ('Oberkategorie', {'fields': ['parent_menu']}),
         ('Beschreibung', {'fields': ['menu_title', 'menu_text']})
     ]
