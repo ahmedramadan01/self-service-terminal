@@ -187,14 +187,11 @@ def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
     for form in Form.objects.all():
         form = vars(form)
         form.pop('_state')
+        form.pop('upload_date')
+        form.pop('last_changed')
         output_dictionary['forms'].append(form)
+    
 
-    """{
-       "menus" : [],
-       "settings" : [],
-       "forms" : []
-    }
-    """
 
 
 
