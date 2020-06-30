@@ -280,7 +280,27 @@ def import_view(request=HttpRequest(), import_string=False, imported_data=None):
         s.save()
 
     # Add the forms of input_dict to the database
-    
+    for form in input_dict['forms']:
+        try:
+            parent = Menu.objects.get(pk=form['parent_menu_id'])
+            f = Form.objects.create(
+                pk=form['id'],
+                parent_menu=parent,
+                pdffile=form['pdffile'],
+                show_on_frontend=form['show_on_frontend'],
+                form_title=form['form_title'],
+                description=form['description']
+            )
+        except:
+            f = Form.objects.create(
+                pk=form['id'],
+                pdffile=form['pdffile'],
+                show_on_frontend=form['show_on_frontend'],
+                form_title=form['form_title'],
+                description=form['description']
+            )
+        finally:
+            f.save()
 
 
 
