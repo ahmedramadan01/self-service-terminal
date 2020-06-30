@@ -145,72 +145,72 @@ def print_formular(request, form_id=None):
         return HttpResponse('No PDF file deposited.', status=404)
 
 
-def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
-    """Export settings, menus and forms.
+# def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
+#     """Export settings, menus and forms.
 
-    Export the files YYYY-MM-DD_settings-export.json,
-    YYYY-MM-DD_menu-export.json and YYYY-MM-DD_form-export.json to the
-    directory "path".
-    If return_json is set True return the tuple
-    (settings-export-json, menu-export-json, form-export-json) as strings
-    instead.
-    """
-    settings_dataset = Terminal_SettingsResource().export()
+#     Export the files YYYY-MM-DD_settings-export.json,
+#     YYYY-MM-DD_menu-export.json and YYYY-MM-DD_form-export.json to the
+#     directory "path".
+#     If return_json is set True return the tuple
+#     (settings-export-json, menu-export-json, form-export-json) as strings
+#     instead.
+#     """
+#     settings_dataset = Terminal_SettingsResource().export()
 
-    # Remove the homepage key from the settings that are going to be exported
-    settings_dataset_dict = json.loads(settings_dataset.json)
-    settings_dataset_dict[0].pop('homepage')
+#     # Remove the homepage key from the settings that are going to be exported
+#     settings_dataset_dict = json.loads(settings_dataset.json)
+#     settings_dataset_dict[0].pop('homepage')
 
-    # Prepare the settings json file
-    settings_dataset_json = json.dumps(settings_dataset_dict)
+#     # Prepare the settings json file
+#     settings_dataset_json = json.dumps(settings_dataset_dict)
 
 
-    settings = Terminal_Settings.objects.get(title='settings')
-    homepage = settings.homepage
-    menu_queryset = Menu.objects.exclude(pk=settings.homepage.pk)
-    menu_dataset = MenuResource().export(queryset=menu_queryset)
-    form_dataset = FormResource().export()
+#     settings = Terminal_Settings.objects.get(title='settings')
+#     homepage = settings.homepage
+#     menu_queryset = Menu.objects.exclude(pk=settings.homepage.pk)
+#     menu_dataset = MenuResource().export(queryset=menu_queryset)
+#     form_dataset = FormResource().export()
     
-    date = strftime('%Y-%m-%d')
+#     date = strftime('%Y-%m-%d')
     
-    # Format the json strings to make them human readable
-    settings_dataset_json = json.dumps(json.loads(settings_dataset_json), indent=4)
-    menu_dataset_json = json.dumps(json.loads(menu_dataset.json), indent=4)
-    form_dataset_json = json.dumps(json.loads(form_dataset.json), indent=4)
+#     # Format the json strings to make them human readable
+#     settings_dataset_json = json.dumps(json.loads(settings_dataset_json), indent=4)
+#     menu_dataset_json = json.dumps(json.loads(menu_dataset.json), indent=4)
+#     form_dataset_json = json.dumps(json.loads(form_dataset.json), indent=4)
 
-    # Either return the exported strings directly or write them to the path
-    if return_string:
-        return (settings_dataset_json, menu_dataset_json, form_dataset_json)
-    else:
-        if not path.exists():
-            path.mkdir()
-        with open(path.joinpath(date + '_settings_export.json'), mode='w') as fp:
-            fp.write(settings_dataset_json)
-        with open(path.joinpath(date + '_menu-export.json'), mode='w') as fp:
-            fp.write(menu_dataset_json)
-        with open(path.joinpath(date + '_form-export.json'), mode='w') as fp:
-            fp.write(form_dataset_json)
+#     # Either return the exported strings directly or write them to the path
+#     if return_string:
+#         return (settings_dataset_json, menu_dataset_json, form_dataset_json)
+#     else:
+#         if not path.exists():
+#             path.mkdir()
+#         with open(path.joinpath(date + '_settings_export.json'), mode='w') as fp:
+#             fp.write(settings_dataset_json)
+#         with open(path.joinpath(date + '_menu-export.json'), mode='w') as fp:
+#             fp.write(menu_dataset_json)
+#         with open(path.joinpath(date + '_form-export.json'), mode='w') as fp:
+#             fp.write(form_dataset_json)
 
-def import_view(request=HttpRequest(), import_string=False, settings_file=None,
-                menu_file=None, form_file=None):
-    """Import settings, menus and forms.
-    """
-    if not import_string:
-        with open(menu_file, mode='r') as fp:
-            menu_json = json.load(fp)
-        with open(form_file, mode='r') as fp:
-            form_json = json.load(fp)
-    else:
-        menu_json = menu_file
-        form_json = form_file
+# def import_view(request=HttpRequest(), import_string=False, settings_file=None,
+#                 menu_file=None, form_file=None):
+#     """Import settings, menus and forms.
+#     """
+#     if not import_string:
+#         with open(menu_file, mode='r') as fp:
+#             menu_json = json.load(fp)
+#         with open(form_file, mode='r') as fp:
+#             form_json = json.load(fp)
+#     else:
+#         menu_json = menu_file
+#         form_json = form_file
 
-    menu_dataset = tablib.Dataset()
-    form_dataset = tablib.Dataset()
-    menu_dataset.load(str(menu_json))
-    form_dataset.load(str(form_json))
+#     menu_dataset = tablib.Dataset()
+#     form_dataset = tablib.Dataset()
+#     menu_dataset.load(str(menu_json))
+#     form_dataset.load(str(form_json))
 
-    MenuResource().import_data(menu_dataset)
-    FormResource().import_data(form_dataset)
+#     MenuResource().import_data(menu_dataset)
+#     FormResource().import_data(form_dataset)
 
 
 # Testview für die Django Templatesprache
