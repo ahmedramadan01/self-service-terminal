@@ -263,6 +263,23 @@ def import_view(request=HttpRequest(), import_string=False, imported_data=None):
         finally:
             m.save()
     
+    # Add the settings of input_dict to the database
+    for settings in input_dict['settings']:
+        s = Terminal_Settings.objects.create(
+            pk=settings['id'],
+            title=settings['title'],
+            description=settings['description'],
+            colorval_nav_bar=settings['colorval_nav_bar'],
+            colorval_heading=settings['colorval_heading'],
+            colorval_text=settings['colorval_text'],
+            colorval_button=settings['colorval_button'],
+            colorval_return_button=settings['colorval_return_button'],
+            institute_logo=settings['institute_logo'],
+            insurance_logo=settings['insurance_logo']
+        )
+        s.save()
+
+    # Add the forms of input_dict to the database
     
 
 
