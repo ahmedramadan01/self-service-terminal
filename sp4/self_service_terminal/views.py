@@ -304,28 +304,6 @@ def import_view(request=HttpRequest(), import_string=False, imported_data=None):
 
 
 
-# def import_view(request=HttpRequest(), import_string=False, settings_file=None,
-#                 menu_file=None, form_file=None):
-#     """Import settings, menus and forms.
-#     """
-#     if not import_string:
-#         with open(menu_file, mode='r') as fp:
-#             menu_json = json.load(fp)
-#         with open(form_file, mode='r') as fp:
-#             form_json = json.load(fp)
-#     else:
-#         menu_json = menu_file
-#         form_json = form_file
-
-#     menu_dataset = tablib.Dataset()
-#     form_dataset = tablib.Dataset()
-#     menu_dataset.load(str(menu_json))
-#     form_dataset.load(str(form_json))
-
-#     MenuResource().import_data(menu_dataset)
-#     FormResource().import_data(form_dataset)
-
-
 # Testview für die Django Templatesprache
 def menu_template_test(request, menu_id=None, menu_title=None):
     """Only for testing purposes."""
