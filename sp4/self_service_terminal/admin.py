@@ -71,6 +71,11 @@ class FormAdmin(ImportExportModelAdmin):
     list_filter = ['upload_date', 'last_changed']
 
 
+class Terminal_SettingsResource(resources.ModelResource):
+
+    class Meta:
+        model = Terminal_Settings
+
 class MenuResource(resources.ModelResource):
 
     class Meta:
