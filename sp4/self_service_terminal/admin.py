@@ -52,6 +52,9 @@ class MenuAdmin(ImportExportModelAdmin):
         ('Beschreibung', {'fields': ['menu_title', 'menu_text']})
     ]
     inlines = [MenuInline, FormInline]
+    list_display = ('menu_title','created')
+    list_filter = ('created',)
+    change_list_template = 'admin/menu/menu_change_list.html'
 
 
 @admin.register(Form)

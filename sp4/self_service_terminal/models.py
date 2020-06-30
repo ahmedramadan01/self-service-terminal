@@ -47,6 +47,8 @@ class Menu(models.Model):
         'self', on_delete=models.CASCADE, blank=True, null=True)
     menu_title = models.CharField(max_length=TITLE_LENGTH)
     menu_text = models.TextField(blank=True)
+    created = models.DateTimeField(auto_now_add=True)
+    font_size = models.IntegerField()
 
     def __str__(self):
         return self.menu_title
