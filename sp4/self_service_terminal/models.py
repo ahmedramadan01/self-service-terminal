@@ -47,8 +47,6 @@ class Menu(models.Model):
     menu_title = models.CharField(max_length=TITLE_LENGTH)
     menu_text = models.TextField(blank=True)
 
-
-
     def __str__(self):
         return self.menu_title
 

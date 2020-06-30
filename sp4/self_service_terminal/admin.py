@@ -34,7 +34,6 @@ class FormInline(admin.TabularInline):
 @admin.register(Terminal_Settings)
 class Terminal_SettingsAdmin(ImportExportModelAdmin):
     fieldsets = [
-        ('Startseite', {'fields': ['homepage']}),
         ('Beschreibung', {'fields': ['title', 'description']}),
         ('Farbe',
             {'fields': [
