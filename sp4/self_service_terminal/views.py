@@ -215,17 +215,24 @@ def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
 
 
 def import_view(request=HttpRequest(), import_string=False, import_dir_path=None):
+    # Set the destination for the files
     file_src = Path(BASE_DIR).joinpath('self_service_terminal').joinpath('files')
+
     if not import_string:
         input_json = ''
         import_dir_path = Path(import_dir_path)
         for child in import_dir_path.iterdir():
+            # load the database entries from the export
             if '.json' in str(child):
                 with open(child) as fp:
                     input_json = json.load(fp)
+            # copy all of the exported files into the files directory
+            # of this installation
             if child.is_dir() and '_files' in str(child):
-                rmtree(file_src)
-                copytree(child, file_src)
+                for f in child.joinpath('forms').iterdir():
+                    copy2(f, file_src.joinpath('forms'))
+                for f in child.joinpath('images').iterdir():
+                    copy2(f, file_src.joinpath('images'))
 
 
 # def import_view(request=HttpRequest(), import_string=False, settings_file=None,
