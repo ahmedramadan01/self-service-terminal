@@ -7,10 +7,12 @@ from self_service_terminal.admin import MenuResource, FormResource, Terminal_Set
 from pdf2image import convert_from_path
 from datetime import datetime
 from time import strftime
+from shutil import copytree, copy2, rmtree
 import os
 import json
 import tablib
 import queue
+
 
 from self_service_terminal.constants import *
 
@@ -196,7 +198,10 @@ def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
     # Create output json string
     output_json = json.dumps(output_dictionary, indent=4)
 
-    date = strftime('%Y-%m-%d')
+    date = strftime('%Y-%m-%d_%H-%M-%S')
+    path = path.joinpath(date + '_export')
+    file_src = Path(BASE_DIR).joinpath('self_service_terminal').joinpath('files')
+    file_dst = path.joinpath(date + '_files')
 
     if return_string:
         return output_json
@@ -205,53 +210,23 @@ def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
             path.mkdir()
         with open(path.joinpath(date + '_export.json'), mode='w') as fp:
             fp.write(output_json)
+        copytree(file_src, file_dst, copy_function=copy2)
 
 
-# def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
-#     """Export settings, menus and forms.
 
-#     Export the files YYYY-MM-DD_settings-export.json,
-#     YYYY-MM-DD_menu-export.json and YYYY-MM-DD_form-export.json to the
-#     directory "path".
-#     If return_json is set True return the tuple
-#     (settings-export-json, menu-export-json, form-export-json) as strings
-#     instead.
-#     """
-#     settings_dataset = Terminal_SettingsResource().export()
+def import_view(request=HttpRequest(), import_string=False, import_dir_path=None):
+    file_src = Path(BASE_DIR).joinpath('self_service_terminal').joinpath('files')
+    if not import_string:
+        input_json = ''
+        import_dir_path = Path(import_dir_path)
+        for child in import_dir_path.iterdir():
+            if '.json' in str(child):
+                with open(child) as fp:
+                    input_json = json.load(fp)
+            if child.is_dir() and '_files' in str(child):
+                rmtree(file_src)
+                copytree(child, file_src)
 
-#     # Remove the homepage key from the settings that are going to be exported
-#     settings_dataset_dict = json.loads(settings_dataset.json)
-#     settings_dataset_dict[0].pop('homepage')
-
-#     # Prepare the settings json file
-#     settings_dataset_json = json.dumps(settings_dataset_dict)
-
-
-#     settings = Terminal_Settings.objects.get(title='settings')
-#     homepage = settings.homepage
-#     menu_queryset = Menu.objects.exclude(pk=settings.homepage.pk)
-#     menu_dataset = MenuResource().export(queryset=menu_queryset)
-#     form_dataset = FormResource().export()
-    
-#     date = strftime('%Y-%m-%d')
-    
-#     # Format the json strings to make them human readable
-#     settings_dataset_json = json.dumps(json.loads(settings_dataset_json), indent=4)
-#     menu_dataset_json = json.dumps(json.loads(menu_dataset.json), indent=4)
-#     form_dataset_json = json.dumps(json.loads(form_dataset.json), indent=4)
-
-#     # Either return the exported strings directly or write them to the path
-#     if return_string:
-#         return (settings_dataset_json, menu_dataset_json, form_dataset_json)
-#     else:
-#         if not path.exists():
-#             path.mkdir()
-#         with open(path.joinpath(date + '_settings_export.json'), mode='w') as fp:
-#             fp.write(settings_dataset_json)
-#         with open(path.joinpath(date + '_menu-export.json'), mode='w') as fp:
-#             fp.write(menu_dataset_json)
-#         with open(path.joinpath(date + '_form-export.json'), mode='w') as fp:
-#             fp.write(form_dataset_json)
 
 # def import_view(request=HttpRequest(), import_string=False, settings_file=None,
 #                 menu_file=None, form_file=None):
