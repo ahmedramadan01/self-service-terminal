@@ -58,7 +58,7 @@ ROOT_URLCONF = 'sp4.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'self_service_terminal/templates/admin')], # Path were overridden templates are found
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
