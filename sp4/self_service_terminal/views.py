@@ -150,6 +150,7 @@ def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
     root = Menu.objects.filter(parent_menu=None)[0]
     
     # Breadth-first search (BFS) on the menus
+    # This is necessary to retain the order of the menus when importing then
     q = queue.Queue()
     discovered = [root]
     export_list = list()
@@ -161,6 +162,40 @@ def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
             if submenu not in discovered:
                 discovered.append(submenu)
                 q.put(submenu)
+
+    # Get the settings and forms
+    settings = Terminal_Settings.objects.get(title='settings')
+    forms = list(Form.objects.all())
+
+    # Create output dictionary
+    output_dictionary = {
+        "menus" : list(),
+        "settings" : list(),
+        "forms" : list()
+    }
+
+    # Add all menus to the output_dictionary
+    for menu in export_list:
+        menu = vars(menu)
+        menu.pop('_state')
+        output_dictionary['menus'].append(menu)
+
+    # Add the settings to the output_dictionary
+    output_dictionary['settings'].append(settings)
+
+    # Add all forms to the output_dictionary
+    for form in Form.objects.all():
+        form = vars(form)
+        form.pop('_state')
+        output_dictionary['forms'].append(form)
+
+    """{
+       "menus" : [],
+       "settings" : [],
+       "forms" : []
+    }
+    """
+
 
 
 # def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
