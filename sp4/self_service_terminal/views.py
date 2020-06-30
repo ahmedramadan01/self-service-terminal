@@ -148,6 +148,12 @@ def print_formular(request, form_id=None):
         return HttpResponse('No PDF file deposited.', status=404)
 
 def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
+    """ Export the database entries of settings, menus and forms. Copy all
+    files from the director files to the export directory.
+
+    If return_string = True return only the database entries as an
+    json-formatted string.
+    """
     # Get menu that has no parent
     root = Menu.objects.filter(parent_menu=None)[0]
     
@@ -215,6 +221,14 @@ def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
 
 
 def import_view(request=HttpRequest(), import_string=False, imported_data=None):
+    """ Import the files that have been exported by the export_view.
+
+    This view copies all exported files to the files installation directory,
+    deletes all settings, menu and form entries on the database
+    and adds the exported settings, menus and forms to the database.
+    If import_string = True then imported_data should be a string as returned
+    by the export_view if its return_string = True.
+    """
     # Set the destination for the files
     file_src = Path(BASE_DIR).joinpath('self_service_terminal').joinpath('files')
 
