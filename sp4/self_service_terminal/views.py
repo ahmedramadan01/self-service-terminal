@@ -146,13 +146,14 @@ def print_formular(request, form_id=None):
 
 
 def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
-    """Export all forms and menus except the homepage.
+    """Export settings, menus and forms.
 
-    Export the files YYYY-MM-DD_menu-export.json and 
-    YYYY-MM-DD_form-export.json to the directory "path".
+    Export the files YYYY-MM-DD_settings-export.json,
+    YYYY-MM-DD_menu-export.json and YYYY-MM-DD_form-export.json to the
+    directory "path".
     If return_json is set True return the tuple
-    (menu-export-json, form-export-json) where menu-export-json and
-    form-export-json are strings instead.
+    (settings-export-json, menu-export-json, form-export-json) as strings
+    instead.
     """
     settings_dataset = Terminal_SettingsResource().export()
 
@@ -172,11 +173,12 @@ def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
     
     date = strftime('%Y-%m-%d')
     
-    # Format the json strings to make them humand readable
+    # Format the json strings to make them human readable
     settings_dataset_json = json.dumps(json.loads(settings_dataset_json), indent=4)
     menu_dataset_json = json.dumps(json.loads(menu_dataset.json), indent=4)
     form_dataset_json = json.dumps(json.loads(form_dataset.json), indent=4)
 
+    # Either return the exported strings directly or write them to the path
     if return_string:
         return (settings_dataset_json, menu_dataset_json, form_dataset_json)
     else:
@@ -189,8 +191,9 @@ def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
         with open(path.joinpath(date + '_form-export.json'), mode='w') as fp:
             fp.write(form_dataset_json)
 
-def import_view(request=HttpRequest(), import_string=False, menu_file=None, form_file=None):
-    """Import all forms and menus except the homepage.
+def import_view(request=HttpRequest(), import_string=False, settings_file=None,
+                menu_file=None, form_file=None):
+    """Import settings, menus and forms.
     """
     if not import_string:
         with open(menu_file, mode='r') as fp:
