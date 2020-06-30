@@ -154,9 +154,10 @@ def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
     (menu-export-json, form-export-json) where menu-export-json and
     form-export-json are strings instead.
     """
-    homepage_pk = Terminal_Settings.objects.get(title='settings').pk
-    queryset = Menu.objects.exclude(pk=homepage_pk)
-    menu_dataset = MenuResource().export(queryset=queryset)
+    settings = Terminal_Settings.objects.get(title='settings')
+    homepage = settings.homepage
+    menu_queryset = Menu.objects.exclude(pk=settings.homepage.pk)
+    menu_dataset = MenuResource().export(queryset=menu_queryset)
     form_dataset = FormResource().export()
     date = strftime('%Y-%m-%d')
     
