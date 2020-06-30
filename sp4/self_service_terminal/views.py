@@ -214,18 +214,18 @@ def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
 
 
 
-def import_view(request=HttpRequest(), import_string=False, import_dir_path=None):
+def import_view(request=HttpRequest(), import_string=False, imported_data=None):
     # Set the destination for the files
     file_src = Path(BASE_DIR).joinpath('self_service_terminal').joinpath('files')
 
     if not import_string:
         input_json = ''
-        import_dir_path = Path(import_dir_path)
-        for child in import_dir_path.iterdir():
+        imported_data = Path(imported_data)
+        for child in imported_data.iterdir():
             # load the database entries from the export
             if '.json' in str(child):
                 with open(child) as fp:
-                    input_json = json.load(fp)
+                    input_dict = json.load(fp)
             # copy all of the exported files into the files directory
             # of this installation
             if child.is_dir() and '_files' in str(child):
@@ -233,6 +233,19 @@ def import_view(request=HttpRequest(), import_string=False, import_dir_path=None
                     copy2(f, file_src.joinpath('forms'))
                 for f in child.joinpath('images').iterdir():
                     copy2(f, file_src.joinpath('images'))
+    else:
+        input_dict = imported_data
+
+    # Delete all entries in the database
+    for menu in Menu.objects.all():
+        menu.delete()
+    for form in Form.objects.all():
+        form.delete()
+    for settings in Terminal_Settings.objects.all():
+        settings.delete()
+
+    # Add the content of input_dict to the database
+
 
 
 # def import_view(request=HttpRequest(), import_string=False, settings_file=None,
