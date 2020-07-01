@@ -380,10 +380,15 @@ class PaginationTestCase(TestCase):
         self.c = Client()
     
     def test_pagination_existence(self):
-        pagination_link = '<a class="noselect back btn" href="?page=2">'
+        pagination_link_re = re.compile(r'(?s)<a .* href="\?page=2">')
         menu_response = self.c.get('/menu/' + str(self.menu.pk) + '/')
         html_site = menu_response.content.decode()
-        self.assertIn(pagination_link, html_site)
+        self.assertTrue(pagination_link_re.search(html_site))
+        
+        pagination_link_re = re.compile(r'(?s)<a .* href="\?page=1">')
+        menu_response = self.c.get('/menu/' + str(self.menu.pk) + '/?page=2')
+        html_site = menu_response.content.decode()
+        self.assertTrue(pagination_link_re.search(html_site))
     
     def test_different_pagination_sites(self):
         page_one = self.c.get('/menu/' + str(self.menu.pk) + '/?page=1')
