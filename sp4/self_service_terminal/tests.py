@@ -81,6 +81,7 @@ TODO document:
 from subprocess import run
 from pathlib import Path
 import re
+import json
 
 from django.test import TestCase, Client
 from self_service_terminal.models import Terminal_Settings, Menu, Form
@@ -264,7 +265,7 @@ class DefaultTestCase(TestCase):
         self.assertEqual(settings.colorval_heading, 'red')
         self.assertEqual(settings.colorval_button, 'red')
         self.assertEqual(settings.colorval_return_button, 'red')
-
+        
     def test_pagination(self):
         """ (T0090)
         """
@@ -390,3 +391,90 @@ class PaginationTestCase(TestCase):
         page_one = page_one.content.decode()
         page_two = page_two.content.decode()
         self.assertHTMLNotEqual(page_one, page_two)
+
+
+class ExportImportTestCase(TestCase):
+    def setUp(self):
+        self.terminal_settings = Terminal_Settings.objects.create(
+            title='settings')
+        self.terminal_settings.save()
+        self.menu = Menu.objects.create(menu_title='default_menu')
+        self.menu.save()
+        self.submenu = Menu.objects.create(
+            parent_menu=self.menu,
+            menu_title='default_submenu'
+        )
+        self.submenu.save()
+        # T0040
+        self.form = Form.objects.create(
+            parent_menu=self.menu,
+            pdffile='forms/form.pdf',
+            show_on_frontend=True,
+            form_title='default_form'
+        )
+        self.form.save()
+        self.form2 = Form.objects.create(
+            parent_menu=self.submenu,
+            show_on_frontend=True,
+            form_title='second_form'
+        )
+        self.form2.save()
+        self.terminal_settings.homepage = self.menu
+        self.terminal_settings.save()
+        self.c = Client()
+
+    def test_export_as_string(self):
+        """ (T0080)
+        """
+        expected_object = {
+            'menus': [
+                {
+                    "id": 1,
+                    "parent_menu_id": None,
+                    "menu_title": "default_menu",
+                    "menu_text": ""
+                },
+                {
+                    "id": 2,
+                    "parent_menu_id": 1,
+                    "menu_title": "default_submenu",
+                    "menu_text": ""
+                }
+            ],
+            'settings': [
+                {
+                    "id": 1,
+                    "title": "settings",
+                    "description": None,
+                    "colorval_nav_bar": "",
+                    "colorval_heading": "",
+                    "colorval_text": "",
+                    "colorval_button": "",
+                    "colorval_return_button": "",
+                    "institute_logo": "images/institute_logo.png",
+                    "insurance_logo": "images/insurance_logo.png"
+                }
+            ],
+            'forms': [
+                {
+                    "id": 1,
+                    "parent_menu_id": 1,
+                    "pdffile": "forms/form.pdf",
+                    "show_on_frontend": True,
+                    "form_title": "default_form",
+                    "description": ""
+                },
+                {
+                    "id": 2,
+                    "parent_menu_id": 2,
+                    "pdffile": "forms/default.pdf",
+                    "show_on_frontend": True,
+                    "form_title": "second_form",
+                    "description": ""
+                }
+            ]
+        }
+
+        exported_string = export_view(return_string=True)
+        exported_object = json.loads(exported_string)
+        self.assertEqual(expected_object, exported_object)
