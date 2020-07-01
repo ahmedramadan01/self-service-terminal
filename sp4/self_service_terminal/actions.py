@@ -6,6 +6,8 @@ def export_action(modeladmin, request, queryset):
     export_view()
 
 def import_action(modeladmin, request, queryset):
+    """ Get the zipfile that was last added and import its data.
+    """
     path = EXPORT_PATH
     exported_files = list(path.glob('**/*.zip'))
     file_last_changed = dict()
