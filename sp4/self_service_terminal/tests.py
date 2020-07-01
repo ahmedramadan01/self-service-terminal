@@ -187,17 +187,8 @@ class DefaultTestCase(TestCase):
             type(get_settings()), 
             Terminal_Settings
         )
-        self.assertEqual(get_settings(), self.menu.settings)
-        self.assertEqual(get_settings(), self.submenu.settings)
         self.assertEqual(get_settings(), 
         Terminal_Settings.objects.get(title='settings'))
-    
-    def test_default_settings(self):
-        self.assertEqual(
-            self.terminal_settings.pk,
-            self.menu.settings.pk)
-        for m in Menu.objects.all():
-            self.assertEqual(self.terminal_settings.pk, m.settings.pk)
 
     def test_user_navigation(self):
         """ (T0010) Simulate a user navigating through the pages.
