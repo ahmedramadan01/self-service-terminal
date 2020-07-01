@@ -24,6 +24,9 @@ from self_service_terminal.constants import *
 def get_settings():
     return Terminal_Settings.objects.get(title='settings')
 
+def get_homepage():
+    return Menu.objects.filter(parent_menu=None)[0]
+
 
 def index(request):
     """Render and return the homepage.
@@ -34,8 +37,8 @@ def index(request):
     """
     settings = get_settings()
 
-    homepage_id = settings.homepage.pk
-    homepage = settings.homepage
+    homepage = get_homepage()
+    homepage_id = homepage.pk
 
     submenus = list(Menu.objects.filter(parent_menu=homepage_id))
     subforms = list(Form.objects.filter(parent_menu=homepage_id))

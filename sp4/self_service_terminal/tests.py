@@ -106,7 +106,6 @@ class DefaultTestCase(TestCase):
         self.menu = Menu.objects.create(menu_title='default_menu')
         self.menu.save()
         self.submenu = Menu.objects.create(
-            settings=self.terminal_settings,
             parent_menu=self.menu,
             menu_title='default_submenu'
         )
@@ -304,11 +303,9 @@ class UnconnectedConfiguration(DefaultTestCase):
         self.terminal_settings = Terminal_Settings.objects.create(
             title='settings')
         self.terminal_settings.save()
-        self.menu = Menu.objects.create(
-            settings=self.terminal_settings, menu_title='default_menu')
+        self.menu = Menu.objects.create(menu_title='default_menu')
         self.menu.save()
         self.submenu = Menu.objects.create(
-            settings=self.terminal_settings,
             parent_menu=self.menu,
             menu_title='default_submenu'
         )
@@ -347,11 +344,9 @@ class ProductionCase(DefaultTestCase):
         self.terminal_settings = Terminal_Settings.objects.create(
             title='settings')
         self.terminal_settings.save()
-        self.menu = Menu.objects.create(
-            settings=self.terminal_settings, menu_title='default_menu')
+        self.menu = Menu.objects.create(menu_title='default_menu')
         self.menu.save()
         self.submenu = Menu.objects.create(
-            settings=self.terminal_settings,
             parent_menu=self.menu,
             menu_title='default_submenu'
         )
