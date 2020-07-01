@@ -8,8 +8,8 @@ from pdf2image import convert_from_path
 from datetime import datetime
 from time import strftime
 from shutil import copytree, copy2, rmtree
-from zipfile import ZipFile, ZIP_DEFLATED
 from pathlib import Path
+from zipfile import ZipFile, ZIP_DEFLATED, is_zipfile
 import os
 import json
 import tablib
@@ -247,6 +247,14 @@ def import_view(request=HttpRequest(), import_string=False, imported_data=None):
     file_src = Path(BASE_DIR).joinpath('self_service_terminal').joinpath('files')
 
     if not import_string:
+        # unzip imported_data if it is a zip file
+        if is_zipfile(imported_data):
+            with ZipFile(imported_data, mode='r', compression=ZIP_DEFLATED) as zipdir:
+                imported_data = str(imported_data)
+                imported_data = imported_data.strip('.zip')
+                imported_data = Path(imported_data)
+                zipdir.extractall(Path(BASE_DIR).parent.joinpath('export').joinpath(imported_data.name))
+
         input_json = ''
         imported_data = Path(imported_data)
         for child in imported_data.iterdir():
