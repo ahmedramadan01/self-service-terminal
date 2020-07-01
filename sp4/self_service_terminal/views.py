@@ -2,7 +2,6 @@ from django.core.paginator import Paginator
 from django.shortcuts import render, HttpResponse
 from django.http import HttpRequest
 from self_service_terminal.models import Menu, Form, Terminal_Settings
-from self_service_terminal.admin import MenuResource, FormResource, Terminal_SettingsResource
 
 from pdf2image import convert_from_path
 from datetime import datetime
@@ -402,3 +401,6 @@ def menu_template_test(request, menu_id=None, menu_title=None):
             'page_obj': page_obj
         }
         return render(request, 'self_service_terminal/dtl_test.html', context)
+
+def export_action(modeladmin, request, queryset):
+    export_view()

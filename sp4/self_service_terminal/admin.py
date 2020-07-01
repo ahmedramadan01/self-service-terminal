@@ -6,6 +6,7 @@ and can be edited.
 
 from django.contrib import admin
 from .models import Form, Menu, Terminal_Settings
+from .actions import export_action, import_action
 
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
@@ -19,7 +20,8 @@ admin_site.register(Terminal_Settings)
 admin_site.register(Form)
 admin_site.register(Menu)
 
-admin.site.site_header = 'Admin Tutorial Dashboard'
+admin.site.site_header = 'Self-Service-Terminal Adminstration'
+admin.site.add_action(export_action)
 
 class MenuInline(admin.TabularInline):
     model = Menu
