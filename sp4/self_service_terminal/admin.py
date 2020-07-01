@@ -22,6 +22,7 @@ admin_site.register(Menu)
 
 admin.site.site_header = 'Self-Service-Terminal Adminstration'
 admin.site.add_action(export_action)
+admin.site.add_action(import_action)
 
 class MenuInline(admin.TabularInline):
     model = Menu
