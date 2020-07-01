@@ -383,25 +383,3 @@ class PaginationTestCase(TestCase):
         menu_response = self.c.get('/menu/' + str(self.menu.pk) + '/')
         html_site = menu_response.content.decode()
         self.assertIn(pagination_link, html_site)
-
-"""
-class NoSettings(DefaultTestCase):
-    def setUp(self):
-        self.menu = Menu.objects.create(menu_title='default_menu')
-        self.menu.save()
-        self.submenu = Menu.objects.create(
-            parent_menu=self.menu,
-            menu_title='default_submenu'
-        )
-        self.submenu.save()
-        self.form = Form.objects.create(
-            parent_menu=self.menu,
-            pdffile='forms/form.pdf',
-            show_on_frontend=True,
-            form_title='default_form'
-        )
-        self.form.save()
-        self.terminal_settings.homepage = self.menu
-        self.terminal_settings.save()
-        self.c = Client()
-"""
