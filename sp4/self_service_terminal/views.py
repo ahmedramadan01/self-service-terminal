@@ -215,6 +215,7 @@ def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH,
     if return_string:
         return output_json
     else:
+        # Write the output to the file system
         if not path.exists():
             path.mkdir()
         with open(json_path, mode='w') as fp:
