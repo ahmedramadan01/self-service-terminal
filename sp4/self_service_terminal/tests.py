@@ -358,6 +358,32 @@ class ProductionCase(DefaultTestCase):
             response = self.c.get('/')
             self.assertEqual(response.status_code, 200)
 
+class PaginationTestCase(TestCase):
+    def setUp(self):
+        self.terminal_settings = Terminal_Settings.objects.create(
+            title='settings')
+        self.terminal_settings.save()
+
+        self.menu = Menu.objects.create(menu_title='homepage')
+        self.menu.save()
+
+        self.submenus = list()
+        for i in range(6):
+            submenu = Menu.objects.create(
+                menu_title='sub' + str(i+1),
+                parent_menu=self.menu
+            )
+            submenu.save()
+            self.submenus.append(submenu)
+
+        self.c = Client()
+    
+    def test_pagination_existence(self):
+        pagination_link = '<a class="noselect back btn" href="?page=2">'
+        menu_response = self.c.get('/menu/' + str(self.menu.pk) + '/')
+        html_site = menu_response.content.decode()
+        self.assertIn(pagination_link, html_site)
+
 """
 class NoSettings(DefaultTestCase):
     def setUp(self):
