@@ -478,3 +478,7 @@ class ExportImportTestCase(TestCase):
         exported_string = export_view(return_string=True)
         exported_object = json.loads(exported_string)
         self.assertEqual(expected_object, exported_object)
+
+    def test_import_as_string(self):
+        pass
+        
