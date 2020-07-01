@@ -383,3 +383,10 @@ class PaginationTestCase(TestCase):
         menu_response = self.c.get('/menu/' + str(self.menu.pk) + '/')
         html_site = menu_response.content.decode()
         self.assertIn(pagination_link, html_site)
+    
+    def test_different_pagination_sites(self):
+        page_one = self.c.get('/menu/' + str(self.menu.pk) + '/?page=1')
+        page_two = self.c.get('/menu/' + str(self.menu.pk) + '/?page=2')
+        page_one = page_one.content.decode()
+        page_two = page_two.content.decode()
+        self.assertHTMLNotEqual(page_one, page_two)
