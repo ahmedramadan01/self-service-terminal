@@ -55,11 +55,11 @@
                 {% if page_obj.has_previous %}
 
 
-                <a style="color:{{ settings.colorval_zurueck_button }}" class="noselect back btn"
+                <a style="color:{{ settings.colorval_zurueck_button }}" class="noselect navigation-btn btn"
                     href="?page={{ page_obj.previous_page_number }}">
                     &lArr; Zurück</a>
                 {% elif settings.homepage_id != menu.pk %}
-                <a style="color:{{ settings.colorval_zurueck_button }}" class="noselect back btn"
+                <a style="color:{{ settings.colorval_zurueck_button }}" class="noselect navigation-btn btn"
                     href="/menu/{{ menu.parent_menu.pk }}">
                     &lArr; Zurück</a>
 
