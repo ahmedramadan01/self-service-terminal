@@ -18,22 +18,18 @@
 
 
 
-    <div class="formular">
-        <p class="formular-title" style="color: {{ settings.colorval_heading }};">{{menu}}</p>
-        <p class="formular-text" style="color: {{ settings.colorval_text }};">
+    <div class="element">
+        <p class="element-title" style="color: {{ settings.colorval_heading }};">{{menu}}</p>
+        <p class="element-description" style="color: {{ settings.colorval_text }};">
             {{menu.menu_text}}
         </p>
     </div>
 
-    {% if page_obj.paginator.num_pages != 1 %}
-    <div class="current">
-        Seite {{ page_obj.number }} von {{ page_obj.paginator.num_pages }}
-    </div>
-    {% endif %}
+
 
     <div class="btn-container">
 
-        <div class="menus-container">
+        <div class="sub-elements-container">
             {% for entry in page_obj.object_list %}
             {% if entry.is_menu %}
             <a style="color:{{ settings.colorval_button }}" class="noselect green-btn btn"
@@ -45,7 +41,14 @@
                 href="/form/{{ entry.object.pk }}?page={{ page_obj.number }}">{{ entry.object.form_title }}</a>
             {% endif %}
             {% endfor %}
+            {% if page_obj.paginator.num_pages != 1 %}
+            <div class="current">
+                Seite {{ page_obj.number }} von {{ page_obj.paginator.num_pages }}
+            </div>
+            {% endif %}
         </div>
+
+
 
         <div class="navigation-container">
             {% if page_obj.paginator.num_pages != 1 %}
@@ -71,9 +74,10 @@
 
             {% if page_obj.paginator.num_pages != 1 %}
             {% if page_obj.has_next %}
-            <a class="noselect back btn" href="?page={{ page_obj.next_page_number }}">weitere Einträge &rArr;</a>
+            <a class="noselect navigation-btn btn" href="?page={{ page_obj.next_page_number }}">weitere Einträge
+                &rArr;</a>
             {% else %}
-            <a class="noselect back btn isDisabled">weitere Einträge &rArr;</a>
+            <a class="noselect navigation-btn btn isDisabled">weitere Einträge &rArr;</a>
             {% endif %}
             {% endif %}
         </div>

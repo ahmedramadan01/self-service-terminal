@@ -5,25 +5,26 @@
 
 <div class="formular">
   <p class="formular-title">{{form}}</p>
-  <p class="formular-text">{{form.description}}</p>
+  <p class="formular-description">{{form.description}}</p>
 </div>
 
-<div id="preview-image-box">
+<!-- <div id="preview-image-box">
   <img id="preview-image" src="{{ img_path }}">
-</div>
+</div> -->
 
 <form action="" method="get">
-  <div class="btn-container">
-
+  <div class="formular-btn-container">
+    <button style="text-decoration: none;color:{{ settings.colorval_button }}" class="green-btn btn">
+      Vorschau</button>
     <!-- <embed type="application/pdf" src="{{ form.pdffile.url }}" width="650" height="850"> -->
-    <!--Makes a HTTP request to the print site => calls printing method for current form
+    <!-- Makes a HTTP request to the print site => calls printing method for current form
         See the console output for the development server:
-        "GET /form/1/print HTTP/1.1" 204 0-->
+        "GET /form/1/print HTTP/1.1" 204 0 -->
     <a style="text-decoration: none;color:{{ settings.colorval_button }}" class="green-btn btn"
       href="/form/{{ form.pk }}/print">Drucken</a>
 
-    <a style="text-decoration: none;color:{{ settings.colorval_zurueck_button }}" class="noselect back btn"
-      href="/menu/{{ form.parent_menu.pk }}?page={{ parent_page_number }}">&#171; Zurück </a>
+    <a style="text-decoration: none;color:{{ settings.colorval_zurueck_button }}" class="noselect navigation-btn btn"
+      href="/menu/{{ form.parent_menu.pk }}?page={{ parent_page_number }}">&lArr; Zurück </a>
   </div>
 </form>
 
