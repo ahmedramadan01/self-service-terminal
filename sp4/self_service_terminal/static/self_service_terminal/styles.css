@@ -67,22 +67,35 @@ nav{
 
 /* menu and pagination Styles */
 
-.formular {
-  padding: 10px;
+.element {
   margin-left: 55px;
   margin-right: 55px;
-  font-family: Helvetica;
+}
+
+.element-title {
   font-size: 35px;
+  margin: 0px;
+  text-align: center;
+}
+
+.element-description {
+  margin-top: 0px;
+  font-size: 20px;
+}
+.formular {
+  margin-left: 55px;
+  margin-right: 55px;
 }
 
 .formular-title {
-  font-size: 40px;
-  margin-top: 5%;
-  margin-bottom: 30px;
+  font-size: 35px;
+  margin: 0px;
+  text-align: center;
 }
 
-.formular-text {
-  font-size: 60%;
+.formular-description {
+  margin-top: 0px;
+  font-size: 30px;
 }
 .btn-container {
   display: -webkit-flex;
@@ -91,15 +104,22 @@ nav{
   justify-content: space-between;
   align-items: center;
   height: 700px;
- 
 }
-.menus-container {
+.sub-elements-container {
   display: -webkit-flex;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
  
+}
+.formular-btn-container {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 450px;
 }
 .navigation-container{
   display: -webkit-flex;
@@ -136,13 +156,13 @@ nav{
   line-height: 95px;
 }
 
-.back {
+.navigation-btn {
   padding: 10px 15px;
   border-radius: 8px;
   border-style: solid;
-  border-color: grey;
+  border-color: #737373;
   background-color: transparent;
-  color: grey;
+  color: #737373;
   font-size: 30px;
 }
 
@@ -180,6 +200,7 @@ nav{
 .current{ 
   text-align: center;
   font-size: 25px;
+  color: #737373;
 }
 
 #preview-image{
