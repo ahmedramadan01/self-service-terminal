@@ -17,10 +17,6 @@ import queue
 
 from self_service_terminal.constants import *
 
-# TEMP: Define the settings as the first entry of all Terminal_Settings
-# settings = list(Terminal_Settings.objects.all())[0]
-
-
 def get_settings():
     return Terminal_Settings.objects.get(title='settings')
 
@@ -57,6 +53,7 @@ def index(request):
     context = {
         'settings': settings,
         'menu': homepage,
+        'is_homepage': True,
         'page_obj': page_obj
     }
     return render(request, 'self_service_terminal/menu.html', context)
@@ -70,6 +67,7 @@ def menu(request, menu_id=None, menu_title=None):
     pressing navigation buttons on the left and right side of the screen.
     """
     settings = get_settings()
+    homepage = get_homepage()
 
     menu = Menu.objects.get(pk=menu_id)
     submenus = list(Menu.objects.filter(parent_menu=menu_id))
@@ -95,6 +93,7 @@ def menu(request, menu_id=None, menu_title=None):
     context = {
         'settings': settings,
         'menu': menu,
+        'is_homepage': menu.pk == homepage.pk,
         'page_obj': page_obj
     }
     return render(request, 'self_service_terminal/menu.html', context)
