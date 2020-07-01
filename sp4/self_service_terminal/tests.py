@@ -85,7 +85,7 @@ import json
 
 from django.test import TestCase, Client
 from self_service_terminal.models import Terminal_Settings, Menu, Form
-from self_service_terminal.views import get_settings, export_view
+from self_service_terminal.views import get_settings, export_view, import_view
 from self_service_terminal.constants import *
 
 
@@ -479,6 +479,21 @@ class ExportImportTestCase(TestCase):
         exported_object = json.loads(exported_string)
         self.assertEqual(expected_object, exported_object)
 
-    def test_import_as_string(self):
-        pass
+    def test_number_of_db_entries_when_import_as_string(self):
+        number_menus_old = len(Menu.objects.all())
+        number_forms_old = len(Form.objects.all())
+
+        exported_data = export_view(return_string=True)
+        for entry in Menu.objects.all():
+            entry.delete()
+        for entry in Terminal_Settings.objects.all():
+            entry.delete()
+        for entry in Form.objects.all():
+            entry.delete()
+        import_view(import_string=True, imported_data=exported_data)
         
+        number_menus_new = len(Menu.objects.all())
+        number_forms_new = len(Form.objects.all())
+
+        self.assertEqual(number_menus_old, number_forms_new)
+        self.assertEqual(number_forms_old, number_forms_new)

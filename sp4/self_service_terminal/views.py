@@ -273,7 +273,7 @@ def import_view(request=HttpRequest(), import_string=False, imported_data=None):
                 for f in child.joinpath('images').iterdir():
                     copy2(f, file_src.joinpath('images'))
     else:
-        input_dict = imported_data
+        input_dict = json.loads(imported_data)
 
     # Delete all entries in the database
     for menu in Menu.objects.all():
