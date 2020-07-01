@@ -9,11 +9,11 @@ from datetime import datetime
 from time import strftime
 from shutil import copytree, copy2, rmtree
 from zipfile import ZipFile, ZIP_DEFLATED
+from pathlib import Path
 import os
 import json
 import tablib
 import queue
-
 
 from self_service_terminal.constants import *
 
@@ -208,6 +208,7 @@ def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH,
 
     date = strftime('%Y-%m-%d_%H-%M-%S')
     path = path.joinpath(date + '_export')
+    json_path = path.joinpath(date + '_export.json')
     file_src = Path(BASE_DIR).joinpath('self_service_terminal').joinpath('files')
     file_dst = path.joinpath(date + '_files')
 
@@ -216,14 +217,19 @@ def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH,
     else:
         if not path.exists():
             path.mkdir()
-        with open(path.joinpath(date + '_export.json'), mode='w') as fp:
+        with open(json_path, mode='w') as fp:
             fp.write(output_json)
         copytree(file_src, file_dst, copy_function=copy2)
 
         if export_as_zip:
             # Compress the directory in a zip file using the DEFLATE method
-            with ZipFile(path + '.zip', mode='w', compression=ZIP_DEFLATED) as zipdir:
-                zipdir.write(path)
+            with ZipFile(str(path) + '.zip', mode='w', compression=ZIP_DEFLATED) as zipdir:
+                zipdir.write(filename=json_path,
+                            arcname=date + '_export.json')
+                for entry in file_dst.joinpath('forms').iterdir():
+                    zipdir.write(filename=entry, arcname='files/forms/' + entry.name)
+                for entry in file_dst.joinpath('images').iterdir():
+                    zipdir.write(filename=entry, arcname='files/images/' + entry.name)
             rmtree(path)
 
 
