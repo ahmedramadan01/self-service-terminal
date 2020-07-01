@@ -8,6 +8,7 @@ from pdf2image import convert_from_path
 from datetime import datetime
 from time import strftime
 from shutil import copytree, copy2, rmtree
+from zipfile import ZipFile, ZIP_DEFLATED
 import os
 import json
 import tablib
@@ -147,7 +148,8 @@ def print_formular(request, form_id=None):
     else:
         return HttpResponse('No PDF file deposited.', status=404)
 
-def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
+def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH,
+                export_as_zip=True):
     """ Export the database entries of settings, menus and forms. Copy all
     files from the director files to the export directory.
 
@@ -217,6 +219,12 @@ def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH):
         with open(path.joinpath(date + '_export.json'), mode='w') as fp:
             fp.write(output_json)
         copytree(file_src, file_dst, copy_function=copy2)
+
+        if export_as_zip:
+            # Compress the directory in a zip file using the DEFLATE method
+            with ZipFile(path + '.zip', mode='w', compression=ZIP_DEFLATED) as zipdir:
+                zipdir.write(path)
+            rmtree(path)
 
 
 
