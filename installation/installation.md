@@ -170,12 +170,17 @@ Change the default VirtualHost configuration (`/etc/apache2/sites-available/000-
 </VirtualHost>
 ```
 
-## 6. Give the webserver write permissions on the database
+## 6. Give the webserver write permissions on the database and the files
 (root) (dir)
 From within the installation directory run
 ```bash
 sudo chown www-data:www-data database
 sudo chown www-data:www-data database/db.sqlite3
+
+mkdir files
+mkdir files/forms
+mkdir files/images
+chown www-data:www-data files/*
 ```
 
 ## [OPTIONAL] 7. Setup the remote interface for CUPS`
