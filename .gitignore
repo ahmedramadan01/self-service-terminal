@@ -1,6 +1,7 @@
 .vscode
 export/*
 database/*
+files/*
 **/Doxyfile
 **/.DS_Store
 sp4/db.sqlite3
