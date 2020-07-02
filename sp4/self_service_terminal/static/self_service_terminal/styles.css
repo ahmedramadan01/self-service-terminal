@@ -76,11 +76,13 @@ nav{
   font-size: 35px;
   margin: 0px;
   text-align: center;
+  color: #4caf50;
 }
 
 .element-description {
   margin-top: 0px;
   font-size: 20px;
+  color:#737373 ;
 }
 .formular {
   margin-left: 55px;
@@ -203,8 +205,16 @@ nav{
   color: #737373;
 }
 
-#preview-image{
+/* #preview-image{
   display: block;
   max-width: 500px;
   margin: auto;
+} */
+#animation{
+ display: block;
+ margin:  auto;
+ margin-top: 100px;
+}
+#animation-container{
+margin-top: 300px;
 }

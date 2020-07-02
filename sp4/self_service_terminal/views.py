@@ -17,8 +17,10 @@ import queue
 
 from self_service_terminal.constants import *
 
+
 def get_settings():
     return Terminal_Settings.objects.get(title='settings')
+
 
 def get_homepage():
     return Menu.objects.filter(parent_menu=None)[0]
@@ -143,12 +145,15 @@ def print_formular(request, form_id=None):
     """Run the print method of the given form object and return a HTTP 204
     No Content response.
     """
+    settings = get_settings()
     form = Form.objects.get(pk=form_id)
     if form.pdffile.name != 'forms/default.pdf':
         form.print_form()
-        return HttpResponse(status=204)
+        context = {'settings': settings}
+        return render(request, 'self_service_terminal/print.html', context)
     else:
         return HttpResponse('No PDF file deposited.', status=404)
+
 
 def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH,
                 export_as_zip=True):
@@ -160,7 +165,7 @@ def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH,
     """
     # Get menu that has no parent
     root = Menu.objects.filter(parent_menu=None)[0]
-    
+
     # Breadth-first search (BFS) on the menus
     # This is necessary to retain the order of the menus when importing then
     q = queue.Queue()
@@ -181,9 +186,9 @@ def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH,
 
     # Create output dictionary
     output_dictionary = {
-        "menus" : list(),
-        "settings" : list(),
-        "forms" : list()
+        "menus": list(),
+        "settings": list(),
+        "forms": list()
     }
 
     # Add all menus to the output_dictionary
@@ -204,14 +209,15 @@ def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH,
         form.pop('upload_date')
         form.pop('last_changed')
         output_dictionary['forms'].append(form)
-    
+
     # Create output json string
     output_json = json.dumps(output_dictionary, indent=4)
 
     date = strftime('%Y-%m-%d_%H-%M-%S')
     path = path.joinpath(date + '_export')
     json_path = path.joinpath(date + '_export.json')
-    file_src = Path(BASE_DIR).joinpath('self_service_terminal').joinpath('files')
+    file_src = Path(BASE_DIR).joinpath(
+        'self_service_terminal').joinpath('files')
     file_dst = path.joinpath(date + '_files')
 
     if return_string:
@@ -228,13 +234,14 @@ def export_view(request=HttpRequest(), return_string=False, path=EXPORT_PATH,
             # Compress the directory in a zip file using the DEFLATE method
             with ZipFile(str(path) + '.zip', mode='w', compression=ZIP_DEFLATED) as zipdir:
                 zipdir.write(filename=json_path,
-                            arcname=date + '_export.json')
+                             arcname=date + '_export.json')
                 for entry in file_dst.joinpath('forms').iterdir():
-                    zipdir.write(filename=entry, arcname='files/forms/' + entry.name)
+                    zipdir.write(filename=entry,
+                                 arcname='files/forms/' + entry.name)
                 for entry in file_dst.joinpath('images').iterdir():
-                    zipdir.write(filename=entry, arcname='files/images/' + entry.name)
+                    zipdir.write(filename=entry,
+                                 arcname='files/images/' + entry.name)
             rmtree(path)
-
 
 
 def import_view(request=HttpRequest(), import_string=False, imported_data=None):
@@ -247,7 +254,8 @@ def import_view(request=HttpRequest(), import_string=False, imported_data=None):
     by the export_view if its return_string = True.
     """
     # Set the destination for the files
-    file_src = Path(BASE_DIR).joinpath('self_service_terminal').joinpath('files')
+    file_src = Path(BASE_DIR).joinpath(
+        'self_service_terminal').joinpath('files')
 
     if not import_string:
         # unzip imported_data if it is a zip file
@@ -256,7 +264,8 @@ def import_view(request=HttpRequest(), import_string=False, imported_data=None):
                 imported_data = str(imported_data)
                 imported_data = imported_data.strip('.zip')
                 imported_data = Path(imported_data)
-                zipdir.extractall(Path(BASE_DIR).parent.joinpath('export').joinpath(imported_data.name))
+                zipdir.extractall(Path(BASE_DIR).parent.joinpath(
+                    'export').joinpath(imported_data.name))
 
         input_json = ''
         imported_data = Path(imported_data)
@@ -301,7 +310,7 @@ def import_view(request=HttpRequest(), import_string=False, imported_data=None):
             )
         finally:
             m.save()
-    
+
     # Add the settings of input_dict to the database
     for settings in input_dict['settings']:
         s = Terminal_Settings.objects.create(
@@ -340,7 +349,6 @@ def import_view(request=HttpRequest(), import_string=False, imported_data=None):
             )
         finally:
             f.save()
-
 
 
 # Testview für die Django Templatesprache
