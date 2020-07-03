@@ -1,0 +1,25 @@
+\section{Installation}
+Nachdem die Vorbereitungen abgeschlossen wurden, können Sie nun mit der Installation der Anwendung beginnen. Die Befehle zur Installation des Self-Service-Terminals sollen:
+
+\begin{itemize}
+    \item im Virtual Environment
+    \item mit root-Rechten
+    \item im Installationsverzeichnis
+\end{itemize}
+
+\noindent ausgeführt werden.\\
+
+\noindent Bringen Sie zunächst ihr System auf den neusten Stand und installieren Sie danach alle benötigten Pakete:\\
+
+\textbf{sudo apt update \&\& sudo apt upgrade -y}\par
+\textbf{sudo apt install apache2 apache2-dev cups hostapd dnsmasq}\\
+
+\noindent Anschließend installieren Sie alle benötigten pip-Pakte:\\
+
+\textbf{pip install django django-import-export mod\_wsgi Pillow pdf2image}\\
+
+\noindent Nachdem alle benötigten Pakete installiert worden sind, klonen Sie den Source-Code des Self-Service-Terminal in Ihr Installationsverzeichnis:\\
+
+\textbf{git clone url/zum/Self-Service-Terminal}\\
+
+\noindent Um die Funktionalität des Self-Service-Terminal zu gewährleisten, muss nun noch die Software für den Wlan-Access-Point sowie den Webserver installiert und konfiguriert werden.
