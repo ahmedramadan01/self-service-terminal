@@ -38,7 +38,9 @@
 
             {% if entry.is_form %}
             <a style="color:{{ settings.colorval_button }}" class="noselect yellow-btn btn"
-                href="/form/{{ entry.object.pk }}?page={{ page_obj.number }}">{{ entry.object.form_title }}</a>
+                href="/form/{{ entry.object.pk }}?page={{ page_obj.number }}"><img
+                    src="{% static 'self_service_terminal/documentg.svg' %}" alt="graue Document Foto">
+                {{ entry.object.form_title }}</a>
             {% endif %}
             {% endfor %}
             {% if page_obj.paginator.num_pages != 1 %}
@@ -52,20 +54,17 @@
 
         <div class="navigation-container">
             {% if page_obj.paginator.num_pages != 1 %}
-                {% if page_obj.has_previous %}
+            {% if page_obj.has_previous %}
 
 
-                <a style="color:{{ settings.colorval_zurueck_button }}" class="noselect navigation-btn btn"
-                    href="?page={{ page_obj.previous_page_number }}">
-                    &lArr; Zurück</a>
-                {% elif settings.homepage_id != menu.pk %}
-                <a style="color:{{ settings.colorval_zurueck_button }}" class="noselect navigation-btn btn"
-                    href="/menu/{{ menu.parent_menu.pk }}">
-                    &lArr; Zurück</a>
-
-
-
-                {% endif %}
+            <a style="color:{{ settings.colorval_zurueck_button }}" class="noselect navigation-btn btn"
+                href="?page={{ page_obj.previous_page_number }}">
+                &lArr; Zurück</a>
+            {% elif not is_homepage %}
+            <a style="color:{{ settings.colorval_zurueck_button }}" class="noselect navigation-btn btn"
+                href="/menu/{{ menu.parent_menu.pk }}">
+                &lArr; Zurück</a>
+            {% endif %}
             {% elif not is_homepage %}
             <a style="color:{{ settings.colorval_zurueck_button }}" class="noselect navigation-btn btn"
                 href="/menu/{{ menu.parent_menu.pk }}">

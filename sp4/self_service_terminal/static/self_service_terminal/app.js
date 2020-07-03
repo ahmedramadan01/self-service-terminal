@@ -3,6 +3,7 @@ var timerId;
 var el = document.querySelector("#homepage");
 var el2 = document.querySelector("#start");
 var el3 = document.querySelector("#welcome");
+var animation = document.querySelector("#animation-container");
 
 if (el2 != null) {
     el2.addEventListener("click", function () {
@@ -44,4 +45,9 @@ function ready(callbackFunc) {
 
 ready(function () {
     setupTimers();
+    if (animation != null) {
+        setTimeout(function () {
+            window.location.replace("/");
+        }, 10000);
+    }
 });
