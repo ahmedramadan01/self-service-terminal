@@ -141,8 +141,8 @@ def formular(request, form_id=None, form_title=None):
 
 
 def print_formular(request, form_id=None):
-    """Run the print method of the given form object and return a HTTP 204
-    No Content response.
+    """Run the print method of the given form object and return a loading
+    animation that redirects to the homepage after some seconds.
     """
     settings = get_settings()
     form = Form.objects.get(pk=form_id)
