@@ -140,6 +140,22 @@ def formular(request, form_id=None, form_title=None):
     return render(request, 'self_service_terminal/formular.html', context)
 
 
+def view_formular(request, form_id=None, form_title=None):
+
+    settings = get_settings()
+
+    form = Form.objects.get(pk=form_id)
+
+    parent_page_number = request.GET.get('page')
+
+    context = {
+        'settings': settings,
+        'form': form,
+        'parent_page_number': parent_page_number
+    }
+    return render(request, 'self_service_terminal/view.html', context)
+
+
 def print_formular(request, form_id=None):
     """Run the print method of the given form object and return a loading
     animation that redirects to the homepage after some seconds.
