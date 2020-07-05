@@ -1,87 +1,32 @@
 \section{Webserver}
-Um das Self-Service-Terminal mit dem Apache Webserver zu betreiben, muss Apache um das Modul mod\_wsgi erweitert werden. Dazu muss das Modul installiert und der Output des Installationsbefehls in eine Konfigurationsdatei kopiert werden. Führen Sie zur Installation des Moduls folgenden Befehl aus:\\
+Zur Installation des Webservers erstellen Sie folgende Datei:\\
 
-\textbf{sudo mod\_wsgi-express install-module}\\
+\textbf{/lib/systemd/system/runmodwsgi.service}\\
 
-\noindent Den Output dieses Befehls kopieren Sie in folgende Datei:\\
+\noindent Füllen Sie die Datei mit folgendem Inhalt:\\
 
-\textbf{'/etc/apache2/mods-available/wsgi.load'}\\
+\textbf{```ini}\par
+\textbf{[Unit]}\par
+\textbf{Description=Run mod\_wsgi}\par
+\textbf{After=multi-user.target}\\
 
-\noindent Anschließend aktivieren Sie das Modul mit folgendem Befehl:\\
-
-\textbf{sudo a2enmod wsgi}\\
-
-\noindent Als Nächstes muss die Standardkonfiguration des VirtualHost angepasst werden. Dazu wird folgende Datei angepasst:\\
-
-\textbf{/etc/apache2/sites-available/000-default.conf}\\
-
-\noindent Die Konfigurationsdatei muss um den Pfad zum Virtual Environment \textcolor{red}{\{venv\_dir\}} (z.B.: /home/user/.venv/Self\_Service\_Terminal) und den Pfad zum Installationsverzeichnis des Self-Service-Terminal \textcolor{blue}{\{sst\_dir\}} ergänzt werden. Es folgt der Inhalt der Konfigurationsdatei. Die Stellen, an denen die Pfade ergänzt werden müssen, sind farblich markiert.\\
-
-<VirtualHost *:80>\par
-	\# The ServerName directive sets the request scheme, hostname and port that\par
-	\# the server uses to identify itself. This is used when creating\par 
-	\# redirection URLs. In the context of virtual hosts, the ServerName\par
-	\# specifies what hostname must appear in the request's Host: header to\par
-	\# match this virtual host. For the default virtual host (this file) this\par
-	\# value is not decisive as it is used as a last resort host regardless.\par
-	\# However, you must set it for any further virtual host explicitly.\par
-	\#ServerName www.example.com\\
-
-	ServerAdmin webmaster@localhost\par
-	DocumentRoot /var/www/html\\
-	
-	\newpage
-	
-	\# Available loglevels: trace8, ..., trace1, debug, info, notice, warn,\par
-	\# error, crit, alert, emerg.\par
-	\# It is also possible to configure the loglevel for particular\par
-	\# modules, e.g.\par
-	\#LogLevel info ssl:warn\\
-
-	ErrorLog \$\{APACHE\_LOG\_DIR\}/error.log\par
-	CustomLog \$\{APACHE\_LOG\_DIR\}/access.log combined\\
-
-	\# For most configuration files from conf-available/, which are\par
-	\# enabled or disabled at a global level, it is possible to\par
-	\# include a line for only one particular virtual host. For example the\par
-	\# following line enables the CGI configuration for this host only\par
-	\# after it has been globally disabled with "a2disconf".\par
-	\#Include conf-available/serve-cgi-bin.conf\\
-	
-	WSGIDaemonProcess sp4 python-home=\textcolor{red}{\{venv\_dir\}}\par python-path=\textcolor{blue}{\{sst\_dir\}}/softwareprojekt---self-service-terminal/sp4\par
-	WSGIProcessGroup sp4 \par
-	WSGIScriptAlias / \textcolor{blue}{\{sst\_dir\}}/softwareprojekt---self-service-terminal/sp4/sp4/wsgi.py\\
-	
-	Alias /files/ \textcolor{blue}{\{sst\_dir\}}/softwareprojekt---self-service-terminal/sp4/self\_service\_terminal/files/\par
-	Alias /static/ \textcolor{blue}{\{sst\_dir\}}/softwareprojekt---self-service-terminal/sp4/self\_service\_terminal/static/\\
-
-	<Directory \textcolor{blue}{\{sst\_dir\}}/softwareprojekt---self-service-terminal/sp4/self\_service\_terminal/static>\par
-	Require all granted\par
-	</Directory>\\
-
-	<Directory \textcolor{blue}{\{sst\_dir\}}/softwareprojekt---self-service-terminal/sp4/self\_service\_terminal/files>\par
-	Require all granted\par
-	</Directory>\\
+\textbf{[Service]}\par
+\textbf{ExecStart=\{venv\_path\}/bin/python3 \{installation\_path\}/sp4/manage.py \indent runmodwsgi \texttt{-{}-}
+reload-on-change \texttt{-{}-}user} \textbf{\{username\}}\par\textbf{\texttt{-{}-}group \{username\}}\\
 
 
-	<Directory \textcolor{blue}{\{sst\_dir\}}/softwareprojekt---self-service-terminal/sp4/sp4>\par
-	<Files wsgi.py>\par
-	Require all granted\par
-	</Files>\par
-	</Directory>\\	
+\textbf{[Install]}\par
+\textbf{WantedBy=multi-user.target}\par
+\textbf{```}\\
 
-</VirtualHost>\\
+\noindent Ersetzen Sie die Ausdrücke in geschwungenen Klammern \{\} mit folgenden Werten:\\
+\noindent \textbf{\{venv\_path\}:} Absoluter Pfad zu Ihrem Python Virtual Environment.\par
+\noindent \textbf{\{installation\_path\}:} Absoluter Installationspfad des Self-Service-Terminal\par
+\noindent \textbf{\{username\}:} Name des Nutzers in dessen Home-Verzeichnis das Self-Service-Terminal installiert wurde.\\
 
-\newpage
+\noindent Anschließend führen Sie folgende Befehle aus:\\
 
-\noindent Als letztes müssen dem Webserver noch Schreibrechte für die Datenbank und auszuliefernden Dateien gegeben werden. Dazu führen Sie folgende Befehle im Installationsverzeichnis der Anwendung aus:\\
+\textbf{’sudo systemctl daemon-reload’}\par
+\textbf{’sudo systemctl enable runmodwsgi.service’}\\
 
-\textbf{sudo chown www-data:www-data database}\par
-\textbf{sudo chown www-data:www-data database/db.sqlite3}\\
-
-\textbf{mkdir files}\par
-\textbf{mkdir files/forms}\par
-\textbf{mkdir files/images}\par
-\textbf{chown www-data:www-data files/}\\
-
-\noindent Der Apache2 Webserver ist nun vollständig installiert und konfiguriert.
+\noindent Das Self-Service-Terminal ist nun nach jedem Neustart auf Port 8000 verfügbar.
