@@ -16,6 +16,7 @@ urlpatterns = [
     path('form/<int:form_id>/print', views.print_formular, name="form_print"),
     path('form/<int:form_id>/print/', views.print_formular, name="form_print"),
     path('form/<str:form_title>/', views.formular, name="form_title"),
+    path('form/<int:form_id>/view', views.view_formular, name="form_id"),
 
     # Django Templatesprache Test
     path('dtl/<int:menu_id>/', views.menu_template_test),
