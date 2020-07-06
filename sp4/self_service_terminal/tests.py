@@ -227,17 +227,27 @@ class DefaultTestCase(TestCase):
             path = Path(form_entry.pdffile.path)
             self.assertTrue(path.exists())
 
-    def test_setup_pdffile(self):
+    def test_pdf_database_relation(self):
         """ (T0050)
         """
         self.custom_form = Form.objects.create(
             parent_menu=self.submenu,
-            pdffile="forms/Aerztliche-Bescheinigung-Notwendigkeit-Haushaltshilfe.pdf",
+            pdffile="forms/form.pdf",
             form_title='custom_form',
             description='nothing to see here'
         )
         self.custom_form.save()
         try:
+            # Test if the objects has been initialized correctly
+            self.assertEqual(self.custom_form.parent_menu, self.submenu)
+            self.assertEqual(self.custom_form.name, 'forms/form.pdf')
+            self.assertEqual(self.custom_form.url, '/files/forms/form.pdf')
+            self.assertEqual(self.custom_form.pdffile.name, 'forms/form.pdf')
+            self.assertEqual(self.custom_form.pdffile.url, '/files/forms/form.pdf')
+            self.assertEqual(self.custom_form.form_title, 'custom_form')
+            self.assertEqual(self.custom_form.description, 'nothing to see here')
+
+            # Change parameters of pdf file and test if they have changed
             form = Form.objects.get(form_title='custom_form')
             form.form_title = 'different title'
             form.description = 'a lot ot see here'
