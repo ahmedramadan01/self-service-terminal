@@ -5,7 +5,6 @@ Zur Installation des Webservers erstellen Sie folgende Datei:\\
 
 \noindent Füllen Sie die Datei mit folgendem Inhalt:\\
 
-\textbf{```ini}\par
 \textbf{[Unit]}\par
 \textbf{Description=Run mod\_wsgi}\par
 \textbf{After=multi-user.target}\\
@@ -16,8 +15,7 @@ reload-on-change \texttt{-{}-}user} \textbf{\{username\}}\par\textbf{\texttt{-{}
 
 
 \textbf{[Install]}\par
-\textbf{WantedBy=multi-user.target}\par
-\textbf{```}\\
+\textbf{WantedBy=multi-user.target}\\
 
 \noindent Ersetzen Sie die Ausdrücke in geschwungenen Klammern \{\} mit folgenden Werten:\\
 \noindent \textbf{\{venv\_path\}:} Absoluter Pfad zu Ihrem Python Virtual Environment.\par
