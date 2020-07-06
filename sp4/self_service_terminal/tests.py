@@ -484,6 +484,9 @@ class ExportImportTestCase(TestCase):
         exported_object = json.loads(exported_string)
         self.assertEqual(expected_object, exported_object)
 
+    def test_export_import_in_file(self):
+        pass
+
     def test_number_of_db_entries_when_import_as_string(self):
         number_menus_old = len(Menu.objects.all())
         number_forms_old = len(Form.objects.all())
@@ -502,3 +505,46 @@ class ExportImportTestCase(TestCase):
 
         self.assertEqual(number_menus_old, number_forms_new)
         self.assertEqual(number_forms_old, number_forms_new)
+
+class NoPdfSetTestCase(TestCase):
+    """ (T0030)
+    """
+    def setUp(self):
+        self.terminal_settings = Terminal_Settings.objects.create(
+            title='settings')
+        self.terminal_settings.save()
+        self.menu = Menu.objects.create(menu_title='default_menu')
+        self.menu.save()
+        self.submenu = Menu.objects.create(
+            parent_menu=self.menu,
+            menu_title='default_submenu'
+        )
+        self.submenu.save()
+        # no PDF set
+        self.form = Form.objects.create(
+            parent_menu=self.menu,
+            show_on_frontend=True,
+            form_title='default_form'
+        )
+        self.form.save()
+        self.form2 = Form.objects.create(
+            parent_menu=self.submenu,
+            show_on_frontend=True,
+            form_title='second_form'
+        )
+        self.form2.save()
+        self.terminal_settings.homepage = self.menu
+        self.terminal_settings.save()
+        self.c = Client()        
+
+    def test_no_pdf_error(self):
+        for form_object in Form.objects.all():
+            response = self.c.get('/form/' + str(form_object.pk) + '/print')
+            self.assertEqual(response.status_code, 404)
+            response_html = response.content.decode()
+            self.assertHTMLEqual(response_html, 'No PDF file deposited.')
+        response = self.c.get('/form/' + str(self.form.pk) + '/print')
+        self.assertEqual(response.status_code, 404)
+        response_html = response.content.decode()
+        self.assertHTMLEqual(response_html, 'No PDF file deposited.')
+
