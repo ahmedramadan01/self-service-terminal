@@ -80,6 +80,7 @@ TODO document:
 """
 from subprocess import run
 from pathlib import Path
+import os
 import re
 import json
 
@@ -490,61 +491,44 @@ class ExportImportTestCase(TestCase):
     def test_export_as_string(self):
         """ (T0080)
         """
-        expected_object = {
-            'menus': [
-                {
-                    "id": 1,
-                    "parent_menu_id": None,
-                    "menu_title": "default_menu",
-                    "menu_text": ""
-                },
-                {
-                    "id": 2,
-                    "parent_menu_id": 1,
-                    "menu_title": "default_submenu",
-                    "menu_text": ""
-                }
-            ],
-            'settings': [
-                {
-                    "id": 1,
-                    "title": "settings",
-                    "description": None,
-                    "colorval_nav_bar": "",
-                    "colorval_heading": "",
-                    "colorval_text": "",
-                    "colorval_button": "",
-                    "colorval_return_button": "",
-                    "institute_logo": "images/institute_logo.png",
-                    "insurance_logo": "images/insurance_logo.png"
-                }
-            ],
-            'forms': [
-                {
-                    "id": 1,
-                    "parent_menu_id": 1,
-                    "pdffile": "forms/form.pdf",
-                    "show_on_frontend": True,
-                    "form_title": "default_form",
-                    "description": ""
-                },
-                {
-                    "id": 2,
-                    "parent_menu_id": 2,
-                    "pdffile": "forms/default.pdf",
-                    "show_on_frontend": True,
-                    "form_title": "second_form",
-                    "description": ""
-                }
-            ]
-        }
-
         exported_string = export_view(return_string=True)
         exported_object = json.loads(exported_string)
         self.assertEqual(self.expected_object, exported_object)
 
     def test_export_import_in_file(self):
-        pass
+        """ (T0080)
+        """
+        export_view()
+
+        # Delelte all entries in database
+        for entry in Menu.objects.all():
+            entry.delete()
+        for entry in Terminal_Settings.objects.all():
+            entry.delete()
+        for entry in Form.objects.all():
+            entry.delete()
+        
+        # import the newest data in the export directory
+        path = EXPORT_PATH
+        exported_files = list(path.glob('**/*.zip'))
+        file_last_changed = dict()
+        for entry in exported_files:
+            file_last_changed[entry] = os.path.getctime(entry)
+        import_view(imported_data=max(file_last_changed))
+
+        # Check if the database is filled and reachable
+        db_structure = export_view(return_string=True)
+        db_structure = json.loads(db_structure)
+        self.assertEqual(db_structure, self.expected_object)
+
+        for menu in Menu.objects.all():
+            response = self.c.get('/menu/' + str(menu.pk) + '/')
+            self.assertEqual(response.status_code, 200)
+        for form in Form.objects.all():
+            response = self.c.get('/form/' + str(form.pk) + '/')
+            self.assertEqual(response.status_code, 200)
+            response = self.c.get('/form/' + str(form.pk) + '/view')
+            self.assertEqual(response.status_code, 200)
 
     def test_number_of_db_entries_when_import_as_string(self):
         number_menus_old = len(Menu.objects.all())
