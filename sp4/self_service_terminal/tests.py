@@ -371,6 +371,8 @@ class ProductionCase(DefaultTestCase):
             self.assertEqual(response.status_code, 200)
 
 class PaginationTestCase(TestCase):
+    """ (T0090)
+    """
     def setUp(self):
         self.terminal_settings = Terminal_Settings.objects.create(
             title='settings')
