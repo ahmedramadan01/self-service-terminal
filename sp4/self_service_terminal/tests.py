@@ -390,12 +390,12 @@ class PaginationTestCase(TestCase):
         self.c = Client()
     
     def test_pagination_existence(self):
-        pagination_link_re = re.compile(r'(?s)<a .* href="\?page=2">')
+        pagination_link_re = re.compile(r'(?s)<a .* href="\?page=2".*>')
         menu_response = self.c.get('/menu/' + str(self.menu.pk) + '/')
         html_site = menu_response.content.decode()
         self.assertTrue(pagination_link_re.search(html_site))
         
-        pagination_link_re = re.compile(r'(?s)<a .* href="\?page=1">')
+        pagination_link_re = re.compile(r'(?s)<a .* href="\?page=1".*>')
         menu_response = self.c.get('/menu/' + str(self.menu.pk) + '/?page=2')
         html_site = menu_response.content.decode()
         self.assertTrue(pagination_link_re.search(html_site))
@@ -437,6 +437,55 @@ class ExportImportTestCase(TestCase):
         self.terminal_settings.homepage = self.menu
         self.terminal_settings.save()
         self.c = Client()
+        self.expected_object = {
+            'menus': [
+                {
+                    "id": 1,
+                    "parent_menu_id": None,
+                    "menu_title": "default_menu",
+                    "menu_text": ""
+                },
+                {
+                    "id": 2,
+                    "parent_menu_id": 1,
+                    "menu_title": "default_submenu",
+                    "menu_text": ""
+                }
+            ],
+            'settings': [
+                {
+                    "id": 1,
+                    "title": "settings",
+                    "description": None,
+                    "colorval_nav_bar": "",
+                    "colorval_heading": "",
+                    "colorval_text": "",
+                    "colorval_button": "",
+                    "colorval_return_button": "",
+                    "institute_logo": "images/institute_logo.png",
+                    "insurance_logo": "images/insurance_logo.png"
+                }
+            ],
+            'forms': [
+                {
+                    "id": 1,
+                    "parent_menu_id": 1,
+                    "pdffile": "forms/form.pdf",
+                    "show_on_frontend": True,
+                    "form_title": "default_form",
+                    "description": ""
+                },
+                {
+                    "id": 2,
+                    "parent_menu_id": 2,
+                    "pdffile": "forms/default.pdf",
+                    "show_on_frontend": True,
+                    "form_title": "second_form",
+                    "description": ""
+                }
+            ]
+        }
+
 
     def test_export_as_string(self):
         """ (T0080)
@@ -492,7 +541,7 @@ class ExportImportTestCase(TestCase):
 
         exported_string = export_view(return_string=True)
         exported_object = json.loads(exported_string)
-        self.assertEqual(expected_object, exported_object)
+        self.assertEqual(self.expected_object, exported_object)
 
     def test_export_import_in_file(self):
         pass
