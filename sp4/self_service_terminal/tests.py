@@ -80,6 +80,7 @@ TODO document:
 """
 from subprocess import run
 from pathlib import Path
+import os
 import re
 import json
 
@@ -161,7 +162,7 @@ class DefaultTestCase(TestCase):
             if f.pdffile.name == 'forms/default.pdf':
                 self.assertEqual(response.status_code, 404)
             else:
-                self.assertEqual(response.status_code, 204)
+                self.assertEqual(response.status_code, 200)
         run(['lprm', '-'])
 
     def test_cups_availability(self):
@@ -227,17 +228,27 @@ class DefaultTestCase(TestCase):
             path = Path(form_entry.pdffile.path)
             self.assertTrue(path.exists())
 
-    def test_setup_pdffile(self):
+    def test_pdf_database_relation(self):
         """ (T0050)
         """
         self.custom_form = Form.objects.create(
             parent_menu=self.submenu,
-            pdffile="forms/Aerztliche-Bescheinigung-Notwendigkeit-Haushaltshilfe.pdf",
+            pdffile="forms/form.pdf",
             form_title='custom_form',
             description='nothing to see here'
         )
         self.custom_form.save()
         try:
+            # Test if the objects has been initialized correctly
+            self.assertEqual(self.custom_form.parent_menu, self.submenu)
+            self.assertEqual(self.custom_form.name, 'forms/form.pdf')
+            self.assertEqual(self.custom_form.url, '/files/forms/form.pdf')
+            self.assertEqual(self.custom_form.pdffile.name, 'forms/form.pdf')
+            self.assertEqual(self.custom_form.pdffile.url, '/files/forms/form.pdf')
+            self.assertEqual(self.custom_form.form_title, 'custom_form')
+            self.assertEqual(self.custom_form.description, 'nothing to see here')
+
+            # Change parameters of pdf file and test if they have changed
             form = Form.objects.get(form_title='custom_form')
             form.form_title = 'different title'
             form.description = 'a lot ot see here'
@@ -360,6 +371,8 @@ class ProductionCase(DefaultTestCase):
             self.assertEqual(response.status_code, 200)
 
 class PaginationTestCase(TestCase):
+    """ (T0090)
+    """
     def setUp(self):
         self.terminal_settings = Terminal_Settings.objects.create(
             title='settings')
@@ -380,12 +393,12 @@ class PaginationTestCase(TestCase):
         self.c = Client()
     
     def test_pagination_existence(self):
-        pagination_link_re = re.compile(r'(?s)<a .* href="\?page=2">')
+        pagination_link_re = re.compile(r'(?s)<a .* href="\?page=2".*>')
         menu_response = self.c.get('/menu/' + str(self.menu.pk) + '/')
         html_site = menu_response.content.decode()
         self.assertTrue(pagination_link_re.search(html_site))
         
-        pagination_link_re = re.compile(r'(?s)<a .* href="\?page=1">')
+        pagination_link_re = re.compile(r'(?s)<a .* href="\?page=1".*>')
         menu_response = self.c.get('/menu/' + str(self.menu.pk) + '/?page=2')
         html_site = menu_response.content.decode()
         self.assertTrue(pagination_link_re.search(html_site))
@@ -427,11 +440,7 @@ class ExportImportTestCase(TestCase):
         self.terminal_settings.homepage = self.menu
         self.terminal_settings.save()
         self.c = Client()
-
-    def test_export_as_string(self):
-        """ (T0080)
-        """
-        expected_object = {
+        self.expected_object = {
             'menus': [
                 {
                     "id": 1,
@@ -480,9 +489,48 @@ class ExportImportTestCase(TestCase):
             ]
         }
 
+
+    def test_export_as_string(self):
+        """ (T0080)
+        """
         exported_string = export_view(return_string=True)
         exported_object = json.loads(exported_string)
-        self.assertEqual(expected_object, exported_object)
+        self.assertEqual(self.expected_object, exported_object)
+
+    def test_export_import_in_file(self):
+        """ (T0080)
+        """
+        export_view()
+
+        # Delelte all entries in database
+        for entry in Menu.objects.all():
+            entry.delete()
+        for entry in Terminal_Settings.objects.all():
+            entry.delete()
+        for entry in Form.objects.all():
+            entry.delete()
+        
+        # import the newest data in the export directory
+        path = EXPORT_PATH
+        exported_files = list(path.glob('**/*.zip'))
+        file_last_changed = dict()
+        for entry in exported_files:
+            file_last_changed[entry] = os.path.getctime(entry)
+        import_view(imported_data=max(file_last_changed))
+
+        # Check if the database is filled and reachable
+        db_structure = export_view(return_string=True)
+        db_structure = json.loads(db_structure)
+        self.assertEqual(db_structure, self.expected_object)
+
+        for menu in Menu.objects.all():
+            response = self.c.get('/menu/' + str(menu.pk) + '/')
+            self.assertEqual(response.status_code, 200)
+        for form in Form.objects.all():
+            response = self.c.get('/form/' + str(form.pk) + '/')
+            self.assertEqual(response.status_code, 200)
+            response = self.c.get('/form/' + str(form.pk) + '/view')
+            self.assertEqual(response.status_code, 200)
 
     def test_number_of_db_entries_when_import_as_string(self):
         number_menus_old = len(Menu.objects.all())
@@ -502,3 +550,46 @@ class ExportImportTestCase(TestCase):
 
         self.assertEqual(number_menus_old, number_forms_new)
         self.assertEqual(number_forms_old, number_forms_new)
+
+class NoPdfSetTestCase(TestCase):
+    """ (T0030)
+    """
+    def setUp(self):
+        self.terminal_settings = Terminal_Settings.objects.create(
+            title='settings')
+        self.terminal_settings.save()
+        self.menu = Menu.objects.create(menu_title='default_menu')
+        self.menu.save()
+        self.submenu = Menu.objects.create(
+            parent_menu=self.menu,
+            menu_title='default_submenu'
+        )
+        self.submenu.save()
+        # no PDF set
+        self.form = Form.objects.create(
+            parent_menu=self.menu,
+            show_on_frontend=True,
+            form_title='default_form'
+        )
+        self.form.save()
+        self.form2 = Form.objects.create(
+            parent_menu=self.submenu,
+            show_on_frontend=True,
+            form_title='second_form'
+        )
+        self.form2.save()
+        self.terminal_settings.homepage = self.menu
+        self.terminal_settings.save()
+        self.c = Client()        
+
+    def test_no_pdf_error(self):
+        for form_object in Form.objects.all():
+            response = self.c.get('/form/' + str(form_object.pk) + '/print')
+            self.assertEqual(response.status_code, 404)
+            response_html = response.content.decode()
+            self.assertHTMLEqual(response_html, 'No PDF file deposited.')
+        response = self.c.get('/form/' + str(self.form.pk) + '/print')
+        self.assertEqual(response.status_code, 404)
+        response_html = response.content.decode()
+        self.assertHTMLEqual(response_html, 'No PDF file deposited.')
+
