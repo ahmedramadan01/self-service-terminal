@@ -4,22 +4,25 @@
 {% block content%}
 
 <div class="formular">
-  <p class="formular-title">{{form}}</p>
-  <p class="formular-description">{{form.description}}</p>
+  <p style="color: {{ settings.colorval_heading }}" class="formular-title">{{form}}</p>
+  <p style="color: {{ settings.colorval_text }}" class="formular-description">{{form.description}}</p>
 </div>
 
 <div class="formular-btn-container">
-  <a href="/form/{{ form.pk }}/view" style="text-decoration: none;color:{{ settings.colorval_button }}"
-    class="green-btn btn">
-    <img src="{% static 'self_service_terminal/document.svg' %}" alt="Document Foto"> Vorschau</a>
+  <a href="/form/{{ form.pk }}/view"
+    style="color:{{ settings.colorval_button }};border-color: {{ settings.colorval_button }}" class="green-btn btn">
+    <img style="fill:{{settings.colorval_button  }}" src="{% static 'self_service_terminal/document.svg' %}"
+      alt="Document Foto"> Vorschau</a>
 
   <!-- Makes a HTTP request to the print site => calls printing method for current form -->
-  <a style="text-decoration: none;color:{{ settings.colorval_button }}" class="green-btn btn"
-    href="/form/{{ form.pk }}/print"><img src="{% static 'self_service_terminal/printer.svg' %}" alt="Drucker Foto">
+  <a style="color:{{ settings.colorval_button }};border-color: {{ settings.colorval_button }}" class="green-btn btn"
+    href="/form/{{ form.pk }}/print"><img style="fill:{{settings.colorval_button  }}"
+      src="{% static 'self_service_terminal/printer.svg' %}" alt="Drucker Foto">
     Drucken</a>
 
-  <a style="text-decoration: none;color:{{ settings.colorval_zurueck_button }}" class="noselect navigation-btn btn"
-    href="/menu/{{ form.parent_menu.pk }}?page={{ parent_page_number }}">&lArr; Zurück </a>
+  <a style="color:{{ settings.colorval_return_button }};border-color:{{ settings.colorval_return_button }}"
+    class="noselect navigation-btn btn" href="/menu/{{ form.parent_menu.pk }}?page={{ parent_page_number }}">&lArr;
+    Zurück </a>
 </div>
 
 
