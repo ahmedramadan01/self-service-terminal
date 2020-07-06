@@ -99,38 +99,91 @@ Useful commands for hostapd:
 - `sudo systemctl disable hostapd`
 - `sudo systemctl enable hostapd`
 
-## 5. Setup Autostart with a Unit File
-(root)  
-Create the file `/lib/systemd/system/runmodwsgi.service` and add the following content:
+## 5. Setup the Apache Webserver
+(dir) (venv) (root)  
 
-```ini
-[Unit]
-Description=Run mod_wsgi
-After=multi-user.target
-
-[Service]
-ExecStart={venv_path}/bin/python3 {installation_path}/sp4/manage.py runmodwsgi --reload-on-change --user {username} --group {username}
-
-[Install]
-WantedBy=multi-user.target
-```
-
-__Substitute the parts in curly brackets {}__
-
-__{venv_path}__ is the absolute path to the virtual Python environment.  
-__{installation_path}__ is the absolute path to the installation directory.  
-__{username}__ is the name of the user in whose home directory contains the installation directory.
-
-Then run
 ```bash
-sudo systemctl daemon-reload
-sudo systemctl enable runmodwsgi.service
+sudo mod_wsgi-express install-module
 ```
 
-The Self-Service-Terminal is now available as a website on port 8000 after every reboot.
+Copy the output into the `/etc/apache2/mods-available/wsgi.load` file.  
+Activate mod-wsgi.
+```bash
+sudo a2enmod wsgi
+```
+
+Change the default VirtualHost configuration (`/etc/apache2/sites-available/000-default.conf`).  
+`{venv_dir}` is the path to the virtual Python environment (e.g.`/home/pi/.venv/Self-Service-Terminal`).  
+`{sst_dir}` is the path to the installation dir.
+```
+<VirtualHost *:80>
+	# The ServerName directive sets the request scheme, hostname and port that
+	# the server uses to identify itself. This is used when creating
+	# redirection URLs. In the context of virtual hosts, the ServerName
+	# specifies what hostname must appear in the request's Host: header to
+	# match this virtual host. For the default virtual host (this file) this
+	# value is not decisive as it is used as a last resort host regardless.
+	# However, you must set it for any further virtual host explicitly.
+	#ServerName www.example.com
+
+	ServerAdmin webmaster@localhost
+	DocumentRoot /var/www/html
+
+	# Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
+	# error, crit, alert, emerg.
+	# It is also possible to configure the loglevel for particular
+	# modules, e.g.
+	#LogLevel info ssl:warn
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+	# For most configuration files from conf-available/, which are
+	# enabled or disabled at a global level, it is possible to
+	# include a line for only one particular virtual host. For example the
+	# following line enables the CGI configuration for this host only
+	# after it has been globally disabled with "a2disconf".
+	#Include conf-available/serve-cgi-bin.conf
+	
+	WSGIDaemonProcess sp4 python-home={venv_dir} python-path={sst_dir}/softwareprojekt---self-service-terminal/sp4
+	WSGIProcessGroup sp4 
+	WSGIScriptAlias / {sst_dir}/softwareprojekt---self-service-terminal/sp4/sp4/wsgi.py
+	
+	Alias /files/ {sst_dir}/softwareprojekt---self-service-terminal/sp4/self_service_terminal/files/
+	Alias /static/ {sst_dir}/softwareprojekt---self-service-terminal/sp4/self_service_terminal/static/
+
+	<Directory {sst_dir}/softwareprojekt---self-service-terminal/sp4/self_service_terminal/static>
+	Require all granted
+	</Directory>
+
+	<Directory {sst_dir}/softwareprojekt---self-service-terminal/sp4/self_service_terminal/files>
+	Require all granted
+	</Directory>
 
 
-## [OPTIONAL] 6. Setup the remote interface for CUPS`
+	<Directory {sst_dir}/softwareprojekt---self-service-terminal/sp4/sp4>
+	<Files wsgi.py>
+	Require all granted
+	</Files>
+	</Directory>	
+
+</VirtualHost>
+```
+
+## 6. Give the webserver write permissions on the database and the files
+(root) (dir)
+From within the installation directory run
+```bash
+sudo chown www-data:www-data database
+sudo chown www-data:www-data database/db.sqlite3
+
+mkdir files
+mkdir files/forms
+mkdir files/images
+chown www-data:www-data files/*
+```
+
+## [OPTIONAL] 7. Setup the remote interface for CUPS`
 (root)  
 ```bash
 sudo usermod -a -G lpadmin $USER
