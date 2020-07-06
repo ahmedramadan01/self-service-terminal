@@ -26,11 +26,13 @@ admin.site.add_action(import_action)
 
 class MenuInline(admin.TabularInline):
     model = Menu
+    fields = ('menu_title', 'menu_text')
     extra = 0
 
 
 class FormInline(admin.TabularInline):
     model = Form
+    fields = ('pdffile', 'form_title', 'description')
     extra = 0
 
 
@@ -63,11 +65,11 @@ class MenuAdmin(ImportExportModelAdmin):
 class FormAdmin(ImportExportModelAdmin):
     fieldsets = [
         ('Übergeordnetes Menü', {'fields': ['parent_menu']}),
-        ('Anzeigen', {'fields': ['show_on_frontend']}),
+        # ('Anzeigen', {'fields': ['show_on_frontend']}),
         ('Details', {'fields': ['form_title', 'description']}),
         ('Dateipfad', {'fields': ['pdffile']})
     ]
-    list_display = ['form_title', 'time_since_last_updated_str',
+    list_display = ['form_title', Form.time_since_last_updated_str,
                     'upload_date', 'last_changed']
     list_filter = ['upload_date', 'last_changed']
 

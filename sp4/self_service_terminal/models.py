@@ -121,6 +121,8 @@ class Form(models.Model):
         return "Zuletzt geändert vor " + \
             str(days) + " Tagen, " + str(hours) + \
             " Stunden, " + str(minutes) + " Minuten."
+    # To change name on admin site
+    time_since_last_updated_str.short_description = 'Zeit seit letzter Änderung'
 
     def __str__(self):
         return self.form_title
