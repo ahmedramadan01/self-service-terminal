@@ -161,7 +161,7 @@ class DefaultTestCase(TestCase):
             if f.pdffile.name == 'forms/default.pdf':
                 self.assertEqual(response.status_code, 404)
             else:
-                self.assertEqual(response.status_code, 204)
+                self.assertEqual(response.status_code, 200)
         run(['lprm', '-'])
 
     def test_cups_availability(self):
