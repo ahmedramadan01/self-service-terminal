@@ -19,22 +19,34 @@ class Terminal_Settings(models.Model):
     Important: Currently only the Terminal_Settings instance with the
     title='settings' is used in the Self service terminal.
     """
-    title = models.CharField(max_length=TITLE_LENGTH, unique=True)
-    description = models.TextField(blank=True, null=True)
+    title = models.CharField(max_length=TITLE_LENGTH, unique=True,
+        verbose_name='Titel')
+    description = models.TextField(blank=True, null=True,
+        verbose_name='Beschreibung')
 
-    colorval_nav_bar = models.CharField(max_length=7, blank=True, default='')
-    colorval_heading = models.CharField(max_length=7, blank=True, default='')
-    colorval_text = models.CharField(max_length=7, blank=True, default='')
-    colorval_button = models.CharField(max_length=7, blank=True, default='')
-    colorval_return_button = models.CharField(
-        max_length=7, blank=True, default='')
+    colorval_nav_bar = models.CharField(max_length=7, blank=True, default='',
+        verbose_name='Farbe der Kopfleiste')
+    colorval_heading = models.CharField(max_length=7, blank=True, default='',
+        verbose_name='Farbe der Überschriften')
+    colorval_text = models.CharField(max_length=7, blank=True, default='',
+        verbose_name='Farbe der Texte')
+    colorval_button = models.CharField(max_length=7, blank=True, default='',
+        verbose_name='Farbe der Buttons')
+    colorval_return_button = models.CharField(max_length=7, blank=True,
+        default='', verbose_name='Farbe des Zurück-Buttons')
     institute_logo = models.ImageField(
-        upload_to='images', default='images/institute_logo.png')
+        upload_to='images', default='images/institute_logo.png',
+        verbose_name='Institutslogo')
     insurance_logo = models.ImageField(
-        upload_to='images', default='images/insurance_logo.png')
+        upload_to='images', default='images/insurance_logo.png',
+        verbose_name='Krankenkassenlogo')
 
     def __str__(self):
         return self.title
+    
+    class Meta:
+        verbose_name = 'Einstellungen'
+        verbose_name_plural = 'Einstellungen'
 
 class Menu(models.Model):
     """Model the menus and submenus of the self service terminal.
@@ -42,13 +54,18 @@ class Menu(models.Model):
     Is linked to its parent menu via a ForeignKey Field. Contains only its
     title and some descriptive text.
     """
-    parent_menu = models.ForeignKey(
-        'self', on_delete=models.CASCADE, blank=True, null=True)
-    menu_title = models.CharField(max_length=TITLE_LENGTH)
-    menu_text = models.TextField(blank=True)
+    parent_menu = models.ForeignKey('self', on_delete=models.CASCADE,
+        blank=True, null=True, verbose_name='Eltern-Menü')
+    menu_title = models.CharField(max_length=TITLE_LENGTH,
+        verbose_name='Titel')
+    menu_text = models.TextField(blank=True, verbose_name='Beschreibung')
 
     def __str__(self):
         return self.menu_title
+
+    class Meta:
+        verbose_name = 'Menü'
+        verbose_name_plural = 'Menüs'
 
 
 class Form(models.Model):
@@ -58,13 +75,19 @@ class Form(models.Model):
     Field for the PDF forms it will hold. Has some info about its upload date
     and last change. Has a title and some descriptive text.
     """
-    parent_menu = models.ForeignKey('Menu', on_delete=models.CASCADE)
-    pdffile = models.FileField(upload_to='forms', default="forms/default.pdf")
-    upload_date = models.DateTimeField(auto_now_add=True)
-    last_changed = models.DateTimeField(auto_now=True)
-    show_on_frontend = models.BooleanField(default=False)
-    form_title = models.CharField(max_length=TITLE_LENGTH, default="Formular")
-    description = models.TextField(blank=True)
+    parent_menu = models.ForeignKey('Menu', on_delete=models.CASCADE,
+        verbose_name='Eltern-Menü')
+    pdffile = models.FileField(upload_to='forms', default="forms/default.pdf",
+        verbose_name='PDF-Datei')
+    upload_date = models.DateTimeField(auto_now_add=True,
+        verbose_name='Uploaddatum')
+    last_changed = models.DateTimeField(auto_now=True,
+        verbose_name='Zuletzt geändert')
+    show_on_frontend = models.BooleanField(default=False,
+        verbose_name='Im Frontend anzeigen')
+    form_title = models.CharField(max_length=TITLE_LENGTH, default="Formular",
+        verbose_name='Titel')
+    description = models.TextField(blank=True, verbose_name='Beschreibung')
 
     def print_form(self, number_of_copies=1):
         """ Print the document.
@@ -101,3 +124,7 @@ class Form(models.Model):
 
     def __str__(self):
         return self.form_title
+
+    class Meta:
+        verbose_name = 'Formular'
+        verbose_name_plural = 'Formulare'
