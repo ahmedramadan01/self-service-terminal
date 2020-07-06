@@ -57,26 +57,26 @@
             {% if page_obj.has_previous %}
 
 
-            <a style="color:{{ settings.colorval_zurueck_button }}" class="noselect navigation-btn btn"
+            <a style="color:{{ settings.colorval_return_button }}" class="noselect navigation-btn btn"
                 href="?page={{ page_obj.previous_page_number }}">
                 &lArr; Zurück</a>
             {% elif not is_homepage %}
-            <a style="color:{{ settings.colorval_zurueck_button }}" class="noselect navigation-btn btn"
+            <a style="color:{{ settings.colorval_return_button }}" class="noselect navigation-btn btn"
                 href="/menu/{{ menu.parent_menu.pk }}">
                 &lArr; Zurück</a>
             {% endif %}
             {% elif not is_homepage %}
-            <a style="color:{{ settings.colorval_zurueck_button }}" class="noselect navigation-btn btn"
+            <a style="color:{{ settings.colorval_return_button }}" class="noselect navigation-btn btn"
                 href="/menu/{{ menu.parent_menu.pk }}">
                 &lArr; Zurück</a>
             {% endif %}
 
             {% if page_obj.paginator.num_pages != 1 %}
             {% if page_obj.has_next %}
-            <a class="noselect navigation-btn btn" href="?page={{ page_obj.next_page_number }}">weitere Einträge
+            <a class="noselect navigation-btn btn" href="?page={{ page_obj.next_page_number }}" style="color:{{ settings.colorval_return_button }}">weitere Einträge
                 &rArr;</a>
             {% else %}
-            <a class="noselect navigation-btn btn isDisabled">weitere Einträge &rArr;</a>
+            <a class="noselect navigation-btn btn isDisabled" style="color:{{ settings.colorval_return_button }}">weitere Einträge &rArr;</a>
             {% endif %}
             {% endif %}
         </div>
