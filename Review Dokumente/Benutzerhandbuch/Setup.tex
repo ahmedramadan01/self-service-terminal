@@ -1,0 +1,19 @@
+\section{Setup}
+Das System Self-Service-Terminal funktioniert durch das Zusammenspiel von drei Komponenten:\par
+\noindent Den Server in Form des \textbf{Raspberry Pi}, einen \textbf{Drucker}, sowie mindestens ein wlanfähiges \textbf{Tablet}. Auf dem Server läuft dabei die Anwendung mit allen peripheren Systemen, das Tablet dient zur Interaktion mit dem Frontend für die Kunden in der Filiale und der Drucker druckt die gewünschten Formulare aus. Im Folgenden erläutern wir, wie sie diese Komponenten konfigurieren müssen um das System in Betrieb zu nehmen. Wir gehen davon aus, dass zum Zeitpunkt der Konfiguration des Systems die Anwendung bereits auf dem Raspberry Pi installiert wurde. Sollte dies nicht der Fall sein, folgen Sie bitte zuerst den Anweisungen der \textbf{Installationsanleitung.}\\
+
+\subsection{Server}
+
+\noindent Um den Server für den Betrieb des Self-Service-Terminal zu vorzubereiten, stellen Sie zuerst sicher, dass der Access-Point funktioniert, indem Sie sich mit einem wlanfähigen Gerät in das Netzwerk einwählen. Anschließend laden sie die Druckertreiber für den zu nutzenden Drucker herunter und installieren diese auf dem Server. Schließlich stellen sie den gewünschten Drucker als Standard-Drucker ein. Dafür verwenden Sie die CUPS-Software. Schließen sie die Einrichtung des Systems ab, indem Sie sich mit einem wlanfähigen Gerät in das Netzwerk des Access-Points einwählen und die IP-Adresse und den Port aufrufen, welche Sie bei der Installation der Anwednung eingestellt haben (z.B. 192.168.4.1:8000). Wird die Startseite (Abb.1) des Self-Sevice-Terminal angezeigt, ist das System betriebsbereit.
+Das System kann nun mit Inhalten gefüllt werden. Näheres dazu finden Sie in den Kapiteln \glqq Benutzeroberfläche \grqq{} und \glqq Funktionsumfang\grqq{}.
+
+\newpage
+
+\subsection{Drucker}
+
+\noindent Um den Drucker für den Betrieb vorzubereiten, schließen Sie ihn zunächst per USB oder Wlan an den Server an. Testen Sie im Anschluss die Konfiguration der Treiber und von CUPS indem Sie eine Testseite vom Server aus drucken. Ist der Druck erfolgreich, ist der Drucker für den Betrieb der Anwendung bereit. Falls nicht passen Sie die Konfiguration des Standarddruckers und/oder der Treibersoftware an.\\
+
+\subsection{Tablet}
+
+\noindent Um den Tablet für den Betrieb des Systems vorzubereiten, verbinden Sie ihn zunächst mit dem Access-Point des Servers. Rufen Sie anschließend die bei der Installation eingestellte IP-Adresse auf dem eingestellten Port auf. Die Startseite des Self-Service-Terminal (Abb.1) wird nun angezeigt. Um die Einsatzbereitschaft des Terminals zu testen, navigieren Sie durch die Menüstruktur und drucken Sie ein Formular aus, falls schon ein Formular im Backend hinterlegt wurde.\par
+\noindent Wir Empfehlen eingesetzte Tablets im \glqq geführten Bedienungsmodus\grqq{} zu betreiben, damit Kunden keinen Zugriff auf weitere Funktionen des Tablets erlangen. Nähere Informationen zur Einschränlung der Bedienbarkeit finden Sie auf den Seiten der Hersteller.
