@@ -1,0 +1,176 @@
+\hypertarget{namespaceself__service__terminal_1_1views}{}\doxysection{self\+\_\+service\+\_\+terminal.\+views Namespace Reference}
+\label{namespaceself__service__terminal_1_1views}\index{self\_service\_terminal.views@{self\_service\_terminal.views}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceself__service__terminal_1_1views_a4a85e497962e8a0d311900493583ad17}{get\+\_\+settings}} ()
+\item 
+def \mbox{\hyperlink{namespaceself__service__terminal_1_1views_a19420b0ed7d54e32a7065ded61b386f0}{get\+\_\+homepage}} ()
+\item 
+def \mbox{\hyperlink{namespaceself__service__terminal_1_1views_aeae0efa8555da6fcca8f752902eeefa4}{index}} (request)
+\item 
+def \mbox{\hyperlink{namespaceself__service__terminal_1_1views_a0626a2fdae22b7feacc1d267bc174e7e}{menu}} (request, menu\+\_\+id=None, menu\+\_\+title=None)
+\item 
+def \mbox{\hyperlink{namespaceself__service__terminal_1_1views_aabcb672eb52d0d1ae33613b3a6255694}{formular}} (request, form\+\_\+id=None, form\+\_\+title=None)
+\item 
+def \mbox{\hyperlink{namespaceself__service__terminal_1_1views_ab7388b19e8450374503fa6aeadd0a236}{view\+\_\+formular}} (request, form\+\_\+id=None, form\+\_\+title=None)
+\item 
+def \mbox{\hyperlink{namespaceself__service__terminal_1_1views_a3ec2b3c0942c84d6b2054837e5e00275}{print\+\_\+formular}} (request, form\+\_\+id=None)
+\item 
+def \mbox{\hyperlink{namespaceself__service__terminal_1_1views_a1507ab606dc71330d145d7b175408346}{export\+\_\+view}} (request=Http\+Request(), return\+\_\+string=False, path=E\+X\+P\+O\+R\+T\+\_\+\+P\+A\+TH, export\+\_\+as\+\_\+zip=True)
+\item 
+def \mbox{\hyperlink{namespaceself__service__terminal_1_1views_ade4a7da4c35f2855e907b26af3ec2b92}{import\+\_\+view}} (request=Http\+Request(), import\+\_\+string=False, imported\+\_\+data=None)
+\item 
+def \mbox{\hyperlink{namespaceself__service__terminal_1_1views_afa5e1938e210a35661c130870e0d8afa}{menu\+\_\+template\+\_\+test}} (request, menu\+\_\+id=None, menu\+\_\+title=None)
+\item 
+def \mbox{\hyperlink{namespaceself__service__terminal_1_1views_a1414198010de84dac93f4ce039a6b098}{export\+\_\+action}} (modeladmin, request, queryset)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceself__service__terminal_1_1views_a1414198010de84dac93f4ce039a6b098}\label{namespaceself__service__terminal_1_1views_a1414198010de84dac93f4ce039a6b098}} 
+\index{self\_service\_terminal.views@{self\_service\_terminal.views}!export\_action@{export\_action}}
+\index{export\_action@{export\_action}!self\_service\_terminal.views@{self\_service\_terminal.views}}
+\doxysubsubsection{\texorpdfstring{export\_action()}{export\_action()}}
+{\footnotesize\ttfamily def self\+\_\+service\+\_\+terminal.\+views.\+export\+\_\+action (\begin{DoxyParamCaption}\item[{}]{modeladmin,  }\item[{}]{request,  }\item[{}]{queryset }\end{DoxyParamCaption})}
+
+
+
+Definition at line 432 of file views.\+py.
+
+\mbox{\Hypertarget{namespaceself__service__terminal_1_1views_a1507ab606dc71330d145d7b175408346}\label{namespaceself__service__terminal_1_1views_a1507ab606dc71330d145d7b175408346}} 
+\index{self\_service\_terminal.views@{self\_service\_terminal.views}!export\_view@{export\_view}}
+\index{export\_view@{export\_view}!self\_service\_terminal.views@{self\_service\_terminal.views}}
+\doxysubsubsection{\texorpdfstring{export\_view()}{export\_view()}}
+{\footnotesize\ttfamily def self\+\_\+service\+\_\+terminal.\+views.\+export\+\_\+view (\begin{DoxyParamCaption}\item[{}]{request = {\ttfamily HttpRequest()},  }\item[{}]{return\+\_\+string = {\ttfamily False},  }\item[{}]{path = {\ttfamily EXPORT\+\_\+PATH},  }\item[{}]{export\+\_\+as\+\_\+zip = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Export the database entries of settings, menus and forms. Copy all
+files from the director files to the export directory.
+
+If return_string = True return only the database entries as an
+json-formatted string.
+\end{DoxyVerb}
+ 
+
+Definition at line 176 of file views.\+py.
+
+\mbox{\Hypertarget{namespaceself__service__terminal_1_1views_aabcb672eb52d0d1ae33613b3a6255694}\label{namespaceself__service__terminal_1_1views_aabcb672eb52d0d1ae33613b3a6255694}} 
+\index{self\_service\_terminal.views@{self\_service\_terminal.views}!formular@{formular}}
+\index{formular@{formular}!self\_service\_terminal.views@{self\_service\_terminal.views}}
+\doxysubsubsection{\texorpdfstring{formular()}{formular()}}
+{\footnotesize\ttfamily def self\+\_\+service\+\_\+terminal.\+views.\+formular (\begin{DoxyParamCaption}\item[{}]{request,  }\item[{}]{form\+\_\+id = {\ttfamily None},  }\item[{}]{form\+\_\+title = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Render and return the form site with the primary key <form_id>.
+
+Create a preview image for the PDF to be printed. Then render and return
+the form page.
+\end{DoxyVerb}
+ 
+
+Definition at line 103 of file views.\+py.
+
+\mbox{\Hypertarget{namespaceself__service__terminal_1_1views_a19420b0ed7d54e32a7065ded61b386f0}\label{namespaceself__service__terminal_1_1views_a19420b0ed7d54e32a7065ded61b386f0}} 
+\index{self\_service\_terminal.views@{self\_service\_terminal.views}!get\_homepage@{get\_homepage}}
+\index{get\_homepage@{get\_homepage}!self\_service\_terminal.views@{self\_service\_terminal.views}}
+\doxysubsubsection{\texorpdfstring{get\_homepage()}{get\_homepage()}}
+{\footnotesize\ttfamily def self\+\_\+service\+\_\+terminal.\+views.\+get\+\_\+homepage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 24 of file views.\+py.
+
+\mbox{\Hypertarget{namespaceself__service__terminal_1_1views_a4a85e497962e8a0d311900493583ad17}\label{namespaceself__service__terminal_1_1views_a4a85e497962e8a0d311900493583ad17}} 
+\index{self\_service\_terminal.views@{self\_service\_terminal.views}!get\_settings@{get\_settings}}
+\index{get\_settings@{get\_settings}!self\_service\_terminal.views@{self\_service\_terminal.views}}
+\doxysubsubsection{\texorpdfstring{get\_settings()}{get\_settings()}}
+{\footnotesize\ttfamily def self\+\_\+service\+\_\+terminal.\+views.\+get\+\_\+settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 20 of file views.\+py.
+
+\mbox{\Hypertarget{namespaceself__service__terminal_1_1views_ade4a7da4c35f2855e907b26af3ec2b92}\label{namespaceself__service__terminal_1_1views_ade4a7da4c35f2855e907b26af3ec2b92}} 
+\index{self\_service\_terminal.views@{self\_service\_terminal.views}!import\_view@{import\_view}}
+\index{import\_view@{import\_view}!self\_service\_terminal.views@{self\_service\_terminal.views}}
+\doxysubsubsection{\texorpdfstring{import\_view()}{import\_view()}}
+{\footnotesize\ttfamily def self\+\_\+service\+\_\+terminal.\+views.\+import\+\_\+view (\begin{DoxyParamCaption}\item[{}]{request = {\ttfamily HttpRequest()},  }\item[{}]{import\+\_\+string = {\ttfamily False},  }\item[{}]{imported\+\_\+data = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Import the files that have been exported by the export_view.
+
+This view copies all exported files to the files installation directory,
+deletes all settings, menu and form entries on the database
+and adds the exported settings, menus and forms to the database.
+If import_string = True then imported_data should be a string as returned
+by the export_view if its return_string = True.
+\end{DoxyVerb}
+ 
+
+Definition at line 265 of file views.\+py.
+
+\mbox{\Hypertarget{namespaceself__service__terminal_1_1views_aeae0efa8555da6fcca8f752902eeefa4}\label{namespaceself__service__terminal_1_1views_aeae0efa8555da6fcca8f752902eeefa4}} 
+\index{self\_service\_terminal.views@{self\_service\_terminal.views}!index@{index}}
+\index{index@{index}!self\_service\_terminal.views@{self\_service\_terminal.views}}
+\doxysubsubsection{\texorpdfstring{index()}{index()}}
+{\footnotesize\ttfamily def self\+\_\+service\+\_\+terminal.\+views.\+index (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Render and return the homepage.
+
+If more then BUTTONS_PER_PAGE submenus and subforms are present, render
+additional pages with the remaining buttons, which can be accessed by
+pressing navigation buttons on the left and right side of the screen.
+\end{DoxyVerb}
+ 
+
+Definition at line 28 of file views.\+py.
+
+\mbox{\Hypertarget{namespaceself__service__terminal_1_1views_a0626a2fdae22b7feacc1d267bc174e7e}\label{namespaceself__service__terminal_1_1views_a0626a2fdae22b7feacc1d267bc174e7e}} 
+\index{self\_service\_terminal.views@{self\_service\_terminal.views}!menu@{menu}}
+\index{menu@{menu}!self\_service\_terminal.views@{self\_service\_terminal.views}}
+\doxysubsubsection{\texorpdfstring{menu()}{menu()}}
+{\footnotesize\ttfamily def self\+\_\+service\+\_\+terminal.\+views.\+menu (\begin{DoxyParamCaption}\item[{}]{request,  }\item[{}]{menu\+\_\+id = {\ttfamily None},  }\item[{}]{menu\+\_\+title = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Render and return the menu site with the primary key <menu_id>.
+
+If more then BUTTONS_PER_PAGE submenus and subforms are present, render
+additional pages with the remaining buttons, which can be accessed by
+pressing navigation buttons on the left and right side of the screen.
+\end{DoxyVerb}
+ 
+
+Definition at line 63 of file views.\+py.
+
+\mbox{\Hypertarget{namespaceself__service__terminal_1_1views_afa5e1938e210a35661c130870e0d8afa}\label{namespaceself__service__terminal_1_1views_afa5e1938e210a35661c130870e0d8afa}} 
+\index{self\_service\_terminal.views@{self\_service\_terminal.views}!menu\_template\_test@{menu\_template\_test}}
+\index{menu\_template\_test@{menu\_template\_test}!self\_service\_terminal.views@{self\_service\_terminal.views}}
+\doxysubsubsection{\texorpdfstring{menu\_template\_test()}{menu\_template\_test()}}
+{\footnotesize\ttfamily def self\+\_\+service\+\_\+terminal.\+views.\+menu\+\_\+template\+\_\+test (\begin{DoxyParamCaption}\item[{}]{request,  }\item[{}]{menu\+\_\+id = {\ttfamily None},  }\item[{}]{menu\+\_\+title = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Only for testing purposes.\end{DoxyVerb}
+ 
+
+Definition at line 373 of file views.\+py.
+
+\mbox{\Hypertarget{namespaceself__service__terminal_1_1views_a3ec2b3c0942c84d6b2054837e5e00275}\label{namespaceself__service__terminal_1_1views_a3ec2b3c0942c84d6b2054837e5e00275}} 
+\index{self\_service\_terminal.views@{self\_service\_terminal.views}!print\_formular@{print\_formular}}
+\index{print\_formular@{print\_formular}!self\_service\_terminal.views@{self\_service\_terminal.views}}
+\doxysubsubsection{\texorpdfstring{print\_formular()}{print\_formular()}}
+{\footnotesize\ttfamily def self\+\_\+service\+\_\+terminal.\+views.\+print\+\_\+formular (\begin{DoxyParamCaption}\item[{}]{request,  }\item[{}]{form\+\_\+id = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Run the print method of the given form object and return a loading
+animation that redirects to the homepage after some seconds.
+If the file has not been printed properly, return a HttpResponse 404.
+\end{DoxyVerb}
+ 
+
+Definition at line 159 of file views.\+py.
+
+\mbox{\Hypertarget{namespaceself__service__terminal_1_1views_ab7388b19e8450374503fa6aeadd0a236}\label{namespaceself__service__terminal_1_1views_ab7388b19e8450374503fa6aeadd0a236}} 
+\index{self\_service\_terminal.views@{self\_service\_terminal.views}!view\_formular@{view\_formular}}
+\index{view\_formular@{view\_formular}!self\_service\_terminal.views@{self\_service\_terminal.views}}
+\doxysubsubsection{\texorpdfstring{view\_formular()}{view\_formular()}}
+{\footnotesize\ttfamily def self\+\_\+service\+\_\+terminal.\+views.\+view\+\_\+formular (\begin{DoxyParamCaption}\item[{}]{request,  }\item[{}]{form\+\_\+id = {\ttfamily None},  }\item[{}]{form\+\_\+title = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 143 of file views.\+py.
+
