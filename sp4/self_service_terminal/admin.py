@@ -8,8 +8,6 @@ from django.contrib import admin
 from .models import Form, Menu, Terminal_Settings
 from .actions import export_action, import_action
 
-from import_export import resources
-from import_export.admin import ImportExportModelAdmin
 from django.contrib.admin import AdminSite
 
 class MyAdminSite(AdminSite):
@@ -37,7 +35,7 @@ class FormInline(admin.TabularInline):
 
 
 @admin.register(Terminal_Settings)
-class Terminal_SettingsAdmin(ImportExportModelAdmin):
+class Terminal_SettingsAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Beschreibung', {'fields': ['title', 'description']}),
         ('Farbe',
@@ -53,7 +51,7 @@ class Terminal_SettingsAdmin(ImportExportModelAdmin):
 
 
 @admin.register(Menu)
-class MenuAdmin(ImportExportModelAdmin):
+class MenuAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Oberkategorie', {'fields': ['parent_menu']}),
         ('Beschreibung', {'fields': ['menu_title', 'menu_text']})
@@ -62,7 +60,7 @@ class MenuAdmin(ImportExportModelAdmin):
 
 
 @admin.register(Form)
-class FormAdmin(ImportExportModelAdmin):
+class FormAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Übergeordnetes Menü', {'fields': ['parent_menu']}),
         # ('Anzeigen', {'fields': ['show_on_frontend']}),
@@ -73,18 +71,3 @@ class FormAdmin(ImportExportModelAdmin):
                     'upload_date', 'last_changed']
     list_filter = ['upload_date', 'last_changed']
 
-
-class Terminal_SettingsResource(resources.ModelResource):
-
-    class Meta:
-        model = Terminal_Settings
-
-class MenuResource(resources.ModelResource):
-
-    class Meta:
-        model = Menu
-
-class FormResource(resources.ModelResource):
-
-    class Meta:
-        model = Form
