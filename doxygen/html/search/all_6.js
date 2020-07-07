@@ -7,6 +7,5 @@ var searchData=
   ['form_5ftitle_34',['form_title',['../classself__service__terminal_1_1models_1_1_form.html#a9d9f1e15877294e016bbd77b3044f1a8',1,'self_service_terminal::models::Form']]],
   ['formadmin_35',['FormAdmin',['../classself__service__terminal_1_1admin_1_1_form_admin.html',1,'self_service_terminal::admin']]],
   ['forminline_36',['FormInline',['../classself__service__terminal_1_1admin_1_1_form_inline.html',1,'self_service_terminal::admin']]],
-  ['formresource_37',['FormResource',['../classself__service__terminal_1_1admin_1_1_form_resource.html',1,'self_service_terminal::admin']]],
-  ['formular_38',['formular',['../namespaceself__service__terminal_1_1views.html#aabcb672eb52d0d1ae33613b3a6255694',1,'self_service_terminal::views']]]
+  ['formular_37',['formular',['../namespaceself__service__terminal_1_1views.html#aabcb672eb52d0d1ae33613b3a6255694',1,'self_service_terminal::views']]]
 ];

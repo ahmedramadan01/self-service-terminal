@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.9)  7 JUL 2020 12:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.9)  7 JUL 2020 12:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -853,7 +853,9 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 6.29996pt on input line 169.
  [1] [2] [3] [4]
-[5] [6] [7] [8]
+[5] [6] [7] [8
+
+]
 Package hyperref Info: Option `pageanchor' set `true' on input line 171.
 
 Chapter 1.
@@ -917,7 +919,7 @@ LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
 )
 (./namespaceself__service__terminal_1_1admin.tex [10]
 LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 4
-6.
+0.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
@@ -946,13 +948,13 @@ ult_test_case__inherit__graph.pdf): PDF inclusion: multiple pdfs with page grou
 p included in a single page
 >
 <classself__service__terminal_1_1tests_1_1_default_test_case__inherit__graph.pd
-f, id=2008, 517.935pt x 160.6pt>
+f, id=1891, 517.935pt x 160.6pt>
 File: classself__service__terminal_1_1tests_1_1_default_test_case__inherit__gra
 ph.pdf Graphic file (type pdf)
 <use classself__service__terminal_1_1tests_1_1_default_test_case__inherit__grap
 h.pdf>
 Package pdftex.def Info: classself__service__terminal_1_1tests_1_1_default_test
-_case__inherit__graph.pdf  used on input line 9.
+_case__inherit__graph.pdf  used on input line 10.
 (pdftex.def)             Requested size: 350.0pt x 108.53264pt.
  <./classself__service__terminal_1_1tests_1_1_default_test_case__coll__graph.pd
 f
@@ -962,16 +964,16 @@ ult_test_case__coll__graph.pdf): PDF inclusion: multiple pdfs with page group i
 ncluded in a single page
 >
 <classself__service__terminal_1_1tests_1_1_default_test_case__coll__graph.pdf, 
-id=2016, 232.87pt x 167.62625pt>
+id=1899, 232.87pt x 167.62625pt>
 File: classself__service__terminal_1_1tests_1_1_default_test_case__coll__graph.
 pdf Graphic file (type pdf)
 <use classself__service__terminal_1_1tests_1_1_default_test_case__coll__graph.p
 df>
 Package pdftex.def Info: classself__service__terminal_1_1tests_1_1_default_test
-_case__coll__graph.pdf  used on input line 18.
+_case__coll__graph.pdf  used on input line 20.
 (pdftex.def)             Requested size: 232.0pt x 167.00684pt.
  [27]
-Overfull \hbox (30.80264pt too wide) in paragraph at lines 94--95
+Overfull \hbox (30.80264pt too wide) in paragraph at lines 96--97
 []\T1/phv/m/n/10 Reimplemented in [], and []. 
  []
 
@@ -985,13 +987,13 @@ rt_import_test_case__inherit__graph.pdf): PDF inclusion: multiple pdfs with pag
 e group included in a single page
 >
 <classself__service__terminal_1_1tests_1_1_export_import_test_case__inherit__gr
-aph.pdf, id=2097, 232.87pt x 167.62625pt>
+aph.pdf, id=1980, 232.87pt x 167.62625pt>
 File: classself__service__terminal_1_1tests_1_1_export_import_test_case__inheri
 t__graph.pdf Graphic file (type pdf)
 <use classself__service__terminal_1_1tests_1_1_export_import_test_case__inherit
 __graph.pdf>
 Package pdftex.def Info: classself__service__terminal_1_1tests_1_1_export_impor
-t_test_case__inherit__graph.pdf  used on input line 9.
+t_test_case__inherit__graph.pdf  used on input line 10.
 (pdftex.def)             Requested size: 232.0pt x 167.00684pt.
  <./classself__service__terminal_1_1tests_1_1_export_import_test_case__coll__gr
 aph.pdf
@@ -1001,16 +1003,16 @@ rt_import_test_case__coll__graph.pdf): PDF inclusion: multiple pdfs with page g
 roup included in a single page
 >
 <classself__service__terminal_1_1tests_1_1_export_import_test_case__coll__graph
-.pdf, id=2105, 232.87pt x 167.62625pt>
+.pdf, id=1988, 232.87pt x 167.62625pt>
 File: classself__service__terminal_1_1tests_1_1_export_import_test_case__coll__
 graph.pdf Graphic file (type pdf)
 <use classself__service__terminal_1_1tests_1_1_export_import_test_case__coll__g
 raph.pdf>
 Package pdftex.def Info: classself__service__terminal_1_1tests_1_1_export_impor
-t_test_case__coll__graph.pdf  used on input line 18.
+t_test_case__coll__graph.pdf  used on input line 20.
 (pdftex.def)             Requested size: 232.0pt x 167.00684pt.
  [32] [33]
-Underfull \hbox (badness 10000) in paragraph at lines 97--98
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
 \T1/pcr/m/n/8 def self[]_[]service[]_[]terminal.[]tests.[]Export[]Import[]Test[
 ]Case.[]test[]_[]number[]_[]of[]_[]db[]_[]entries[]_[]when[]_[]import[]_[]
  []
@@ -1022,13 +1024,13 @@ pdfTeX warning: pdflatex (file ./classself__service__terminal_1_1models_1_1_for
 m__inherit__graph.pdf): PDF inclusion: multiple pdfs with page group included i
 n a single page
 >
-<classself__service__terminal_1_1models_1_1_form__inherit__graph.pdf, id=2156, 
+<classself__service__terminal_1_1models_1_1_form__inherit__graph.pdf, id=2038, 
 269.005pt x 156.585pt>
 File: classself__service__terminal_1_1models_1_1_form__inherit__graph.pdf Graph
 ic file (type pdf)
 <use classself__service__terminal_1_1models_1_1_form__inherit__graph.pdf>
 Package pdftex.def Info: classself__service__terminal_1_1models_1_1_form__inher
-it__graph.pdf  used on input line 9.
+it__graph.pdf  used on input line 10.
 (pdftex.def)             Requested size: 268.0pt x 156.00162pt.
  <./classself__service__terminal_1_1models_1_1_form__coll__graph.pdf
 
@@ -1036,16 +1038,16 @@ pdfTeX warning: pdflatex (file ./classself__service__terminal_1_1models_1_1_for
 m__coll__graph.pdf): PDF inclusion: multiple pdfs with page group included in a
  single page
 >
-<classself__service__terminal_1_1models_1_1_form__coll__graph.pdf, id=2164, 269
+<classself__service__terminal_1_1models_1_1_form__coll__graph.pdf, id=2046, 269
 .005pt x 156.585pt>
 File: classself__service__terminal_1_1models_1_1_form__coll__graph.pdf Graphic 
 file (type pdf)
 <use classself__service__terminal_1_1models_1_1_form__coll__graph.pdf>
 Package pdftex.def Info: classself__service__terminal_1_1models_1_1_form__coll_
-_graph.pdf  used on input line 18.
+_graph.pdf  used on input line 20.
 (pdftex.def)             Requested size: 268.0pt x 156.00162pt.
  [35] [36] [37]
-Overfull \hbox (48.75621pt too wide) in paragraph at lines 130--131
+Overfull \hbox (48.75621pt too wide) in paragraph at lines 132--133
 \T1/pcr/m/n/8 self[]_[]service[]_[]terminal.[]models.[]Form.[]description = mod
 els.[]Text[]Field(blank=True, verbose[]_[]name=\TS1/pcr/m/n/8 '\T1/pcr/m/n/8 Be
 schreibung\TS1/pcr/m/n/8 '\T1/pcr/m/n/8 )
@@ -1059,12 +1061,12 @@ _admin__inherit__graph.pdf): PDF inclusion: multiple pdfs with page group inclu
 ded in a single page
 >
 <classself__service__terminal_1_1admin_1_1_form_admin__inherit__graph.pdf, id=2
-220, 238.8925pt x 167.62625pt>
+102, 238.8925pt x 167.62625pt>
 File: classself__service__terminal_1_1admin_1_1_form_admin__inherit__graph.pdf 
 Graphic file (type pdf)
 <use classself__service__terminal_1_1admin_1_1_form_admin__inherit__graph.pdf>
 Package pdftex.def Info: classself__service__terminal_1_1admin_1_1_form_admin__
-inherit__graph.pdf  used on input line 9.
+inherit__graph.pdf  used on input line 10.
 (pdftex.def)             Requested size: 238.0pt x 166.99916pt.
  [39] <./classself__service__terminal_1_1admin_1_1_form_admin__coll__graph.pdf
 
@@ -1072,24 +1074,24 @@ pdfTeX warning: pdflatex (file ./classself__service__terminal_1_1admin_1_1_form
 _admin__coll__graph.pdf): PDF inclusion: multiple pdfs with page group included
  in a single page
 >
-<classself__service__terminal_1_1admin_1_1_form_admin__coll__graph.pdf, id=2233
+<classself__service__terminal_1_1admin_1_1_form_admin__coll__graph.pdf, id=2115
 , 238.8925pt x 167.62625pt>
 File: classself__service__terminal_1_1admin_1_1_form_admin__coll__graph.pdf Gra
 phic file (type pdf)
 <use classself__service__terminal_1_1admin_1_1_form_admin__coll__graph.pdf>
 Package pdftex.def Info: classself__service__terminal_1_1admin_1_1_form_admin__
-coll__graph.pdf  used on input line 18.
+coll__graph.pdf  used on input line 20.
 (pdftex.def)             Requested size: 238.0pt x 166.99916pt.
  [40]) (./classself__service__terminal_1_1admin_1_1_form_inline.tex <./classsel
 f__service__terminal_1_1admin_1_1_form_inline__inherit__graph.pdf>
 <classself__service__terminal_1_1admin_1_1_form_inline__inherit__graph.pdf, id=
-2255, 238.8925pt x 167.62625pt>
+2137, 238.8925pt x 167.62625pt>
 File: classself__service__terminal_1_1admin_1_1_form_inline__inherit__graph.pdf
  Graphic file (type pdf)
 <use classself__service__terminal_1_1admin_1_1_form_inline__inherit__graph.pdf>
 
 Package pdftex.def Info: classself__service__terminal_1_1admin_1_1_form_inline_
-_inherit__graph.pdf  used on input line 9.
+_inherit__graph.pdf  used on input line 10.
 (pdftex.def)             Requested size: 238.0pt x 166.99916pt.
  <./classself__service__terminal_1_1admin_1_1_form_inline__coll__graph.pdf
 
@@ -1097,71 +1099,43 @@ pdfTeX warning: pdflatex (file ./classself__service__terminal_1_1admin_1_1_form
 _inline__coll__graph.pdf): PDF inclusion: multiple pdfs with page group include
 d in a single page
 >
-<classself__service__terminal_1_1admin_1_1_form_inline__coll__graph.pdf, id=226
-3, 238.8925pt x 167.62625pt>
+<classself__service__terminal_1_1admin_1_1_form_inline__coll__graph.pdf, id=214
+5, 238.8925pt x 167.62625pt>
 File: classself__service__terminal_1_1admin_1_1_form_inline__coll__graph.pdf Gr
 aphic file (type pdf)
 <use classself__service__terminal_1_1admin_1_1_form_inline__coll__graph.pdf>
 Package pdftex.def Info: classself__service__terminal_1_1admin_1_1_form_inline_
-_coll__graph.pdf  used on input line 18.
+_coll__graph.pdf  used on input line 20.
 (pdftex.def)             Requested size: 238.0pt x 166.99916pt.
  [41]
-Underfull \hbox (badness 10000) in paragraph at lines 54--55
+Underfull \hbox (badness 10000) in paragraph at lines 56--57
 \T1/pcr/m/n/8 tuple self[]_[]service[]_[]terminal.[]admin.[]Form[]Inline.[]fiel
 ds = (\TS1/pcr/m/n/8 '\T1/pcr/m/n/8 pdffile\TS1/pcr/m/n/8 '\T1/pcr/m/n/8 , \TS1
 /pcr/m/n/8 '\T1/pcr/m/n/8 form[]_[]title\TS1/pcr/m/n/8 '\T1/pcr/m/n/8 , \TS1/pc
 r/m/n/8 '\T1/pcr/m/n/8 description\TS1/pcr/m/n/8 '\T1/pcr/m/n/8 )
  []
 
-) (./classself__service__terminal_1_1admin_1_1_form_resource.tex <./classself__
-service__terminal_1_1admin_1_1_form_resource__inherit__graph.pdf>
-<classself__service__terminal_1_1admin_1_1_form_resource__inherit__graph.pdf, i
-d=2282, 238.8925pt x 167.62625pt>
-File: classself__service__terminal_1_1admin_1_1_form_resource__inherit__graph.p
-df Graphic file (type pdf)
-<use classself__service__terminal_1_1admin_1_1_form_resource__inherit__graph.pd
-f>
-Package pdftex.def Info: classself__service__terminal_1_1admin_1_1_form_resourc
-e__inherit__graph.pdf  used on input line 9.
-(pdftex.def)             Requested size: 238.0pt x 166.99916pt.
- [42] <./classself__service__terminal_1_1admin_1_1_form_resource__coll__graph.p
-df>
-<classself__service__terminal_1_1admin_1_1_form_resource__coll__graph.pdf, id=2
-300, 238.8925pt x 167.62625pt>
-File: classself__service__terminal_1_1admin_1_1_form_resource__coll__graph.pdf 
-Graphic file (type pdf)
-<use classself__service__terminal_1_1admin_1_1_form_resource__coll__graph.pdf>
-Package pdftex.def Info: classself__service__terminal_1_1admin_1_1_form_resourc
-e__coll__graph.pdf  used on input line 18.
-(pdftex.def)             Requested size: 238.0pt x 166.99916pt.
-)
-(./classself__service__terminal_1_1models_1_1_menu.tex <./classself__service__t
-erminal_1_1models_1_1_menu__inherit__graph.pdf
-
-pdfTeX warning: pdflatex (file ./classself__service__terminal_1_1models_1_1_men
-u__inherit__graph.pdf): PDF inclusion: multiple pdfs with page group included i
-n a single page
->
-<classself__service__terminal_1_1models_1_1_menu__inherit__graph.pdf, id=2309, 
+) (./classself__service__terminal_1_1models_1_1_menu.tex <./classself__service_
+_terminal_1_1models_1_1_menu__inherit__graph.pdf>
+<classself__service__terminal_1_1models_1_1_menu__inherit__graph.pdf, id=2164, 
 272.01625pt x 156.585pt>
 File: classself__service__terminal_1_1models_1_1_menu__inherit__graph.pdf Graph
 ic file (type pdf)
 <use classself__service__terminal_1_1models_1_1_menu__inherit__graph.pdf>
 Package pdftex.def Info: classself__service__terminal_1_1models_1_1_menu__inher
-it__graph.pdf  used on input line 9.
+it__graph.pdf  used on input line 10.
 (pdftex.def)             Requested size: 271.0pt x 156.00879pt.
- [43] <./classself__service__terminal_1_1models_1_1_menu__coll__graph.pdf>
-<classself__service__terminal_1_1models_1_1_menu__coll__graph.pdf, id=2326, 272
+ [42] <./classself__service__terminal_1_1models_1_1_menu__coll__graph.pdf>
+<classself__service__terminal_1_1models_1_1_menu__coll__graph.pdf, id=2183, 272
 .01625pt x 156.585pt>
 File: classself__service__terminal_1_1models_1_1_menu__coll__graph.pdf Graphic 
 file (type pdf)
 <use classself__service__terminal_1_1models_1_1_menu__coll__graph.pdf>
 Package pdftex.def Info: classself__service__terminal_1_1models_1_1_menu__coll_
-_graph.pdf  used on input line 18.
+_graph.pdf  used on input line 20.
 (pdftex.def)             Requested size: 271.0pt x 156.00879pt.
-
-[44]
-Overfull \hbox (39.1562pt too wide) in paragraph at lines 72--73
+ [43]
+Overfull \hbox (39.1562pt too wide) in paragraph at lines 74--75
 \T1/pcr/m/n/8 self[]_[]service[]_[]terminal.[]models.[]Menu.[]menu[]_[]text = m
 odels.[]Text[]Field(blank=True, verbose[]_[]name=\TS1/pcr/m/n/8 '\T1/pcr/m/n/8 
 Beschreibung\TS1/pcr/m/n/8 '\T1/pcr/m/n/8 )
@@ -1170,37 +1144,37 @@ Beschreibung\TS1/pcr/m/n/8 '\T1/pcr/m/n/8 )
 ) (./classself__service__terminal_1_1admin_1_1_menu_admin.tex <./classself__ser
 vice__terminal_1_1admin_1_1_menu_admin__inherit__graph.pdf>
 <classself__service__terminal_1_1admin_1_1_menu_admin__inherit__graph.pdf, id=2
-353, 238.8925pt x 167.62625pt>
+206, 238.8925pt x 167.62625pt>
 File: classself__service__terminal_1_1admin_1_1_menu_admin__inherit__graph.pdf 
 Graphic file (type pdf)
 <use classself__service__terminal_1_1admin_1_1_menu_admin__inherit__graph.pdf>
 Package pdftex.def Info: classself__service__terminal_1_1admin_1_1_menu_admin__
-inherit__graph.pdf  used on input line 9.
+inherit__graph.pdf  used on input line 10.
 (pdftex.def)             Requested size: 238.0pt x 166.99916pt.
- [45] <./classself__service__terminal_1_1admin_1_1_menu_admin__coll__graph.pdf
+ [44] <./classself__service__terminal_1_1admin_1_1_menu_admin__coll__graph.pdf
 
 pdfTeX warning: pdflatex (file ./classself__service__terminal_1_1admin_1_1_menu
 _admin__coll__graph.pdf): PDF inclusion: multiple pdfs with page group included
  in a single page
 >
-<classself__service__terminal_1_1admin_1_1_menu_admin__coll__graph.pdf, id=2366
+<classself__service__terminal_1_1admin_1_1_menu_admin__coll__graph.pdf, id=2222
 , 238.8925pt x 167.62625pt>
 File: classself__service__terminal_1_1admin_1_1_menu_admin__coll__graph.pdf Gra
 phic file (type pdf)
 <use classself__service__terminal_1_1admin_1_1_menu_admin__coll__graph.pdf>
 Package pdftex.def Info: classself__service__terminal_1_1admin_1_1_menu_admin__
-coll__graph.pdf  used on input line 18.
+coll__graph.pdf  used on input line 20.
 (pdftex.def)             Requested size: 238.0pt x 166.99916pt.
- [46]) (./classself__service__terminal_1_1admin_1_1_menu_inline.tex <./classsel
+ [45]) (./classself__service__terminal_1_1admin_1_1_menu_inline.tex <./classsel
 f__service__terminal_1_1admin_1_1_menu_inline__inherit__graph.pdf>
 <classself__service__terminal_1_1admin_1_1_menu_inline__inherit__graph.pdf, id=
-2390, 238.8925pt x 167.62625pt>
+2247, 238.8925pt x 167.62625pt>
 File: classself__service__terminal_1_1admin_1_1_menu_inline__inherit__graph.pdf
  Graphic file (type pdf)
 <use classself__service__terminal_1_1admin_1_1_menu_inline__inherit__graph.pdf>
 
 Package pdftex.def Info: classself__service__terminal_1_1admin_1_1_menu_inline_
-_inherit__graph.pdf  used on input line 9.
+_inherit__graph.pdf  used on input line 10.
 (pdftex.def)             Requested size: 238.0pt x 166.99916pt.
  <./classself__service__terminal_1_1admin_1_1_menu_inline__coll__graph.pdf
 
@@ -1208,114 +1182,91 @@ pdfTeX warning: pdflatex (file ./classself__service__terminal_1_1admin_1_1_menu
 _inline__coll__graph.pdf): PDF inclusion: multiple pdfs with page group include
 d in a single page
 >
-<classself__service__terminal_1_1admin_1_1_menu_inline__coll__graph.pdf, id=239
-8, 238.8925pt x 167.62625pt>
+<classself__service__terminal_1_1admin_1_1_menu_inline__coll__graph.pdf, id=225
+5, 238.8925pt x 167.62625pt>
 File: classself__service__terminal_1_1admin_1_1_menu_inline__coll__graph.pdf Gr
 aphic file (type pdf)
 <use classself__service__terminal_1_1admin_1_1_menu_inline__coll__graph.pdf>
 Package pdftex.def Info: classself__service__terminal_1_1admin_1_1_menu_inline_
-_coll__graph.pdf  used on input line 18.
+_coll__graph.pdf  used on input line 20.
 (pdftex.def)             Requested size: 238.0pt x 166.99916pt.
- [47]) (./classself__service__terminal_1_1admin_1_1_menu_resource.tex <./classs
-elf__service__terminal_1_1admin_1_1_menu_resource__inherit__graph.pdf>
-<classself__service__terminal_1_1admin_1_1_menu_resource__inherit__graph.pdf, i
-d=2417, 238.8925pt x 167.62625pt>
-File: classself__service__terminal_1_1admin_1_1_menu_resource__inherit__graph.p
-df Graphic file (type pdf)
-<use classself__service__terminal_1_1admin_1_1_menu_resource__inherit__graph.pd
-f>
-Package pdftex.def Info: classself__service__terminal_1_1admin_1_1_menu_resourc
-e__inherit__graph.pdf  used on input line 9.
-(pdftex.def)             Requested size: 238.0pt x 166.99916pt.
-
-[48] <./classself__service__terminal_1_1admin_1_1_menu_resource__coll__graph.pd
-f>
-<classself__service__terminal_1_1admin_1_1_menu_resource__coll__graph.pdf, id=2
-436, 238.8925pt x 167.62625pt>
-File: classself__service__terminal_1_1admin_1_1_menu_resource__coll__graph.pdf 
-Graphic file (type pdf)
-<use classself__service__terminal_1_1admin_1_1_menu_resource__coll__graph.pdf>
-Package pdftex.def Info: classself__service__terminal_1_1admin_1_1_menu_resourc
-e__coll__graph.pdf  used on input line 18.
-(pdftex.def)             Requested size: 238.0pt x 166.99916pt.
-) (./classself__service__terminal_1_1models_1_1_menu_1_1_meta.tex [49])
-(./classself__service__terminal_1_1admin_1_1_terminal___settings_resource_1_1_m
-eta.tex) (./classself__service__terminal_1_1models_1_1_form_1_1_meta.tex
-[50]) (./classself__service__terminal_1_1admin_1_1_menu_resource_1_1_meta.tex)
-(./classself__service__terminal_1_1admin_1_1_form_resource_1_1_meta.tex
-[51])
+ [46])
 (./classself__service__terminal_1_1models_1_1_terminal___settings_1_1_meta.tex
+[47]
 Underfull \hbox (badness 10000) in paragraph at lines 24--25
 \T1/pcr/m/n/8 string self[]_[]service[]_[]terminal.[]models.[]Terminal[]_[][]Se
 ttings.[]Meta.[]verbose[]_[]name = \TS1/pcr/m/n/8 '\T1/pcr/m/n/8 Einstellungen\
 TS1/pcr/m/n/8 '
  []
 
-[52]) (./classself__service__terminal_1_1admin_1_1_my_admin_site.tex <./classse
-lf__service__terminal_1_1admin_1_1_my_admin_site__inherit__graph.pdf
+) (./classself__service__terminal_1_1models_1_1_menu_1_1_meta.tex [48])
+(./classself__service__terminal_1_1models_1_1_form_1_1_meta.tex)
+(./classself__service__terminal_1_1admin_1_1_my_admin_site.tex <./classself__se
+rvice__terminal_1_1admin_1_1_my_admin_site__inherit__graph.pdf
 
 pdfTeX warning: pdflatex (file ./classself__service__terminal_1_1admin_1_1_my_a
 dmin_site__inherit__graph.pdf): PDF inclusion: multiple pdfs with page group in
 cluded in a single page
 >
 <classself__service__terminal_1_1admin_1_1_my_admin_site__inherit__graph.pdf, i
-d=2495, 238.8925pt x 167.62625pt>
+d=2300, 238.8925pt x 167.62625pt>
 File: classself__service__terminal_1_1admin_1_1_my_admin_site__inherit__graph.p
 df Graphic file (type pdf)
 <use classself__service__terminal_1_1admin_1_1_my_admin_site__inherit__graph.pd
 f>
 Package pdftex.def Info: classself__service__terminal_1_1admin_1_1_my_admin_sit
-e__inherit__graph.pdf  used on input line 9.
+e__inherit__graph.pdf  used on input line 10.
 (pdftex.def)             Requested size: 238.0pt x 166.99916pt.
- <./classself__service__terminal_1_1admin_1_1_my_admin_site__coll__graph.pdf
+ [49] <./classself__service__terminal_1_1admin_1_1_my_admin_site__coll__graph.p
+df
 
 pdfTeX warning: pdflatex (file ./classself__service__terminal_1_1admin_1_1_my_a
 dmin_site__coll__graph.pdf): PDF inclusion: multiple pdfs with page group inclu
 ded in a single page
 >
 <classself__service__terminal_1_1admin_1_1_my_admin_site__coll__graph.pdf, id=2
-503, 238.8925pt x 167.62625pt>
+314, 238.8925pt x 167.62625pt>
 File: classself__service__terminal_1_1admin_1_1_my_admin_site__coll__graph.pdf 
 Graphic file (type pdf)
 <use classself__service__terminal_1_1admin_1_1_my_admin_site__coll__graph.pdf>
 Package pdftex.def Info: classself__service__terminal_1_1admin_1_1_my_admin_sit
-e__coll__graph.pdf  used on input line 18.
+e__coll__graph.pdf  used on input line 20.
 (pdftex.def)             Requested size: 238.0pt x 166.99916pt.
- [53]
-Underfull \hbox (badness 10000) in paragraph at lines 40--41
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--43
 \T1/pcr/m/n/8 string self[]_[]service[]_[]terminal.[]admin.[]My[]Admin[]Site.[]
 site[]_[]header = \TS1/pcr/m/n/8 '\T1/pcr/m/n/8 Monty python adminstration\TS1/
 pcr/m/n/8 '
  []
 
 ) (./classself__service__terminal_1_1tests_1_1_no_pdf_set_test_case.tex <./clas
-sself__service__terminal_1_1tests_1_1_no_pdf_set_test_case__inherit__graph.pdf>
+sself__service__terminal_1_1tests_1_1_no_pdf_set_test_case__inherit__graph.pdf
+
+pdfTeX warning: pdflatex (file ./classself__service__terminal_1_1tests_1_1_no_p
+df_set_test_case__inherit__graph.pdf): PDF inclusion: multiple pdfs with page g
+roup included in a single page
+>
 <classself__service__terminal_1_1tests_1_1_no_pdf_set_test_case__inherit__graph
-.pdf, id=2519, 232.87pt x 167.62625pt>
+.pdf, id=2323, 232.87pt x 167.62625pt>
 File: classself__service__terminal_1_1tests_1_1_no_pdf_set_test_case__inherit__
 graph.pdf Graphic file (type pdf)
 <use classself__service__terminal_1_1tests_1_1_no_pdf_set_test_case__inherit__g
 raph.pdf>
 Package pdftex.def Info: classself__service__terminal_1_1tests_1_1_no_pdf_set_t
-est_case__inherit__graph.pdf  used on input line 9.
+est_case__inherit__graph.pdf  used on input line 10.
 (pdftex.def)             Requested size: 232.0pt x 167.00684pt.
- <./classself__service__terminal_1_1tests_1_1_no_pdf_set_test_case__coll__graph
-.pdf
-
-pdfTeX warning: pdflatex (file ./classself__service__terminal_1_1tests_1_1_no_p
-df_set_test_case__coll__graph.pdf): PDF inclusion: multiple pdfs with page grou
-p included in a single page
->
+ [50] <./classself__service__terminal_1_1tests_1_1_no_pdf_set_test_case__coll__
+graph.pdf>
 <classself__service__terminal_1_1tests_1_1_no_pdf_set_test_case__coll__graph.pd
-f, id=2527, 232.87pt x 167.62625pt>
+f, id=2340, 232.87pt x 167.62625pt>
 File: classself__service__terminal_1_1tests_1_1_no_pdf_set_test_case__coll__gra
 ph.pdf Graphic file (type pdf)
 <use classself__service__terminal_1_1tests_1_1_no_pdf_set_test_case__coll__grap
 h.pdf>
 Package pdftex.def Info: classself__service__terminal_1_1tests_1_1_no_pdf_set_t
-est_case__coll__graph.pdf  used on input line 18.
+est_case__coll__graph.pdf  used on input line 20.
 (pdftex.def)             Requested size: 232.0pt x 167.00684pt.
- [54] [55])
+ [51] [52])
 (./classself__service__terminal_1_1tests_1_1_pagination_test_case.tex <./classs
 elf__service__terminal_1_1tests_1_1_pagination_test_case__inherit__graph.pdf
 
@@ -1324,45 +1275,46 @@ nation_test_case__inherit__graph.pdf): PDF inclusion: multiple pdfs with page g
 roup included in a single page
 >
 <classself__service__terminal_1_1tests_1_1_pagination_test_case__inherit__graph
-.pdf, id=2566, 232.87pt x 167.62625pt>
+.pdf, id=2379, 232.87pt x 167.62625pt>
 File: classself__service__terminal_1_1tests_1_1_pagination_test_case__inherit__
 graph.pdf Graphic file (type pdf)
 <use classself__service__terminal_1_1tests_1_1_pagination_test_case__inherit__g
 raph.pdf>
 Package pdftex.def Info: classself__service__terminal_1_1tests_1_1_pagination_t
-est_case__inherit__graph.pdf  used on input line 9.
+est_case__inherit__graph.pdf  used on input line 10.
 (pdftex.def)             Requested size: 232.0pt x 167.00684pt.
- [56] <./classself__service__terminal_1_1tests_1_1_pagination_test_case__coll__
-graph.pdf
+ <./classself__service__terminal_1_1tests_1_1_pagination_test_case__coll__graph
+.pdf
 
 pdfTeX warning: pdflatex (file ./classself__service__terminal_1_1tests_1_1_pagi
 nation_test_case__coll__graph.pdf): PDF inclusion: multiple pdfs with page grou
 p included in a single page
 >
 <classself__service__terminal_1_1tests_1_1_pagination_test_case__coll__graph.pd
-f, id=2578, 232.87pt x 167.62625pt>
+f, id=2387, 232.87pt x 167.62625pt>
 File: classself__service__terminal_1_1tests_1_1_pagination_test_case__coll__gra
 ph.pdf Graphic file (type pdf)
 <use classself__service__terminal_1_1tests_1_1_pagination_test_case__coll__grap
 h.pdf>
 Package pdftex.def Info: classself__service__terminal_1_1tests_1_1_pagination_t
-est_case__coll__graph.pdf  used on input line 18.
+est_case__coll__graph.pdf  used on input line 20.
 (pdftex.def)             Requested size: 232.0pt x 167.00684pt.
- [57] [58]) (./classself__service__terminal_1_1tests_1_1_production_case.tex <.
-/classself__service__terminal_1_1tests_1_1_production_case__inherit__graph.pdf
+ [53] [54] [55])
+(./classself__service__terminal_1_1tests_1_1_production_case.tex <./classself__
+service__terminal_1_1tests_1_1_production_case__inherit__graph.pdf
 
 pdfTeX warning: pdflatex (file ./classself__service__terminal_1_1tests_1_1_prod
 uction_case__inherit__graph.pdf): PDF inclusion: multiple pdfs with page group 
 included in a single page
 >
 <classself__service__terminal_1_1tests_1_1_production_case__inherit__graph.pdf,
- id=2615, 232.87pt x 234.8775pt>
+ id=2426, 232.87pt x 234.8775pt>
 File: classself__service__terminal_1_1tests_1_1_production_case__inherit__graph
 .pdf Graphic file (type pdf)
 <use classself__service__terminal_1_1tests_1_1_production_case__inherit__graph.
 pdf>
 Package pdftex.def Info: classself__service__terminal_1_1tests_1_1_production_c
-ase__inherit__graph.pdf  used on input line 9.
+ase__inherit__graph.pdf  used on input line 10.
 (pdftex.def)             Requested size: 232.0pt x 234.0096pt.
  <./classself__service__terminal_1_1tests_1_1_production_case__coll__graph.pdf
 
@@ -1371,28 +1323,28 @@ uction_case__coll__graph.pdf): PDF inclusion: multiple pdfs with page group inc
 luded in a single page
 >
 <classself__service__terminal_1_1tests_1_1_production_case__coll__graph.pdf, id
-=2623, 232.87pt x 234.8775pt>
+=2434, 232.87pt x 234.8775pt>
 File: classself__service__terminal_1_1tests_1_1_production_case__coll__graph.pd
 f Graphic file (type pdf)
 <use classself__service__terminal_1_1tests_1_1_production_case__coll__graph.pdf
 >
 Package pdftex.def Info: classself__service__terminal_1_1tests_1_1_production_c
-ase__coll__graph.pdf  used on input line 18.
+ase__coll__graph.pdf  used on input line 20.
 (pdftex.def)             Requested size: 232.0pt x 234.0096pt.
- [59] [60])
+ [56] [57])
 (./classself__service__terminal_1_1apps_1_1_self_service_terminal_config.tex <.
 /classself__service__terminal_1_1apps_1_1_self_service_terminal_config__inherit
 __graph.pdf>
 <classself__service__terminal_1_1apps_1_1_self_service_terminal_config__inherit
-__graph.pdf, id=2659, 231.86626pt x 167.62625pt>
+__graph.pdf, id=2472, 231.86626pt x 167.62625pt>
 File: classself__service__terminal_1_1apps_1_1_self_service_terminal_config__in
 herit__graph.pdf Graphic file (type pdf)
 <use classself__service__terminal_1_1apps_1_1_self_service_terminal_config__inh
 erit__graph.pdf>
 Package pdftex.def Info: classself__service__terminal_1_1apps_1_1_self_service_
-terminal_config__inherit__graph.pdf  used on input line 9.
+terminal_config__inherit__graph.pdf  used on input line 10.
 (pdftex.def)             Requested size: 231.0pt x 167.00427pt.
- [61] <./classself__service__terminal_1_1apps_1_1_self_service_terminal_config_
+ [58] <./classself__service__terminal_1_1apps_1_1_self_service_terminal_config_
 _coll__graph.pdf
 
 pdfTeX warning: pdflatex (file ./classself__service__terminal_1_1apps_1_1_self_
@@ -1400,32 +1352,32 @@ service_terminal_config__coll__graph.pdf): PDF inclusion: multiple pdfs with pa
 ge group included in a single page
 >
 <classself__service__terminal_1_1apps_1_1_self_service_terminal_config__coll__g
-raph.pdf, id=2671, 231.86626pt x 167.62625pt>
+raph.pdf, id=2484, 231.86626pt x 167.62625pt>
 File: classself__service__terminal_1_1apps_1_1_self_service_terminal_config__co
 ll__graph.pdf Graphic file (type pdf)
 <use classself__service__terminal_1_1apps_1_1_self_service_terminal_config__col
 l__graph.pdf>
 Package pdftex.def Info: classself__service__terminal_1_1apps_1_1_self_service_
-terminal_config__coll__graph.pdf  used on input line 18.
+terminal_config__coll__graph.pdf  used on input line 20.
 (pdftex.def)             Requested size: 231.0pt x 167.00427pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--41
+Underfull \hbox (badness 10000) in paragraph at lines 42--43
 \T1/pcr/m/n/8 string self[]_[]service[]_[]terminal.[]apps.[]Self[]Service[]Term
 inal[]Config.[]name = \TS1/pcr/m/n/8 '\T1/pcr/m/n/8 self[]_[]service[]_[]termin
 al\TS1/pcr/m/n/8 '
  []
 
 ) (./classself__service__terminal_1_1models_1_1_terminal___settings.tex
-[62] <./classself__service__terminal_1_1models_1_1_terminal___settings__inherit
+[59] <./classself__service__terminal_1_1models_1_1_terminal___settings__inherit
 __graph.pdf>
 <classself__service__terminal_1_1models_1_1_terminal___settings__inherit__graph
-.pdf, id=2690, 244.915pt x 167.62625pt>
+.pdf, id=2502, 244.915pt x 167.62625pt>
 File: classself__service__terminal_1_1models_1_1_terminal___settings__inherit__
 graph.pdf Graphic file (type pdf)
 <use classself__service__terminal_1_1models_1_1_terminal___settings__inherit__g
 raph.pdf>
 Package pdftex.def Info: classself__service__terminal_1_1models_1_1_terminal___
-settings__inherit__graph.pdf  used on input line 9.
+settings__inherit__graph.pdf  used on input line 10.
 (pdftex.def)             Requested size: 244.0pt x 167.00427pt.
  <./classself__service__terminal_1_1models_1_1_terminal___settings__coll__graph
 .pdf
@@ -1435,15 +1387,15 @@ minal___settings__coll__graph.pdf): PDF inclusion: multiple pdfs with page grou
 p included in a single page
 >
 <classself__service__terminal_1_1models_1_1_terminal___settings__coll__graph.pd
-f, id=2698, 244.915pt x 167.62625pt>
+f, id=2510, 244.915pt x 167.62625pt>
 File: classself__service__terminal_1_1models_1_1_terminal___settings__coll__gra
 ph.pdf Graphic file (type pdf)
 <use classself__service__terminal_1_1models_1_1_terminal___settings__coll__grap
 h.pdf>
 Package pdftex.def Info: classself__service__terminal_1_1models_1_1_terminal___
-settings__coll__graph.pdf  used on input line 18.
+settings__coll__graph.pdf  used on input line 20.
 (pdftex.def)             Requested size: 244.0pt x 167.00427pt.
- [63] [64] [65])
+ [60] [61] [62])
 (./classself__service__terminal_1_1admin_1_1_terminal___settings_admin.tex <./c
 lassself__service__terminal_1_1admin_1_1_terminal___settings_admin__inherit__gr
 aph.pdf
@@ -1453,13 +1405,13 @@ inal___settings_admin__inherit__graph.pdf): PDF inclusion: multiple pdfs with p
 age group included in a single page
 >
 <classself__service__terminal_1_1admin_1_1_terminal___settings_admin__inherit__
-graph.pdf, id=2746, 238.8925pt x 167.62625pt>
+graph.pdf, id=2558, 238.8925pt x 167.62625pt>
 File: classself__service__terminal_1_1admin_1_1_terminal___settings_admin__inhe
 rit__graph.pdf Graphic file (type pdf)
 <use classself__service__terminal_1_1admin_1_1_terminal___settings_admin__inher
 it__graph.pdf>
 Package pdftex.def Info: classself__service__terminal_1_1admin_1_1_terminal___s
-ettings_admin__inherit__graph.pdf  used on input line 9.
+ettings_admin__inherit__graph.pdf  used on input line 10.
 (pdftex.def)             Requested size: 238.0pt x 166.99916pt.
  <./classself__service__terminal_1_1admin_1_1_terminal___settings_admin__coll__
 graph.pdf
@@ -1469,83 +1421,54 @@ inal___settings_admin__coll__graph.pdf): PDF inclusion: multiple pdfs with page
  group included in a single page
 >
 <classself__service__terminal_1_1admin_1_1_terminal___settings_admin__coll__gra
-ph.pdf, id=2754, 238.8925pt x 167.62625pt>
+ph.pdf, id=2566, 238.8925pt x 167.62625pt>
 File: classself__service__terminal_1_1admin_1_1_terminal___settings_admin__coll
 __graph.pdf Graphic file (type pdf)
 <use classself__service__terminal_1_1admin_1_1_terminal___settings_admin__coll_
 _graph.pdf>
 Package pdftex.def Info: classself__service__terminal_1_1admin_1_1_terminal___s
-ettings_admin__coll__graph.pdf  used on input line 18.
+ettings_admin__coll__graph.pdf  used on input line 20.
 (pdftex.def)             Requested size: 238.0pt x 166.99916pt.
- [66])
-(./classself__service__terminal_1_1admin_1_1_terminal___settings_resource.tex <
-./classself__service__terminal_1_1admin_1_1_terminal___settings_resource__inher
-it__graph.pdf>
-<classself__service__terminal_1_1admin_1_1_terminal___settings_resource__inheri
-t__graph.pdf, id=2769, 238.8925pt x 167.62625pt>
-File: classself__service__terminal_1_1admin_1_1_terminal___settings_resource__i
-nherit__graph.pdf Graphic file (type pdf)
-<use classself__service__terminal_1_1admin_1_1_terminal___settings_resource__in
-herit__graph.pdf>
-Package pdftex.def Info: classself__service__terminal_1_1admin_1_1_terminal___s
-ettings_resource__inherit__graph.pdf  used on input line 9.
-(pdftex.def)             Requested size: 238.0pt x 166.99916pt.
- [67] <./classself__service__terminal_1_1admin_1_1_terminal___settings_resource
-__coll__graph.pdf>
-<classself__service__terminal_1_1admin_1_1_terminal___settings_resource__coll__
-graph.pdf, id=2785, 238.8925pt x 167.62625pt>
-File: classself__service__terminal_1_1admin_1_1_terminal___settings_resource__c
-oll__graph.pdf Graphic file (type pdf)
-<use classself__service__terminal_1_1admin_1_1_terminal___settings_resource__co
-ll__graph.pdf>
-Package pdftex.def Info: classself__service__terminal_1_1admin_1_1_terminal___s
-ettings_resource__coll__graph.pdf  used on input line 18.
-(pdftex.def)             Requested size: 238.0pt x 166.99916pt.
-)
+ [63])
 (./classself__service__terminal_1_1tests_1_1_unconnected_configuration.tex <./c
 lassself__service__terminal_1_1tests_1_1_unconnected_configuration__inherit__gr
-aph.pdf
-
-pdfTeX warning: pdflatex (file ./classself__service__terminal_1_1tests_1_1_unco
-nnected_configuration__inherit__graph.pdf): PDF inclusion: multiple pdfs with p
-age group included in a single page
->
+aph.pdf>
 <classself__service__terminal_1_1tests_1_1_unconnected_configuration__inherit__
-graph.pdf, id=2795, 232.87pt x 234.8775pt>
+graph.pdf, id=2582, 232.87pt x 234.8775pt>
 File: classself__service__terminal_1_1tests_1_1_unconnected_configuration__inhe
 rit__graph.pdf Graphic file (type pdf)
 <use classself__service__terminal_1_1tests_1_1_unconnected_configuration__inher
 it__graph.pdf>
 Package pdftex.def Info: classself__service__terminal_1_1tests_1_1_unconnected_
-configuration__inherit__graph.pdf  used on input line 9.
+configuration__inherit__graph.pdf  used on input line 10.
 (pdftex.def)             Requested size: 232.0pt x 234.0096pt.
- [68] <./classself__service__terminal_1_1tests_1_1_unconnected_configuration__c
+ [64] <./classself__service__terminal_1_1tests_1_1_unconnected_configuration__c
 oll__graph.pdf>
 <classself__service__terminal_1_1tests_1_1_unconnected_configuration__coll__gra
-ph.pdf, id=2811, 232.87pt x 234.8775pt>
+ph.pdf, id=2598, 232.87pt x 234.8775pt>
 File: classself__service__terminal_1_1tests_1_1_unconnected_configuration__coll
 __graph.pdf Graphic file (type pdf)
 <use classself__service__terminal_1_1tests_1_1_unconnected_configuration__coll_
 _graph.pdf>
 Package pdftex.def Info: classself__service__terminal_1_1tests_1_1_unconnected_
-configuration__coll__graph.pdf  used on input line 18.
+configuration__coll__graph.pdf  used on input line 20.
 (pdftex.def)             Requested size: 232.0pt x 234.0096pt.
- [69] [70]) [71] [72
+ [65] [66]) [67] [68
 
 ]
 Chapter 7.
 (./self__service__terminal_2____init_____8py.tex) (./sp4_2____init_____8py.tex)
-(./actions_8py.tex) (./admin_8py.tex [73]) (./apps_8py.tex) (./asgi_8py.tex)
-(./constants_8py.tex [74]) (./manage_8py.tex) (./models_8py.tex)
-(./printer__status_8py.tex) (./settings_8py.tex [75]) (./tests_8py.tex)
-(./self__service__terminal_2urls_8py.tex [76]) (./sp4_2urls_8py.tex)
-(./views_8py.tex
+(./actions_8py.tex) (./admin_8py.tex [69]) (./apps_8py.tex) (./asgi_8py.tex)
+(./constants_8py.tex) (./manage_8py.tex) (./models_8py.tex [70])
+(./printer__status_8py.tex) (./settings_8py.tex [71]) (./tests_8py.tex)
+(./self__service__terminal_2urls_8py.tex) (./sp4_2urls_8py.tex)
+(./views_8py.tex [72]
 Underfull \hbox (badness 2443) in paragraph at lines 27--29
 []\T1/phv/m/n/10 def [] (request=Http[]Request(), import[]_[]string=False, impo
 rted[]_[]
  []
 
-) (./wsgi_8py.tex) [77] [78
+) (./wsgi_8py.tex) [73] [74
 
 ] (./refman.ind
 Underfull \hbox (badness 10000) in paragraph at lines 7--9
@@ -1617,7 +1540,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 121--123
 []| \T1/phv/m/n/10 self_service_terminal.tests.ExportImportTestCase,
  []
 
-[79
+[75
 
 
 ]
@@ -1646,63 +1569,58 @@ Overfull \hbox (15.22787pt too wide) in paragraph at lines 194--196
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 207--209
-[]| \T1/phv/m/n/10 self_service_terminal.admin.FormResource.Meta,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 210--212
-[]| \T1/phv/m/n/10 self_service_terminal.admin.MenuResource.Meta,
- []
-
-
-Overfull \hbox (46.95229pt too wide) in paragraph at lines 212--214
-[]| \T1/phv/m/n/10 self_service_terminal.admin.Terminal_SettingsResource.Meta,
- []
-
-
-Overfull \hbox (15.20996pt too wide) in paragraph at lines 219--221
+Overfull \hbox (15.20996pt too wide) in paragraph at lines 213--215
 []| \T1/phv/m/n/10 self_service_terminal.apps.SelfServiceTerminalConfig,
  []
 
-[80]
-Underfull \hbox (badness 10000) in paragraph at lines 278--280
+[76]
+Underfull \hbox (badness 10000) in paragraph at lines 264--266
 []\T1/phv/m/n/10 self_service_terminal.admin.Terminal_SettingsAdmin,
  []
 
 
-Overfull \hbox (26.95229pt too wide) in paragraph at lines 283--285
-[]\T1/phv/m/n/10 self_service_terminal.admin.Terminal_SettingsResource.Meta,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 287--289
+Underfull \hbox (badness 10000) in paragraph at lines 268--270
 []\T1/phv/m/n/10 self_service_terminal.apps.SelfServiceTerminalConfig,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--333
+Underfull \hbox (badness 10000) in paragraph at lines 312--314
 []\T1/phv/m/n/10 self_service_terminal.models.Terminal_Settings.Meta,
  []
 
-[81]
-Underfull \hbox (badness 10000) in paragraph at lines 400--402
+[77]
+Underfull \hbox (badness 10000) in paragraph at lines 381--383
 []\T1/phv/m/n/10 self_service_terminal.tests.UnconnectedConfiguration,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 429--431
+Underfull \hbox (badness 10000) in paragraph at lines 410--412
 []| \T1/phv/m/n/10 self_service_terminal.tests.ExportImportTestCase,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 433--435
+Underfull \hbox (badness 10000) in paragraph at lines 414--416
 []| \T1/phv/m/n/10 self_service_terminal.tests.PaginationTestCase,
  []
 
 
-Overfull \hbox (15.22787pt too wide) in paragraph at lines 437--439
+Overfull \hbox (15.22787pt too wide) in paragraph at lines 418--420
 []| \T1/phv/m/n/10 self_service_terminal.tests.UnconnectedConfiguration,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 463--465
+[]| \T1/phv/m/n/10 self_service_terminal.tests.ExportImportTestCase,
+ []
+
+
+Overfull \hbox (15.22787pt too wide) in paragraph at lines 469--471
+[]| \T1/phv/m/n/10 self_service_terminal.tests.UnconnectedConfiguration,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 472--474
+[]| \T1/phv/m/n/10 self_service_terminal.tests.PaginationTestCase,
  []
 
 
@@ -1711,79 +1629,64 @@ Underfull \hbox (badness 10000) in paragraph at lines 482--484
  []
 
 
-Overfull \hbox (15.22787pt too wide) in paragraph at lines 488--490
-[]| \T1/phv/m/n/10 self_service_terminal.tests.UnconnectedConfiguration,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 491--493
+Underfull \hbox (badness 10000) in paragraph at lines 486--488
 []| \T1/phv/m/n/10 self_service_terminal.tests.PaginationTestCase,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 501--503
-[]| \T1/phv/m/n/10 self_service_terminal.tests.ExportImportTestCase,
+Overfull \hbox (15.22787pt too wide) in paragraph at lines 490--492
+[]| \T1/phv/m/n/10 self_service_terminal.tests.UnconnectedConfiguration,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 502--504
+[]| \T1/phv/m/n/10 self_service_terminal.tests.PaginationTestCase,
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 505--507
-[]| \T1/phv/m/n/10 self_service_terminal.tests.PaginationTestCase,
- []
-
-
-Overfull \hbox (15.22787pt too wide) in paragraph at lines 509--511
-[]| \T1/phv/m/n/10 self_service_terminal.tests.UnconnectedConfiguration,
- []
-
-[82]
-Underfull \hbox (badness 10000) in paragraph at lines 521--523
-[]| \T1/phv/m/n/10 self_service_terminal.tests.PaginationTestCase,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 524--526
 []| \T1/phv/m/n/10 self_service_terminal.tests.ExportImportTestCase,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 527--529
+Underfull \hbox (badness 10000) in paragraph at lines 508--510
 []| \T1/phv/m/n/10 self_service_terminal.tests.ExportImportTestCase,
  []
 
-
-Overfull \hbox (15.22787pt too wide) in paragraph at lines 538--540
+[78]
+Overfull \hbox (15.22787pt too wide) in paragraph at lines 519--521
 []| \T1/phv/m/n/10 self_service_terminal.tests.UnconnectedConfiguration,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 550--552
+Underfull \hbox (badness 10000) in paragraph at lines 531--533
 []| \T1/phv/m/n/10 self_service_terminal.tests.ExportImportTestCase,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 556--558
+Underfull \hbox (badness 10000) in paragraph at lines 537--539
 []| \T1/phv/m/n/10 self_service_terminal.tests.PaginationTestCase,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 578--580
+Underfull \hbox (badness 10000) in paragraph at lines 559--561
 []| \T1/phv/m/n/10 self_service_terminal.models.Terminal_Settings,
  []
 
-[83])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 252.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 252.
+[79])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 246.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 246.
  (./refman.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 252.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 252.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 246.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 246.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 87246BFB7EE9B7C75C8094369E7EE0E5;64588.
+(rerunfilecheck)             Checksum: A08CA9D4BC20AD1DEEB6B324E5EFAB82;59712.
  ) 
 Here is how much of TeX's memory you used:
- 18059 strings out of 483057
- 309021 string characters out of 5962302
- 608615 words of memory out of 5000000
- 31946 multiletter control sequences out of 15000+600000
+ 17935 strings out of 483057
+ 302474 string characters out of 5962302
+ 602421 words of memory out of 5000000
+ 31877 multiletter control sequences out of 15000+600000
  577324 words of font info for 84 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  55i,16n,96p,938b,503s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1797,10 +1700,10 @@ er/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on refman.pdf (93 pages, 501444 bytes).
+Output written on refman.pdf (89 pages, 452538 bytes).
 PDF statistics:
- 3580 PDF objects out of 3580 (max. 8388607)
- 3317 compressed objects within 34 object streams
- 717 named destinations out of 1000 (max. 500000)
- 2583 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3341 PDF objects out of 3580 (max. 8388607)
+ 3101 compressed objects within 32 object streams
+ 674 named destinations out of 1000 (max. 500000)
+ 2409 words of extra memory for PDF output out of 10000 (max. 10000000)
 

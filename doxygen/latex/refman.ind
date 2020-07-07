@@ -1,16 +1,16 @@
 \begin{theindex}
 
-  \item {\_\_init\_\_.py}, \hyperpage{73}
+  \item {\_\_init\_\_.py}, \hyperpage{69}
   \item {\_\_str\_\_}
     \subitem {self\_service\_terminal.models.Form}, \hyperpage{37}
-    \subitem {self\_service\_terminal.models.Menu}, \hyperpage{45}
+    \subitem {self\_service\_terminal.models.Menu}, \hyperpage{44}
     \subitem {self\_service\_terminal.models.Terminal\_Settings}, 
-		\hyperpage{64}
+		\hyperpage{61}
 
   \indexspace
 
-  \item {actions.py}, \hyperpage{73}
-  \item {admin.py}, \hyperpage{74}
+  \item {actions.py}, \hyperpage{69}
+  \item {admin.py}, \hyperpage{69}
   \item {admin\_site}
     \subitem {self\_service\_terminal.admin}, \hyperpage{11}
   \item {ALLOWED\_HOSTS}
@@ -18,8 +18,8 @@
   \item {application}
     \subitem {sp4.asgi}, \hyperpage{19}
     \subitem {sp4.wsgi}, \hyperpage{25}
-  \item {apps.py}, \hyperpage{74}
-  \item {asgi.py}, \hyperpage{74}
+  \item {apps.py}, \hyperpage{70}
+  \item {asgi.py}, \hyperpage{70}
   \item {AUTH\_PASSWORD\_VALIDATORS}
     \subitem {sp4.settings}, \hyperpage{20}
 
@@ -38,29 +38,29 @@
     \subitem {self\_service\_terminal.tests.ExportImportTestCase}, 
 		\hyperpage{34}
     \subitem {self\_service\_terminal.tests.NoPdfSetTestCase}, 
-		\hyperpage{55}
+		\hyperpage{52}
     \subitem {self\_service\_terminal.tests.PaginationTestCase}, 
-		\hyperpage{58}
+		\hyperpage{55}
     \subitem {self\_service\_terminal.tests.ProductionCase}, 
-		\hyperpage{61}
+		\hyperpage{58}
     \subitem {self\_service\_terminal.tests.UnconnectedConfiguration}, 
-		\hyperpage{70}
+		\hyperpage{66}
   \item {colorval\_button}
     \subitem {self\_service\_terminal.models.Terminal\_Settings}, 
-		\hyperpage{64}
+		\hyperpage{61}
   \item {colorval\_heading}
     \subitem {self\_service\_terminal.models.Terminal\_Settings}, 
-		\hyperpage{64}
+		\hyperpage{61}
   \item {colorval\_nav\_bar}
     \subitem {self\_service\_terminal.models.Terminal\_Settings}, 
-		\hyperpage{65}
+		\hyperpage{62}
   \item {colorval\_return\_button}
     \subitem {self\_service\_terminal.models.Terminal\_Settings}, 
-		\hyperpage{65}
+		\hyperpage{62}
   \item {colorval\_text}
     \subitem {self\_service\_terminal.models.Terminal\_Settings}, 
-		\hyperpage{65}
-  \item {constants.py}, \hyperpage{75}
+		\hyperpage{62}
+  \item {constants.py}, \hyperpage{70}
   \item {custom\_form}
     \subitem {self\_service\_terminal.tests.DefaultTestCase}, 
 		\hyperpage{31}
@@ -74,9 +74,9 @@
   \item {description}
     \subitem {self\_service\_terminal.models.Form}, \hyperpage{38}
     \subitem {self\_service\_terminal.models.Terminal\_Settings}, 
-		\hyperpage{65}
+		\hyperpage{62}
   \item {document\_root}
-    \subitem {self\_service\_terminal.urls}, \hyperpage{14}
+    \subitem {self\_service\_terminal.urls}, \hyperpage{15}
 
   \indexspace
 
@@ -92,36 +92,36 @@
     \subitem {self\_service\_terminal.views}, \hyperpage{16}
   \item {extra}
     \subitem {self\_service\_terminal.admin.FormInline}, \hyperpage{42}
-    \subitem {self\_service\_terminal.admin.MenuInline}, \hyperpage{48}
+    \subitem {self\_service\_terminal.admin.MenuInline}, \hyperpage{47}
 
   \indexspace
 
   \item {fields}
     \subitem {self\_service\_terminal.admin.FormInline}, \hyperpage{42}
-    \subitem {self\_service\_terminal.admin.MenuInline}, \hyperpage{48}
+    \subitem {self\_service\_terminal.admin.MenuInline}, \hyperpage{47}
   \item {fieldsets}
     \subitem {self\_service\_terminal.admin.FormAdmin}, \hyperpage{40}
-    \subitem {self\_service\_terminal.admin.MenuAdmin}, \hyperpage{47}
+    \subitem {self\_service\_terminal.admin.MenuAdmin}, \hyperpage{46}
     \subitem {self\_service\_terminal.admin.Terminal\_SettingsAdmin}, 
-		\hyperpage{67}
+		\hyperpage{64}
   \item {form}
     \subitem {self\_service\_terminal.tests.DefaultTestCase}, 
 		\hyperpage{31}
     \subitem {self\_service\_terminal.tests.ExportImportTestCase}, 
 		\hyperpage{34}
     \subitem {self\_service\_terminal.tests.NoPdfSetTestCase}, 
-		\hyperpage{56}
+		\hyperpage{52}
     \subitem {self\_service\_terminal.tests.ProductionCase}, 
-		\hyperpage{61}
+		\hyperpage{58}
     \subitem {self\_service\_terminal.tests.UnconnectedConfiguration}, 
-		\hyperpage{70}
+		\hyperpage{66}
   \item {form2}
     \subitem {self\_service\_terminal.tests.DefaultTestCase}, 
 		\hyperpage{31}
     \subitem {self\_service\_terminal.tests.ExportImportTestCase}, 
 		\hyperpage{35}
     \subitem {self\_service\_terminal.tests.NoPdfSetTestCase}, 
-		\hyperpage{56}
+		\hyperpage{53}
   \item {form\_title}
     \subitem {self\_service\_terminal.models.Form}, \hyperpage{38}
   \item {formular}
@@ -147,15 +147,15 @@
   \item {index}
     \subitem {self\_service\_terminal.views}, \hyperpage{17}
   \item {inlines}
-    \subitem {self\_service\_terminal.admin.MenuAdmin}, \hyperpage{47}
+    \subitem {self\_service\_terminal.admin.MenuAdmin}, \hyperpage{46}
   \item {INSTALLED\_APPS}
     \subitem {sp4.settings}, \hyperpage{21}
   \item {institute\_logo}
     \subitem {self\_service\_terminal.models.Terminal\_Settings}, 
-		\hyperpage{65}
+		\hyperpage{62}
   \item {insurance\_logo}
     \subitem {self\_service\_terminal.models.Terminal\_Settings}, 
-		\hyperpage{66}
+		\hyperpage{63}
 
   \indexspace
 
@@ -174,7 +174,7 @@
     \subitem {manage}, \hyperpage{9}
   \item {manage}, \hyperpage{9}
     \subitem {main}, \hyperpage{9}
-  \item {manage.py}, \hyperpage{75}
+  \item {manage.py}, \hyperpage{71}
   \item {MEDIA\_ROOT}
     \subitem {sp4.settings}, \hyperpage{22}
   \item {MEDIA\_URL}
@@ -186,44 +186,38 @@
     \subitem {self\_service\_terminal.tests.ExportImportTestCase}, 
 		\hyperpage{35}
     \subitem {self\_service\_terminal.tests.NoPdfSetTestCase}, 
-		\hyperpage{56}
+		\hyperpage{53}
     \subitem {self\_service\_terminal.tests.PaginationTestCase}, 
-		\hyperpage{58}
+		\hyperpage{55}
     \subitem {self\_service\_terminal.tests.ProductionCase}, 
-		\hyperpage{61}
+		\hyperpage{58}
     \subitem {self\_service\_terminal.tests.UnconnectedConfiguration}, 
-		\hyperpage{71}
+		\hyperpage{67}
     \subitem {self\_service\_terminal.views}, \hyperpage{17}
   \item {menu\_template\_test}
     \subitem {self\_service\_terminal.views}, \hyperpage{18}
   \item {menu\_text}
-    \subitem {self\_service\_terminal.models.Menu}, \hyperpage{45}
+    \subitem {self\_service\_terminal.models.Menu}, \hyperpage{44}
   \item {menu\_title}
-    \subitem {self\_service\_terminal.models.Menu}, \hyperpage{45}
+    \subitem {self\_service\_terminal.models.Menu}, \hyperpage{44}
   \item {MIDDLEWARE}
     \subitem {sp4.settings}, \hyperpage{22}
   \item {model}
     \subitem {self\_service\_terminal.admin.FormInline}, \hyperpage{42}
-    \subitem {self\_service\_terminal.admin.FormResource.Meta}, 
-		\hyperpage{52}
-    \subitem {self\_service\_terminal.admin.MenuInline}, \hyperpage{48}
-    \subitem {self\_service\_terminal.admin.MenuResource.Meta}, 
-		\hyperpage{51}
-    \subitem {self\_service\_terminal.admin.Terminal\_SettingsResource.Meta}, 
-		\hyperpage{50}
-  \item {models.py}, \hyperpage{75}
+    \subitem {self\_service\_terminal.admin.MenuInline}, \hyperpage{47}
+  \item {models.py}, \hyperpage{71}
 
   \indexspace
 
   \item {name}
     \subitem {self\_service\_terminal.apps.SelfServiceTerminalConfig}, 
-		\hyperpage{62}
+		\hyperpage{59}
 
   \indexspace
 
   \item {parent\_menu}
     \subitem {self\_service\_terminal.models.Form}, \hyperpage{38}
-    \subitem {self\_service\_terminal.models.Menu}, \hyperpage{45}
+    \subitem {self\_service\_terminal.models.Menu}, \hyperpage{44}
   \item {pdffile}
     \subitem {self\_service\_terminal.models.Form}, \hyperpage{39}
   \item {print\_form}
@@ -232,7 +226,7 @@
     \subitem {self\_service\_terminal.views}, \hyperpage{18}
   \item {PRINTER}
     \subitem {self\_service\_terminal.constants}, \hyperpage{12}
-  \item {printer\_status.py}, \hyperpage{75}
+  \item {printer\_status.py}, \hyperpage{71}
 
   \indexspace
 
@@ -258,35 +252,22 @@
     \subitem {extra}, \hyperpage{42}
     \subitem {fields}, \hyperpage{42}
     \subitem {model}, \hyperpage{42}
-  \item {self\_service\_terminal.admin.FormResource}, \hyperpage{43}
-  \item {self\_service\_terminal.admin.FormResource.Meta}, 
-		\hyperpage{52}
-    \subitem {model}, \hyperpage{52}
-  \item {self\_service\_terminal.admin.MenuAdmin}, \hyperpage{46}
-    \subitem {fieldsets}, \hyperpage{47}
-    \subitem {inlines}, \hyperpage{47}
-  \item {self\_service\_terminal.admin.MenuInline}, \hyperpage{47}
-    \subitem {extra}, \hyperpage{48}
-    \subitem {fields}, \hyperpage{48}
-    \subitem {model}, \hyperpage{48}
-  \item {self\_service\_terminal.admin.MenuResource}, \hyperpage{49}
-  \item {self\_service\_terminal.admin.MenuResource.Meta}, 
-		\hyperpage{51}
-    \subitem {model}, \hyperpage{51}
-  \item {self\_service\_terminal.admin.MyAdminSite}, \hyperpage{53}
-    \subitem {site\_header}, \hyperpage{54}
+  \item {self\_service\_terminal.admin.MenuAdmin}, \hyperpage{45}
+    \subitem {fieldsets}, \hyperpage{46}
+    \subitem {inlines}, \hyperpage{46}
+  \item {self\_service\_terminal.admin.MenuInline}, \hyperpage{46}
+    \subitem {extra}, \hyperpage{47}
+    \subitem {fields}, \hyperpage{47}
+    \subitem {model}, \hyperpage{47}
+  \item {self\_service\_terminal.admin.MyAdminSite}, \hyperpage{50}
+    \subitem {site\_header}, \hyperpage{50}
   \item {self\_service\_terminal.admin.Terminal\_SettingsAdmin}, 
-		\hyperpage{66}
-    \subitem {fieldsets}, \hyperpage{67}
-  \item {self\_service\_terminal.admin.Terminal\_SettingsResource}, 
-		\hyperpage{68}
-  \item {self\_service\_terminal.admin.Terminal\_SettingsResource.Meta}, 
-		\hyperpage{50}
-    \subitem {model}, \hyperpage{50}
+		\hyperpage{63}
+    \subitem {fieldsets}, \hyperpage{64}
   \item {self\_service\_terminal.apps}, \hyperpage{11}
   \item {self\_service\_terminal.apps.SelfServiceTerminalConfig}, 
-		\hyperpage{62}
-    \subitem {name}, \hyperpage{62}
+		\hyperpage{59}
+    \subitem {name}, \hyperpage{59}
   \item {self\_service\_terminal.constants}, \hyperpage{11}
     \subitem {BUTTONS\_PER\_PAGE}, \hyperpage{12}
     \subitem {EXPORT\_PATH}, \hyperpage{12}
@@ -306,32 +287,32 @@
     \subitem {time\_since\_last\_updated}, \hyperpage{37}
     \subitem {time\_since\_last\_updated\_str}, \hyperpage{37}
     \subitem {upload\_date}, \hyperpage{39}
-  \item {self\_service\_terminal.models.Form.Meta}, \hyperpage{51}
-    \subitem {verbose\_name}, \hyperpage{51}
-  \item {self\_service\_terminal.models.Menu}, \hyperpage{44}
-    \subitem {\_\_str\_\_}, \hyperpage{45}
-    \subitem {menu\_text}, \hyperpage{45}
-    \subitem {menu\_title}, \hyperpage{45}
-    \subitem {parent\_menu}, \hyperpage{45}
-  \item {self\_service\_terminal.models.Menu.Meta}, \hyperpage{50}
-    \subitem {verbose\_name}, \hyperpage{50}
-    \subitem {verbose\_name\_plural}, \hyperpage{50}
+  \item {self\_service\_terminal.models.Form.Meta}, \hyperpage{49}
+    \subitem {verbose\_name}, \hyperpage{49}
+  \item {self\_service\_terminal.models.Menu}, \hyperpage{43}
+    \subitem {\_\_str\_\_}, \hyperpage{44}
+    \subitem {menu\_text}, \hyperpage{44}
+    \subitem {menu\_title}, \hyperpage{44}
+    \subitem {parent\_menu}, \hyperpage{44}
+  \item {self\_service\_terminal.models.Menu.Meta}, \hyperpage{48}
+    \subitem {verbose\_name}, \hyperpage{49}
+    \subitem {verbose\_name\_plural}, \hyperpage{49}
   \item {self\_service\_terminal.models.Terminal\_Settings}, 
-		\hyperpage{63}
-    \subitem {\_\_str\_\_}, \hyperpage{64}
-    \subitem {colorval\_button}, \hyperpage{64}
-    \subitem {colorval\_heading}, \hyperpage{64}
-    \subitem {colorval\_nav\_bar}, \hyperpage{65}
-    \subitem {colorval\_return\_button}, \hyperpage{65}
-    \subitem {colorval\_text}, \hyperpage{65}
-    \subitem {description}, \hyperpage{65}
-    \subitem {institute\_logo}, \hyperpage{65}
-    \subitem {insurance\_logo}, \hyperpage{66}
-    \subitem {title}, \hyperpage{66}
+		\hyperpage{60}
+    \subitem {\_\_str\_\_}, \hyperpage{61}
+    \subitem {colorval\_button}, \hyperpage{61}
+    \subitem {colorval\_heading}, \hyperpage{61}
+    \subitem {colorval\_nav\_bar}, \hyperpage{62}
+    \subitem {colorval\_return\_button}, \hyperpage{62}
+    \subitem {colorval\_text}, \hyperpage{62}
+    \subitem {description}, \hyperpage{62}
+    \subitem {institute\_logo}, \hyperpage{62}
+    \subitem {insurance\_logo}, \hyperpage{63}
+    \subitem {title}, \hyperpage{63}
   \item {self\_service\_terminal.models.Terminal\_Settings.Meta}, 
-		\hyperpage{52}
-    \subitem {verbose\_name}, \hyperpage{52}
-    \subitem {verbose\_name\_plural}, \hyperpage{53}
+		\hyperpage{48}
+    \subitem {verbose\_name}, \hyperpage{48}
+    \subitem {verbose\_name\_plural}, \hyperpage{48}
   \item {self\_service\_terminal.printer\_status}, \hyperpage{13}
     \subitem {get\_cups\_status}, \hyperpage{13}
   \item {self\_service\_terminal.tests}, \hyperpage{13}
@@ -371,43 +352,43 @@
     \subitem {test\_number\_of\_db\_entries\_when\_import\_as\_string}, 
 		\hyperpage{34}
   \item {self\_service\_terminal.tests.NoPdfSetTestCase}, 
+		\hyperpage{51}
+    \subitem {c}, \hyperpage{52}
+    \subitem {form}, \hyperpage{52}
+    \subitem {form2}, \hyperpage{53}
+    \subitem {menu}, \hyperpage{53}
+    \subitem {setUp}, \hyperpage{52}
+    \subitem {submenu}, \hyperpage{53}
+    \subitem {terminal\_settings}, \hyperpage{53}
+    \subitem {test\_no\_pdf\_error}, \hyperpage{52}
+  \item {self\_service\_terminal.tests.PaginationTestCase}, 
 		\hyperpage{54}
     \subitem {c}, \hyperpage{55}
-    \subitem {form}, \hyperpage{56}
-    \subitem {form2}, \hyperpage{56}
-    \subitem {menu}, \hyperpage{56}
+    \subitem {menu}, \hyperpage{55}
     \subitem {setUp}, \hyperpage{55}
-    \subitem {submenu}, \hyperpage{56}
+    \subitem {submenus}, \hyperpage{56}
     \subitem {terminal\_settings}, \hyperpage{56}
-    \subitem {test\_no\_pdf\_error}, \hyperpage{55}
-  \item {self\_service\_terminal.tests.PaginationTestCase}, 
-		\hyperpage{57}
+    \subitem {test\_different\_pagination\_sites}, \hyperpage{55}
+    \subitem {test\_pagination\_existence}, \hyperpage{55}
+  \item {self\_service\_terminal.tests.ProductionCase}, \hyperpage{56}
     \subitem {c}, \hyperpage{58}
+    \subitem {form}, \hyperpage{58}
     \subitem {menu}, \hyperpage{58}
-    \subitem {setUp}, \hyperpage{58}
-    \subitem {submenus}, \hyperpage{59}
-    \subitem {terminal\_settings}, \hyperpage{59}
-    \subitem {test\_different\_pagination\_sites}, \hyperpage{58}
-    \subitem {test\_pagination\_existence}, \hyperpage{58}
-  \item {self\_service\_terminal.tests.ProductionCase}, \hyperpage{59}
-    \subitem {c}, \hyperpage{61}
-    \subitem {form}, \hyperpage{61}
-    \subitem {menu}, \hyperpage{61}
-    \subitem {setUp}, \hyperpage{60}
-    \subitem {submenu}, \hyperpage{61}
-    \subitem {terminal\_settings}, \hyperpage{61}
-    \subitem {test\_debug\_false}, \hyperpage{60}
+    \subitem {setUp}, \hyperpage{57}
+    \subitem {submenu}, \hyperpage{58}
+    \subitem {terminal\_settings}, \hyperpage{58}
+    \subitem {test\_debug\_false}, \hyperpage{57}
   \item {self\_service\_terminal.tests.UnconnectedConfiguration}, 
-		\hyperpage{69}
-    \subitem {c}, \hyperpage{70}
-    \subitem {form}, \hyperpage{70}
-    \subitem {menu}, \hyperpage{71}
-    \subitem {setUp}, \hyperpage{70}
-    \subitem {submenu}, \hyperpage{71}
-    \subitem {terminal\_settings}, \hyperpage{71}
-    \subitem {test\_homepage\_availability}, \hyperpage{70}
+		\hyperpage{65}
+    \subitem {c}, \hyperpage{66}
+    \subitem {form}, \hyperpage{66}
+    \subitem {menu}, \hyperpage{67}
+    \subitem {setUp}, \hyperpage{66}
+    \subitem {submenu}, \hyperpage{67}
+    \subitem {terminal\_settings}, \hyperpage{67}
+    \subitem {test\_homepage\_availability}, \hyperpage{66}
   \item {self\_service\_terminal.urls}, \hyperpage{14}
-    \subitem {document\_root}, \hyperpage{14}
+    \subitem {document\_root}, \hyperpage{15}
     \subitem {MEDIA\_URL}, \hyperpage{15}
     \subitem {urlpatterns}, \hyperpage{15}
   \item {self\_service\_terminal.views}, \hyperpage{15}
@@ -422,20 +403,20 @@
     \subitem {menu\_template\_test}, \hyperpage{18}
     \subitem {print\_formular}, \hyperpage{18}
     \subitem {view\_formular}, \hyperpage{18}
-  \item {settings.py}, \hyperpage{76}
+  \item {settings.py}, \hyperpage{71}
   \item {setUp}
     \subitem {self\_service\_terminal.tests.DefaultTestCase}, 
 		\hyperpage{28}
     \subitem {self\_service\_terminal.tests.ExportImportTestCase}, 
 		\hyperpage{33}
     \subitem {self\_service\_terminal.tests.NoPdfSetTestCase}, 
-		\hyperpage{55}
+		\hyperpage{52}
     \subitem {self\_service\_terminal.tests.PaginationTestCase}, 
-		\hyperpage{58}
+		\hyperpage{55}
     \subitem {self\_service\_terminal.tests.ProductionCase}, 
-		\hyperpage{60}
+		\hyperpage{57}
     \subitem {self\_service\_terminal.tests.UnconnectedConfiguration}, 
-		\hyperpage{70}
+		\hyperpage{66}
   \item {short\_description}
     \subitem {self\_service\_terminal.models.Form}, \hyperpage{39}
   \item {show\_on\_frontend}
@@ -443,7 +424,7 @@
   \item {site\_header}
     \subitem {self\_service\_terminal.admin}, \hyperpage{11}
     \subitem {self\_service\_terminal.admin.MyAdminSite}, 
-		\hyperpage{54}
+		\hyperpage{50}
   \item {sp4}, \hyperpage{19}
   \item {sp4.asgi}, \hyperpage{19}
     \subitem {application}, \hyperpage{19}
@@ -482,14 +463,14 @@
     \subitem {self\_service\_terminal.tests.ExportImportTestCase}, 
 		\hyperpage{35}
     \subitem {self\_service\_terminal.tests.NoPdfSetTestCase}, 
-		\hyperpage{56}
+		\hyperpage{53}
     \subitem {self\_service\_terminal.tests.ProductionCase}, 
-		\hyperpage{61}
+		\hyperpage{58}
     \subitem {self\_service\_terminal.tests.UnconnectedConfiguration}, 
-		\hyperpage{71}
+		\hyperpage{67}
   \item {submenus}
     \subitem {self\_service\_terminal.tests.PaginationTestCase}, 
-		\hyperpage{59}
+		\hyperpage{56}
 
   \indexspace
 
@@ -501,13 +482,13 @@
     \subitem {self\_service\_terminal.tests.ExportImportTestCase}, 
 		\hyperpage{35}
     \subitem {self\_service\_terminal.tests.NoPdfSetTestCase}, 
-		\hyperpage{56}
+		\hyperpage{53}
     \subitem {self\_service\_terminal.tests.PaginationTestCase}, 
-		\hyperpage{59}
+		\hyperpage{56}
     \subitem {self\_service\_terminal.tests.ProductionCase}, 
-		\hyperpage{61}
+		\hyperpage{58}
     \subitem {self\_service\_terminal.tests.UnconnectedConfiguration}, 
-		\hyperpage{71}
+		\hyperpage{67}
   \item {test\_change\_color\_values}
     \subitem {self\_service\_terminal.tests.DefaultTestCase}, 
 		\hyperpage{28}
@@ -516,10 +497,10 @@
 		\hyperpage{29}
   \item {test\_debug\_false}
     \subitem {self\_service\_terminal.tests.ProductionCase}, 
-		\hyperpage{60}
+		\hyperpage{57}
   \item {test\_different\_pagination\_sites}
     \subitem {self\_service\_terminal.tests.PaginationTestCase}, 
-		\hyperpage{58}
+		\hyperpage{55}
   \item {test\_export\_as\_string}
     \subitem {self\_service\_terminal.tests.ExportImportTestCase}, 
 		\hyperpage{33}
@@ -536,7 +517,7 @@
     \subitem {self\_service\_terminal.tests.DefaultTestCase}, 
 		\hyperpage{29}
     \subitem {self\_service\_terminal.tests.UnconnectedConfiguration}, 
-		\hyperpage{70}
+		\hyperpage{66}
   \item {test\_menu\_1}
     \subitem {self\_service\_terminal.tests.DefaultTestCase}, 
 		\hyperpage{29}
@@ -545,7 +526,7 @@
 		\hyperpage{30}
   \item {test\_no\_pdf\_error}
     \subitem {self\_service\_terminal.tests.NoPdfSetTestCase}, 
-		\hyperpage{55}
+		\hyperpage{52}
   \item {test\_number\_of\_db\_entries\_when\_import\_as\_string}
     \subitem {self\_service\_terminal.tests.ExportImportTestCase}, 
 		\hyperpage{34}
@@ -554,7 +535,7 @@
 		\hyperpage{30}
   \item {test\_pagination\_existence}
     \subitem {self\_service\_terminal.tests.PaginationTestCase}, 
-		\hyperpage{58}
+		\hyperpage{55}
   \item {test\_pdf\_database\_relation}
     \subitem {self\_service\_terminal.tests.DefaultTestCase}, 
 		\hyperpage{30}
@@ -567,7 +548,7 @@
   \item {test\_user\_navigation}
     \subitem {self\_service\_terminal.tests.DefaultTestCase}, 
 		\hyperpage{31}
-  \item {tests.py}, \hyperpage{76}
+  \item {tests.py}, \hyperpage{72}
   \item {time\_since\_last\_updated}
     \subitem {self\_service\_terminal.models.Form}, \hyperpage{37}
   \item {time\_since\_last\_updated\_str}
@@ -576,7 +557,7 @@
     \subitem {sp4.settings}, \hyperpage{23}
   \item {title}
     \subitem {self\_service\_terminal.models.Terminal\_Settings}, 
-		\hyperpage{66}
+		\hyperpage{63}
   \item {TITLE\_LENGTH}
     \subitem {self\_service\_terminal.constants}, \hyperpage{12}
 
@@ -586,7 +567,7 @@
     \subitem {self\_service\_terminal.models.Form}, \hyperpage{39}
   \item {urlpatterns}
     \subitem {self\_service\_terminal.urls}, \hyperpage{15}
-  \item {urls.py}, \hyperpage{77}
+  \item {urls.py}, \hyperpage{72, 73}
   \item {USE\_I18N}
     \subitem {sp4.settings}, \hyperpage{23}
   \item {USE\_L10N}
@@ -597,21 +578,21 @@
   \indexspace
 
   \item {verbose\_name}
-    \subitem {self\_service\_terminal.models.Form.Meta}, \hyperpage{51}
-    \subitem {self\_service\_terminal.models.Menu.Meta}, \hyperpage{50}
+    \subitem {self\_service\_terminal.models.Form.Meta}, \hyperpage{49}
+    \subitem {self\_service\_terminal.models.Menu.Meta}, \hyperpage{49}
     \subitem {self\_service\_terminal.models.Terminal\_Settings.Meta}, 
-		\hyperpage{52}
+		\hyperpage{48}
   \item {verbose\_name\_plural}
-    \subitem {self\_service\_terminal.models.Menu.Meta}, \hyperpage{50}
+    \subitem {self\_service\_terminal.models.Menu.Meta}, \hyperpage{49}
     \subitem {self\_service\_terminal.models.Terminal\_Settings.Meta}, 
-		\hyperpage{53}
+		\hyperpage{48}
   \item {view\_formular}
     \subitem {self\_service\_terminal.views}, \hyperpage{18}
-  \item {views.py}, \hyperpage{77}
+  \item {views.py}, \hyperpage{73}
 
   \indexspace
 
-  \item {wsgi.py}, \hyperpage{77}
+  \item {wsgi.py}, \hyperpage{73}
   \item {WSGI\_APPLICATION}
     \subitem {sp4.settings}, \hyperpage{24}
 
