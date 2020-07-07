@@ -1,7 +1,7 @@
 \section{Funktionsumfang}
-Im Folgenden beschreiben wir den Funktionsumfang des Self-Service-Terminal sowie das erwartete Verhalten der Anwendung bei Ausführung besagter Funktionen. Der Übersichtlichkeit halber unterscheiden wir in Funktionen der Administratorensicht und der Kundensicht. Mit Kundensicht meinen wir in diesem Kontext die Benutzeroberfläche für die Kunden in der Filiale; mit Administratorensicht ist die Benutzeroberfläche für die Administratoren des Self-Service-Terminal gemeint.\\
+Im Folgenden beschreiben wir den Funktionsumfang des Self-Service-Terminal sowie das erwartete Verhalten der Anwendung bei Ausführung besagter Funktionen. Der Übersichtlichkeit halber unterscheiden wir in Funktionen der Administratorensicht und der Kundensicht. Mit Kundensicht meinen wir in diesem Kontext die Benutzeroberfläche für die Kunden in der Filiale, mit Administratorensicht ist die Benutzeroberfläche für die Administratoren des Self-Service-Terminal gemeint.\\
 
-\subsection{Administrationssicht}
+\subsection{Administratorensicht}
 
 
 \subsubsection{Benutzer} Benutzer können angelegt und gelöscht werden. Zu jedem Benutzer können Benutzername, Vorname, Nachname, E-Mail, Passwort, Berechtigungen, Gruppenzugehörigkeit und Login-Daten gespeichert werden (Abbildung 1).
@@ -22,7 +22,7 @@ Im Folgenden beschreiben wir den Funktionsumfang des Self-Service-Terminal sowie
 
 \newpage
 
-\subsubsection{Gruppen} Es können Benutzergruppen angelegt und gelöscht werden. Mit diesen Benutzergruppen können beispielsweise Berechtigungen einfacher administriert werden (Abbildung 2).
+\subsubsection{Gruppen} Es können Benutzergruppen angelegt und gelöscht werden. Mit diesen Benutzergruppen können beispielsweise Berechtigungen einfacher administriert werden (Abbildung 3).
 
 \begin{figure}[htp]
     \centering
@@ -33,7 +33,7 @@ Im Folgenden beschreiben wir den Funktionsumfang des Self-Service-Terminal sowie
 
 \newpage
 
-\subsubsection{Einstellungen} Es können Einstellungen-Objekte angelegt werden. Einstellungen haben einen Titel, eine Beschreibung sowie Farbeinstellungen für: Kopfleiste, Überschriften, Texte, Buttons und den Zurück-Button (Abbildung 3). Außerdem können zwei Logos hochgeladen werden. Werden die Farbeinstellungen leer gelassen, wird das Grüne Default-Theme angezeigt. Der Titel der Einstellungen muss auf \glqq settings\grqq{} gesetzt werden, damit sie vom System verarbeitet werden. Ist kein Einstellungs-Objekt gespeichert, ist das System nicht funktions fähig.
+\subsubsection{Einstellungen} Es können Einstellungen-Objekte angelegt werden. Einstellungen haben einen Titel, eine Beschreibung sowie Farbeinstellungen für: Kopfleiste, Überschriften, Texte, Buttons und den Zurück-Button (Abbildung 4). Außerdem können zwei Logos hochgeladen werden. Werden die Farbeinstellungen leer gelassen, wird das Grüne Default-Theme angezeigt. Der Titel der Einstellungen muss auf \glqq settings\grqq{} gesetzt werden, damit sie vom System verarbeitet werden. Ist kein Einstellungs-Objekt gespeichert, ist das System nicht funktionsfähig.
 
 \begin{figure}[htp]
     \centering
@@ -44,7 +44,7 @@ Im Folgenden beschreiben wir den Funktionsumfang des Self-Service-Terminal sowie
 
 \newpage
 
-\subsubsection{Formulare} Formulare können hinzugefügt und gelöscht werden. Formulare haben ein Eltern-Menü indem sie angezeigt werden, außerdem einem Titel, eine Beschreibung und die zugehörige PDF-Datei (Abbildung 4).
+\subsubsection{Formulare} Formulare können hinzugefügt und gelöscht werden. Formulare haben ein Eltern-Menü indem sie angezeigt werden, außerdem einen Titel, eine Beschreibung und die zugehörige PDF-Datei (Abbildung 5).
 
 \begin{figure}[htp]
     \centering
@@ -55,7 +55,7 @@ Im Folgenden beschreiben wir den Funktionsumfang des Self-Service-Terminal sowie
 
 \newpage
 
-\subsubsection{Menüs} Menüs können hinzugefügt und gelöscht werden. Menüs haben ein Eltern-Menü um eine  Baumstruktur zu erzeugen, außerdem einen Titel und eine Beschreibung. Einem Menü können Submenüs und Formulare zugewiesen werden (Abbildung 5).
+\subsubsection{Menüs} Menüs können hinzugefügt und gelöscht werden. Menüs haben ein Eltern-Menü um eine  Baumstruktur zu erzeugen, außerdem einen Titel und eine Beschreibung. Einem Menü können Submenüs und Formulare zugewiesen werden (Abbildung 6).
 
 \begin{figure}[htp]
     \centering
@@ -66,15 +66,15 @@ Im Folgenden beschreiben wir den Funktionsumfang des Self-Service-Terminal sowie
 
 \newpage
 
-\subsubsection{Export/Import}Einstellungen, Formulare und Menüs können zusammen mit den zugehörigen PDF-Dateien und PNG-Dateien exportiert und importiert werden. Diese Aktion kann im Einstellungs- ,Formular- oder Menü-Reiter ausgelöst werden. Die Datenbankstrukturen werden als JSON-Datei gespeichert und zusammen mit PFDs und PNGS in einem zip-Archiv im export-Ordner gespeichert. Entsprechend entstandene oder formatierte zip-Archive können im selben Aktions-Menü importiert werden, wenn sie im export-Ordner gespeichert wurden. Der export-Ordner ist im Installationsverzeichnis unter /Self-Service-Terminal/export zu finden.
+\subsubsection{Export/Import}Einstellungen, Formulare und Menüs können zusammen mit den zugehörigen PDF-Dateien und PNG-Dateien exportiert und importiert werden. Diese Aktion kann im Einstellungs-, Formular- oder Menü-Reiter ausgelöst werden. Die Datenbankstrukturen werden als JSON-Datei gespeichert und zusammen mit PDFs und PNGs in einem zip-Archiv im export-Ordner gespeichert. Entsprechend entstandene oder formatierte zip-Archive können im selben Aktions-Menü importiert werden, wenn sie im export-Ordner gespeichert wurden. Der export-Ordner ist im Installationsverzeichnis unter /export zu finden.
 
 \subsubsection{Verlauf} Am rechten Bildschirmrand wird ein Verlauf der auf der Administrationsseite vorgenommenen Änderungen gespeichert (Abbildung 6).
 
-\subsubsection{Webseite anzeigen}Mit einem Klick auf die Schaltfläche \glqq Auf der Webseite anzeigen\grqq{} (Abbildung 6) wird dem Nutzer die Startseite des Self-Service-Terminal angezeigt.
+\subsubsection{Webseite anzeigen}Mit einem Klick auf die Schaltfläche \glqq Auf der Webseite anzeigen\grqq{} (Abbildung 7) wird dem Nutzer die Startseite des Self-Service-Terminal angezeigt.
 
-\subsubsection{Passwort ändern} Mit einem Klick auf die Schaltfläche \glqq Passwort ändern\grqq{} (Abbildung 6) wird der Nutzer auf eine Seite zum ändern des Passworts weitergeleitet.
+\subsubsection{Passwort ändern} Mit einem Klick auf die Schaltfläche \glqq Passwort ändern\grqq{} (Abbildung 7) wird der Nutzer auf eine Seite zum Ändern des Passworts weitergeleitet.
 
-\subsubsection{Abmelden} Mit einem Klick auf die Schaltfläche \glqq Abmelden\grqq{} (Abbildung 6) wird der Nutzer abgemeldet.
+\subsubsection{Abmelden} Mit einem Klick auf die Schaltfläche \glqq Abmelden\grqq{} (Abbildung 7) wird der Nutzer abgemeldet.
 
 \begin{figure}[htp]
     \centering
@@ -88,7 +88,7 @@ Im Folgenden beschreiben wir den Funktionsumfang des Self-Service-Terminal sowie
 \subsection{Kundensicht}
 
 
-\subsubsection{Startseite} Die Startseite (Abbildung 7) ist der Ausgangspunkt der Navigation durch die Menüstruktur des Self-Service-Terminals. Mit einem Klick auf die Schaltfläche \glqq Startseite\grqq{} in der rechten oberen Ecke der Benutzeroberfläche kann jederzeit zur Startseite zurückgekehrt werden.
+\subsubsection{Startseite} Die Startseite (Abbildung 8) ist der Ausgangspunkt der Navigation durch die Menüstruktur des Self-Service-Terminals. Mit einem Klick auf die Schaltfläche \glqq Zur Startseite\grqq{} in der linken oberen Ecke der Benutzeroberfläche kann jederzeit zur Startseite zurückgekehrt werden.
 
 \begin{figure}[htp]
     \centering
@@ -99,7 +99,7 @@ Im Folgenden beschreiben wir den Funktionsumfang des Self-Service-Terminal sowie
 
 \newpage
 
-\subsubsection{Menüs}Menüs (Abbildung 8) enthalten Submenüs oder Formulare, welche als Buttons dargestellt werden. Formular-Buttons sind dabei mit einem Formular-Icon gekennzeichnet (Abbildung 9). Über die Buttons kann in Submenüs oder Formulare gewechselt werden. Über einen Klick auf den \glqq zurück\grqq{} Button kann man zum vorherigen Menü zurückkehren.
+\subsubsection{Menüs}Menüs (Abbildung 9) enthalten Submenüs oder Formulare, welche als Buttons dargestellt werden. Formular-Buttons sind dabei mit einem Formular-Icon gekennzeichnet (Abbildung 10). Über die Buttons kann in Submenüs oder Formulare gewechselt werden. Über einen Klick auf den \glqq Zurück\grqq{} Button kann man zum vorherigen Menü zurückkehren.
 
 \begin{figure}[htp]
     \centering
@@ -117,7 +117,7 @@ Im Folgenden beschreiben wir den Funktionsumfang des Self-Service-Terminal sowie
 
 \newpage
 
-\subsubsection{Pagination} Pagination ist eine Funtkion welche greift, wenn mehr als fünf Submenüs oder Formulare in einem Menü angezeigt werden sollen. In diesem Fall werden weitere Seiten des Menüs erstellt, welche nach einem Klick auf die Schaltfläche \glqq weitere Einträge\grqq{} angezeigt werden. Wie viele Seiten das so erweiterte Menü umfasst, wird direkt unter den Buttons angezeigt (Abbildung 10).
+\subsubsection{Pagination} Pagination ist eine Funktion welche greift, wenn mehr als fünf Submenüs oder Formulare in einem Menü angezeigt werden sollen. In diesem Fall werden weitere Seiten des Menüs erstellt, welche nach einem Klick auf die Schaltfläche \glqq weitere Einträge\grqq{} angezeigt werden. Wie viele Seiten das so erweiterte Menü umfasst, wird direkt unter den Buttons angezeigt (Abbildung 11).
 
 \begin{figure}[htp]
     \centering
@@ -128,7 +128,7 @@ Im Folgenden beschreiben wir den Funktionsumfang des Self-Service-Terminal sowie
 
 \newpage
 
-\subsubsection{Formulare}Wird ein Formular angeklickt, öffnet sich die Formular-Ansicht. Hier stehen 3 Optionen zur weiteren Navigation zur Verfügung. \glqq Vorschau\grqq{}, \glqq Drucken\grqq{} und \glqq zurück\grqq{} (Abbildung 11).
+\subsubsection{Formulare}Wird ein Formular angeklickt, öffnet sich die Formular-Ansicht. Hier stehen 3 Optionen zur weiteren Navigation zur Verfügung. \glqq Vorschau\grqq{}, \glqq Drucken\grqq{} und \glqq Zurück\grqq{} (Abbildung 12).
 
 \begin{figure}[htp]
     \centering
@@ -137,11 +137,11 @@ Im Folgenden beschreiben wir den Funktionsumfang des Self-Service-Terminal sowie
     \label{fig:SSTFormular}
 \end{figure}
 
-\subsubsection{Vorschau} Bei einem Klick auf den Button \glqq Vorschau\grqq{} wird eine Bilddatei des hinterlegten Formular-PDFs erzeugt und angezeigt.
+\subsubsection{Vorschau} Bei einem Klick auf den Button \glqq Vorschau\grqq{} wird das hinterlegte PDF mit Mitteln des verwendeten Browsers angezeigt.
 
 \newpage
 
-\subsubsection{Drucken} Bei einem Klick auf den Button \glqq Drucken\grqq{} wird der lp-Befehl an den Server übermittelt und der http-Code: 200 zurückgegeben. Im Anschluss wird eine Ladeanimation angezeigt um dem Nutzer ein visuelles Feedback über den Druckvorgang zu bieten (Abbildung 12).
+\subsubsection{Drucken} Bei einem Klick auf den Button \glqq Drucken\grqq{} wird der lp-Befehl an den Server übermittelt und der http-Code: 200 zurückgegeben. Im Anschluss wird eine Ladeanimation angezeigt, um dem Nutzer ein visuelles Feedback über den Druckvorgang zu bieten (Abbildung 13).
 
 \begin{figure}[htp]
     \centering
@@ -150,7 +150,7 @@ Im Folgenden beschreiben wir den Funktionsumfang des Self-Service-Terminal sowie
     \label{fig:SSTDrucken}
 \end{figure}
 
-\subsubsection{Weiterleitung} Registriert das Self-Service-Terminal für mehr als 120 Sekunden keine Eingaben, setzt es sich auf die Startseite zurück. Gleiches passiert, nachdem ein Druckvorgang abgeschlossen wurde.
+\subsubsection{Weiterleitung} Registriert das Self-Service-Terminal für mehr als 120 Sekunden keine Eingaben, setzt es sich auf die Startseite zurück. Gleiches passiert nachdem ein Druckvorgang abgeschlossen wurde.
 
 \newpage
 
