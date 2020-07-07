@@ -97,13 +97,15 @@ class Form(models.Model):
         an error message is issued and the contents of stderr is printed with
         print().
         """
-        args = ['lpr', self.pdffile.path]
+        args = ['lp', self.pdffile.path]
         result = subprocess.run(args, capture_output=True)
         if result.returncode:
-            print('Error: "lpr ' + self.pdffile.name + '" returned 1.')
+            print('Error: "lp ' + self.pdffile.name + '" returned 1.')
             print(result.stderr)
+            return False
         else:
             print('Printing', self.pdffile.name)
+            return True
 
     def time_since_last_updated(self):
         """Return the time passed since the form was updated.
