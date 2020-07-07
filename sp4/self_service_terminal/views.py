@@ -166,7 +166,7 @@ def print_formular(request, form_id=None):
     if form.pdffile.name != 'forms/default.pdf':
         has_been_printed = form.print_form()
         if not has_been_printed:
-            return HttpResponse('Error: PDF file has not been printed', status=404)
+            return HttpResponse('Error: PDF file cannot be printed', status=404)
         context = {'settings': settings}
         return render(request, 'self_service_terminal/print.html', context)
     else:
