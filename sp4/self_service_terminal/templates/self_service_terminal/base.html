@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <!-- placeholder title-->
+    <title> {% block title %} {% endblock %} </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'self_service_terminal/styles.css' %}" />
+    <!-- Scripts with the async attribute are executed asynchronously.
+      This means the script is executed as soon as it's downloaded,
+      without blocking the browser in the meantime. -->
+    <!-- HaSh:note for Hakeem:we need to decide later whether we use "async" or "defer" -->
+    <script src="{% static 'self_service_terminal/app.js' %}" type="text/javascript" defer></script>
+
+</head>
+
+<body>
+    <nav id="nav-bar" style="background-color:{{settings.colorval_nav_bar}}">
+        <a href="/"> <img src="{% static 'self_service_terminal/home.svg' %}" alt=""> Zur Startseite</a>
+        <header>
+
+            <div>
+                <img id="left-logo" src="{{settings.institute_logo.url}}" />
+            </div>
+            <div>
+                <img id="right-logo" src="{{settings.insurance_logo.url}}" />
+            </div>
+
+        </header>
+    </nav>
+
+    {% block content %}
+    {% endblock content %}
+
+</body>
+
+</html>

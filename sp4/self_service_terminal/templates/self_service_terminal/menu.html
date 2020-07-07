@@ -1,0 +1,94 @@
+{% extends "self_service_terminal/base.html"%}
+{% load static %}
+
+{% block title %} {{ menu.menu_title}} {% endblock %}
+
+
+{% block content %}
+{% if request.get_full_path == "/" %}
+<div id="welcome">
+    <h1 style="color: {{ settings.colorval_heading }}">Willkommen</h1>
+    <h3 style="color: {{ settings.colorval_text }}">Drücken Sie auf START <br> um ein Formular auszuwählen</h3>
+    <button style="color:{{ settings.colorval_button }};border-color: {{ settings.colorval_button }}" id="start"
+        class="btn green-btn">START</button>
+</div>
+{% endif %}
+
+
+<div {% if request.get_full_path == "/" %} id="homepage" class="" style="display :none;" {% endif %}>
+
+
+
+    <div class="element">
+        <p class="element-title" style="color:{{ settings.colorval_heading }} ">{{menu}}</p>
+        <p class="element-description" style="color: {{ settings.colorval_text }}">
+            {{menu.menu_text}}
+        </p>
+    </div>
+
+
+
+    <div class="btn-container">
+
+        <div class="sub-elements-container">
+            {% for entry in page_obj.object_list %}
+            {% if entry.is_menu %}
+            <a style="color:{{ settings.colorval_button }};border-color: {{ settings.colorval_button }}"
+                class="noselect green-btn btn" href="/menu/{{ entry.object.pk }}">{{ entry.object.menu_title }}</a>
+            {% endif %}
+
+            {% if entry.is_form %}
+            <a style="color:{{ settings.colorval_button }};border-color: {{ settings.colorval_button }}"
+                class="noselect yellow-btn btn" href="/form/{{ entry.object.pk }}?page={{ page_obj.number }}"><img
+                    style="fill:{{settings.colorval_button  }}" src="{% static 'self_service_terminal/documentg.svg' %}"
+                    alt="graue Document Foto">
+                {{ entry.object.form_title }}</a>
+            {% endif %}
+            {% endfor %}
+            {% if page_obj.paginator.num_pages != 1 %}
+            <div style="color:{{ settings.colorval_return_button }}" class="current">
+                Seite {{ page_obj.number }} von {{ page_obj.paginator.num_pages }}
+            </div>
+            {% endif %}
+        </div>
+
+
+
+        <div class="navigation-container">
+            {% if page_obj.paginator.num_pages != 1 %}
+            {% if page_obj.has_previous %}
+
+
+            <a style="color:{{ settings.colorval_return_button }};border-color:{{ settings.colorval_return_button }}"
+                class="noselect navigation-btn btn" href="?page={{ page_obj.previous_page_number }}">
+                &lArr; Zurück</a>
+            {% elif not is_homepage %}
+            <a style="color:{{ settings.colorval_return_button }};border-color:{{ settings.colorval_return_button }}"
+                class="noselect navigation-btn btn" href="/menu/{{ menu.parent_menu.pk }}">
+                &lArr; Zurück</a>
+            {% endif %}
+            {% elif not is_homepage %}
+            <a style="color:{{ settings.colorval_return_button }};border-color:{{ settings.colorval_return_button }}"
+                class="noselect navigation-btn btn" href="/menu/{{ menu.parent_menu.pk }}">
+                &lArr; Zurück</a>
+            {% endif %}
+
+            {% if page_obj.paginator.num_pages != 1 %}
+            {% if page_obj.has_next %}
+            <a style="color:{{ settings.colorval_return_button }};border-color:{{ settings.colorval_return_button }}"
+                class="noselect navigation-btn btn" href="?page={{ page_obj.next_page_number }}">weitere Einträge
+                &rArr;</a>
+            {% else %}
+            <a style="color:{{ settings.colorval_return_button }};border-color:{{ settings.colorval_return_button }}"
+                class="noselect navigation-btn btn isDisabled">weitere Einträge &rArr;</a>
+            {% endif %}
+            {% endif %}
+        </div>
+    </div>
+
+
+
+
+
+</div>
+{% endblock content %}

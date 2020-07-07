@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from pathlib import Path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,12 +21,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'hvyf2=t2mhmrpo0)tlecy#uv#(ge9n*-l33^17@na*ap49-#g)'
+SECRET_KEY = ']Sb6ZMm=r97S8b8zCYYtv(ujPrjwo5G>w>5py9rg8BfDDf(cng'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mod_wsgi.server',
+    'import_export'
 ]
 
 MIDDLEWARE = [
@@ -55,7 +58,7 @@ ROOT_URLCONF = 'sp4.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'self_service_terminal/templates/admin')], # Path were overridden templates are found
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -63,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -118,6 +122,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'self_service_terminal/static')
+
 STATIC_URL = '/static/'
 
 # User uploaded files
@@ -126,3 +132,7 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'self_service_terminal/files')
 
 MEDIA_URL = '/files/'
+
+# Transactions on data import for import_export
+
+IMPORT_EXPORT_USE_TRANSACTIONS = True

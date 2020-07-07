@@ -1,0 +1,38 @@
+{% extends "self_service_terminal/base.html"%}
+{% load static %}
+
+{# Verfügbare Variablen: settings, menu, submenus, subforms, page_obj #}
+
+{% block content %}
+
+{% if page_obj.has_previous %}
+<a href="?page=1">&laquo; first</a>
+<a href="?page={{ page_obj.previous_page_number }}">previous</a>
+{% endif %}
+
+<span class="current">
+    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+</span>
+
+{% if page_obj.has_next %}
+<a href="?page={{ page_obj.next_page_number }}">next</a>
+<a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+{% endif %}
+
+<div class="btn-container">
+
+    {% for entry in page_obj.object_list %}
+    {% if entry.is_menu %}
+    <a style="color:{{ settings.colorval_button }}" class="noselect year btn"
+        href="/dtl/{{entry.object.pk}}">{{ entry.object.menu_title }}</a>
+    {% endif %}
+
+    {% if entry.is_form %}
+    <a style="color:{{ settings.colorval_button }}" class="noselect year btn form"
+        href="/form/{{entry.object.pk}}">{{ entry.object.form_title }}</a>
+    {% endif %}
+    {% endfor %}
+
+</div>
+
+{% endblock content %}

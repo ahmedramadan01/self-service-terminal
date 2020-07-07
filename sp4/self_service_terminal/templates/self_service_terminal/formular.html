@@ -1,49 +1,29 @@
+{% extends "self_service_terminal/base.html"%}
 {% load static %}
+{% block title %} {{ form.form_title }} {% endblock %}
+{% block content%}
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<div class="formular">
+  <p style="color: {{ settings.colorval_heading }}" class="formular-title">{{form}}</p>
+  <p style="color: {{ settings.colorval_text }}" class="formular-description">{{form.description}}</p>
+</div>
 
-<head>
-  <meta charset="utf-8">
-  <script src="https://kit.fontawesome.com/73467a7cb0.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="{% static 'self_service_terminal/styles.css' %}">
-  <script src="app.js" type="text/javascript" async></script>
+<div class="formular-btn-container">
+  <a href="/form/{{ form.pk }}/view"
+    style="color:{{ settings.colorval_button }};border-color: {{ settings.colorval_button }}" class="green-btn btn">
+    <img style="fill:{{settings.colorval_button  }}" src="{% static 'self_service_terminal/document.svg' %}"
+      alt="Document Foto"> Vorschau</a>
 
-</head>
+  <!-- Makes a HTTP request to the print site => calls printing method for current form -->
+  <a style="color:{{ settings.colorval_button }};border-color: {{ settings.colorval_button }}" class="green-btn btn"
+    href="/form/{{ form.pk }}/print"><img style="fill:{{settings.colorval_button  }}"
+      src="{% static 'self_service_terminal/printer.svg' %}" alt="Drucker Foto">
+    Drucken</a>
 
-<body>
-  <div class="container">
-    <div class="aok">
-      <img src="{% static 'self_service_terminal/Logo_AOK_PLUS.svg.png' %}" />
-    </div>
-    <div id="nav-bar">
-      <div class="tu-ilmenau">
-        <img src="{% static 'self_service_terminal/Tu-ilmenauLogo.png' %}" />
-      </div>
-    </div>
-
-    <div class="formular">
-      <p class="formular-title">Formular title</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed velit tortor. 
-          Vivamus sed dui erat. Donec lacinia mollis arcu in placerat. 
-          Ut non odio ac libero aliquam condimentum. Aliquam aliquam, lectus laoreet laoreet ultrices, eros libero consequat nibh, nec mollis orci risus a felis. 
-          Quisque consectetur sagittis magna sit amet ornare. Quisque luctus tempus enim non viverra. Morbi molestie nulla at ligula blandit malesuada.
-        </p>
-
-    </div>
-  </div>
-
-  <form action="index.html" method="post">
-    <div class="btn-container">
-      <button class="noselect print btn" type="button"><i class="fas fa-print"></i>
-        Drucken</button>
-      <button class="noselect view  btn" type="button"><i class="far fa-file-alt"></i>Ansehen</button>
-      <!-- <button class="noselect back btn" type="button" name="back">&#171; Zurück</button> -->
-      <a style="text-decoration: none;" class="noselect back btn" href="../">&#171; Zurück  </a>
-    </div>
-  </form>
+  <a style="color:{{ settings.colorval_return_button }};border-color:{{ settings.colorval_return_button }}"
+    class="noselect navigation-btn btn" href="/menu/{{ form.parent_menu.pk }}?page={{ parent_page_number }}">&lArr;
+    Zurück </a>
+</div>
 
 
-</body>
-
-</html>
+{% endblock %}

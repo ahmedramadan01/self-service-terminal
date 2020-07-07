@@ -1,0 +1,13 @@
+{% extends "self_service_terminal/base.html"%}
+{% load static %}
+{% block title %}Startseite{% endblock %}
+{% block content%}
+
+<embed id="pdf" type="application/pdf" src="{{ form.pdffile.url }}">
+<div id="floating-button-container">
+  <a id="floating-button"
+    style="color:{{ settings.colorval_return_button }};border-color:{{ settings.colorval_return_button }}"
+    class="noselect navigation-btn btn" href="/form/{{ form.pk }}">&lArr; Zurück
+  </a></div>
+
+{% endblock %}

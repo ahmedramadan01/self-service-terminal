@@ -1,0 +1,10 @@
+{% extends "self_service_terminal/base.html"%}
+{% load static %}
+{% block title %}drucken{% endblock %}
+{% block content%}
+<div id="animation-container">
+    <h3 style="color: {{ settings.colorval_text }}">Ihr Formular wird gedruckt</h3>
+    <img id="animation" src="{% static 'self_service_terminal/animation.svg' %}" alt="animation">
+</div>
+
+{% endblock %}
