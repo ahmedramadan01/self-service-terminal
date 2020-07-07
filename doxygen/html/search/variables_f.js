@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['templates_226',['TEMPLATES',['../namespacesp4_1_1settings.html#a7040818aa8e63aee38280ab8231f42b1',1,'sp4::settings']]],
-  ['time_5fzone_227',['TIME_ZONE',['../namespacesp4_1_1settings.html#a85970bf3ac46a7a821aad9ab467a1e49',1,'sp4::settings']]],
-  ['title_228',['title',['../classself__service__terminal_1_1models_1_1_terminal___settings.html#a7760a84fb5f6c462cecf886ade7148f6',1,'self_service_terminal::models::Terminal_Settings']]],
-  ['title_5flength_229',['TITLE_LENGTH',['../namespaceself__service__terminal_1_1constants.html#afb175466f88af2270a73bead7be79af9',1,'self_service_terminal::constants']]]
+  ['verbose_5fname_301',['verbose_name',['../classself__service__terminal_1_1models_1_1_terminal___settings_1_1_meta.html#a3a0de51c2d4f0480761cd8899fba46a7',1,'self_service_terminal.models.Terminal_Settings.Meta.verbose_name()'],['../classself__service__terminal_1_1models_1_1_menu_1_1_meta.html#aaa32a02cbd5939523581a1c5155fbaf1',1,'self_service_terminal.models.Menu.Meta.verbose_name()'],['../classself__service__terminal_1_1models_1_1_form_1_1_meta.html#a78d71b13a2cf9f4d8ededa30aede2e67',1,'self_service_terminal.models.Form.Meta.verbose_name()']]],
+  ['verbose_5fname_5fplural_302',['verbose_name_plural',['../classself__service__terminal_1_1models_1_1_terminal___settings_1_1_meta.html#a3065acc2869aed4deee11e209d125ec3',1,'self_service_terminal.models.Terminal_Settings.Meta.verbose_name_plural()'],['../classself__service__terminal_1_1models_1_1_menu_1_1_meta.html#aa70a9ffe19672cb921abd8be76dee002',1,'self_service_terminal.models.Menu.Meta.verbose_name_plural()']]]
 ];

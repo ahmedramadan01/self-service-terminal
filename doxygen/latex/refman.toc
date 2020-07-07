@@ -13,192 +13,288 @@
 \contentsline {subsection}{\numberline {5.1.2}Function Documentation}{9}{subsection.5.1.2}%
 \contentsline {subsubsection}{\numberline {5.1.2.1}main()}{9}{subsubsection.5.1.2.1}%
 \contentsline {section}{\numberline {5.2}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal Namespace Reference}{9}{section.5.2}%
-\contentsline {section}{\numberline {5.3}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}admin Namespace Reference}{10}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{10}{subsection.5.3.1}%
-\contentsline {section}{\numberline {5.4}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}apps Namespace Reference}{10}{section.5.4}%
-\contentsline {section}{\numberline {5.5}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}constants Namespace Reference}{10}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{10}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Variable Documentation}{10}{subsection.5.5.2}%
-\contentsline {subsubsection}{\numberline {5.5.2.1}PRINTER}{10}{subsubsection.5.5.2.1}%
-\contentsline {subsubsection}{\numberline {5.5.2.2}TITLE\_LENGTH}{11}{subsubsection.5.5.2.2}%
-\contentsline {section}{\numberline {5.6}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}migrations Namespace Reference}{11}{section.5.6}%
-\contentsline {section}{\numberline {5.7}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}migrations.0001\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}initial Namespace Reference}{11}{section.5.7}%
-\contentsline {section}{\numberline {5.8}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}migrations.0002\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}settings\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}homepage Namespace Reference}{11}{section.5.8}%
-\contentsline {section}{\numberline {5.9}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}migrations.0003\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}img Namespace Reference}{11}{section.5.9}%
-\contentsline {section}{\numberline {5.10}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}migrations.0004\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}texttt Namespace Reference}{11}{section.5.10}%
-\contentsline {section}{\numberline {5.11}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}migrations.0005\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}remove\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}texttt Namespace Reference}{12}{section.5.11}%
-\contentsline {section}{\numberline {5.12}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}migrations.0006\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}remove\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}img Namespace Reference}{12}{section.5.12}%
-\contentsline {section}{\numberline {5.13}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}migrations.0007\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}auto\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}20200609\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}2031 Namespace Reference}{12}{section.5.13}%
-\contentsline {section}{\numberline {5.14}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}models Namespace Reference}{12}{section.5.14}%
-\contentsline {section}{\numberline {5.15}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tests Namespace Reference}{12}{section.5.15}%
-\contentsline {subsection}{\numberline {5.15.1}Detailed Description}{12}{subsection.5.15.1}%
-\contentsline {subsection}{\numberline {5.15.2}Variable Documentation}{13}{subsection.5.15.2}%
-\contentsline {subsubsection}{\numberline {5.15.2.1}retstr}{13}{subsubsection.5.15.2.1}%
-\contentsline {section}{\numberline {5.16}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}urls Namespace Reference}{13}{section.5.16}%
-\contentsline {subsection}{\numberline {5.16.1}Detailed Description}{13}{subsection.5.16.1}%
-\contentsline {subsection}{\numberline {5.16.2}Variable Documentation}{13}{subsection.5.16.2}%
-\contentsline {subsubsection}{\numberline {5.16.2.1}document\_root}{13}{subsubsection.5.16.2.1}%
-\contentsline {subsubsection}{\numberline {5.16.2.2}MEDIA\_URL}{13}{subsubsection.5.16.2.2}%
-\contentsline {subsubsection}{\numberline {5.16.2.3}urlpatterns}{13}{subsubsection.5.16.2.3}%
-\contentsline {section}{\numberline {5.17}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}views Namespace Reference}{14}{section.5.17}%
-\contentsline {subsection}{\numberline {5.17.1}Function Documentation}{14}{subsection.5.17.1}%
-\contentsline {subsubsection}{\numberline {5.17.1.1}formular()}{14}{subsubsection.5.17.1.1}%
-\contentsline {subsubsection}{\numberline {5.17.1.2}get\_settings()}{14}{subsubsection.5.17.1.2}%
-\contentsline {subsubsection}{\numberline {5.17.1.3}index()}{14}{subsubsection.5.17.1.3}%
-\contentsline {subsubsection}{\numberline {5.17.1.4}menu()}{15}{subsubsection.5.17.1.4}%
-\contentsline {subsubsection}{\numberline {5.17.1.5}menu\_template\_test()}{15}{subsubsection.5.17.1.5}%
-\contentsline {subsubsection}{\numberline {5.17.1.6}print\_formular()}{15}{subsubsection.5.17.1.6}%
-\contentsline {section}{\numberline {5.18}sp4 Namespace Reference}{15}{section.5.18}%
-\contentsline {section}{\numberline {5.19}sp4.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}asgi Namespace Reference}{15}{section.5.19}%
-\contentsline {subsection}{\numberline {5.19.1}Detailed Description}{16}{subsection.5.19.1}%
-\contentsline {subsection}{\numberline {5.19.2}Variable Documentation}{16}{subsection.5.19.2}%
-\contentsline {subsubsection}{\numberline {5.19.2.1}application}{16}{subsubsection.5.19.2.1}%
-\contentsline {section}{\numberline {5.20}sp4.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}settings Namespace Reference}{16}{section.5.20}%
-\contentsline {subsection}{\numberline {5.20.1}Detailed Description}{16}{subsection.5.20.1}%
-\contentsline {subsection}{\numberline {5.20.2}Variable Documentation}{17}{subsection.5.20.2}%
-\contentsline {subsubsection}{\numberline {5.20.2.1}ALLOWED\_HOSTS}{17}{subsubsection.5.20.2.1}%
-\contentsline {subsubsection}{\numberline {5.20.2.2}AUTH\_PASSWORD\_VALIDATORS}{17}{subsubsection.5.20.2.2}%
-\contentsline {subsubsection}{\numberline {5.20.2.3}BASE\_DIR}{17}{subsubsection.5.20.2.3}%
-\contentsline {subsubsection}{\numberline {5.20.2.4}DATABASES}{17}{subsubsection.5.20.2.4}%
-\contentsline {subsubsection}{\numberline {5.20.2.5}DEBUG}{17}{subsubsection.5.20.2.5}%
-\contentsline {subsubsection}{\numberline {5.20.2.6}IMPORT\_EXPORT\_USE\_TRANSACTIONS}{18}{subsubsection.5.20.2.6}%
-\contentsline {subsubsection}{\numberline {5.20.2.7}INSTALLED\_APPS}{18}{subsubsection.5.20.2.7}%
-\contentsline {subsubsection}{\numberline {5.20.2.8}LANGUAGE\_CODE}{18}{subsubsection.5.20.2.8}%
-\contentsline {subsubsection}{\numberline {5.20.2.9}MEDIA\_ROOT}{18}{subsubsection.5.20.2.9}%
-\contentsline {subsubsection}{\numberline {5.20.2.10}MEDIA\_URL}{18}{subsubsection.5.20.2.10}%
-\contentsline {subsubsection}{\numberline {5.20.2.11}MIDDLEWARE}{18}{subsubsection.5.20.2.11}%
-\contentsline {subsubsection}{\numberline {5.20.2.12}ROOT\_URLCONF}{19}{subsubsection.5.20.2.12}%
-\contentsline {subsubsection}{\numberline {5.20.2.13}SECRET\_KEY}{19}{subsubsection.5.20.2.13}%
-\contentsline {subsubsection}{\numberline {5.20.2.14}STATIC\_URL}{19}{subsubsection.5.20.2.14}%
-\contentsline {subsubsection}{\numberline {5.20.2.15}TEMPLATES}{19}{subsubsection.5.20.2.15}%
-\contentsline {subsubsection}{\numberline {5.20.2.16}TIME\_ZONE}{19}{subsubsection.5.20.2.16}%
-\contentsline {subsubsection}{\numberline {5.20.2.17}USE\_I18N}{19}{subsubsection.5.20.2.17}%
-\contentsline {subsubsection}{\numberline {5.20.2.18}USE\_L10N}{20}{subsubsection.5.20.2.18}%
-\contentsline {subsubsection}{\numberline {5.20.2.19}USE\_TZ}{20}{subsubsection.5.20.2.19}%
-\contentsline {subsubsection}{\numberline {5.20.2.20}WSGI\_APPLICATION}{20}{subsubsection.5.20.2.20}%
-\contentsline {section}{\numberline {5.21}sp4.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}urls Namespace Reference}{20}{section.5.21}%
-\contentsline {subsection}{\numberline {5.21.1}Detailed Description}{20}{subsection.5.21.1}%
-\contentsline {section}{\numberline {5.22}sp4.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}wsgi Namespace Reference}{20}{section.5.22}%
-\contentsline {subsection}{\numberline {5.22.1}Detailed Description}{20}{subsection.5.22.1}%
-\contentsline {subsection}{\numberline {5.22.2}Variable Documentation}{20}{subsection.5.22.2}%
-\contentsline {subsubsection}{\numberline {5.22.2.1}application}{20}{subsubsection.5.22.2.1}%
-\contentsline {chapter}{\numberline {6}Class Documentation}{21}{chapter.6}%
-\contentsline {section}{\numberline {6.1}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}models.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Form Class Reference}{21}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{21}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Member Function Documentation}{22}{subsection.6.1.2}%
-\contentsline {subsubsection}{\numberline {6.1.2.1}\_\_str\_\_()}{22}{subsubsection.6.1.2.1}%
-\contentsline {subsubsection}{\numberline {6.1.2.2}print\_form()}{22}{subsubsection.6.1.2.2}%
-\contentsline {subsubsection}{\numberline {6.1.2.3}time\_since\_last\_updated()}{22}{subsubsection.6.1.2.3}%
-\contentsline {subsubsection}{\numberline {6.1.2.4}time\_since\_last\_updated\_str()}{22}{subsubsection.6.1.2.4}%
-\contentsline {subsection}{\numberline {6.1.3}Member Data Documentation}{22}{subsection.6.1.3}%
-\contentsline {subsubsection}{\numberline {6.1.3.1}description}{23}{subsubsection.6.1.3.1}%
-\contentsline {subsubsection}{\numberline {6.1.3.2}form\_title}{23}{subsubsection.6.1.3.2}%
-\contentsline {subsubsection}{\numberline {6.1.3.3}last\_changed}{23}{subsubsection.6.1.3.3}%
-\contentsline {subsubsection}{\numberline {6.1.3.4}parent\_menu}{23}{subsubsection.6.1.3.4}%
-\contentsline {subsubsection}{\numberline {6.1.3.5}pdffile}{23}{subsubsection.6.1.3.5}%
-\contentsline {subsubsection}{\numberline {6.1.3.6}show\_on\_frontend}{23}{subsubsection.6.1.3.6}%
-\contentsline {subsubsection}{\numberline {6.1.3.7}upload\_date}{23}{subsubsection.6.1.3.7}%
-\contentsline {section}{\numberline {6.2}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}admin.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Form\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Admin Class Reference}{24}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Member Data Documentation}{24}{subsection.6.2.1}%
-\contentsline {subsubsection}{\numberline {6.2.1.1}fieldsets}{24}{subsubsection.6.2.1.1}%
-\contentsline {subsubsection}{\numberline {6.2.1.2}list\_display}{24}{subsubsection.6.2.1.2}%
-\contentsline {section}{\numberline {6.3}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}admin.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Form\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Inline Class Reference}{24}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Member Data Documentation}{25}{subsection.6.3.1}%
-\contentsline {subsubsection}{\numberline {6.3.1.1}extra}{25}{subsubsection.6.3.1.1}%
-\contentsline {subsubsection}{\numberline {6.3.1.2}model}{25}{subsubsection.6.3.1.2}%
-\contentsline {section}{\numberline {6.4}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tests.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Form\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Case Class Reference}{25}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}Member Function Documentation}{25}{subsection.6.4.1}%
-\contentsline {subsubsection}{\numberline {6.4.1.1}setUp()}{25}{subsubsection.6.4.1.1}%
-\contentsline {subsubsection}{\numberline {6.4.1.2}test\_menu\_form\_interaction()}{26}{subsubsection.6.4.1.2}%
-\contentsline {subsubsection}{\numberline {6.4.1.3}test\_time\_since\_last\_updated()}{26}{subsubsection.6.4.1.3}%
-\contentsline {section}{\numberline {6.5}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}models.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu Class Reference}{26}{section.6.5}%
-\contentsline {subsection}{\numberline {6.5.1}Detailed Description}{26}{subsection.6.5.1}%
-\contentsline {subsection}{\numberline {6.5.2}Member Function Documentation}{26}{subsection.6.5.2}%
-\contentsline {subsubsection}{\numberline {6.5.2.1}\_\_str\_\_()}{27}{subsubsection.6.5.2.1}%
-\contentsline {subsection}{\numberline {6.5.3}Member Data Documentation}{27}{subsection.6.5.3}%
-\contentsline {subsubsection}{\numberline {6.5.3.1}menu\_text}{27}{subsubsection.6.5.3.1}%
-\contentsline {subsubsection}{\numberline {6.5.3.2}menu\_title}{27}{subsubsection.6.5.3.2}%
-\contentsline {subsubsection}{\numberline {6.5.3.3}parent\_menu}{27}{subsubsection.6.5.3.3}%
-\contentsline {subsubsection}{\numberline {6.5.3.4}settings}{27}{subsubsection.6.5.3.4}%
-\contentsline {section}{\numberline {6.6}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}admin.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Admin Class Reference}{27}{section.6.6}%
-\contentsline {subsection}{\numberline {6.6.1}Member Data Documentation}{28}{subsection.6.6.1}%
-\contentsline {subsubsection}{\numberline {6.6.1.1}fieldsets}{28}{subsubsection.6.6.1.1}%
-\contentsline {subsubsection}{\numberline {6.6.1.2}inlines}{28}{subsubsection.6.6.1.2}%
-\contentsline {section}{\numberline {6.7}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}admin.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Inline Class Reference}{28}{section.6.7}%
-\contentsline {subsection}{\numberline {6.7.1}Member Data Documentation}{28}{subsection.6.7.1}%
-\contentsline {subsubsection}{\numberline {6.7.1.1}extra}{29}{subsubsection.6.7.1.1}%
-\contentsline {subsubsection}{\numberline {6.7.1.2}model}{29}{subsubsection.6.7.1.2}%
-\contentsline {section}{\numberline {6.8}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}migrations.0002\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}settings\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}homepage.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Migration Class Reference}{29}{section.6.8}%
-\contentsline {subsection}{\numberline {6.8.1}Member Data Documentation}{29}{subsection.6.8.1}%
-\contentsline {subsubsection}{\numberline {6.8.1.1}dependencies}{29}{subsubsection.6.8.1.1}%
-\contentsline {subsubsection}{\numberline {6.8.1.2}operations}{30}{subsubsection.6.8.1.2}%
-\contentsline {section}{\numberline {6.9}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}migrations.0007\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}auto\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}20200609\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}2031.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Migration Class Reference}{30}{section.6.9}%
-\contentsline {subsection}{\numberline {6.9.1}Member Data Documentation}{30}{subsection.6.9.1}%
-\contentsline {subsubsection}{\numberline {6.9.1.1}dependencies}{30}{subsubsection.6.9.1.1}%
-\contentsline {subsubsection}{\numberline {6.9.1.2}operations}{31}{subsubsection.6.9.1.2}%
-\contentsline {section}{\numberline {6.10}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}migrations.0003\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}img.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Migration Class Reference}{31}{section.6.10}%
-\contentsline {subsection}{\numberline {6.10.1}Member Data Documentation}{31}{subsection.6.10.1}%
-\contentsline {subsubsection}{\numberline {6.10.1.1}dependencies}{31}{subsubsection.6.10.1.1}%
-\contentsline {subsubsection}{\numberline {6.10.1.2}operations}{31}{subsubsection.6.10.1.2}%
-\contentsline {section}{\numberline {6.11}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}migrations.0004\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}texttt.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Migration Class Reference}{32}{section.6.11}%
-\contentsline {subsection}{\numberline {6.11.1}Member Data Documentation}{32}{subsection.6.11.1}%
-\contentsline {subsubsection}{\numberline {6.11.1.1}dependencies}{32}{subsubsection.6.11.1.1}%
-\contentsline {subsubsection}{\numberline {6.11.1.2}operations}{32}{subsubsection.6.11.1.2}%
-\contentsline {section}{\numberline {6.12}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}migrations.0005\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}remove\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}texttt.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Migration Class Reference}{33}{section.6.12}%
-\contentsline {subsection}{\numberline {6.12.1}Member Data Documentation}{33}{subsection.6.12.1}%
-\contentsline {subsubsection}{\numberline {6.12.1.1}dependencies}{33}{subsubsection.6.12.1.1}%
-\contentsline {subsubsection}{\numberline {6.12.1.2}operations}{33}{subsubsection.6.12.1.2}%
-\contentsline {section}{\numberline {6.13}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}migrations.0006\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}remove\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}img.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Migration Class Reference}{34}{section.6.13}%
-\contentsline {subsection}{\numberline {6.13.1}Member Data Documentation}{34}{subsection.6.13.1}%
-\contentsline {subsubsection}{\numberline {6.13.1.1}dependencies}{34}{subsubsection.6.13.1.1}%
-\contentsline {subsubsection}{\numberline {6.13.1.2}operations}{34}{subsubsection.6.13.1.2}%
-\contentsline {section}{\numberline {6.14}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}migrations.0001\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}initial.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Migration Class Reference}{34}{section.6.14}%
-\contentsline {subsection}{\numberline {6.14.1}Member Data Documentation}{35}{subsection.6.14.1}%
-\contentsline {subsubsection}{\numberline {6.14.1.1}dependencies}{35}{subsubsection.6.14.1.1}%
-\contentsline {subsubsection}{\numberline {6.14.1.2}initial}{35}{subsubsection.6.14.1.2}%
-\contentsline {subsubsection}{\numberline {6.14.1.3}operations}{35}{subsubsection.6.14.1.3}%
-\contentsline {section}{\numberline {6.15}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}apps.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Terminal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Config Class Reference}{35}{section.6.15}%
-\contentsline {subsection}{\numberline {6.15.1}Member Data Documentation}{36}{subsection.6.15.1}%
-\contentsline {subsubsection}{\numberline {6.15.1.1}name}{36}{subsubsection.6.15.1.1}%
-\contentsline {section}{\numberline {6.16}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}models.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Terminal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Settings Class Reference}{36}{section.6.16}%
-\contentsline {subsection}{\numberline {6.16.1}Detailed Description}{36}{subsection.6.16.1}%
-\contentsline {subsection}{\numberline {6.16.2}Member Function Documentation}{36}{subsection.6.16.2}%
-\contentsline {subsubsection}{\numberline {6.16.2.1}\_\_str\_\_()}{37}{subsubsection.6.16.2.1}%
-\contentsline {subsection}{\numberline {6.16.3}Member Data Documentation}{37}{subsection.6.16.3}%
-\contentsline {subsubsection}{\numberline {6.16.3.1}colorval\_button}{37}{subsubsection.6.16.3.1}%
-\contentsline {subsubsection}{\numberline {6.16.3.2}colorval\_heading}{37}{subsubsection.6.16.3.2}%
-\contentsline {subsubsection}{\numberline {6.16.3.3}colorval\_nav\_bar}{37}{subsubsection.6.16.3.3}%
-\contentsline {subsubsection}{\numberline {6.16.3.4}colorval\_text}{37}{subsubsection.6.16.3.4}%
-\contentsline {subsubsection}{\numberline {6.16.3.5}colorval\_zurueck\_button}{37}{subsubsection.6.16.3.5}%
-\contentsline {subsubsection}{\numberline {6.16.3.6}description}{38}{subsubsection.6.16.3.6}%
-\contentsline {subsubsection}{\numberline {6.16.3.7}homepage}{38}{subsubsection.6.16.3.7}%
-\contentsline {subsubsection}{\numberline {6.16.3.8}institute\_logo}{38}{subsubsection.6.16.3.8}%
-\contentsline {subsubsection}{\numberline {6.16.3.9}insurance\_logo}{38}{subsubsection.6.16.3.9}%
-\contentsline {subsubsection}{\numberline {6.16.3.10}title}{38}{subsubsection.6.16.3.10}%
-\contentsline {section}{\numberline {6.17}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}admin.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Terminal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Settings\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Admin Class Reference}{38}{section.6.17}%
-\contentsline {subsection}{\numberline {6.17.1}Member Data Documentation}{39}{subsection.6.17.1}%
-\contentsline {subsubsection}{\numberline {6.17.1.1}fieldsets}{39}{subsubsection.6.17.1.1}%
-\contentsline {chapter}{\numberline {7}File Documentation}{41}{chapter.7}%
-\contentsline {section}{\numberline {7.1}sp4/manage.py File Reference}{41}{section.7.1}%
-\contentsline {section}{\numberline {7.2}sp4/self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}init\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}.py File Reference}{41}{section.7.2}%
-\contentsline {section}{\numberline {7.3}sp4/self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal/migrations/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}init\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}.py File Reference}{41}{section.7.3}%
-\contentsline {section}{\numberline {7.4}sp4/sp4/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}init\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}.py File Reference}{41}{section.7.4}%
-\contentsline {section}{\numberline {7.5}sp4/self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal/admin.py File Reference}{42}{section.7.5}%
-\contentsline {section}{\numberline {7.6}sp4/self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal/apps.py File Reference}{42}{section.7.6}%
-\contentsline {section}{\numberline {7.7}sp4/self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal/constants.py File Reference}{42}{section.7.7}%
-\contentsline {section}{\numberline {7.8}sp4/self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal/migrations/0001\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}initial.py File Reference}{42}{section.7.8}%
-\contentsline {section}{\numberline {7.9}sp4/self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal/migrations/0002\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}settings\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}homepage.py File Reference}{43}{section.7.9}%
-\contentsline {section}{\numberline {7.10}sp4/self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal/migrations/0003\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}img.py File Reference}{43}{section.7.10}%
-\contentsline {section}{\numberline {7.11}sp4/self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal/migrations/0004\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}texttt.py File Reference}{43}{section.7.11}%
-\contentsline {section}{\numberline {7.12}sp4/self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal/migrations/0005\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}remove\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}texttt.py File Reference}{43}{section.7.12}%
-\contentsline {section}{\numberline {7.13}sp4/self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal/migrations/0006\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}remove\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}img.py File Reference}{44}{section.7.13}%
-\contentsline {section}{\numberline {7.14}sp4/self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal/migrations/0007\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}auto\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}20200609\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}2031.py File Reference}{44}{section.7.14}%
-\contentsline {section}{\numberline {7.15}sp4/self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal/models.py File Reference}{44}{section.7.15}%
-\contentsline {section}{\numberline {7.16}sp4/self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal/tests.py File Reference}{44}{section.7.16}%
-\contentsline {section}{\numberline {7.17}sp4/self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal/urls.py File Reference}{45}{section.7.17}%
-\contentsline {section}{\numberline {7.18}sp4/sp4/urls.py File Reference}{45}{section.7.18}%
-\contentsline {section}{\numberline {7.19}sp4/self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal/views.py File Reference}{45}{section.7.19}%
-\contentsline {section}{\numberline {7.20}sp4/sp4/asgi.py File Reference}{46}{section.7.20}%
-\contentsline {section}{\numberline {7.21}sp4/sp4/settings.py File Reference}{46}{section.7.21}%
-\contentsline {section}{\numberline {7.22}sp4/sp4/wsgi.py File Reference}{46}{section.7.22}%
-\contentsline {chapter}{Index}{47}{section*.101}%
+\contentsline {section}{\numberline {5.3}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}actions Namespace Reference}{10}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Function Documentation}{10}{subsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.1.1}export\_action()}{10}{subsubsection.5.3.1.1}%
+\contentsline {subsubsection}{\numberline {5.3.1.2}import\_action()}{10}{subsubsection.5.3.1.2}%
+\contentsline {section}{\numberline {5.4}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}admin Namespace Reference}{10}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{11}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Variable Documentation}{11}{subsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.2.1}admin\_site}{11}{subsubsection.5.4.2.1}%
+\contentsline {subsubsection}{\numberline {5.4.2.2}site\_header}{11}{subsubsection.5.4.2.2}%
+\contentsline {section}{\numberline {5.5}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}apps Namespace Reference}{11}{section.5.5}%
+\contentsline {section}{\numberline {5.6}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}constants Namespace Reference}{11}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Detailed Description}{12}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Variable Documentation}{12}{subsection.5.6.2}%
+\contentsline {subsubsection}{\numberline {5.6.2.1}BUTTONS\_PER\_PAGE}{12}{subsubsection.5.6.2.1}%
+\contentsline {subsubsection}{\numberline {5.6.2.2}EXPORT\_PATH}{12}{subsubsection.5.6.2.2}%
+\contentsline {subsubsection}{\numberline {5.6.2.3}PRINTER}{12}{subsubsection.5.6.2.3}%
+\contentsline {subsubsection}{\numberline {5.6.2.4}TITLE\_LENGTH}{12}{subsubsection.5.6.2.4}%
+\contentsline {section}{\numberline {5.7}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}models Namespace Reference}{12}{section.5.7}%
+\contentsline {section}{\numberline {5.8}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}printer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}status Namespace Reference}{13}{section.5.8}%
+\contentsline {subsection}{\numberline {5.8.1}Function Documentation}{13}{subsection.5.8.1}%
+\contentsline {subsubsection}{\numberline {5.8.1.1}get\_cups\_status()}{13}{subsubsection.5.8.1.1}%
+\contentsline {section}{\numberline {5.9}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tests Namespace Reference}{13}{section.5.9}%
+\contentsline {subsection}{\numberline {5.9.1}Detailed Description}{13}{subsection.5.9.1}%
+\contentsline {section}{\numberline {5.10}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}urls Namespace Reference}{14}{section.5.10}%
+\contentsline {subsection}{\numberline {5.10.1}Detailed Description}{14}{subsection.5.10.1}%
+\contentsline {subsection}{\numberline {5.10.2}Variable Documentation}{14}{subsection.5.10.2}%
+\contentsline {subsubsection}{\numberline {5.10.2.1}document\_root}{15}{subsubsection.5.10.2.1}%
+\contentsline {subsubsection}{\numberline {5.10.2.2}MEDIA\_URL}{15}{subsubsection.5.10.2.2}%
+\contentsline {subsubsection}{\numberline {5.10.2.3}urlpatterns}{15}{subsubsection.5.10.2.3}%
+\contentsline {section}{\numberline {5.11}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}views Namespace Reference}{15}{section.5.11}%
+\contentsline {subsection}{\numberline {5.11.1}Function Documentation}{16}{subsection.5.11.1}%
+\contentsline {subsubsection}{\numberline {5.11.1.1}export\_action()}{16}{subsubsection.5.11.1.1}%
+\contentsline {subsubsection}{\numberline {5.11.1.2}export\_view()}{16}{subsubsection.5.11.1.2}%
+\contentsline {subsubsection}{\numberline {5.11.1.3}formular()}{16}{subsubsection.5.11.1.3}%
+\contentsline {subsubsection}{\numberline {5.11.1.4}get\_homepage()}{17}{subsubsection.5.11.1.4}%
+\contentsline {subsubsection}{\numberline {5.11.1.5}get\_settings()}{17}{subsubsection.5.11.1.5}%
+\contentsline {subsubsection}{\numberline {5.11.1.6}import\_view()}{17}{subsubsection.5.11.1.6}%
+\contentsline {subsubsection}{\numberline {5.11.1.7}index()}{17}{subsubsection.5.11.1.7}%
+\contentsline {subsubsection}{\numberline {5.11.1.8}menu()}{18}{subsubsection.5.11.1.8}%
+\contentsline {subsubsection}{\numberline {5.11.1.9}menu\_template\_test()}{18}{subsubsection.5.11.1.9}%
+\contentsline {subsubsection}{\numberline {5.11.1.10}print\_formular()}{18}{subsubsection.5.11.1.10}%
+\contentsline {subsubsection}{\numberline {5.11.1.11}view\_formular()}{18}{subsubsection.5.11.1.11}%
+\contentsline {section}{\numberline {5.12}sp4 Namespace Reference}{19}{section.5.12}%
+\contentsline {section}{\numberline {5.13}sp4.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}asgi Namespace Reference}{19}{section.5.13}%
+\contentsline {subsection}{\numberline {5.13.1}Detailed Description}{19}{subsection.5.13.1}%
+\contentsline {subsection}{\numberline {5.13.2}Variable Documentation}{19}{subsection.5.13.2}%
+\contentsline {subsubsection}{\numberline {5.13.2.1}application}{19}{subsubsection.5.13.2.1}%
+\contentsline {section}{\numberline {5.14}sp4.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}settings Namespace Reference}{19}{section.5.14}%
+\contentsline {subsection}{\numberline {5.14.1}Detailed Description}{20}{subsection.5.14.1}%
+\contentsline {subsection}{\numberline {5.14.2}Variable Documentation}{20}{subsection.5.14.2}%
+\contentsline {subsubsection}{\numberline {5.14.2.1}ALLOWED\_HOSTS}{20}{subsubsection.5.14.2.1}%
+\contentsline {subsubsection}{\numberline {5.14.2.2}AUTH\_PASSWORD\_VALIDATORS}{20}{subsubsection.5.14.2.2}%
+\contentsline {subsubsection}{\numberline {5.14.2.3}BASE\_DIR}{21}{subsubsection.5.14.2.3}%
+\contentsline {subsubsection}{\numberline {5.14.2.4}DATABASES}{21}{subsubsection.5.14.2.4}%
+\contentsline {subsubsection}{\numberline {5.14.2.5}DEBUG}{21}{subsubsection.5.14.2.5}%
+\contentsline {subsubsection}{\numberline {5.14.2.6}IMPORT\_EXPORT\_USE\_TRANSACTIONS}{21}{subsubsection.5.14.2.6}%
+\contentsline {subsubsection}{\numberline {5.14.2.7}INSTALLED\_APPS}{21}{subsubsection.5.14.2.7}%
+\contentsline {subsubsection}{\numberline {5.14.2.8}LANGUAGE\_CODE}{22}{subsubsection.5.14.2.8}%
+\contentsline {subsubsection}{\numberline {5.14.2.9}MEDIA\_ROOT}{22}{subsubsection.5.14.2.9}%
+\contentsline {subsubsection}{\numberline {5.14.2.10}MEDIA\_URL}{22}{subsubsection.5.14.2.10}%
+\contentsline {subsubsection}{\numberline {5.14.2.11}MIDDLEWARE}{22}{subsubsection.5.14.2.11}%
+\contentsline {subsubsection}{\numberline {5.14.2.12}ROOT\_URLCONF}{22}{subsubsection.5.14.2.12}%
+\contentsline {subsubsection}{\numberline {5.14.2.13}SECRET\_KEY}{23}{subsubsection.5.14.2.13}%
+\contentsline {subsubsection}{\numberline {5.14.2.14}STATIC\_ROOT}{23}{subsubsection.5.14.2.14}%
+\contentsline {subsubsection}{\numberline {5.14.2.15}STATIC\_URL}{23}{subsubsection.5.14.2.15}%
+\contentsline {subsubsection}{\numberline {5.14.2.16}TEMPLATES}{23}{subsubsection.5.14.2.16}%
+\contentsline {subsubsection}{\numberline {5.14.2.17}TIME\_ZONE}{23}{subsubsection.5.14.2.17}%
+\contentsline {subsubsection}{\numberline {5.14.2.18}USE\_I18N}{24}{subsubsection.5.14.2.18}%
+\contentsline {subsubsection}{\numberline {5.14.2.19}USE\_L10N}{24}{subsubsection.5.14.2.19}%
+\contentsline {subsubsection}{\numberline {5.14.2.20}USE\_TZ}{24}{subsubsection.5.14.2.20}%
+\contentsline {subsubsection}{\numberline {5.14.2.21}WSGI\_APPLICATION}{24}{subsubsection.5.14.2.21}%
+\contentsline {section}{\numberline {5.15}sp4.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}urls Namespace Reference}{24}{section.5.15}%
+\contentsline {subsection}{\numberline {5.15.1}Detailed Description}{24}{subsection.5.15.1}%
+\contentsline {section}{\numberline {5.16}sp4.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}wsgi Namespace Reference}{25}{section.5.16}%
+\contentsline {subsection}{\numberline {5.16.1}Detailed Description}{25}{subsection.5.16.1}%
+\contentsline {subsection}{\numberline {5.16.2}Variable Documentation}{25}{subsection.5.16.2}%
+\contentsline {subsubsection}{\numberline {5.16.2.1}application}{25}{subsubsection.5.16.2.1}%
+\contentsline {chapter}{\numberline {6}Class Documentation}{27}{chapter.6}%
+\contentsline {section}{\numberline {6.1}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tests.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Default\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Case Class Reference}{27}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{28}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Member Function Documentation}{28}{subsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.1}setUp()}{28}{subsubsection.6.1.2.1}%
+\contentsline {subsubsection}{\numberline {6.1.2.2}test\_change\_color\_values()}{29}{subsubsection.6.1.2.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.3}test\_cups\_availability()}{29}{subsubsection.6.1.2.3}%
+\contentsline {subsubsection}{\numberline {6.1.2.4}test\_form\_availability()}{29}{subsubsection.6.1.2.4}%
+\contentsline {subsubsection}{\numberline {6.1.2.5}test\_get\_settings()}{29}{subsubsection.6.1.2.5}%
+\contentsline {subsubsection}{\numberline {6.1.2.6}test\_homepage\_availability()}{29}{subsubsection.6.1.2.6}%
+\contentsline {subsubsection}{\numberline {6.1.2.7}test\_menu\_1()}{30}{subsubsection.6.1.2.7}%
+\contentsline {subsubsection}{\numberline {6.1.2.8}test\_menu\_availability()}{30}{subsubsection.6.1.2.8}%
+\contentsline {subsubsection}{\numberline {6.1.2.9}test\_pagination()}{30}{subsubsection.6.1.2.9}%
+\contentsline {subsubsection}{\numberline {6.1.2.10}test\_pdf\_database\_relation()}{30}{subsubsection.6.1.2.10}%
+\contentsline {subsubsection}{\numberline {6.1.2.11}test\_pdf\_file\_exists()}{30}{subsubsection.6.1.2.11}%
+\contentsline {subsubsection}{\numberline {6.1.2.12}test\_print\_return\_code()}{31}{subsubsection.6.1.2.12}%
+\contentsline {subsubsection}{\numberline {6.1.2.13}test\_user\_navigation()}{31}{subsubsection.6.1.2.13}%
+\contentsline {subsection}{\numberline {6.1.3}Member Data Documentation}{31}{subsection.6.1.3}%
+\contentsline {subsubsection}{\numberline {6.1.3.1}c}{31}{subsubsection.6.1.3.1}%
+\contentsline {subsubsection}{\numberline {6.1.3.2}custom\_form}{31}{subsubsection.6.1.3.2}%
+\contentsline {subsubsection}{\numberline {6.1.3.3}form}{31}{subsubsection.6.1.3.3}%
+\contentsline {subsubsection}{\numberline {6.1.3.4}form2}{32}{subsubsection.6.1.3.4}%
+\contentsline {subsubsection}{\numberline {6.1.3.5}menu}{32}{subsubsection.6.1.3.5}%
+\contentsline {subsubsection}{\numberline {6.1.3.6}submenu}{32}{subsubsection.6.1.3.6}%
+\contentsline {subsubsection}{\numberline {6.1.3.7}terminal\_settings}{32}{subsubsection.6.1.3.7}%
+\contentsline {section}{\numberline {6.2}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tests.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Export\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Import\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Case Class Reference}{32}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Detailed Description}{33}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Member Function Documentation}{33}{subsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.2.1}setUp()}{33}{subsubsection.6.2.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2.2}test\_export\_as\_string()}{34}{subsubsection.6.2.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.2.3}test\_export\_import\_in\_file()}{34}{subsubsection.6.2.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.2.4}test\_number\_of\_db\_entries\_when\_import\_as\_string()}{34}{subsubsection.6.2.2.4}%
+\contentsline {subsection}{\numberline {6.2.3}Member Data Documentation}{34}{subsection.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.3.1}c}{34}{subsubsection.6.2.3.1}%
+\contentsline {subsubsection}{\numberline {6.2.3.2}expected\_object}{34}{subsubsection.6.2.3.2}%
+\contentsline {subsubsection}{\numberline {6.2.3.3}form}{35}{subsubsection.6.2.3.3}%
+\contentsline {subsubsection}{\numberline {6.2.3.4}form2}{35}{subsubsection.6.2.3.4}%
+\contentsline {subsubsection}{\numberline {6.2.3.5}menu}{35}{subsubsection.6.2.3.5}%
+\contentsline {subsubsection}{\numberline {6.2.3.6}submenu}{35}{subsubsection.6.2.3.6}%
+\contentsline {subsubsection}{\numberline {6.2.3.7}terminal\_settings}{35}{subsubsection.6.2.3.7}%
+\contentsline {section}{\numberline {6.3}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}models.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Form Class Reference}{36}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Detailed Description}{37}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Member Function Documentation}{37}{subsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.1}\_\_str\_\_()}{37}{subsubsection.6.3.2.1}%
+\contentsline {subsubsection}{\numberline {6.3.2.2}print\_form()}{37}{subsubsection.6.3.2.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.3}time\_since\_last\_updated()}{37}{subsubsection.6.3.2.3}%
+\contentsline {subsubsection}{\numberline {6.3.2.4}time\_since\_last\_updated\_str()}{38}{subsubsection.6.3.2.4}%
+\contentsline {subsection}{\numberline {6.3.3}Member Data Documentation}{38}{subsection.6.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.3.1}description}{38}{subsubsection.6.3.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.3.2}form\_title}{38}{subsubsection.6.3.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.3.3}last\_changed}{38}{subsubsection.6.3.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.3.4}parent\_menu}{39}{subsubsection.6.3.3.4}%
+\contentsline {subsubsection}{\numberline {6.3.3.5}pdffile}{39}{subsubsection.6.3.3.5}%
+\contentsline {subsubsection}{\numberline {6.3.3.6}short\_description}{39}{subsubsection.6.3.3.6}%
+\contentsline {subsubsection}{\numberline {6.3.3.7}show\_on\_frontend}{39}{subsubsection.6.3.3.7}%
+\contentsline {subsubsection}{\numberline {6.3.3.8}upload\_date}{39}{subsubsection.6.3.3.8}%
+\contentsline {section}{\numberline {6.4}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}admin.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Form\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Admin Class Reference}{40}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Detailed Description}{40}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Member Data Documentation}{40}{subsection.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.2.1}fieldsets}{41}{subsubsection.6.4.2.1}%
+\contentsline {subsubsection}{\numberline {6.4.2.2}list\_display}{41}{subsubsection.6.4.2.2}%
+\contentsline {subsubsection}{\numberline {6.4.2.3}list\_filter}{41}{subsubsection.6.4.2.3}%
+\contentsline {section}{\numberline {6.5}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}admin.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Form\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Inline Class Reference}{41}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Detailed Description}{42}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Member Data Documentation}{42}{subsection.6.5.2}%
+\contentsline {subsubsection}{\numberline {6.5.2.1}extra}{42}{subsubsection.6.5.2.1}%
+\contentsline {subsubsection}{\numberline {6.5.2.2}fields}{42}{subsubsection.6.5.2.2}%
+\contentsline {subsubsection}{\numberline {6.5.2.3}model}{43}{subsubsection.6.5.2.3}%
+\contentsline {section}{\numberline {6.6}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}admin.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Form\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Resource Class Reference}{43}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Detailed Description}{43}{subsection.6.6.1}%
+\contentsline {section}{\numberline {6.7}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}models.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu Class Reference}{44}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Detailed Description}{45}{subsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.7.2}Member Function Documentation}{45}{subsection.6.7.2}%
+\contentsline {subsubsection}{\numberline {6.7.2.1}\_\_str\_\_()}{45}{subsubsection.6.7.2.1}%
+\contentsline {subsection}{\numberline {6.7.3}Member Data Documentation}{45}{subsection.6.7.3}%
+\contentsline {subsubsection}{\numberline {6.7.3.1}menu\_text}{45}{subsubsection.6.7.3.1}%
+\contentsline {subsubsection}{\numberline {6.7.3.2}menu\_title}{45}{subsubsection.6.7.3.2}%
+\contentsline {subsubsection}{\numberline {6.7.3.3}parent\_menu}{46}{subsubsection.6.7.3.3}%
+\contentsline {section}{\numberline {6.8}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}admin.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Admin Class Reference}{46}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}Detailed Description}{47}{subsection.6.8.1}%
+\contentsline {subsection}{\numberline {6.8.2}Member Data Documentation}{47}{subsection.6.8.2}%
+\contentsline {subsubsection}{\numberline {6.8.2.1}fieldsets}{47}{subsubsection.6.8.2.1}%
+\contentsline {subsubsection}{\numberline {6.8.2.2}inlines}{47}{subsubsection.6.8.2.2}%
+\contentsline {section}{\numberline {6.9}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}admin.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Inline Class Reference}{47}{section.6.9}%
+\contentsline {subsection}{\numberline {6.9.1}Detailed Description}{48}{subsection.6.9.1}%
+\contentsline {subsection}{\numberline {6.9.2}Member Data Documentation}{48}{subsection.6.9.2}%
+\contentsline {subsubsection}{\numberline {6.9.2.1}extra}{48}{subsubsection.6.9.2.1}%
+\contentsline {subsubsection}{\numberline {6.9.2.2}fields}{48}{subsubsection.6.9.2.2}%
+\contentsline {subsubsection}{\numberline {6.9.2.3}model}{49}{subsubsection.6.9.2.3}%
+\contentsline {section}{\numberline {6.10}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}admin.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Resource Class Reference}{49}{section.6.10}%
+\contentsline {subsection}{\numberline {6.10.1}Detailed Description}{49}{subsection.6.10.1}%
+\contentsline {section}{\numberline {6.11}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}models.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Meta Class Reference}{50}{section.6.11}%
+\contentsline {subsection}{\numberline {6.11.1}Detailed Description}{50}{subsection.6.11.1}%
+\contentsline {subsection}{\numberline {6.11.2}Member Data Documentation}{50}{subsection.6.11.2}%
+\contentsline {subsubsection}{\numberline {6.11.2.1}verbose\_name}{50}{subsubsection.6.11.2.1}%
+\contentsline {subsubsection}{\numberline {6.11.2.2}verbose\_name\_plural}{50}{subsubsection.6.11.2.2}%
+\contentsline {section}{\numberline {6.12}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}admin.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Terminal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Settings\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Resource.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Meta Class Reference}{50}{section.6.12}%
+\contentsline {subsection}{\numberline {6.12.1}Detailed Description}{50}{subsection.6.12.1}%
+\contentsline {subsection}{\numberline {6.12.2}Member Data Documentation}{50}{subsection.6.12.2}%
+\contentsline {subsubsection}{\numberline {6.12.2.1}model}{51}{subsubsection.6.12.2.1}%
+\contentsline {section}{\numberline {6.13}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}models.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Form.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Meta Class Reference}{51}{section.6.13}%
+\contentsline {subsection}{\numberline {6.13.1}Detailed Description}{51}{subsection.6.13.1}%
+\contentsline {subsection}{\numberline {6.13.2}Member Data Documentation}{51}{subsection.6.13.2}%
+\contentsline {subsubsection}{\numberline {6.13.2.1}verbose\_name}{51}{subsubsection.6.13.2.1}%
+\contentsline {section}{\numberline {6.14}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}admin.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Resource.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Meta Class Reference}{51}{section.6.14}%
+\contentsline {subsection}{\numberline {6.14.1}Detailed Description}{51}{subsection.6.14.1}%
+\contentsline {subsection}{\numberline {6.14.2}Member Data Documentation}{51}{subsection.6.14.2}%
+\contentsline {subsubsection}{\numberline {6.14.2.1}model}{52}{subsubsection.6.14.2.1}%
+\contentsline {section}{\numberline {6.15}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}admin.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Form\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Resource.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Meta Class Reference}{52}{section.6.15}%
+\contentsline {subsection}{\numberline {6.15.1}Detailed Description}{52}{subsection.6.15.1}%
+\contentsline {subsection}{\numberline {6.15.2}Member Data Documentation}{52}{subsection.6.15.2}%
+\contentsline {subsubsection}{\numberline {6.15.2.1}model}{52}{subsubsection.6.15.2.1}%
+\contentsline {section}{\numberline {6.16}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}models.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Terminal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Settings.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Meta Class Reference}{52}{section.6.16}%
+\contentsline {subsection}{\numberline {6.16.1}Detailed Description}{52}{subsection.6.16.1}%
+\contentsline {subsection}{\numberline {6.16.2}Member Data Documentation}{52}{subsection.6.16.2}%
+\contentsline {subsubsection}{\numberline {6.16.2.1}verbose\_name}{53}{subsubsection.6.16.2.1}%
+\contentsline {subsubsection}{\numberline {6.16.2.2}verbose\_name\_plural}{53}{subsubsection.6.16.2.2}%
+\contentsline {section}{\numberline {6.17}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}admin.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}My\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Admin\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Site Class Reference}{53}{section.6.17}%
+\contentsline {subsection}{\numberline {6.17.1}Detailed Description}{54}{subsection.6.17.1}%
+\contentsline {subsection}{\numberline {6.17.2}Member Data Documentation}{54}{subsection.6.17.2}%
+\contentsline {subsubsection}{\numberline {6.17.2.1}site\_header}{54}{subsubsection.6.17.2.1}%
+\contentsline {section}{\numberline {6.18}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tests.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}No\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Pdf\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Set\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Case Class Reference}{54}{section.6.18}%
+\contentsline {subsection}{\numberline {6.18.1}Detailed Description}{55}{subsection.6.18.1}%
+\contentsline {subsection}{\numberline {6.18.2}Member Function Documentation}{55}{subsection.6.18.2}%
+\contentsline {subsubsection}{\numberline {6.18.2.1}setUp()}{55}{subsubsection.6.18.2.1}%
+\contentsline {subsubsection}{\numberline {6.18.2.2}test\_no\_pdf\_error()}{55}{subsubsection.6.18.2.2}%
+\contentsline {subsection}{\numberline {6.18.3}Member Data Documentation}{55}{subsection.6.18.3}%
+\contentsline {subsubsection}{\numberline {6.18.3.1}c}{56}{subsubsection.6.18.3.1}%
+\contentsline {subsubsection}{\numberline {6.18.3.2}form}{56}{subsubsection.6.18.3.2}%
+\contentsline {subsubsection}{\numberline {6.18.3.3}form2}{56}{subsubsection.6.18.3.3}%
+\contentsline {subsubsection}{\numberline {6.18.3.4}menu}{56}{subsubsection.6.18.3.4}%
+\contentsline {subsubsection}{\numberline {6.18.3.5}submenu}{56}{subsubsection.6.18.3.5}%
+\contentsline {subsubsection}{\numberline {6.18.3.6}terminal\_settings}{56}{subsubsection.6.18.3.6}%
+\contentsline {section}{\numberline {6.19}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tests.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Pagination\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Case Class Reference}{57}{section.6.19}%
+\contentsline {subsection}{\numberline {6.19.1}Detailed Description}{58}{subsection.6.19.1}%
+\contentsline {subsection}{\numberline {6.19.2}Member Function Documentation}{58}{subsection.6.19.2}%
+\contentsline {subsubsection}{\numberline {6.19.2.1}setUp()}{58}{subsubsection.6.19.2.1}%
+\contentsline {subsubsection}{\numberline {6.19.2.2}test\_different\_pagination\_sites()}{58}{subsubsection.6.19.2.2}%
+\contentsline {subsubsection}{\numberline {6.19.2.3}test\_pagination\_existence()}{58}{subsubsection.6.19.2.3}%
+\contentsline {subsection}{\numberline {6.19.3}Member Data Documentation}{58}{subsection.6.19.3}%
+\contentsline {subsubsection}{\numberline {6.19.3.1}c}{58}{subsubsection.6.19.3.1}%
+\contentsline {subsubsection}{\numberline {6.19.3.2}menu}{59}{subsubsection.6.19.3.2}%
+\contentsline {subsubsection}{\numberline {6.19.3.3}submenus}{59}{subsubsection.6.19.3.3}%
+\contentsline {subsubsection}{\numberline {6.19.3.4}terminal\_settings}{59}{subsubsection.6.19.3.4}%
+\contentsline {section}{\numberline {6.20}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tests.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Production\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Case Class Reference}{59}{section.6.20}%
+\contentsline {subsection}{\numberline {6.20.1}Detailed Description}{60}{subsection.6.20.1}%
+\contentsline {subsection}{\numberline {6.20.2}Member Function Documentation}{60}{subsection.6.20.2}%
+\contentsline {subsubsection}{\numberline {6.20.2.1}setUp()}{60}{subsubsection.6.20.2.1}%
+\contentsline {subsubsection}{\numberline {6.20.2.2}test\_debug\_false()}{61}{subsubsection.6.20.2.2}%
+\contentsline {subsection}{\numberline {6.20.3}Member Data Documentation}{61}{subsection.6.20.3}%
+\contentsline {subsubsection}{\numberline {6.20.3.1}c}{61}{subsubsection.6.20.3.1}%
+\contentsline {subsubsection}{\numberline {6.20.3.2}form}{61}{subsubsection.6.20.3.2}%
+\contentsline {subsubsection}{\numberline {6.20.3.3}menu}{61}{subsubsection.6.20.3.3}%
+\contentsline {subsubsection}{\numberline {6.20.3.4}submenu}{61}{subsubsection.6.20.3.4}%
+\contentsline {subsubsection}{\numberline {6.20.3.5}terminal\_settings}{61}{subsubsection.6.20.3.5}%
+\contentsline {section}{\numberline {6.21}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}apps.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Terminal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Config Class Reference}{62}{section.6.21}%
+\contentsline {subsection}{\numberline {6.21.1}Detailed Description}{62}{subsection.6.21.1}%
+\contentsline {subsection}{\numberline {6.21.2}Member Data Documentation}{62}{subsection.6.21.2}%
+\contentsline {subsubsection}{\numberline {6.21.2.1}name}{63}{subsubsection.6.21.2.1}%
+\contentsline {section}{\numberline {6.22}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}models.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Terminal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Settings Class Reference}{63}{section.6.22}%
+\contentsline {subsection}{\numberline {6.22.1}Detailed Description}{64}{subsection.6.22.1}%
+\contentsline {subsection}{\numberline {6.22.2}Member Function Documentation}{64}{subsection.6.22.2}%
+\contentsline {subsubsection}{\numberline {6.22.2.1}\_\_str\_\_()}{64}{subsubsection.6.22.2.1}%
+\contentsline {subsection}{\numberline {6.22.3}Member Data Documentation}{64}{subsection.6.22.3}%
+\contentsline {subsubsection}{\numberline {6.22.3.1}colorval\_button}{64}{subsubsection.6.22.3.1}%
+\contentsline {subsubsection}{\numberline {6.22.3.2}colorval\_heading}{65}{subsubsection.6.22.3.2}%
+\contentsline {subsubsection}{\numberline {6.22.3.3}colorval\_nav\_bar}{65}{subsubsection.6.22.3.3}%
+\contentsline {subsubsection}{\numberline {6.22.3.4}colorval\_return\_button}{65}{subsubsection.6.22.3.4}%
+\contentsline {subsubsection}{\numberline {6.22.3.5}colorval\_text}{65}{subsubsection.6.22.3.5}%
+\contentsline {subsubsection}{\numberline {6.22.3.6}description}{65}{subsubsection.6.22.3.6}%
+\contentsline {subsubsection}{\numberline {6.22.3.7}institute\_logo}{66}{subsubsection.6.22.3.7}%
+\contentsline {subsubsection}{\numberline {6.22.3.8}insurance\_logo}{66}{subsubsection.6.22.3.8}%
+\contentsline {subsubsection}{\numberline {6.22.3.9}title}{66}{subsubsection.6.22.3.9}%
+\contentsline {section}{\numberline {6.23}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}admin.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Terminal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Settings\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Admin Class Reference}{66}{section.6.23}%
+\contentsline {subsection}{\numberline {6.23.1}Detailed Description}{67}{subsection.6.23.1}%
+\contentsline {subsection}{\numberline {6.23.2}Member Data Documentation}{67}{subsection.6.23.2}%
+\contentsline {subsubsection}{\numberline {6.23.2.1}fieldsets}{67}{subsubsection.6.23.2.1}%
+\contentsline {section}{\numberline {6.24}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}admin.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Terminal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Settings\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Resource Class Reference}{68}{section.6.24}%
+\contentsline {subsection}{\numberline {6.24.1}Detailed Description}{68}{subsection.6.24.1}%
+\contentsline {section}{\numberline {6.25}self\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}terminal.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tests.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Unconnected\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Configuration Class Reference}{69}{section.6.25}%
+\contentsline {subsection}{\numberline {6.25.1}Detailed Description}{70}{subsection.6.25.1}%
+\contentsline {subsection}{\numberline {6.25.2}Member Function Documentation}{70}{subsection.6.25.2}%
+\contentsline {subsubsection}{\numberline {6.25.2.1}setUp()}{70}{subsubsection.6.25.2.1}%
+\contentsline {subsubsection}{\numberline {6.25.2.2}test\_homepage\_availability()}{70}{subsubsection.6.25.2.2}%
+\contentsline {subsection}{\numberline {6.25.3}Member Data Documentation}{70}{subsection.6.25.3}%
+\contentsline {subsubsection}{\numberline {6.25.3.1}c}{70}{subsubsection.6.25.3.1}%
+\contentsline {subsubsection}{\numberline {6.25.3.2}form}{71}{subsubsection.6.25.3.2}%
+\contentsline {subsubsection}{\numberline {6.25.3.3}menu}{71}{subsubsection.6.25.3.3}%
+\contentsline {subsubsection}{\numberline {6.25.3.4}submenu}{71}{subsubsection.6.25.3.4}%
+\contentsline {subsubsection}{\numberline {6.25.3.5}terminal\_settings}{71}{subsubsection.6.25.3.5}%
+\contentsline {chapter}{\numberline {7}File Documentation}{73}{chapter.7}%
+\contentsline {section}{\numberline {7.1}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}init\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}py File Reference}{73}{section.7.1}%
+\contentsline {section}{\numberline {7.2}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}init\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}py File Reference}{73}{section.7.2}%
+\contentsline {section}{\numberline {7.3}actions.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}py File Reference}{73}{section.7.3}%
+\contentsline {section}{\numberline {7.4}admin.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}py File Reference}{74}{section.7.4}%
+\contentsline {section}{\numberline {7.5}apps.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}py File Reference}{74}{section.7.5}%
+\contentsline {section}{\numberline {7.6}asgi.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}py File Reference}{74}{section.7.6}%
+\contentsline {section}{\numberline {7.7}constants.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}py File Reference}{75}{section.7.7}%
+\contentsline {section}{\numberline {7.8}manage.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}py File Reference}{75}{section.7.8}%
+\contentsline {section}{\numberline {7.9}models.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}py File Reference}{75}{section.7.9}%
+\contentsline {section}{\numberline {7.10}printer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}status.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}py File Reference}{75}{section.7.10}%
+\contentsline {section}{\numberline {7.11}settings.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}py File Reference}{76}{section.7.11}%
+\contentsline {section}{\numberline {7.12}tests.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}py File Reference}{76}{section.7.12}%
+\contentsline {section}{\numberline {7.13}urls.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}py File Reference}{77}{section.7.13}%
+\contentsline {section}{\numberline {7.14}urls.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}py File Reference}{77}{section.7.14}%
+\contentsline {section}{\numberline {7.15}views.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}py File Reference}{77}{section.7.15}%
+\contentsline {section}{\numberline {7.16}wsgi.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}py File Reference}{77}{section.7.16}%
+\contentsline {chapter}{Index}{79}{section*.122}%

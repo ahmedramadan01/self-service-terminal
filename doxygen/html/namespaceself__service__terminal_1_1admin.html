@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -50,23 +46,6 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('namespaceself__service__terminal_1_1admin.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -81,9 +60,15 @@ $(document).ready(function(){initNavTree('namespaceself__service__terminal_1_1ad
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceself__service__terminal.html">self_service_terminal</a></li><li class="navelem"><a class="el" href="namespaceself__service__terminal_1_1admin.html">admin</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">self_service_terminal.admin Namespace Reference</div>  </div>
 </div><!--header-->
@@ -95,28 +80,72 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classself__service__terminal_1_1admin_1_1_form_inline.html">FormInline</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classself__service__terminal_1_1admin_1_1_form_resource.html">FormResource</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classself__service__terminal_1_1admin_1_1_menu_admin.html">MenuAdmin</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classself__service__terminal_1_1admin_1_1_menu_inline.html">MenuInline</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classself__service__terminal_1_1admin_1_1_menu_resource.html">MenuResource</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classself__service__terminal_1_1admin_1_1_my_admin_site.html">MyAdminSite</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classself__service__terminal_1_1admin_1_1_terminal___settings_admin.html">Terminal_SettingsAdmin</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classself__service__terminal_1_1admin_1_1_terminal___settings_resource.html">Terminal_SettingsResource</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a152852450378fc0a7b00cbbb6fd9c958"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceself__service__terminal_1_1admin.html#a152852450378fc0a7b00cbbb6fd9c958">admin_site</a> = <a class="el" href="classself__service__terminal_1_1admin_1_1_my_admin_site.html">MyAdminSite</a>(name='myadmin')</td></tr>
+<tr class="separator:a152852450378fc0a7b00cbbb6fd9c958"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4018fb7a2b130541a800a48930cedff5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceself__service__terminal_1_1admin.html#a4018fb7a2b130541a800a48930cedff5">site_header</a></td></tr>
+<tr class="separator:a4018fb7a2b130541a800a48930cedff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">Customizations for the admin site.
 
-This document defines among other things which fields appear on the admin page 
+This document defines among other things which fields appear on the admin page
 and can be edited.
-</pre> </div></div><!-- contents -->
-</div><!-- doc-content -->
-<!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespaceself__service__terminal.html">self_service_terminal</a></li><li class="navelem"><a class="el" href="namespaceself__service__terminal_1_1admin.html">admin</a></li>
-    <li class="footer">Generated by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
-  </ul>
+</pre> </div><h2 class="groupheader">Variable Documentation</h2>
+<a id="a152852450378fc0a7b00cbbb6fd9c958"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a152852450378fc0a7b00cbbb6fd9c958">&#9670;&nbsp;</a></span>admin_site</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">self_service_terminal.admin.admin_site = <a class="el" href="classself__service__terminal_1_1admin_1_1_my_admin_site.html">MyAdminSite</a>(name='myadmin')</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="admin_8py_source.html#l00018">18</a> of file <a class="el" href="admin_8py_source.html">admin.py</a>.</p>
+
 </div>
+</div>
+<a id="a4018fb7a2b130541a800a48930cedff5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4018fb7a2b130541a800a48930cedff5">&#9670;&nbsp;</a></span>site_header</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">self_service_terminal.admin.site_header</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="admin_8py_source.html#l00023">23</a> of file <a class="el" href="admin_8py_source.html">admin.py</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generated by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
 </body>
 </html>

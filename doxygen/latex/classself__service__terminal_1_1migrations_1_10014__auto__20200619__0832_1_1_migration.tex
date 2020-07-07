@@ -1,0 +1,82 @@
+\hypertarget{classself__service__terminal_1_1migrations_1_10014__auto__20200619__0832_1_1_migration}{}\doxysection{self\+\_\+service\+\_\+terminal.\+migrations.0014\+\_\+auto\+\_\+20200619\+\_\+0832.\+Migration Class Reference}
+\label{classself__service__terminal_1_1migrations_1_10014__auto__20200619__0832_1_1_migration}\index{self\_service\_terminal.migrations.0014\_auto\_20200619\_0832.Migration@{self\_service\_terminal.migrations.0014\_auto\_20200619\_0832.Migration}}
+
+
+Inheritance diagram for self\+\_\+service\+\_\+terminal.\+migrations.0014\+\_\+auto\+\_\+20200619\+\_\+0832.\+Migration\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{classself__service__terminal_1_1migrations_1_10014__auto__20200619__0832_1_1_migration__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for self\+\_\+service\+\_\+terminal.\+migrations.0014\+\_\+auto\+\_\+20200619\+\_\+0832.\+Migration\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{classself__service__terminal_1_1migrations_1_10014__auto__20200619__0832_1_1_migration__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+list \mbox{\hyperlink{classself__service__terminal_1_1migrations_1_10014__auto__20200619__0832_1_1_migration_a74e822cb9b194c6e961a4dd544866ffe}{dependencies}}
+\item 
+list \mbox{\hyperlink{classself__service__terminal_1_1migrations_1_10014__auto__20200619__0832_1_1_migration_a622945e2a0190deb1ce797ef4297b798}{operations}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 7 of file 0014\+\_\+auto\+\_\+20200619\+\_\+0832.\+py.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classself__service__terminal_1_1migrations_1_10014__auto__20200619__0832_1_1_migration_a74e822cb9b194c6e961a4dd544866ffe}\label{classself__service__terminal_1_1migrations_1_10014__auto__20200619__0832_1_1_migration_a74e822cb9b194c6e961a4dd544866ffe}} 
+\index{self\_service\_terminal.migrations.0014\_auto\_20200619\_0832.Migration@{self\_service\_terminal.migrations.0014\_auto\_20200619\_0832.Migration}!dependencies@{dependencies}}
+\index{dependencies@{dependencies}!self\_service\_terminal.migrations.0014\_auto\_20200619\_0832.Migration@{self\_service\_terminal.migrations.0014\_auto\_20200619\_0832.Migration}}
+\doxysubsubsection{\texorpdfstring{dependencies}{dependencies}}
+{\footnotesize\ttfamily list self\+\_\+service\+\_\+terminal.\+migrations.\+0014\+\_\+auto\+\_\+20200619\+\_\+0832.\+Migration.\+dependencies\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  [}
+\DoxyCodeLine{        (\textcolor{stringliteral}{'self\_service\_terminal'}, \textcolor{stringliteral}{'0013\_auto\_20200619\_0830'}),}
+\DoxyCodeLine{    ]}
+
+\end{DoxyCode}
+
+
+Definition at line 9 of file 0014\+\_\+auto\+\_\+20200619\+\_\+0832.\+py.
+
+\mbox{\Hypertarget{classself__service__terminal_1_1migrations_1_10014__auto__20200619__0832_1_1_migration_a622945e2a0190deb1ce797ef4297b798}\label{classself__service__terminal_1_1migrations_1_10014__auto__20200619__0832_1_1_migration_a622945e2a0190deb1ce797ef4297b798}} 
+\index{self\_service\_terminal.migrations.0014\_auto\_20200619\_0832.Migration@{self\_service\_terminal.migrations.0014\_auto\_20200619\_0832.Migration}!operations@{operations}}
+\index{operations@{operations}!self\_service\_terminal.migrations.0014\_auto\_20200619\_0832.Migration@{self\_service\_terminal.migrations.0014\_auto\_20200619\_0832.Migration}}
+\doxysubsubsection{\texorpdfstring{operations}{operations}}
+{\footnotesize\ttfamily list self\+\_\+service\+\_\+terminal.\+migrations.\+0014\+\_\+auto\+\_\+20200619\+\_\+0832.\+Migration.\+operations\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  [}
+\DoxyCodeLine{        migrations.AlterField(}
+\DoxyCodeLine{            model\_name=\textcolor{stringliteral}{'menu'},}
+\DoxyCodeLine{            name=\textcolor{stringliteral}{'settings'},}
+\DoxyCodeLine{            field=models.ForeignKey(blank=\textcolor{keyword}{True}, default=\textcolor{stringliteral}{'settings'}, null=\textcolor{keyword}{True}, on\_delete=django.db.models.deletion.CASCADE, to=\textcolor{stringliteral}{'self\_service\_terminal.Terminal\_Settings'}, to\_field=\textcolor{stringliteral}{'title'}),}
+\DoxyCodeLine{        ),}
+\DoxyCodeLine{        migrations.AlterField(}
+\DoxyCodeLine{            model\_name=\textcolor{stringliteral}{'terminal\_settings'},}
+\DoxyCodeLine{            name=\textcolor{stringliteral}{'title'},}
+\DoxyCodeLine{            field=models.CharField(max\_length=100, unique=\textcolor{keyword}{True}),}
+\DoxyCodeLine{        ),}
+\DoxyCodeLine{    ]}
+
+\end{DoxyCode}
+
+
+Definition at line 13 of file 0014\+\_\+auto\+\_\+20200619\+\_\+0832.\+py.
+

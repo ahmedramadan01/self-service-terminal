@@ -1,10 +1,4 @@
 var searchData=
 [
-  ['0001_5finitial_2epy_0',['0001_initial.py',['../0001__initial_8py.html',1,'']]],
-  ['0002_5fterminal_5fsettings_5fhomepage_2epy_1',['0002_terminal_settings_homepage.py',['../0002__terminal__settings__homepage_8py.html',1,'']]],
-  ['0003_5fmenu_5ftest_5fimg_2epy_2',['0003_menu_test_img.py',['../0003__menu__test__img_8py.html',1,'']]],
-  ['0004_5fmenu_5fmenu_5ftexttt_2epy_3',['0004_menu_menu_texttt.py',['../0004__menu__menu__texttt_8py.html',1,'']]],
-  ['0005_5fremove_5fmenu_5fmenu_5ftexttt_2epy_4',['0005_remove_menu_menu_texttt.py',['../0005__remove__menu__menu__texttt_8py.html',1,'']]],
-  ['0006_5fremove_5fmenu_5ftest_5fimg_2epy_5',['0006_remove_menu_test_img.py',['../0006__remove__menu__test__img_8py.html',1,'']]],
-  ['0007_5fauto_5f20200609_5f2031_2epy_6',['0007_auto_20200609_2031.py',['../0007__auto__20200609__2031_8py.html',1,'']]]
+  ['_5f_5fstr_5f_5f_0',['__str__',['../classself__service__terminal_1_1models_1_1_terminal___settings.html#ac2d14a182dc6e232f1485896c74167d5',1,'self_service_terminal.models.Terminal_Settings.__str__()'],['../classself__service__terminal_1_1models_1_1_menu.html#a5b4e27681661efe9d3806bfc991d5d6e',1,'self_service_terminal.models.Menu.__str__()'],['../classself__service__terminal_1_1models_1_1_form.html#aa528a08a125141c264922cc056ba38ff',1,'self_service_terminal.models.Form.__str__()']]]
 ];

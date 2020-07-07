@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['admin_2epy_157',['admin.py',['../admin_8py.html',1,'']]],
-  ['apps_2epy_158',['apps.py',['../apps_8py.html',1,'']]],
-  ['asgi_2epy_159',['asgi.py',['../asgi_8py.html',1,'']]]
+  ['manage_2epy_190',['manage.py',['../manage_8py.html',1,'']]],
+  ['models_2epy_191',['models.py',['../models_8py.html',1,'']]]
 ];

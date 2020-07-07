@@ -1,11 +1,28 @@
 \hypertarget{classself__service__terminal_1_1models_1_1_terminal___settings}{}\doxysection{self\+\_\+service\+\_\+terminal.\+models.\+Terminal\+\_\+\+Settings Class Reference}
 \label{classself__service__terminal_1_1models_1_1_terminal___settings}\index{self\_service\_terminal.models.Terminal\_Settings@{self\_service\_terminal.models.Terminal\_Settings}}
-Inheritance diagram for self\+\_\+service\+\_\+terminal.\+models.\+Terminal\+\_\+\+Settings\+:\begin{figure}[H]
+
+
+Inheritance diagram for self\+\_\+service\+\_\+terminal.\+models.\+Terminal\+\_\+\+Settings\+:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{classself__service__terminal_1_1models_1_1_terminal___settings}
+\includegraphics[width=244pt]{classself__service__terminal_1_1models_1_1_terminal___settings__inherit__graph}
 \end{center}
 \end{figure}
+
+
+Collaboration diagram for self\+\_\+service\+\_\+terminal.\+models.\+Terminal\+\_\+\+Settings\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classself__service__terminal_1_1models_1_1_terminal___settings__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classself__service__terminal_1_1models_1_1_terminal___settings_1_1_meta}{Meta}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -14,21 +31,19 @@ def \mbox{\hyperlink{classself__service__terminal_1_1models_1_1_terminal___setti
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classself__service__terminal_1_1models_1_1_terminal___settings_a7760a84fb5f6c462cecf886ade7148f6}{title}} = models.\+Char\+Field(max\+\_\+length=T\+I\+T\+L\+E\+\_\+\+L\+E\+N\+G\+TH)
+\mbox{\hyperlink{classself__service__terminal_1_1models_1_1_terminal___settings_a7760a84fb5f6c462cecf886ade7148f6}{title}}
 \item 
-\mbox{\hyperlink{classself__service__terminal_1_1models_1_1_terminal___settings_ace329bfcee29e3f0682a475416081418}{description}} = models.\+Text\+Field()
+\mbox{\hyperlink{classself__service__terminal_1_1models_1_1_terminal___settings_ace329bfcee29e3f0682a475416081418}{description}}
 \item 
-\mbox{\hyperlink{classself__service__terminal_1_1models_1_1_terminal___settings_a90a80b32b05f3bb61943420ebf494cbd}{homepage}}
+\mbox{\hyperlink{classself__service__terminal_1_1models_1_1_terminal___settings_a7b2fe52be03453c4547454d2917619c4}{colorval\+\_\+nav\+\_\+bar}}
 \item 
-\mbox{\hyperlink{classself__service__terminal_1_1models_1_1_terminal___settings_a7b2fe52be03453c4547454d2917619c4}{colorval\+\_\+nav\+\_\+bar}} = models.\+Char\+Field(max\+\_\+length=7, blank=True, default=\textquotesingle{}\textquotesingle{})
+\mbox{\hyperlink{classself__service__terminal_1_1models_1_1_terminal___settings_abcf16ce749b004d4f4aebe5084c16181}{colorval\+\_\+heading}}
 \item 
-\mbox{\hyperlink{classself__service__terminal_1_1models_1_1_terminal___settings_abcf16ce749b004d4f4aebe5084c16181}{colorval\+\_\+heading}} = models.\+Char\+Field(max\+\_\+length=7, blank=True, default=\textquotesingle{}\textquotesingle{})
+\mbox{\hyperlink{classself__service__terminal_1_1models_1_1_terminal___settings_ad9b877fa5ed223f228c9e53f04a551b8}{colorval\+\_\+text}}
 \item 
-\mbox{\hyperlink{classself__service__terminal_1_1models_1_1_terminal___settings_ad9b877fa5ed223f228c9e53f04a551b8}{colorval\+\_\+text}} = models.\+Char\+Field(max\+\_\+length=7, blank=True, default=\textquotesingle{}\textquotesingle{})
+\mbox{\hyperlink{classself__service__terminal_1_1models_1_1_terminal___settings_a288e3a53add41815b98595271b5195c3}{colorval\+\_\+button}}
 \item 
-\mbox{\hyperlink{classself__service__terminal_1_1models_1_1_terminal___settings_a288e3a53add41815b98595271b5195c3}{colorval\+\_\+button}} = models.\+Char\+Field(max\+\_\+length=7, blank=True, default=\textquotesingle{}\textquotesingle{})
-\item 
-\mbox{\hyperlink{classself__service__terminal_1_1models_1_1_terminal___settings_a53f5f21580d97c60b1bc226062933ef8}{colorval\+\_\+zurueck\+\_\+button}}
+\mbox{\hyperlink{classself__service__terminal_1_1models_1_1_terminal___settings_a8f14eb188bde85981099b5c194e831b8}{colorval\+\_\+return\+\_\+button}}
 \item 
 \mbox{\hyperlink{classself__service__terminal_1_1models_1_1_terminal___settings_a945f56cb266d39798bb293d834deb2a8}{institute\+\_\+logo}}
 \item 
@@ -43,8 +58,15 @@ Contains settings fields for the colors and logos of the user interface.
 Values must be valid for CSS. Example: #aabbcc or black
 Sets the homepage menu.
 Title and description fields are deprecated.
+
+Important: Currently only the Terminal_Settings instance with the
+title='settings' is used in the Self service terminal.
 \end{DoxyVerb}
  
+
+Definition at line 11 of file models.\+py.
+
+
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classself__service__terminal_1_1models_1_1_terminal___settings_ac2d14a182dc6e232f1485896c74167d5}\label{classself__service__terminal_1_1models_1_1_terminal___settings_ac2d14a182dc6e232f1485896c74167d5}} 
@@ -55,61 +77,107 @@ Title and description fields are deprecated.
 
 
 
+Definition at line 44 of file models.\+py.
+
+
+
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{classself__service__terminal_1_1models_1_1_terminal___settings_a288e3a53add41815b98595271b5195c3}\label{classself__service__terminal_1_1models_1_1_terminal___settings_a288e3a53add41815b98595271b5195c3}} 
 \index{self\_service\_terminal.models.Terminal\_Settings@{self\_service\_terminal.models.Terminal\_Settings}!colorval\_button@{colorval\_button}}
 \index{colorval\_button@{colorval\_button}!self\_service\_terminal.models.Terminal\_Settings@{self\_service\_terminal.models.Terminal\_Settings}}
 \doxysubsubsection{\texorpdfstring{colorval\_button}{colorval\_button}}
-{\footnotesize\ttfamily self\+\_\+service\+\_\+terminal.\+models.\+Terminal\+\_\+\+Settings.\+colorval\+\_\+button = models.\+Char\+Field(max\+\_\+length=7, blank=True, default=\textquotesingle{}\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily self\+\_\+service\+\_\+terminal.\+models.\+Terminal\+\_\+\+Settings.\+colorval\+\_\+button\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  models.CharField(max\_length=7, blank=\textcolor{keyword}{True}, default=\textcolor{stringliteral}{''},}
+\DoxyCodeLine{        verbose\_name=\textcolor{stringliteral}{'Farbe der Buttons'})}
+
+\end{DoxyCode}
+
+
+Definition at line 33 of file models.\+py.
 
 \mbox{\Hypertarget{classself__service__terminal_1_1models_1_1_terminal___settings_abcf16ce749b004d4f4aebe5084c16181}\label{classself__service__terminal_1_1models_1_1_terminal___settings_abcf16ce749b004d4f4aebe5084c16181}} 
 \index{self\_service\_terminal.models.Terminal\_Settings@{self\_service\_terminal.models.Terminal\_Settings}!colorval\_heading@{colorval\_heading}}
 \index{colorval\_heading@{colorval\_heading}!self\_service\_terminal.models.Terminal\_Settings@{self\_service\_terminal.models.Terminal\_Settings}}
 \doxysubsubsection{\texorpdfstring{colorval\_heading}{colorval\_heading}}
-{\footnotesize\ttfamily self\+\_\+service\+\_\+terminal.\+models.\+Terminal\+\_\+\+Settings.\+colorval\+\_\+heading = models.\+Char\+Field(max\+\_\+length=7, blank=True, default=\textquotesingle{}\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily self\+\_\+service\+\_\+terminal.\+models.\+Terminal\+\_\+\+Settings.\+colorval\+\_\+heading\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  models.CharField(max\_length=7, blank=\textcolor{keyword}{True}, default=\textcolor{stringliteral}{''},}
+\DoxyCodeLine{        verbose\_name=\textcolor{stringliteral}{'Farbe der Überschriften'})}
+
+\end{DoxyCode}
+
+
+Definition at line 29 of file models.\+py.
 
 \mbox{\Hypertarget{classself__service__terminal_1_1models_1_1_terminal___settings_a7b2fe52be03453c4547454d2917619c4}\label{classself__service__terminal_1_1models_1_1_terminal___settings_a7b2fe52be03453c4547454d2917619c4}} 
 \index{self\_service\_terminal.models.Terminal\_Settings@{self\_service\_terminal.models.Terminal\_Settings}!colorval\_nav\_bar@{colorval\_nav\_bar}}
 \index{colorval\_nav\_bar@{colorval\_nav\_bar}!self\_service\_terminal.models.Terminal\_Settings@{self\_service\_terminal.models.Terminal\_Settings}}
 \doxysubsubsection{\texorpdfstring{colorval\_nav\_bar}{colorval\_nav\_bar}}
-{\footnotesize\ttfamily self\+\_\+service\+\_\+terminal.\+models.\+Terminal\+\_\+\+Settings.\+colorval\+\_\+nav\+\_\+bar = models.\+Char\+Field(max\+\_\+length=7, blank=True, default=\textquotesingle{}\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily self\+\_\+service\+\_\+terminal.\+models.\+Terminal\+\_\+\+Settings.\+colorval\+\_\+nav\+\_\+bar\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  models.CharField(max\_length=7, blank=\textcolor{keyword}{True}, default=\textcolor{stringliteral}{''},}
+\DoxyCodeLine{        verbose\_name=\textcolor{stringliteral}{'Farbe der Kopfleiste'})}
+
+\end{DoxyCode}
+
+
+Definition at line 27 of file models.\+py.
+
+\mbox{\Hypertarget{classself__service__terminal_1_1models_1_1_terminal___settings_a8f14eb188bde85981099b5c194e831b8}\label{classself__service__terminal_1_1models_1_1_terminal___settings_a8f14eb188bde85981099b5c194e831b8}} 
+\index{self\_service\_terminal.models.Terminal\_Settings@{self\_service\_terminal.models.Terminal\_Settings}!colorval\_return\_button@{colorval\_return\_button}}
+\index{colorval\_return\_button@{colorval\_return\_button}!self\_service\_terminal.models.Terminal\_Settings@{self\_service\_terminal.models.Terminal\_Settings}}
+\doxysubsubsection{\texorpdfstring{colorval\_return\_button}{colorval\_return\_button}}
+{\footnotesize\ttfamily self\+\_\+service\+\_\+terminal.\+models.\+Terminal\+\_\+\+Settings.\+colorval\+\_\+return\+\_\+button\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  models.CharField(max\_length=7, blank=\textcolor{keyword}{True},}
+\DoxyCodeLine{        default=\textcolor{stringliteral}{''}, verbose\_name=\textcolor{stringliteral}{'Farbe des Zurück-\/Buttons'})}
+
+\end{DoxyCode}
+
+
+Definition at line 35 of file models.\+py.
 
 \mbox{\Hypertarget{classself__service__terminal_1_1models_1_1_terminal___settings_ad9b877fa5ed223f228c9e53f04a551b8}\label{classself__service__terminal_1_1models_1_1_terminal___settings_ad9b877fa5ed223f228c9e53f04a551b8}} 
 \index{self\_service\_terminal.models.Terminal\_Settings@{self\_service\_terminal.models.Terminal\_Settings}!colorval\_text@{colorval\_text}}
 \index{colorval\_text@{colorval\_text}!self\_service\_terminal.models.Terminal\_Settings@{self\_service\_terminal.models.Terminal\_Settings}}
 \doxysubsubsection{\texorpdfstring{colorval\_text}{colorval\_text}}
-{\footnotesize\ttfamily self\+\_\+service\+\_\+terminal.\+models.\+Terminal\+\_\+\+Settings.\+colorval\+\_\+text = models.\+Char\+Field(max\+\_\+length=7, blank=True, default=\textquotesingle{}\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classself__service__terminal_1_1models_1_1_terminal___settings_a53f5f21580d97c60b1bc226062933ef8}\label{classself__service__terminal_1_1models_1_1_terminal___settings_a53f5f21580d97c60b1bc226062933ef8}} 
-\index{self\_service\_terminal.models.Terminal\_Settings@{self\_service\_terminal.models.Terminal\_Settings}!colorval\_zurueck\_button@{colorval\_zurueck\_button}}
-\index{colorval\_zurueck\_button@{colorval\_zurueck\_button}!self\_service\_terminal.models.Terminal\_Settings@{self\_service\_terminal.models.Terminal\_Settings}}
-\doxysubsubsection{\texorpdfstring{colorval\_zurueck\_button}{colorval\_zurueck\_button}}
-{\footnotesize\ttfamily self\+\_\+service\+\_\+terminal.\+models.\+Terminal\+\_\+\+Settings.\+colorval\+\_\+zurueck\+\_\+button\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily self\+\_\+service\+\_\+terminal.\+models.\+Terminal\+\_\+\+Settings.\+colorval\+\_\+text\hspace{0.3cm}{\ttfamily [static]}}
 
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{=  models.CharField(}
-\DoxyCodeLine{        max\_length=7, blank=\textcolor{keyword}{True}, default=\textcolor{stringliteral}{''})}
+\DoxyCodeLine{=  models.CharField(max\_length=7, blank=\textcolor{keyword}{True}, default=\textcolor{stringliteral}{''},}
+\DoxyCodeLine{        verbose\_name=\textcolor{stringliteral}{'Farbe der Texte'})}
 
 \end{DoxyCode}
+
+
+Definition at line 31 of file models.\+py.
+
 \mbox{\Hypertarget{classself__service__terminal_1_1models_1_1_terminal___settings_ace329bfcee29e3f0682a475416081418}\label{classself__service__terminal_1_1models_1_1_terminal___settings_ace329bfcee29e3f0682a475416081418}} 
 \index{self\_service\_terminal.models.Terminal\_Settings@{self\_service\_terminal.models.Terminal\_Settings}!description@{description}}
 \index{description@{description}!self\_service\_terminal.models.Terminal\_Settings@{self\_service\_terminal.models.Terminal\_Settings}}
 \doxysubsubsection{\texorpdfstring{description}{description}}
-{\footnotesize\ttfamily self\+\_\+service\+\_\+terminal.\+models.\+Terminal\+\_\+\+Settings.\+description = models.\+Text\+Field()\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classself__service__terminal_1_1models_1_1_terminal___settings_a90a80b32b05f3bb61943420ebf494cbd}\label{classself__service__terminal_1_1models_1_1_terminal___settings_a90a80b32b05f3bb61943420ebf494cbd}} 
-\index{self\_service\_terminal.models.Terminal\_Settings@{self\_service\_terminal.models.Terminal\_Settings}!homepage@{homepage}}
-\index{homepage@{homepage}!self\_service\_terminal.models.Terminal\_Settings@{self\_service\_terminal.models.Terminal\_Settings}}
-\doxysubsubsection{\texorpdfstring{homepage}{homepage}}
-{\footnotesize\ttfamily self\+\_\+service\+\_\+terminal.\+models.\+Terminal\+\_\+\+Settings.\+homepage\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily self\+\_\+service\+\_\+terminal.\+models.\+Terminal\+\_\+\+Settings.\+description\hspace{0.3cm}{\ttfamily [static]}}
 
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{=  models.OneToOneField(}
-\DoxyCodeLine{        \textcolor{stringliteral}{'Menu'}, on\_delete=models.CASCADE, blank=\textcolor{keyword}{True}, null=\textcolor{keyword}{True})}
+\DoxyCodeLine{=  models.TextField(blank=\textcolor{keyword}{True}, null=\textcolor{keyword}{True},}
+\DoxyCodeLine{        verbose\_name=\textcolor{stringliteral}{'Beschreibung'})}
 
 \end{DoxyCode}
+
+
+Definition at line 24 of file models.\+py.
+
 \mbox{\Hypertarget{classself__service__terminal_1_1models_1_1_terminal___settings_a945f56cb266d39798bb293d834deb2a8}\label{classself__service__terminal_1_1models_1_1_terminal___settings_a945f56cb266d39798bb293d834deb2a8}} 
 \index{self\_service\_terminal.models.Terminal\_Settings@{self\_service\_terminal.models.Terminal\_Settings}!institute\_logo@{institute\_logo}}
 \index{institute\_logo@{institute\_logo}!self\_service\_terminal.models.Terminal\_Settings@{self\_service\_terminal.models.Terminal\_Settings}}
@@ -119,9 +187,14 @@ Title and description fields are deprecated.
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{=  models.ImageField(}
-\DoxyCodeLine{        upload\_to=\textcolor{stringliteral}{'images'}, default=\textcolor{stringliteral}{'static/Tu-\/ilmenauLogo.png'}, blank=\textcolor{keyword}{True})}
+\DoxyCodeLine{        upload\_to=\textcolor{stringliteral}{'images'}, default=\textcolor{stringliteral}{'images/institute\_logo.png'},}
+\DoxyCodeLine{        verbose\_name=\textcolor{stringliteral}{'Institutslogo'})}
 
 \end{DoxyCode}
+
+
+Definition at line 37 of file models.\+py.
+
 \mbox{\Hypertarget{classself__service__terminal_1_1models_1_1_terminal___settings_a16c33a75a200d76f1a8400a8aa6f03a2}\label{classself__service__terminal_1_1models_1_1_terminal___settings_a16c33a75a200d76f1a8400a8aa6f03a2}} 
 \index{self\_service\_terminal.models.Terminal\_Settings@{self\_service\_terminal.models.Terminal\_Settings}!insurance\_logo@{insurance\_logo}}
 \index{insurance\_logo@{insurance\_logo}!self\_service\_terminal.models.Terminal\_Settings@{self\_service\_terminal.models.Terminal\_Settings}}
@@ -131,12 +204,27 @@ Title and description fields are deprecated.
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{=  models.ImageField(}
-\DoxyCodeLine{        upload\_to=\textcolor{stringliteral}{'images'}, default=\textcolor{stringliteral}{'static/Logo\_AOK\_PLUS.svg.png'}, blank=\textcolor{keyword}{True})}
+\DoxyCodeLine{        upload\_to=\textcolor{stringliteral}{'images'}, default=\textcolor{stringliteral}{'images/insurance\_logo.png'},}
+\DoxyCodeLine{        verbose\_name=\textcolor{stringliteral}{'Krankenkassenlogo'})}
 
 \end{DoxyCode}
+
+
+Definition at line 40 of file models.\+py.
+
 \mbox{\Hypertarget{classself__service__terminal_1_1models_1_1_terminal___settings_a7760a84fb5f6c462cecf886ade7148f6}\label{classself__service__terminal_1_1models_1_1_terminal___settings_a7760a84fb5f6c462cecf886ade7148f6}} 
 \index{self\_service\_terminal.models.Terminal\_Settings@{self\_service\_terminal.models.Terminal\_Settings}!title@{title}}
 \index{title@{title}!self\_service\_terminal.models.Terminal\_Settings@{self\_service\_terminal.models.Terminal\_Settings}}
 \doxysubsubsection{\texorpdfstring{title}{title}}
-{\footnotesize\ttfamily self\+\_\+service\+\_\+terminal.\+models.\+Terminal\+\_\+\+Settings.\+title = models.\+Char\+Field(max\+\_\+length=T\+I\+T\+L\+E\+\_\+\+L\+E\+N\+G\+TH)\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily self\+\_\+service\+\_\+terminal.\+models.\+Terminal\+\_\+\+Settings.\+title\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  models.CharField(max\_length=TITLE\_LENGTH, unique=\textcolor{keyword}{True},}
+\DoxyCodeLine{        verbose\_name=\textcolor{stringliteral}{'Titel'})}
+
+\end{DoxyCode}
+
+
+Definition at line 22 of file models.\+py.
 

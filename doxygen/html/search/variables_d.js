@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['retstr_220',['retstr',['../namespaceself__service__terminal_1_1tests.html#adcbbd01ff769a2e64d4b07d73029a837',1,'self_service_terminal::tests']]],
-  ['root_5furlconf_221',['ROOT_URLCONF',['../namespacesp4_1_1settings.html#a8197030db0c9967eac17f94e16f1b4ea',1,'sp4::settings']]]
+  ['templates_291',['TEMPLATES',['../namespacesp4_1_1settings.html#a7040818aa8e63aee38280ab8231f42b1',1,'sp4::settings']]],
+  ['terminal_5fsettings_292',['terminal_settings',['../classself__service__terminal_1_1tests_1_1_default_test_case.html#a910db8ffe958d361b87e5f60e9593dce',1,'self_service_terminal.tests.DefaultTestCase.terminal_settings()'],['../classself__service__terminal_1_1tests_1_1_unconnected_configuration.html#af6b0189c3278b94b4ba8e4e793620e37',1,'self_service_terminal.tests.UnconnectedConfiguration.terminal_settings()'],['../classself__service__terminal_1_1tests_1_1_production_case.html#a77b4eaf95f9f983c33f649fe5b0e0f51',1,'self_service_terminal.tests.ProductionCase.terminal_settings()'],['../classself__service__terminal_1_1tests_1_1_pagination_test_case.html#a812c10807cf0d9c851c451bdce3038ad',1,'self_service_terminal.tests.PaginationTestCase.terminal_settings()'],['../classself__service__terminal_1_1tests_1_1_export_import_test_case.html#aa37eb29073f4d13f84c2d963fbbec1c1',1,'self_service_terminal.tests.ExportImportTestCase.terminal_settings()'],['../classself__service__terminal_1_1tests_1_1_no_pdf_set_test_case.html#a5827c8bc4d7e3ee2dfeb1ad33ab0f464',1,'self_service_terminal.tests.NoPdfSetTestCase.terminal_settings()']]],
+  ['time_5fzone_293',['TIME_ZONE',['../namespacesp4_1_1settings.html#a85970bf3ac46a7a821aad9ab467a1e49',1,'sp4::settings']]],
+  ['title_294',['title',['../classself__service__terminal_1_1models_1_1_terminal___settings.html#a7760a84fb5f6c462cecf886ade7148f6',1,'self_service_terminal::models::Terminal_Settings']]],
+  ['title_5flength_295',['TITLE_LENGTH',['../namespaceself__service__terminal_1_1constants.html#afb175466f88af2270a73bead7be79af9',1,'self_service_terminal::constants']]]
 ];

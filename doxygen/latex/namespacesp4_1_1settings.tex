@@ -9,7 +9,7 @@ string \mbox{\hyperlink{namespacesp4_1_1settings_ababadefae785d3955eb397bae546db
 \item 
 bool \mbox{\hyperlink{namespacesp4_1_1settings_ad9456cf7aa78286c0852e0e70fe410b4}{D\+E\+B\+UG}} = True
 \item 
-list \mbox{\hyperlink{namespacesp4_1_1settings_a32e3ae6bab826527e3bd70c4a4691955}{A\+L\+L\+O\+W\+E\+D\+\_\+\+H\+O\+S\+TS}} = \mbox{[}$\,$\mbox{]}
+list \mbox{\hyperlink{namespacesp4_1_1settings_a32e3ae6bab826527e3bd70c4a4691955}{A\+L\+L\+O\+W\+E\+D\+\_\+\+H\+O\+S\+TS}} = \mbox{[}\textquotesingle{}192.\+168.\+4.\+1\textquotesingle{}, \textquotesingle{}192.\+168.\+2.\+200\textquotesingle{}\mbox{]}
 \item 
 list \mbox{\hyperlink{namespacesp4_1_1settings_a7577c7ce51be99dc02a0abf44cce85d7}{I\+N\+S\+T\+A\+L\+L\+E\+D\+\_\+\+A\+P\+PS}}
 \item 
@@ -34,6 +34,8 @@ bool \mbox{\hyperlink{namespacesp4_1_1settings_aa9c2b9ba22dc8ef021aa1c59228dc8ab
 bool \mbox{\hyperlink{namespacesp4_1_1settings_ae83fee8ceef93297564f613d4160c671}{U\+S\+E\+\_\+\+L10N}} = True
 \item 
 bool \mbox{\hyperlink{namespacesp4_1_1settings_a19109ede42ebc1b104c150aa29fe5caf}{U\+S\+E\+\_\+\+TZ}} = True
+\item 
+\mbox{\hyperlink{namespacesp4_1_1settings_ac70c062a05ce42a80571cf3588b3f08e}{S\+T\+A\+T\+I\+C\+\_\+\+R\+O\+OT}} = os.\+path.\+join(\mbox{\hyperlink{namespacesp4_1_1settings_a962acfc44b7e493e3a9fb8abc8b91c7c}{B\+A\+S\+E\+\_\+\+D\+IR}}, \textquotesingle{}self\+\_\+service\+\_\+terminal/static\textquotesingle{})
 \item 
 string \mbox{\hyperlink{namespacesp4_1_1settings_abbed4decc913b63800551ff2ce3cd0bb}{S\+T\+A\+T\+I\+C\+\_\+\+U\+RL}} = \textquotesingle{}/static/\textquotesingle{}
 \item 
@@ -63,7 +65,11 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 \index{sp4.settings@{sp4.settings}!ALLOWED\_HOSTS@{ALLOWED\_HOSTS}}
 \index{ALLOWED\_HOSTS@{ALLOWED\_HOSTS}!sp4.settings@{sp4.settings}}
 \doxysubsubsection{\texorpdfstring{ALLOWED\_HOSTS}{ALLOWED\_HOSTS}}
-{\footnotesize\ttfamily list sp4.\+settings.\+A\+L\+L\+O\+W\+E\+D\+\_\+\+H\+O\+S\+TS = \mbox{[}$\,$\mbox{]}}
+{\footnotesize\ttfamily list sp4.\+settings.\+A\+L\+L\+O\+W\+E\+D\+\_\+\+H\+O\+S\+TS = \mbox{[}\textquotesingle{}192.\+168.\+4.\+1\textquotesingle{}, \textquotesingle{}192.\+168.\+2.\+200\textquotesingle{}\mbox{]}}
+
+
+
+Definition at line 29 of file settings.\+py.
 
 \mbox{\Hypertarget{namespacesp4_1_1settings_ab6000589224c3fe8d572c6f2e22761bd}\label{namespacesp4_1_1settings_ab6000589224c3fe8d572c6f2e22761bd}} 
 \index{sp4.settings@{sp4.settings}!AUTH\_PASSWORD\_VALIDATORS@{AUTH\_PASSWORD\_VALIDATORS}}
@@ -89,11 +95,19 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 \DoxyCodeLine{14 ]}
 
 \end{DoxyCode}
+
+
+Definition at line 92 of file settings.\+py.
+
 \mbox{\Hypertarget{namespacesp4_1_1settings_a962acfc44b7e493e3a9fb8abc8b91c7c}\label{namespacesp4_1_1settings_a962acfc44b7e493e3a9fb8abc8b91c7c}} 
 \index{sp4.settings@{sp4.settings}!BASE\_DIR@{BASE\_DIR}}
 \index{BASE\_DIR@{BASE\_DIR}!sp4.settings@{sp4.settings}}
 \doxysubsubsection{\texorpdfstring{BASE\_DIR}{BASE\_DIR}}
 {\footnotesize\ttfamily sp4.\+settings.\+B\+A\+S\+E\+\_\+\+D\+IR = os.\+path.\+dirname(os.\+path.\+dirname(os.\+path.\+abspath(\+\_\+\+\_\+file\+\_\+\+\_\+)))}
+
+
+
+Definition at line 17 of file settings.\+py.
 
 \mbox{\Hypertarget{namespacesp4_1_1settings_a8aef1c27a8174e54a36db0088014b1b6}\label{namespacesp4_1_1settings_a8aef1c27a8174e54a36db0088014b1b6}} 
 \index{sp4.settings@{sp4.settings}!DATABASES@{DATABASES}}
@@ -111,17 +125,29 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 \DoxyCodeLine{6 \}}
 
 \end{DoxyCode}
+
+
+Definition at line 81 of file settings.\+py.
+
 \mbox{\Hypertarget{namespacesp4_1_1settings_ad9456cf7aa78286c0852e0e70fe410b4}\label{namespacesp4_1_1settings_ad9456cf7aa78286c0852e0e70fe410b4}} 
 \index{sp4.settings@{sp4.settings}!DEBUG@{DEBUG}}
 \index{DEBUG@{DEBUG}!sp4.settings@{sp4.settings}}
 \doxysubsubsection{\texorpdfstring{DEBUG}{DEBUG}}
 {\footnotesize\ttfamily bool sp4.\+settings.\+D\+E\+B\+UG = True}
 
+
+
+Definition at line 27 of file settings.\+py.
+
 \mbox{\Hypertarget{namespacesp4_1_1settings_a451d07b01455704dff2695063c3d5859}\label{namespacesp4_1_1settings_a451d07b01455704dff2695063c3d5859}} 
 \index{sp4.settings@{sp4.settings}!IMPORT\_EXPORT\_USE\_TRANSACTIONS@{IMPORT\_EXPORT\_USE\_TRANSACTIONS}}
 \index{IMPORT\_EXPORT\_USE\_TRANSACTIONS@{IMPORT\_EXPORT\_USE\_TRANSACTIONS}!sp4.settings@{sp4.settings}}
 \doxysubsubsection{\texorpdfstring{IMPORT\_EXPORT\_USE\_TRANSACTIONS}{IMPORT\_EXPORT\_USE\_TRANSACTIONS}}
 {\footnotesize\ttfamily bool sp4.\+settings.\+I\+M\+P\+O\+R\+T\+\_\+\+E\+X\+P\+O\+R\+T\+\_\+\+U\+S\+E\+\_\+\+T\+R\+A\+N\+S\+A\+C\+T\+I\+O\+NS = True}
+
+
+
+Definition at line 138 of file settings.\+py.
 
 \mbox{\Hypertarget{namespacesp4_1_1settings_a7577c7ce51be99dc02a0abf44cce85d7}\label{namespacesp4_1_1settings_a7577c7ce51be99dc02a0abf44cce85d7}} 
 \index{sp4.settings@{sp4.settings}!INSTALLED\_APPS@{INSTALLED\_APPS}}
@@ -139,15 +165,24 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 \DoxyCodeLine{6     \textcolor{stringliteral}{'django.contrib.sessions'},}
 \DoxyCodeLine{7     \textcolor{stringliteral}{'django.contrib.messages'},}
 \DoxyCodeLine{8     \textcolor{stringliteral}{'django.contrib.staticfiles'},}
-\DoxyCodeLine{9     \textcolor{stringliteral}{'import\_export'}}
-\DoxyCodeLine{10 ]}
+\DoxyCodeLine{9     \textcolor{stringliteral}{'mod\_wsgi.server'},}
+\DoxyCodeLine{10     \textcolor{stringliteral}{'import\_export'}}
+\DoxyCodeLine{11 ]}
 
 \end{DoxyCode}
+
+
+Definition at line 34 of file settings.\+py.
+
 \mbox{\Hypertarget{namespacesp4_1_1settings_ac0bb101072b1e0e27e89d33bd3d833a4}\label{namespacesp4_1_1settings_ac0bb101072b1e0e27e89d33bd3d833a4}} 
 \index{sp4.settings@{sp4.settings}!LANGUAGE\_CODE@{LANGUAGE\_CODE}}
 \index{LANGUAGE\_CODE@{LANGUAGE\_CODE}!sp4.settings@{sp4.settings}}
 \doxysubsubsection{\texorpdfstring{LANGUAGE\_CODE}{LANGUAGE\_CODE}}
 {\footnotesize\ttfamily string sp4.\+settings.\+L\+A\+N\+G\+U\+A\+G\+E\+\_\+\+C\+O\+DE = \textquotesingle{}de-\/DE\textquotesingle{}}
+
+
+
+Definition at line 111 of file settings.\+py.
 
 \mbox{\Hypertarget{namespacesp4_1_1settings_aa820f76743857de577e4ffe98cb34b9b}\label{namespacesp4_1_1settings_aa820f76743857de577e4ffe98cb34b9b}} 
 \index{sp4.settings@{sp4.settings}!MEDIA\_ROOT@{MEDIA\_ROOT}}
@@ -155,11 +190,19 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 \doxysubsubsection{\texorpdfstring{MEDIA\_ROOT}{MEDIA\_ROOT}}
 {\footnotesize\ttfamily sp4.\+settings.\+M\+E\+D\+I\+A\+\_\+\+R\+O\+OT = os.\+path.\+join(\mbox{\hyperlink{namespacesp4_1_1settings_a962acfc44b7e493e3a9fb8abc8b91c7c}{B\+A\+S\+E\+\_\+\+D\+IR}}, \textquotesingle{}self\+\_\+service\+\_\+terminal/files\textquotesingle{})}
 
+
+
+Definition at line 132 of file settings.\+py.
+
 \mbox{\Hypertarget{namespacesp4_1_1settings_a2c2807a7dab3519317b4c09fe7f11c21}\label{namespacesp4_1_1settings_a2c2807a7dab3519317b4c09fe7f11c21}} 
 \index{sp4.settings@{sp4.settings}!MEDIA\_URL@{MEDIA\_URL}}
 \index{MEDIA\_URL@{MEDIA\_URL}!sp4.settings@{sp4.settings}}
 \doxysubsubsection{\texorpdfstring{MEDIA\_URL}{MEDIA\_URL}}
 {\footnotesize\ttfamily string sp4.\+settings.\+M\+E\+D\+I\+A\+\_\+\+U\+RL = \textquotesingle{}/files/\textquotesingle{}}
+
+
+
+Definition at line 134 of file settings.\+py.
 
 \mbox{\Hypertarget{namespacesp4_1_1settings_a83c4b6c97acfd64d865961ba03d53c07}\label{namespacesp4_1_1settings_a83c4b6c97acfd64d865961ba03d53c07}} 
 \index{sp4.settings@{sp4.settings}!MIDDLEWARE@{MIDDLEWARE}}
@@ -180,11 +223,19 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 \DoxyCodeLine{9 ]}
 
 \end{DoxyCode}
+
+
+Definition at line 46 of file settings.\+py.
+
 \mbox{\Hypertarget{namespacesp4_1_1settings_a8197030db0c9967eac17f94e16f1b4ea}\label{namespacesp4_1_1settings_a8197030db0c9967eac17f94e16f1b4ea}} 
 \index{sp4.settings@{sp4.settings}!ROOT\_URLCONF@{ROOT\_URLCONF}}
 \index{ROOT\_URLCONF@{ROOT\_URLCONF}!sp4.settings@{sp4.settings}}
 \doxysubsubsection{\texorpdfstring{ROOT\_URLCONF}{ROOT\_URLCONF}}
 {\footnotesize\ttfamily string sp4.\+settings.\+R\+O\+O\+T\+\_\+\+U\+R\+L\+C\+O\+NF = \textquotesingle{}sp4.\+urls\textquotesingle{}}
+
+
+
+Definition at line 56 of file settings.\+py.
 
 \mbox{\Hypertarget{namespacesp4_1_1settings_ababadefae785d3955eb397bae546db4d}\label{namespacesp4_1_1settings_ababadefae785d3955eb397bae546db4d}} 
 \index{sp4.settings@{sp4.settings}!SECRET\_KEY@{SECRET\_KEY}}
@@ -192,11 +243,29 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 \doxysubsubsection{\texorpdfstring{SECRET\_KEY}{SECRET\_KEY}}
 {\footnotesize\ttfamily string sp4.\+settings.\+S\+E\+C\+R\+E\+T\+\_\+\+K\+EY = \textquotesingle{}hvyf2=t2mhmrpo0)tlecy\#uv\#(ge9n$\ast$-\/l33$^\wedge$17@na$\ast$ap49-\/\#g)\textquotesingle{}}
 
+
+
+Definition at line 24 of file settings.\+py.
+
+\mbox{\Hypertarget{namespacesp4_1_1settings_ac70c062a05ce42a80571cf3588b3f08e}\label{namespacesp4_1_1settings_ac70c062a05ce42a80571cf3588b3f08e}} 
+\index{sp4.settings@{sp4.settings}!STATIC\_ROOT@{STATIC\_ROOT}}
+\index{STATIC\_ROOT@{STATIC\_ROOT}!sp4.settings@{sp4.settings}}
+\doxysubsubsection{\texorpdfstring{STATIC\_ROOT}{STATIC\_ROOT}}
+{\footnotesize\ttfamily sp4.\+settings.\+S\+T\+A\+T\+I\+C\+\_\+\+R\+O\+OT = os.\+path.\+join(\mbox{\hyperlink{namespacesp4_1_1settings_a962acfc44b7e493e3a9fb8abc8b91c7c}{B\+A\+S\+E\+\_\+\+D\+IR}}, \textquotesingle{}self\+\_\+service\+\_\+terminal/static\textquotesingle{})}
+
+
+
+Definition at line 125 of file settings.\+py.
+
 \mbox{\Hypertarget{namespacesp4_1_1settings_abbed4decc913b63800551ff2ce3cd0bb}\label{namespacesp4_1_1settings_abbed4decc913b63800551ff2ce3cd0bb}} 
 \index{sp4.settings@{sp4.settings}!STATIC\_URL@{STATIC\_URL}}
 \index{STATIC\_URL@{STATIC\_URL}!sp4.settings@{sp4.settings}}
 \doxysubsubsection{\texorpdfstring{STATIC\_URL}{STATIC\_URL}}
 {\footnotesize\ttfamily string sp4.\+settings.\+S\+T\+A\+T\+I\+C\+\_\+\+U\+RL = \textquotesingle{}/static/\textquotesingle{}}
+
+
+
+Definition at line 127 of file settings.\+py.
 
 \mbox{\Hypertarget{namespacesp4_1_1settings_a7040818aa8e63aee38280ab8231f42b1}\label{namespacesp4_1_1settings_a7040818aa8e63aee38280ab8231f42b1}} 
 \index{sp4.settings@{sp4.settings}!TEMPLATES@{TEMPLATES}}
@@ -209,7 +278,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 \DoxyCodeLine{1 =  [}
 \DoxyCodeLine{2     \{}
 \DoxyCodeLine{3         \textcolor{stringliteral}{'BACKEND'}: \textcolor{stringliteral}{'django.template.backends.django.DjangoTemplates'},}
-\DoxyCodeLine{4         \textcolor{stringliteral}{'DIRS'}: [],}
+\DoxyCodeLine{4         \textcolor{stringliteral}{'DIRS'}: [os.path.join(BASE\_DIR, \textcolor{stringliteral}{'self\_service\_terminal/templates/admin'})], \textcolor{comment}{\# Path were overridden templates are found}}
 \DoxyCodeLine{5         \textcolor{stringliteral}{'APP\_DIRS'}: \textcolor{keyword}{True},}
 \DoxyCodeLine{6         \textcolor{stringliteral}{'OPTIONS'}: \{}
 \DoxyCodeLine{7             \textcolor{stringliteral}{'context\_processors'}: [}
@@ -224,11 +293,19 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 \DoxyCodeLine{16 ]}
 
 \end{DoxyCode}
+
+
+Definition at line 58 of file settings.\+py.
+
 \mbox{\Hypertarget{namespacesp4_1_1settings_a85970bf3ac46a7a821aad9ab467a1e49}\label{namespacesp4_1_1settings_a85970bf3ac46a7a821aad9ab467a1e49}} 
 \index{sp4.settings@{sp4.settings}!TIME\_ZONE@{TIME\_ZONE}}
 \index{TIME\_ZONE@{TIME\_ZONE}!sp4.settings@{sp4.settings}}
 \doxysubsubsection{\texorpdfstring{TIME\_ZONE}{TIME\_ZONE}}
 {\footnotesize\ttfamily string sp4.\+settings.\+T\+I\+M\+E\+\_\+\+Z\+O\+NE = \textquotesingle{}Europe/Berlin\textquotesingle{}}
+
+
+
+Definition at line 113 of file settings.\+py.
 
 \mbox{\Hypertarget{namespacesp4_1_1settings_aa9c2b9ba22dc8ef021aa1c59228dc8ab}\label{namespacesp4_1_1settings_aa9c2b9ba22dc8ef021aa1c59228dc8ab}} 
 \index{sp4.settings@{sp4.settings}!USE\_I18N@{USE\_I18N}}
@@ -236,11 +313,19 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 \doxysubsubsection{\texorpdfstring{USE\_I18N}{USE\_I18N}}
 {\footnotesize\ttfamily bool sp4.\+settings.\+U\+S\+E\+\_\+\+I18N = True}
 
+
+
+Definition at line 115 of file settings.\+py.
+
 \mbox{\Hypertarget{namespacesp4_1_1settings_ae83fee8ceef93297564f613d4160c671}\label{namespacesp4_1_1settings_ae83fee8ceef93297564f613d4160c671}} 
 \index{sp4.settings@{sp4.settings}!USE\_L10N@{USE\_L10N}}
 \index{USE\_L10N@{USE\_L10N}!sp4.settings@{sp4.settings}}
 \doxysubsubsection{\texorpdfstring{USE\_L10N}{USE\_L10N}}
 {\footnotesize\ttfamily bool sp4.\+settings.\+U\+S\+E\+\_\+\+L10N = True}
+
+
+
+Definition at line 117 of file settings.\+py.
 
 \mbox{\Hypertarget{namespacesp4_1_1settings_a19109ede42ebc1b104c150aa29fe5caf}\label{namespacesp4_1_1settings_a19109ede42ebc1b104c150aa29fe5caf}} 
 \index{sp4.settings@{sp4.settings}!USE\_TZ@{USE\_TZ}}
@@ -248,9 +333,17 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 \doxysubsubsection{\texorpdfstring{USE\_TZ}{USE\_TZ}}
 {\footnotesize\ttfamily bool sp4.\+settings.\+U\+S\+E\+\_\+\+TZ = True}
 
+
+
+Definition at line 119 of file settings.\+py.
+
 \mbox{\Hypertarget{namespacesp4_1_1settings_ab865fc2e700c2cee412ca66193b4fea5}\label{namespacesp4_1_1settings_ab865fc2e700c2cee412ca66193b4fea5}} 
 \index{sp4.settings@{sp4.settings}!WSGI\_APPLICATION@{WSGI\_APPLICATION}}
 \index{WSGI\_APPLICATION@{WSGI\_APPLICATION}!sp4.settings@{sp4.settings}}
 \doxysubsubsection{\texorpdfstring{WSGI\_APPLICATION}{WSGI\_APPLICATION}}
 {\footnotesize\ttfamily string sp4.\+settings.\+W\+S\+G\+I\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON = \textquotesingle{}\mbox{\hyperlink{namespacesp4_1_1wsgi_ac184507e659e1b32d2ce1de1c535c61a}{sp4.\+wsgi.\+application}}\textquotesingle{}}
+
+
+
+Definition at line 75 of file settings.\+py.
 

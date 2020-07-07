@@ -1,10 +1,6 @@
 var searchData=
 [
-  ['fieldsets_28',['fieldsets',['../classself__service__terminal_1_1admin_1_1_terminal___settings_admin.html#a982a4da15ca10250e603c8e2ed289cfd',1,'self_service_terminal.admin.Terminal_SettingsAdmin.fieldsets()'],['../classself__service__terminal_1_1admin_1_1_menu_admin.html#a514c15baa5ce58cff974a07b2f2cd6f4',1,'self_service_terminal.admin.MenuAdmin.fieldsets()'],['../classself__service__terminal_1_1admin_1_1_form_admin.html#acbd2632cefbb0a2ba6bb1f6ddde1d101',1,'self_service_terminal.admin.FormAdmin.fieldsets()']]],
-  ['form_29',['Form',['../classself__service__terminal_1_1models_1_1_form.html',1,'self_service_terminal::models']]],
-  ['form_5ftitle_30',['form_title',['../classself__service__terminal_1_1models_1_1_form.html#a9d9f1e15877294e016bbd77b3044f1a8',1,'self_service_terminal::models::Form']]],
-  ['formadmin_31',['FormAdmin',['../classself__service__terminal_1_1admin_1_1_form_admin.html',1,'self_service_terminal::admin']]],
-  ['forminline_32',['FormInline',['../classself__service__terminal_1_1admin_1_1_form_inline.html',1,'self_service_terminal::admin']]],
-  ['formtestcase_33',['FormTestCase',['../classself__service__terminal_1_1tests_1_1_form_test_case.html',1,'self_service_terminal::tests']]],
-  ['formular_34',['formular',['../namespaceself__service__terminal_1_1views.html#aabcb672eb52d0d1ae33613b3a6255694',1,'self_service_terminal::views']]]
+  ['get_5fcups_5fstatus_39',['get_cups_status',['../namespaceself__service__terminal_1_1printer__status.html#ab3f0f7a82bc8da98f6d0af9b1dfbf9e8',1,'self_service_terminal::printer_status']]],
+  ['get_5fhomepage_40',['get_homepage',['../namespaceself__service__terminal_1_1views.html#a19420b0ed7d54e32a7065ded61b386f0',1,'self_service_terminal::views']]],
+  ['get_5fsettings_41',['get_settings',['../namespaceself__service__terminal_1_1views.html#a4a85e497962e8a0d311900493583ad17',1,'self_service_terminal::views']]]
 ];

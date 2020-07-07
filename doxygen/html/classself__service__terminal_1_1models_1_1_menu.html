@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -50,23 +46,6 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('classself__service__terminal_1_1models_1_1_menu.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -81,8 +60,14 @@ $(document).ready(function(){initNavTree('classself__service__terminal_1_1models
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceself__service__terminal.html">self_service_terminal</a></li><li class="navelem"><a class="el" href="namespaceself__service__terminal_1_1models.html">models</a></li><li class="navelem"><a class="el" href="classself__service__terminal_1_1models_1_1_menu.html">Menu</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="classself__service__terminal_1_1models_1_1_menu-members.html">List of all members</a>  </div>
@@ -93,10 +78,27 @@ $(document).ready(function(){initNavTree('classself__service__terminal_1_1models
 <div class="dynheader">
 Inheritance diagram for self_service_terminal.models.Menu:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="classself__service__terminal_1_1models_1_1_menu.png" alt=""/>
- </div></div>
+<div class="center"><img src="classself__service__terminal_1_1models_1_1_menu__inherit__graph.png" border="0" usemap="#self__service__terminal_8models_8_menu_inherit__map" alt="Inheritance graph"/></div>
+<map name="self__service__terminal_8models_8_menu_inherit__map" id="self__service__terminal_8models_8_menu_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,80,260,107"/>
+<area shape="rect" title=" " alt="" coords="101,5,164,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for self_service_terminal.models.Menu:</div>
+<div class="dyncontent">
+<div class="center"><img src="classself__service__terminal_1_1models_1_1_menu__coll__graph.png" border="0" usemap="#self__service__terminal_8models_8_menu_coll__map" alt="Collaboration graph"/></div>
+<map name="self__service__terminal_8models_8_menu_coll__map" id="self__service__terminal_8models_8_menu_coll__map">
+<area shape="rect" title=" " alt="" coords="5,80,260,107"/>
+<area shape="rect" title=" " alt="" coords="101,5,164,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classself__service__terminal_1_1models_1_1_menu_1_1_meta.html">Meta</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5b4e27681661efe9d3806bfc991d5d6e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classself__service__terminal_1_1models_1_1_menu.html#a5b4e27681661efe9d3806bfc991d5d6e">__str__</a> (self)</td></tr>
@@ -104,21 +106,21 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a4e2baf4182a065e719449138c97cf3a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classself__service__terminal_1_1models_1_1_menu.html#a4e2baf4182a065e719449138c97cf3a7">settings</a> = models.ForeignKey(<a class="el" href="classself__service__terminal_1_1models_1_1_terminal___settings.html">Terminal_Settings</a>, on_delete=models.CASCADE)</td></tr>
-<tr class="separator:a4e2baf4182a065e719449138c97cf3a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdc7b0d14af150a24b00cdee6c400183"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classself__service__terminal_1_1models_1_1_menu.html#acdc7b0d14af150a24b00cdee6c400183">parent_menu</a></td></tr>
 <tr class="separator:acdc7b0d14af150a24b00cdee6c400183"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5152a5dbcea50eec4b4d05302d0fc6d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classself__service__terminal_1_1models_1_1_menu.html#ab5152a5dbcea50eec4b4d05302d0fc6d">menu_title</a> = models.CharField(max_length=TITLE_LENGTH)</td></tr>
+<tr class="memitem:ab5152a5dbcea50eec4b4d05302d0fc6d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classself__service__terminal_1_1models_1_1_menu.html#ab5152a5dbcea50eec4b4d05302d0fc6d">menu_title</a></td></tr>
 <tr class="separator:ab5152a5dbcea50eec4b4d05302d0fc6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2444780931009b56958b2d57636c3104"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classself__service__terminal_1_1models_1_1_menu.html#a2444780931009b56958b2d57636c3104">menu_text</a> = models.TextField(blank=True)</td></tr>
+<tr class="memitem:a2444780931009b56958b2d57636c3104"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classself__service__terminal_1_1models_1_1_menu.html#a2444780931009b56958b2d57636c3104">menu_text</a> = models.TextField(blank=True, verbose_name='Beschreibung')</td></tr>
 <tr class="separator:a2444780931009b56958b2d57636c3104"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">Model the menus and submenus of the self service terminal.
 
-Is linked to its parent menu via a ForeignKey Field. Contains only its 
+Is linked to its parent menu via a ForeignKey Field. Contains only its
 title and some descriptive text.
-</pre> </div><h2 class="groupheader">Member Function Documentation</h2>
+</pre> 
+<p class="definition">Definition at line <a class="el" href="models_8py_source.html#l00051">51</a> of file <a class="el" href="models_8py_source.html">models.py</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a5b4e27681661efe9d3806bfc991d5d6e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5b4e27681661efe9d3806bfc991d5d6e">&#9670;&nbsp;</a></span>__str__()</h2>
 
@@ -135,6 +137,8 @@ title and some descriptive text.
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="models_8py_source.html#l00063">63</a> of file <a class="el" href="models_8py_source.html">models.py</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -148,7 +152,7 @@ title and some descriptive text.
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">self_service_terminal.models.Menu.menu_text = models.TextField(blank=True)</td>
+          <td class="memname">self_service_terminal.models.Menu.menu_text = models.TextField(blank=True, verbose_name='Beschreibung')</td>
         </tr>
       </table>
   </td>
@@ -157,6 +161,8 @@ title and some descriptive text.
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="models_8py_source.html#l00061">61</a> of file <a class="el" href="models_8py_source.html">models.py</a>.</p>
 
 </div>
 </div>
@@ -170,7 +176,7 @@ title and some descriptive text.
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">self_service_terminal.models.Menu.menu_title = models.CharField(max_length=TITLE_LENGTH)</td>
+          <td class="memname">self_service_terminal.models.Menu.menu_title</td>
         </tr>
       </table>
   </td>
@@ -179,6 +185,10 @@ title and some descriptive text.
   </tr>
 </table>
 </div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=  models.CharField(max_length=TITLE_LENGTH,</div>
+<div class="line">        verbose_name=<span class="stringliteral">&#39;Titel&#39;</span>)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="models_8py_source.html#l00059">59</a> of file <a class="el" href="models_8py_source.html">models.py</a>.</p>
 
 </div>
 </div>
@@ -201,43 +211,19 @@ title and some descriptive text.
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">=  models.ForeignKey(</div>
-<div class="line">        <span class="stringliteral">&#39;self&#39;</span>, on_delete=models.CASCADE, blank=<span class="keyword">True</span>, null=<span class="keyword">True</span>)</div>
+<b>Initial value:</b><div class="fragment"><div class="line">=  models.ForeignKey(<span class="stringliteral">&#39;self&#39;</span>, on_delete=models.CASCADE,</div>
+<div class="line">        blank=<span class="keyword">True</span>, null=<span class="keyword">True</span>, verbose_name=<span class="stringliteral">&#39;Eltern-Menü&#39;</span>)</div>
 </div><!-- fragment -->
-</div>
-</div>
-<a id="a4e2baf4182a065e719449138c97cf3a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e2baf4182a065e719449138c97cf3a7">&#9670;&nbsp;</a></span>settings</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">self_service_terminal.models.Menu.settings = models.ForeignKey(<a class="el" href="classself__service__terminal_1_1models_1_1_terminal___settings.html">Terminal_Settings</a>, on_delete=models.CASCADE)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p class="definition">Definition at line <a class="el" href="models_8py_source.html#l00057">57</a> of file <a class="el" href="models_8py_source.html">models.py</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespaceself__service__terminal.html">self_service_terminal</a></li><li class="navelem"><a class="el" href="namespaceself__service__terminal_1_1models.html">models</a></li><li class="navelem"><a class="el" href="classself__service__terminal_1_1models_1_1_menu.html">Menu</a></li>
-    <li class="footer">Generated by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
 </body>
 </html>

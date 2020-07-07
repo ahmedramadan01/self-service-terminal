@@ -72,11 +72,6 @@ General tests for every different configuration:
         Create a menu with more then 5 submenus and forms.
         - Check via regex if the links for pagination appear.
         - Check via URL parameters if pagination works.
-
-TODO document:
-- input = used attributes
-- expected_output
-- output = actual_output
 """
 from subprocess import run
 from pathlib import Path

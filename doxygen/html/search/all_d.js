@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['name_62',['name',['../classself__service__terminal_1_1apps_1_1_self_service_terminal_config.html#a8ea39faaa9da671b606d46605ac780ad',1,'self_service_terminal::apps::SelfServiceTerminalConfig']]]
+  ['root_5furlconf_81',['ROOT_URLCONF',['../namespacesp4_1_1settings.html#a8197030db0c9967eac17f94e16f1b4ea',1,'sp4::settings']]]
 ];
