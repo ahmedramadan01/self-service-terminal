@@ -93,9 +93,9 @@ class Form(models.Model):
         """ Print the document.
 
         Print the pdffile. The command is passed to the Linux operating system
-        using the Python STL module subprocess. If the command run() returns 1,
-        an error message is issued and the contents of stderr is printed with
-        print().
+        using the Python STL module subprocess. If the command run() runs
+        successfully and returns 1, return True, else return False and issue
+        an error message. The contents of stderr is printed on stdout.
         """
         args = ['lp', self.pdffile.path]
         result = subprocess.run(args, capture_output=True)
