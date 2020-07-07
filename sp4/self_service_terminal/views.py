@@ -159,11 +159,14 @@ def view_formular(request, form_id=None, form_title=None):
 def print_formular(request, form_id=None):
     """Run the print method of the given form object and return a loading
     animation that redirects to the homepage after some seconds.
+    If the file has not been printed properly, return a HttpResponse 404.
     """
     settings = get_settings()
     form = Form.objects.get(pk=form_id)
     if form.pdffile.name != 'forms/default.pdf':
-        form.print_form()
+        has_been_printed = form.print_form()
+        if not has_been_printed:
+            return HttpResponse('Error: PDF file has not been printed', status=404)
         context = {'settings': settings}
         return render(request, 'self_service_terminal/print.html', context)
     else:
