@@ -22,3 +22,4 @@ password=admin
 ```
 Change the password after installation.  
 In `settings.py` change the value of `SECRET_KEY` to a different key of same length.
+# self-service-terminal
